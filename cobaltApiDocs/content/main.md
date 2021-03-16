@@ -12,7 +12,7 @@ Welcome to the [Cobalt.io](https://cobalt.io) public API docs portal. You can us
 > To authorize, give this a try:
 
 ```shell
-curl - X GET "https://api.cobalt.io/orgs"
+curl -X GET "https://api.cobalt.io/orgs"
   -H "Authorization: Bearer your-personal-API-token-here"
 ```
 
