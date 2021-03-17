@@ -1,8 +1,6 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b42b3f4e-140b-472d-becf-a0ce06e197d5/deploy-status)](https://app.netlify.com/sites/cobalt-api/deploys)
-
-**DocuAPI** is a multilingual API documentation theme for [Hugo](http://gohugo.io/). This theme is built on top of the beautiful work of [Robert Lord](https://github.com/lord) and others on the [Slate](https://github.com/slatedocs/slate) project ([Apache 2 License](https://github.com/slatedocs/slate/blob/master/LICENSE)) and is maintaiened [here](https://github.com/bep/docuapi).
-
-<br/>
+Cobalt Public API Docs
+===============================
+These docs complement our OpenAPI Swagger docs with walkthroughs and examples of endpoints, fields, and query parameters. You can easily add or edit pages using Markdown from the `cobaltApiDocs/content/` directory, where `main.md` is the entry point. All other pages utilize a `weight` property to indicate where they're nested in navigation.
 
 ## Local Development
 
@@ -13,7 +11,7 @@ brew install go
 brew install hugo
 ```
 
-From any site directory (e.g. `exampleSite`), you can test and deploy changes with
+From any site directory (e.g. `exampleSite` or in our case, `cobaltApiDocs`), you can test and deploy changes locally with
 
 ```
 hugo serve
@@ -21,7 +19,22 @@ hugo serve
 
 ## Hosting
 
-**TODO**
+The site uses Netlify's CD pipeline and is hosted at [docs.cobalt.io](https://docs.cobalt.io) using a Cloudflare CNAME pointed at cobalt-api.netlify.app.
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b42b3f4e-140b-472d-becf-a0ce06e197d5/deploy-status)](https://app.netlify.com/sites/cobalt-api/deploys)
+
+All commits to `master`, if the build is successful, will be automatically deployed to the production site (usually in < 1 minute).
+
+<br/>
+
+**Deploy previews**
+Any pull request against the `master` branch will listen for new commits and is set to auto-build, available for preview before merging (Click Details in the PR Check).
+
+
+## Origin
+
+**DocuAPI** is a multilingual API documentation theme for [Hugo](http://gohugo.io/). This theme is built on top of the beautiful work of [Robert Lord](https://github.com/lord) and others on the [Slate](https://github.com/slatedocs/slate) project ([Apache 2 License](https://github.com/slatedocs/slate/blob/master/LICENSE)) and is maintained [here](https://github.com/bep/docuapi).
+
 
 ## Use
 
