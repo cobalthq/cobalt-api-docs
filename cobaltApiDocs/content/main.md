@@ -5,7 +5,7 @@ title: API Reference
 
 # Introduction
 
-Welcome to the [Cobalt.io](https://cobalt.io) public API docs portal. You can use our REST API to access information on orgs, assets, pentests, findings and events from our database. Our API is currently read-only.
+Welcome to the [Cobalt.io](https://cobalt.io) public API docs portal. You can use our REST API to access information on orgs, assets, pentests, findings and events from our database. Our API is currently in BETA and is read-only.
 
 # Authentication
 
