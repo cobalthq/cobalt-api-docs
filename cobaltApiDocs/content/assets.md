@@ -32,7 +32,7 @@ curl -X GET "https://api.cobalt.io/assets"
 }
 ```
 
-This endpoint retrieves a list of assets that belong to the org specified in the header.
+This endpoint retrieves a list of assets that belong to the organization specified in the header.
 
 
 ### HTTP Request

@@ -8,10 +8,10 @@ title: Findings
 ## Get All Findings
 
 ```shell
-curl -X GET "https://api.cobalt.io/findings" 
-  -H "accept: application/vnd.cobalt.v1+json" 
-  -H "Authorization: Bearer your-personal-api-token-here" 
-  -H "X-Org-Token: your-org-token-here"
+curl -X GET "https://api.cobalt.io/findings"
+  -H "accept: application/vnd.cobalt.v1+json"
+  -H "Authorization: Bearer your-personal-api-token-here"
+  -H "X-Org-Token: your-organization-token-here"
 
 ```
 
@@ -31,10 +31,10 @@ curl -X GET "https://api.cobalt.io/findings"
         "impact": 4,
         "likelihood": 4,
         "severity": high,
-        "affected_targets": [ ""],
+        "affected_targets": [""],
         "proof_of_concept": null,
         "suggested_fix": "Ensure this...",
-        "pentest_id": "pt_9Ig",
+        "pentest_id": "pt_9Ig1234",
         "asset_id": "as_cwrsqsL",
         "log": [],
         "state": "need_fix"
@@ -45,7 +45,7 @@ curl -X GET "https://api.cobalt.io/findings"
 
 ```
 
-This endpoint retrieves a list of all pentest findings that belong to the org specified in the header, filterable by pentest id or asset id.
+This endpoint retrieves a list of all pentest findings that belong to the organization specified in the header, filterable by pentest id or asset id.
 
 ### Calculations
 
@@ -55,7 +55,7 @@ This endpoint retrieves a list of all pentest findings that belong to the org sp
  - `likelihood` := [1-5]
 
 *Cobalt Risk Classification*
- - `severity` :=
+ - `severity` (`criticality`) :=
  - **high** = Risk @ 16+
  - **medium** = Risk @ 5-15
  - **low** = Risk @ 1-4
@@ -73,11 +73,11 @@ limit | 100 | If set, you can adjust the limit returned, e.g. https://api.cobalt
 
 ### Fields
 
-Field           | Enum Types
---------------- | -----------
-`severity`      | null, low, medium, high
-`state`         | need_fix, wont_fix, valid_fix, check_fix, new, invalid, carried_over
-`type_category` | null, XSS, ... (about 30 more via the Cobalt Taxonomy)
+Field                      | Enum Types
+-------------------------- | -----------
+`severity` (`criticality`) | `null`, low, medium, high
+`state`                    | new, triaging, need_fix, wont_fix, valid_fix, check_fix, invalid, carried_over
+`type_category`            | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)
 
 
 <aside class="success">

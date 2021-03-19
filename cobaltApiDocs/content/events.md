@@ -29,7 +29,7 @@ curl -X GET "https://api.cobalt.io/events"
 }
 ```
 
-This endpoint retrieves a list of all events happening across the org specified in the header.
+This endpoint retrieves a list of all events happening across the organization specified in the header.
 
 
 ### HTTP Request

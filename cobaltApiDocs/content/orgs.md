@@ -1,11 +1,11 @@
 ---
 weight: 11
-title: Orgs
+title: Organization
 ---
 
-# Orgs
+# Organizations (orgs)
 
-## Get All Orgs
+## Get All Organizations
 
 ```shell
 curl -X GET "https://api.cobalt.io/orgs" 
@@ -36,7 +36,7 @@ curl -X GET "https://api.cobalt.io/orgs"
 }
 ```
 
-This endpoint retrieves a list of organizations you belong to. Save the `token` field to be used as your `X-Org-Token` field in subsequent calls in querying for assets, findings, pentests and events that belong to that org. 
+This endpoint retrieves a list of organizations you belong to. Save the `token` field to be used as your `X-Org-Token` field in subsequent calls in querying for assets, findings, pentests, and events that belong to that organization.
 
 
 ### HTTP Request
@@ -45,5 +45,5 @@ This endpoint retrieves a list of organizations you belong to. Save the `token` 
 
 
 <aside class="success">
-Remember — Save that org token for use in subsequent API calls as part of your header.
+Remember — Save that organization-token for use in subsequent API calls as part of your header.
 </aside>
