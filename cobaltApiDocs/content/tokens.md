@@ -48,6 +48,6 @@ limit | 100 | If set, you can adjust the limit returned, e.g. https://api.cobalt
 Field             | Description
 ----------------- | -----------
 `id`              | Integer field used in the POST request to refresh your token
-`last_characters` | Last four digits of your token for recall
+`last_characters` | Last four characters of your token for recall
 `expire_at`       | null (not currently implemented)
 
