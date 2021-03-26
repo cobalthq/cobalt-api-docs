@@ -21,7 +21,9 @@ curl -X GET "https://api.cobalt.io/tokens"
   "data": [
     {
       "resource": {
-        "id": "WIP"
+        "id": "34",
+        "last_characters": "9qy7",
+        "expire_at": null
       }
     }
  ]
@@ -29,7 +31,7 @@ curl -X GET "https://api.cobalt.io/tokens"
 
 ```
 
-This endpoint retrieves a list of all tokens that belong to you.
+This endpoint retrieves a list of all tokens that belong to you. 
 
 ### HTTP Request
 
@@ -40,3 +42,12 @@ This endpoint retrieves a list of all tokens that belong to you.
 Parameter | Default | Description
 --------- | ------- | -----------
 limit | 100 | If set, you can adjust the limit returned, e.g. https://api.cobalt.io/tokens?limit=1000
+
+### Fields
+
+Field             | Description
+----------------- | -----------
+`id`              | Integer field used in the POST request to refresh your token
+`last_characters` | Last four digits of your token for recall
+`expire_at`       | null (not currently implemented)
+
