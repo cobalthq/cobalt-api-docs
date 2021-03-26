@@ -45,6 +45,16 @@ Parameter | Default | Description
 --------- | ------- | -----------
 limit | 100 | If set, you can adjust the limit returned, e.g. https://api.cobalt.io/assets?limit=1000
 
+### Fields
+
+Field          | Description
+-------------  | -----------
+`id`           | The Cobalt id of the asset
+`title`        | The title of the asset
+`description`  | A description of the asset
+`asset_type`   | api, cloud_config, external_network, internal_network, mobile, web, web_plus_api, web_plus_mobile  
+
+
 <aside class="success">
 Remember — you can only request Assets scoped to the Org specified in the header.
 </aside>
