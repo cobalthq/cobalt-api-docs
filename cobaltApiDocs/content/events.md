@@ -22,14 +22,39 @@ curl -X GET "https://api.cobalt.io/events"
   "data": [
     {
       "resource": {
-        "id": "WIP"
+        "id": "277603",
+        "action": "comment_created",
+        "subject": {
+          "id": "277603",
+          "type": "comment"
+        }
+      }
+    },
+    {
+      "resource": {
+        "id": "277600",
+        "action": "pentest_deleted",
+        "subject": {
+          "id": "277600",
+          "type": "program"
+        }
+      }
+    },
+    {
+      "resource": {
+        "id": "277567",
+        "action": "finding_created",
+        "subject": {
+          "id": "277567",
+          "type": "vulnerability"
+        }
       }
     }
  ]
 }
 ```
 
-This endpoint retrieves a list of all events happening across the org specified in the header.
+This endpoint retrieves a list of all events happening across the org specified in the header. 
 
 
 ### HTTP Request
@@ -43,5 +68,5 @@ Parameter | Default | Description
 limit | 100 | If set, you can adjust the limit returned, e.g. https://api.cobalt.io/events?limit=1000
 
 <aside class="success">
-Remember — you can only request Pentests scoped to the Org specified in the header.
+Remember — you can only request Events scoped to the Org specified in the header.
 </aside>

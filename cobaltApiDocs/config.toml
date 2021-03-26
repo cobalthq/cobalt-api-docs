@@ -1,7 +1,7 @@
 theme = "docuapi"
 themesDir = "themes"
 languageCode = "en-us"
-baseurl = "https://docuapi.netlify.com/"
+baseurl = "https://cobalt-api.netlify.com/"
 title = "Cobalt.io API Docs"
 
 disableKinds = ["taxonomyTerm"]
@@ -58,8 +58,8 @@ title = "Cobalt.io API Docs"
 # Left sidebar footer items. Use HTMl or Markdown.
 toc_footers = [ 
 "<a href='https://app.cobalt.io/settings/api-token' target='_new'>Create your personal API token</a>",
-"<a href='https://app.swaggerhub.com/apis/CobaltLab/Cobalt_Public_API/1.3.0' target='_new'>Explore our API in Swagger</a>",
-"Visit our [Help Center](https://intercom.help/cobalt/en/) and [Support Guides](https://cobaltio.zendesk.com/hc/en-us)"
+"<a href='https://app.swaggerhub.com/apis/CobaltLab/Cobalt_Public_API/1.3.1' target='_new'>Explore our API in Swagger</a>",
+"Visit our [Support Center](https://cobaltio.zendesk.com/hc/en-us)"
 ]
 [languages.en.blackfriday]
 angledQuotes = false
