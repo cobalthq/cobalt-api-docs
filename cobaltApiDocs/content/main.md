@@ -5,7 +5,7 @@ title: API Reference
 
 # Introduction
 
-Welcome to the [Cobalt.io](https://cobalt.io) public API docs portal. You can use our REST API to access information on orgs, assets, pentests, findings and events from our database. Our API is currently in BETA and is read-only.
+Welcome to the [Cobalt.io](https://cobalt.io) public API docs portal. You can use our REST API to access information on orgs, assets, pentests, findings, and events from our database. Our API is currently in BETA and is read-only.
 
 # Authentication
 
@@ -34,7 +34,7 @@ Our Living Documentation and API Explorer are located in [Swagger](https://app.s
  - Make sure to point to Production (i.e. https://api.cobalt.io) from the drop-down 
  - Authorize with your API token
  - From there, you'll want to execute the `/orgs` endpoint (Try it out => Execute)
- - Note the organization `token` 
+ - Note the org `token` 
  - Return back to the Authorize section and add the org `token` and Authorize that as part of your OrgToken (i.e. `X-Org-Token`) header
  - Now, all subsequent requests to `/assets`, `/findings`, `/pentests`, etc will be scoped to your personal API token and the org selected
 
