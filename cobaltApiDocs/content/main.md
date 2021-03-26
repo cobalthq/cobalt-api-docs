@@ -33,7 +33,7 @@ You must replace <code>your-personal-API-token-here</code> with your personal AP
 DO NOT remove the word Bearer.
 </aside>
 
-Our Living Documentation and API Explorer are located in [Swagger](https://app.swaggerhub.com/apis/CobaltLab/Cobalt_Public_API/1.3.0) and built with the [OpenAPI specification](https://swagger.io/specification/). 
+Our Living Documentation and API Explorer are located in [Swagger](https://app.swaggerhub.com/apis/CobaltLab/Cobalt_Public_API/1.3.1) and built with the [OpenAPI specification](https://swagger.io/specification/). 
  - With your token copied locally (once you leave the profile page you won't be able to copy it), head to Swagger
  - Make sure to point to Production (i.e. https://api.cobalt.io) from the drop-down 
  - Authorize with your API token

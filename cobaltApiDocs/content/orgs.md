@@ -36,12 +36,20 @@ curl -X GET "https://api.cobalt.io/orgs"
 }
 ```
 
-This endpoint retrieves a list of organizations, i.e. *orgs*, that you belong to. Save the `token` field to be used as your `X-Org-Token` field in subsequent calls in querying for assets, findings, pentests and events that belong to that org. 
+This endpoint retrieves a list of organizations, i.e. *orgs*, that you belong to. Save the `token` field to be used in your `X-Org-Token` header in subsequent calls in querying for assets, findings, pentests and events that belong to that org. 
 
 
 ### HTTP Request
 
 `GET https://api.cobalt.io/orgs`
+
+### Fields
+
+Field       | Description
+----------- | -----------
+`id`        | The Cobalt id of the org
+`name`      | The name of the org
+`token`     | The org token you'll need in subsequent calls
 
 
 <aside class="success">
