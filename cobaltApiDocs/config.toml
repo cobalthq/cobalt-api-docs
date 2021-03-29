@@ -2,7 +2,7 @@ theme = "docuapi"
 themesDir = "themes"
 languageCode = "en-us"
 baseurl = "https://cobalt-api.netlify.com/"
-title = "Cobalt.io API Docs"
+title = "Cobalt API Docs"
 
 disableKinds = ["taxonomyTerm"]
 
