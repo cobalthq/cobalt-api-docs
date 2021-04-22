@@ -27,7 +27,7 @@ curl -X GET "https://api.cobalt.io/findings?pentest=pt_9Ig"
         "labels": [],
         "impact": 4,
         "likelihood": 4,
-        "severity": high,
+        "severity": "high",
         "affected_targets": [ ""],
         "proof_of_concept": null,
         "suggested_fix": "Ensure this...",

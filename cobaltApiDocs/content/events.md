@@ -61,11 +61,6 @@ This endpoint retrieves a list of all events happening across the org specified 
 
 `GET https://api.cobalt.io/events`
 
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-limit | 100 | If set, you can adjust the limit returned, e.g. https://api.cobalt.io/events?limit=1000
 
 <aside class="success">
 Remember — you can only request Events scoped to the Org specified in the header.

@@ -37,12 +37,6 @@ This endpoint retrieves a list of all tokens that belong to you.
 
 `GET https://api.cobalt.io/tokens`
 
-### URL Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-limit | 100 | If set, you can adjust the limit returned, e.g. https://api.cobalt.io/tokens?limit=1000
-
 ### Fields
 
 Field             | Description

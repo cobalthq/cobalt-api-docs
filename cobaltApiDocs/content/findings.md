@@ -30,7 +30,7 @@ curl -X GET "https://api.cobalt.io/findings"
         "labels": [],
         "impact": 4,
         "likelihood": 4,
-        "severity": high,
+        "severity": "high",
         "affected_targets": [ ""],
         "proof_of_concept": null,
         "suggested_fix": "Ensure this...",
@@ -64,12 +64,6 @@ This endpoint retrieves a list of all pentest findings that belong to the org sp
 ### HTTP Request
 
 `GET https://api.cobalt.io/findings`
-
-### URL Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-limit | 100 | If set, you can adjust the limit returned, e.g. https://api.cobalt.io/findings?limit=1000
 
 ### Fields
 
