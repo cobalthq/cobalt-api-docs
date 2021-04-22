@@ -39,12 +39,6 @@ This endpoint retrieves a list of assets that belong to the org specified in the
 
 `GET https://api.cobalt.io/assets`
 
-### URL Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-limit | 100 | If set, you can adjust the limit returned, e.g. https://api.cobalt.io/assets?limit=1000
-
 ### Fields
 
 Field          | Description
