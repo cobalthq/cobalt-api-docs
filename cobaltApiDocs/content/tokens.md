@@ -8,10 +8,9 @@ title: Tokens
 ## Get All Tokens
 
 ```shell
-curl -X GET "https://api.cobalt.io/tokens" 
-  -H "accept: application/vnd.cobalt.v1+json" 
+curl -X GET "https://api.cobalt.io/tokens" \
+  -H "accept: application/vnd.cobalt.v1+json" \
   -H "Authorization: Bearer your-personal-api-token-here" 
-
 ```
 
 > The above command returns JSON structured like this:
