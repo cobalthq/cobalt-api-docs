@@ -6,9 +6,9 @@ title: Get Specific Findings
 ## Get Specific Findings
 
 ```shell
-curl -X GET "https://api.cobalt.io/findings?pentest=pt_9Ig" 
-  -H "accept: application/vnd.cobalt.v1+json" 
-  -H "Authorization: Bearer your-personal-api-token-here" 
+curl -X GET "https://api.cobalt.io/findings?pentest=pt_9Ig" \
+  -H "accept: application/vnd.cobalt.v1+json" \
+  -H "Authorization: Bearer your-personal-api-token-here" \
   -H "X-Org-Token: your-org-token-here"
 ```
 

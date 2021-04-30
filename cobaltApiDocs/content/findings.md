@@ -8,11 +8,10 @@ title: Findings
 ## Get All Findings
 
 ```shell
-curl -X GET "https://api.cobalt.io/findings" 
-  -H "accept: application/vnd.cobalt.v1+json" 
-  -H "Authorization: Bearer your-personal-api-token-here" 
+curl -X GET "https://api.cobalt.io/findings" \
+  -H "accept: application/vnd.cobalt.v1+json" \
+  -H "Authorization: Bearer your-personal-api-token-here" \
   -H "X-Org-Token: your-org-token-here"
-
 ```
 
 > The above command returns JSON structured like this:
