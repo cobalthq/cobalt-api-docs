@@ -26,8 +26,12 @@ curl -X GET "https://api.cobalt.io/findings" \
         "title": "SQL Injection",
         "description": "A SQL injection attack...",
         "type_category": null,
-        "labels": [],
-        "impact": 4,
+        "labels": [
+          {
+            "name": "Your label"
+          }
+        ],
+        "impact": 5,
         "likelihood": 4,
         "severity": "high",
         "affected_targets": [ ""],
@@ -35,8 +39,33 @@ curl -X GET "https://api.cobalt.io/findings" \
         "suggested_fix": "Ensure this...",
         "pentest_id": "pt_9Ig1234",
         "asset_id": "as_cwrsqsL",
-        "log": [],
-        "state": "need_fix"
+        "log": [
+          {
+            "action": "created",
+            "timestamp": "2021-04-01T15:13:24.322Z"
+          },
+          {
+            "action": "likelihood_changed",
+            "value": 5,
+            "timestamp": "2021-04-01T15:14:05.856Z"
+          },
+          {
+            "action": "impact_changed",
+            "value": 5,
+            "timestamp": "2021-04-01T15:14:05.856Z"
+          },
+          {
+            "action": "state_changed",
+            "value": "need_fix",
+            "timestamp": "2021-04-01T15:14:06.757Z"
+          },
+          {
+            "action": "state_changed",
+            "value": "check_fix",
+            "timestamp": "2021-04-01T15:14:57.845Z"
+          }
+        ],
+        "state": "check_fix"
       }
     }
  ]
@@ -44,7 +73,7 @@ curl -X GET "https://api.cobalt.io/findings" \
 
 ```
 
-This endpoint retrieves a list of all pentest findings that belong to the org specified in the header, filterable by pentest id or asset id.
+This endpoint retrieves a list of all pentest findings that belong to the org specified in the header, filterable by `pentest_id` or `asset_id`. The `log` array presents a history of each finding and corresponding timestamp. 
 
 ### Calculations
 
@@ -68,6 +97,7 @@ This endpoint retrieves a list of all pentest findings that belong to the org sp
 
 Field           | Enum Types
 --------------- | -----------
+`log`           | created, impact_changed, likelihood_changed, state_changed
 `severity`      | null, low, medium, high  (`severity`, aka `criticality` in our web app, will be null for findings where their likelihood/impact have not yet been set)
 `state`         | new, triaging, need_fix, wont_fix, valid_fix, check_fix, invalid, carried_over
 `type_category` | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)
