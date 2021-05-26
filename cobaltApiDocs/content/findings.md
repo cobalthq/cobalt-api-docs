@@ -46,7 +46,7 @@ curl -X GET "https://api.cobalt.io/findings" \
           },
           {
             "action": "likelihood_changed",
-            "value": 5,
+            "value": 4,
             "timestamp": "2021-04-01T15:14:05.856Z"
           },
           {
