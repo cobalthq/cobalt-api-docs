@@ -45,7 +45,7 @@ Our Living Documentation and API Explorer are located in [Swagger](https://app.s
 <aside class="warning">
 If your organization uses SAML for authentication with Cobalt, API tokens are not currently disabled
 when a user is offboarded from SAML.  To disable API access by offboarded personnel, you must
-manually remove them from your organization via the "People" tab on Cobalt's website.  Automating
+manually remove them from your organization via the "People" tab on the Cobalt platform.  Automating
 this offboarding process is a high-priority issue for Cobalt and a permanent fix will be released as
 soon as possible.
 </aside>
