@@ -24,6 +24,8 @@ curl https://api.cobalt.io/orgs \
 
 Cobalt uses API tokens to allow access to various endpoints. You can create a new Cobalt API token from within your [Cobalt profile](https://app.cobalt.io/settings/api-token).
 
+Note: API Token provides separate authentication. If you're using SAML remember to remove users as part of your offboarding.
+
 Cobalt expects the API token to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: Bearer your-personal-API-token-here`
