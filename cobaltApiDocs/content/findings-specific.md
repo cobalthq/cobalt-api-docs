@@ -35,6 +35,11 @@ curl -X GET "https://api.cobalt.io/findings?pentest=pt_9Ig" \
         "asset_id": "as_cwrsqsL",
         "log": [],
         "state": "need_fix"
+      },
+      "links": {
+        "ui": {
+          "url": "https://api.cobalt.io/links/long-web-app-redirect-to-this-finding"
+        }
       }
     }
  ]
