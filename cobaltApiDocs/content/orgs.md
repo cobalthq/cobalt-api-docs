@@ -21,15 +21,25 @@ curl -X GET "https://api.cobalt.io/orgs" \
     {
       "resource": {
         "id": "1955",
-        "name": "Banana",
+        "name": "Acme Co",
         "token": "save-this-org-token"
+      },
+      "links": {
+        "ui": {
+          "url": "https://api.cobalt.io/links/long-web-app-redirect-to-acme-org"
+        }
       }
     },
     {
       "resource": {
         "id": "2546",
-        "name": "Saxophone - Alto",
+        "name": "E Corp",
         "token": "or-save-this-org-token"
+      },
+      "links": {
+        "ui": {
+          "url": "https://api.cobalt.io/links/long-web-app-redirect-to-e-corp-org"
+        }
       }
     }
   ]
@@ -50,6 +60,7 @@ Field       | Description
 `id`        | The Cobalt id of the org
 `name`      | The name of the org
 `token`     | The org token you'll need in subsequent calls
+`url`       | The links.ui.url will redirect an authorized user to this org in the Cobalt platform
 
 
 <aside class="success">

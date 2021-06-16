@@ -66,6 +66,11 @@ curl -X GET "https://api.cobalt.io/findings" \
           }
         ],
         "state": "check_fix"
+      },
+      "links": {
+        "ui": {
+          "url": "https://api.cobalt.io/links/long-web-app-redirect-to-this-finding"
+        }
       }
     }
  ]
@@ -101,6 +106,7 @@ Field           | Enum Types
 `severity`      | null, low, medium, high  (`severity`, aka `criticality` in our web app, will be null for findings where their likelihood/impact have not yet been set)
 `state`         | new, triaging, need_fix, wont_fix, valid_fix, check_fix, invalid, carried_over
 `type_category` | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)
+`url`           | The links.ui.url will redirect an authorized user to this finding in the Cobalt platform
 
 
 <aside class="success">
