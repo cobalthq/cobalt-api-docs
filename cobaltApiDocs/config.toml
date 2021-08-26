@@ -57,7 +57,7 @@ title = "Cobalt.io API Docs"
 
 # Left sidebar footer items. Use HTMl or Markdown.
 toc_footers = [
-"<a href='https://app.cobalt.io/settings/api-token' target='_new'>Create your personal API token</a>",
+"<a href='https://app.cobalt.io/settings/api-token' rel='nofollow' target='_new'>Create your personal API token</a>",
 "<a href='https://app.swaggerhub.com/apis/CobaltLab/cobalt-api/' target='_new'>Explore our API in Swagger</a>",
 "Visit our [Support Center](https://cobaltio.zendesk.com/hc/en-us)"
 ]
