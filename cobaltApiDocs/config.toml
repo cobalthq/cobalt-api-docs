@@ -3,7 +3,6 @@ themesDir = "themes"
 languageCode = "en-us"
 baseurl = "https://cobalt-api.netlify.com/"
 title = "Cobalt API Documentation"
-description = "With the Cobalt API, access Orgs, Assets, Pentests, Findings, and Events. Read how to use this penetration test API to improve your security positioning."
 
 disableKinds = ["taxonomyTerm"]
 
@@ -55,7 +54,6 @@ name = "Shell"
 languageName = "English"
 weight = 2
 title = "Cobalt API Documentation"
-description = "With the Cobalt API, access Orgs, Assets, Pentests, Findings, and Events. Read how to use this penetration test API to improve your security positioning."
 
 # Left sidebar footer items. Use HTMl or Markdown.
 toc_footers = [
