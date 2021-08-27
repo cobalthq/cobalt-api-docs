@@ -54,7 +54,8 @@ name = "Shell"
 [languages.en]
 languageName = "English"
 weight = 2
-title = "Cobalt.io API Docs"
+title = "Cobalt API Documentation"
+description = "With the Cobalt API, access Orgs, Assets, Pentests, Findings, and Events. Read how to use this penetration test API to improve your security positioning."
 
 # Left sidebar footer items. Use HTMl or Markdown.
 toc_footers = [
