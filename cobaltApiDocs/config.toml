@@ -2,6 +2,7 @@ theme = "docuapi"
 themesDir = "themes"
 languageCode = "en-us"
 baseurl = "https://cobalt-api.netlify.com/"
+title = "Cobalt API Documentation"
 title = "With the Cobalt API, access Orgs, Assets, Pentests, Findings, and Events. Read how to use this penetration test API to improve your security positioning."
 
 disableKinds = ["taxonomyTerm"]
