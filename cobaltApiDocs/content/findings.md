@@ -25,7 +25,7 @@ curl -X GET "https://api.cobalt.io/findings" \
         "tag": "#PT3334_37",
         "title": "SQL Injection",
         "description": "A SQL injection attack...",
-        "type_category": null,
+        "type_category": "SQL Injection",
         "labels": [
           {
             "name": "Your label"
