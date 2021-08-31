@@ -26,7 +26,7 @@ You can obtain a new token with a POST request to the token refresh endpoint, re
 
 For example, with a valid API token you would first make a GET request to list your tokens, note your current token `id` in this response, and then use that `id` in the refresh endpoint URL. This will give you a new token back as `secret` - note it, as your old token will no longer work. 
 
-If you've forgotten your token, you can always re-authenticate in the Cobalt web app, go to your [profile](https://app.cobalt.io/settings/api-token), revoke and generate a new token.
+If you've forgotten your token, you can always re-authenticate in the Cobalt web app, go to your <a href="https://app.cobalt.io/settings/api-token" rel="nofollow">profile</a>, revoke and generate a new token.
 
 
 ### HTTP Request

@@ -60,6 +60,6 @@ You can filter for findings scoped to a specific pentest or asset.
 
 Parameter | Default | Description
 --------- | ------- | -----------
-pentest | n/a | If specified, returns findings scoped to this pentest id, e.g. https://api.cobalt.io/findings?pentest=pt_9Ig
-asset | n/a | If specified, returns findings scoped to this asset id, e.g. https://api.cobalt.io/findings?asset=as_cwrsqsL
+pentest | n/a | If specified, returns findings scoped to this pentest id, e.g. `https://api.cobalt.io/findings?pentest=pt_9Ig`
+asset | n/a | If specified, returns findings scoped to this asset id, e.g. `https://api.cobalt.io/findings?asset=as_cwrsqsL`
 
