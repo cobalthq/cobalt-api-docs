@@ -36,7 +36,7 @@ curl -X GET "https://api.cobalt.io/webhooks" \
 
 ```
 
-This endpoint retrieves a list of all tokens that belong to you. 
+This endpoint retrieves a list of all webhooks that belong to you, scoped to the org specified in the header.
 
 ### HTTP Request
 

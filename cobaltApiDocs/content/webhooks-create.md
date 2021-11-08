@@ -16,7 +16,7 @@ curl -X POST "https://api.cobalt.io/webhooks" \
 ```
 
 <aside class="success">
-Of note — the `content-type` header is required for incoming data in POST/PUT/PATCH requests.
+Of note: the content-type header is required for incoming data in POST/PUT/PATCH requests.
 </aside>
 
 > The above command accepts JSON structured like this:
