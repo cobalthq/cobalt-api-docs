@@ -70,7 +70,7 @@ This endpoint retrieves a list of all events happening across the org specified 
 Parameter | Default | Description
 --------- | ------- | -----------
 cursor | n/a | Used for [pagination](#pagination), e.g. `https://api.cobalt.io/events?cursor=123asdzxc`
-limit | `1000` | If specified, returns only `limit` events, e.g. `https://api.cobalt.io/events?limit=5`
+limit | `10` | If specified, returns only `limit` events, e.g. `https://api.cobalt.io/events?limit=5`
 
 
 <aside class="success">

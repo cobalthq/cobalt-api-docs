@@ -63,7 +63,7 @@ This endpoint retrieves a list of organizations, i.e. *orgs*, that you belong to
 Parameter | Default | Description
 --------- | ------- | -----------
 cursor | n/a | Used for [pagination](#pagination), e.g. `https://api.cobalt.io/orgs?cursor=123asdzxc`
-limit | `1000` | If specified, returns only `limit` orgs, e.g. `https://api.cobalt.io/orgs?limit=5`
+limit | `10` | If specified, returns only `limit` orgs, e.g. `https://api.cobalt.io/orgs?limit=5`
 
 
 ### Fields
