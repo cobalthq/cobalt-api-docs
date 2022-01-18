@@ -49,7 +49,11 @@ curl -X GET "https://api.cobalt.io/events" \
         }
       }
     }
- ]
+  ],
+  "pagination": {
+    "next_page": "/events?cursor=123asdzxc",
+    "prev_page": "/events?cursor=123asdzxd"
+  }
 }
 ```
 
@@ -59,6 +63,14 @@ This endpoint retrieves a list of all events happening across the org specified 
 ### HTTP Request
 
 `GET https://api.cobalt.io/events`
+
+
+### URL Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+cursor | n/a | Used for [pagination](#pagination), e.g. `https://api.cobalt.io/events?cursor=123asdzxc`
+limit | `10` | If specified, returns only `limit` events, e.g. `https://api.cobalt.io/events?limit=5`
 
 
 <aside class="success">

@@ -42,7 +42,11 @@ curl -X GET "https://api.cobalt.io/orgs" \
         }
       }
     }
-  ]
+  ],
+  "pagination": {
+    "next_page": "/orgs?cursor=123asdzxc",
+    "prev_page": "/orgs?cursor=123asdzxd"
+  }
 }
 ```
 
@@ -52,6 +56,15 @@ This endpoint retrieves a list of organizations, i.e. *orgs*, that you belong to
 ### HTTP Request
 
 `GET https://api.cobalt.io/orgs`
+
+
+### URL Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+cursor | n/a | Used for [pagination](#pagination), e.g. `https://api.cobalt.io/orgs?cursor=123asdzxc`
+limit | `10` | If specified, returns only `limit` orgs, e.g. `https://api.cobalt.io/orgs?limit=5`
+
 
 ### Fields
 

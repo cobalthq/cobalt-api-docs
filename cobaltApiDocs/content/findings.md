@@ -73,7 +73,11 @@ curl -X GET "https://api.cobalt.io/findings" \
         }
       }
     }
- ]
+  ],
+  "pagination": {
+    "next_page": "/findings?cursor=123asdzxc",
+    "prev_page": "/findings?cursor=123asdzxd"
+  }
 }
 
 ```
@@ -97,6 +101,15 @@ This endpoint retrieves a list of all pentest findings that belong to the org sp
 ### HTTP Request
 
 `GET https://api.cobalt.io/findings`
+
+
+### URL Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+cursor | n/a | Used for [pagination](#pagination), e.g. `https://api.cobalt.io/findings?cursor=123asdzxc`
+limit | `1000` | If specified, returns only `limit` findings, e.g. `https://api.cobalt.io/findings?limit=5`
+
 
 ### Fields
 
