@@ -49,7 +49,11 @@ curl -X GET "https://api.cobalt.io/events" \
         }
       }
     }
- ]
+  ],
+  "pagination": {
+    "next_page": "/events?cursor=123asdzxc",
+    "prev_page": "/events?cursor=123asdzxd"
+  }
 }
 ```
 
