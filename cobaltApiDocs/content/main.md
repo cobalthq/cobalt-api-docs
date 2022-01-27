@@ -5,7 +5,7 @@ title: API Reference
 
 # Introduction
 
-The [Cobalt](https://cobalt.io) API gives you REST access to Orgs, Assets, Pentests, Findings, and Events, and is currently read-only.
+The [Cobalt](https://cobalt.io) API gives you REST access to Orgs, Assets, Pentests, Findings, Events, and Webhooks. It is primarily a read-only API, and we're actively working on write endpoints (e.g. you can create a Webhook via the API today).
 
 <aside class="notice">
 We are actively working to improve the usability of our API and welcome your feedback: <strong>integrations@cobalt.io</strong>
