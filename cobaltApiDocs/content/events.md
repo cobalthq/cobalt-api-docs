@@ -7,7 +7,7 @@ title: Events
 
 ## Get All Events
 
-```shell
+```sh
 curl -X GET "https://api.cobalt.io/events" \
   -H "accept: application/vnd.cobalt.v1+json" \
   -H "Authorization: Bearer your-personal-api-token-here" \
@@ -57,21 +57,18 @@ curl -X GET "https://api.cobalt.io/events" \
 }
 ```
 
-This endpoint retrieves a list of all events happening across the org specified in the header. 
-
+This endpoint retrieves a list of all events happening across the org specified in the header.
 
 ### HTTP Request
 
 `GET https://api.cobalt.io/events`
 
-
 ### URL Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-cursor | n/a | Used for [pagination](#pagination), e.g. `https://api.cobalt.io/events?cursor=123asdzxc`
-limit | `10` | If specified, returns only `limit` events, e.g. `https://api.cobalt.io/events?limit=5`
-
+| Parameter | Default | Description                                                                              |
+|-----------|---------|------------------------------------------------------------------------------------------|
+| cursor    | N/A     | Used for [pagination](#pagination), e.g. `https://api.cobalt.io/events?cursor=123asdzxc` |
+| limit     | `10`    | If specified, returns only `limit` events, e.g. `https://api.cobalt.io/events?limit=5`   |
 
 <aside class="success">
 Remember — you can only request Events scoped to the Org specified in the header.

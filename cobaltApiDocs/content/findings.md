@@ -7,7 +7,7 @@ title: Findings
 
 ## Get All Findings
 
-```shell
+```sh
 curl -X GET "https://api.cobalt.io/findings" \
   -H "accept: application/vnd.cobalt.v1+json" \
   -H "Authorization: Bearer your-personal-api-token-here" \
@@ -79,48 +79,46 @@ curl -X GET "https://api.cobalt.io/findings" \
     "prev_page": "/findings?cursor=123asdzxd"
   }
 }
-
 ```
 
-This endpoint retrieves a list of all pentest findings that belong to the org specified in the header, filterable by `pentest_id` or `asset_id`. The `log` array presents a history of each finding and corresponding timestamp. 
+This endpoint retrieves a list of all pentest findings that belong to the org specified in the header, filterable by
+`pentest_id` or `asset_id`. The `log` array presents a history of each finding and corresponding timestamp.
 
 ### Calculations
 
-*Cobalt Risk Input Fields*
- - Risk = Impact * Likelihood
- - `impact` := [1-5]
- - `likelihood` := [1-5]
+Cobalt Risk Input Fields:
 
-*Cobalt Risk Classification*
- - `severity` (aka `criticality`) :=
- - **high** = Risk @ 16+
- - **medium** = Risk @ 5-15
- - **low** = Risk @ 1-4
+- Risk = Impact * Likelihood
+- `impact` := [1-5]
+- `likelihood` := [1-5]
 
+Cobalt Risk Classification:
+
+- `severity` (aka `criticality`) :=
+- **high** = Risk @ 16+
+- **medium** = Risk @ 5-15
+- **low** = Risk @ 1-4
 
 ### HTTP Request
 
 `GET https://api.cobalt.io/findings`
 
-
 ### URL Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-cursor | n/a | Used for [pagination](#pagination), e.g. `https://api.cobalt.io/findings?cursor=123asdzxc`
-limit | `1000` | If specified, returns only `limit` findings, e.g. `https://api.cobalt.io/findings?limit=5`
-
+| Parameter | Default | Description                                                                                |
+|-----------|---------|--------------------------------------------------------------------------------------------|
+| cursor    | N/A     | Used for [pagination](#pagination), e.g. `https://api.cobalt.io/findings?cursor=123asdzxc` |
+| limit     | `1000`  | If specified, returns only `limit` findings, e.g. `https://api.cobalt.io/findings?limit=5` |
 
 ### Fields
 
-Field           | Enum Types
---------------- | -----------
-`log`           | created, impact_changed, likelihood_changed, state_changed
-`severity`      | null, low, medium, high  (`severity`, aka `criticality` in our web app, will be null for findings where their likelihood/impact have not yet been set)
-`state`         | new, triaging, need_fix, wont_fix, valid_fix, check_fix, invalid, carried_over
-`type_category` | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)
-`url`           | The links.ui.url will redirect an authorized user to this finding in the Cobalt platform
-
+| Field           | Enum Types                                                                                            |
+|-----------------|-------------------------------------------------------------------------------------------------------|
+| `log`           | created, impact_changed, likelihood_changed, state_changed                                            |
+| `severity`      | null, low, medium, high  (aka `criticality`. will be null if likelihood/impact have not yet been set) |
+| `state`         | new, triaging, need_fix, wont_fix, valid_fix, check_fix, invalid, carried_over                        |
+| `type_category` | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                |
+| `url`           | The links.ui.url will redirect an authorized user to this finding in the Cobalt platform              |
 
 <aside class="success">
 Remember — you can only request Findings scoped to the Org specified in the header.

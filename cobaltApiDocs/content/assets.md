@@ -7,7 +7,7 @@ title: Assets
 
 ## Get All Assets
 
-```shell
+```sh
 curl -X GET "https://api.cobalt.io/assets" \
   -H "accept: application/vnd.cobalt.v1+json" \
   -H "Authorization: Bearer your-personal-api-token-here" \
@@ -43,30 +43,26 @@ curl -X GET "https://api.cobalt.io/assets" \
 
 This endpoint retrieves a list of assets that belong to the org specified in the header.
 
-
 ### HTTP Request
 
 `GET https://api.cobalt.io/assets`
-
 
 ### URL Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
-cursor | n/a | Used for [pagination](#pagination), e.g. `https://api.cobalt.io/assets?cursor=123asdzxc`
+cursor | N/A | Used for [pagination](#pagination), e.g. `https://api.cobalt.io/assets?cursor=123asdzxc`
 limit | `10` | If specified, returns only `limit` assets, e.g. `https://api.cobalt.io/assets?limit=5`
-
 
 ### Fields
 
-Field          | Description
--------------  | -----------
-`id`           | The Cobalt id of the asset
-`title`        | The title of the asset
-`description`  | A description of the asset
-`asset_type`   | api, cloud_config, external_network, internal_network, mobile, web, web_plus_api, web_plus_mobile  
-`url`          | The links.ui.url will redirect an authorized user to this asset in the Cobalt platform
-
+| Field         | Description                                                                                       |
+|---------------|---------------------------------------------------------------------------------------------------|
+| `id`          | The Cobalt id of the asset                                                                        |
+| `title`       | The title of the asset                                                                            |
+| `description` | A description of the asset                                                                        |
+| `asset_type`  | api, cloud_config, external_network, internal_network, mobile, web, web_plus_api, web_plus_mobile |
+| `url`         | The links.ui.url will redirect an authorized user to this asset in the Cobalt platform            |
 
 <aside class="success">
 Remember — you can only request Assets scoped to the Org specified in the header.

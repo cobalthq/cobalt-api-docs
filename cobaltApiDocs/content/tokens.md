@@ -7,7 +7,7 @@ title: Tokens
 
 ## Get All Tokens
 
-```shell
+```sh
 curl -X GET "https://api.cobalt.io/tokens" \
   -H "accept: application/vnd.cobalt.v1+json" \
   -H "Authorization: Bearer your-personal-api-token-here" 
@@ -27,10 +27,9 @@ curl -X GET "https://api.cobalt.io/tokens" \
     }
  ]
 }
-
 ```
 
-This endpoint retrieves a list of all tokens that belong to you. 
+This endpoint retrieves a list of all tokens that belong to you.
 
 ### HTTP Request
 
@@ -38,9 +37,8 @@ This endpoint retrieves a list of all tokens that belong to you.
 
 ### Fields
 
-Field             | Description
------------------ | -----------
-`id`              | Integer field used in the POST request to refresh your token
-`last_characters` | Last four characters of your token for recall
-`expire_at`       | null (not currently implemented)
-
+| Field             | Description                                                  |
+|-------------------|--------------------------------------------------------------|
+| `id`              | Integer field used in the POST request to refresh your token |
+| `last_characters` | Last four characters of your token for recall                |
+| `expire_at`       | null (not currently implemented)                             |
