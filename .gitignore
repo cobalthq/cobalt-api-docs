@@ -5,7 +5,7 @@
 public/
 
 # minified resources
-resources/_gen/**
+resources/_gen/
 
 # JS dependencies
-node_modules/**
+node_modules/
