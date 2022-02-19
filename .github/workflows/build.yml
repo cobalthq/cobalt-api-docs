@@ -14,3 +14,5 @@ jobs:
           folder-path: 'cobaltApiDocs/content'
           use-quiet-mode: 'no'
           use-verbose-mode: 'yes'
+      - name: Lint markdown files
+        uses: avto-dev/markdown-lint@v1
