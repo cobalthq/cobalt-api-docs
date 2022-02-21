@@ -15,7 +15,7 @@ jobs:
           use-quiet-mode: 'no'
           use-verbose-mode: 'yes'
       - name: Lint markdown files
-        uses: avto-dev/markdown-lint@v1
+        uses: avto-dev/markdown-lint@v1.5.0
         with:
           args: 'cobaltApiDocs/content/*.md'
           config: '.markdownlint.yaml'
