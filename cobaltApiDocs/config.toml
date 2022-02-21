@@ -1,4 +1,4 @@
-theme = "docuapi"
+theme = "github.com/bep/docuapi"
 themesDir = "themes"
 languageCode = "en-us"
 baseurl = "https://cobalt-api.netlify.com/"
@@ -25,8 +25,7 @@ defaultContentLanguage = "en"
 [module]
 [module.hugoVersion]
 [[module.imports]]
-# We include the theme by "../.." above, but we need one module import for Hugo to detect us as a Hugo Module.
-path="github.com/bep/empty-hugo-module"
+path="github.com/bep/docuapi"
 
 [params]
 search = true
@@ -64,3 +63,6 @@ toc_footers = [
 [languages.en.blackfriday]
 angledQuotes = false
 hrefTargetBlank = true
+
+[security.funcs]
+getenv = [ "ADD_GA", "REPOSITORY_URL" ]
