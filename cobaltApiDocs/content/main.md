@@ -24,15 +24,14 @@ curl https://api.cobalt.io/orgs \
 > Make sure to replace `YOUR_PERSONAL_API_TOKEN` with your actual API token.
 
 Cobalt uses API tokens to allow access to various endpoints. You can create a new Cobalt API token from within your
-<a href="https://app.cobalt.io/settings/api-token" rel="nofollow">Cobalt profile</a>.
+[Cobalt profile](https://app.cobalt.io/settings/api-token).
 
 Cobalt expects the API token to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: Bearer YOUR_PERSONAL_API_TOKEN`
 
 <aside class="notice">
-You must replace <code>YOUR_PERSONAL_API_TOKEN</code> with your personal API token.<br>
-DO NOT remove the word Bearer.
+You must replace <strong>YOUR_PERSONAL_API_TOKEN</strong> with your personal API token. DO NOT remove the word Bearer.
 </aside>
 
 Our Living Documentation and API Explorer are located in [Swagger](https://app.swaggerhub.com/apis/CobaltLab/cobalt-api/)
