@@ -1,9 +1,0 @@
-[submodule "themes/docuapi"]
-	path = themes/docuapi
-	url = https://github.com/bep/docuapi
-[submodule "exampleSite/themes/docuapi"]
-	path = exampleSite/themes/docuapi
-	url = https://github.com/bep/docuapi
-[submodule "cobaltApiDocs/themes/docuapi"]
-	path = cobaltApiDocs/themes/docuapi
-	url = https://github.com/bep/docuapi
