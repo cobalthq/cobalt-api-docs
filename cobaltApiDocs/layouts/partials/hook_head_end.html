@@ -1,15 +1,44 @@
-{{ with getenv "ADD_GA" }}
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<!-- Additional meta tags -->
+<meta name="description"
+  content="With the Cobalt API, access Orgs, Assets, Pentests, Findings, and Events. Read how to use this penetration test API to improve your security positioning." />
 
-  ga('create', 'UA-52478213-11', 'auto');
-  ga('send', 'pageview');
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N446383SP1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-N446383SP1');
 </script>
-{{ end }}
-<meta
-  name="description"
-  content="With the Cobalt API, access Orgs, Assets, Pentests, Findings, and Events. Read how to use this penetration test API to improve your security positioning."
-/>
+
+<!-- Pretty fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+
+<!-- Additional styles -->
+<!-- Cobaltify sidebar with blue color, and soften notice and warnings -->
+<style>
+  .index {
+    font-family: 'Source Sans Pro', serif;
+  }
+
+  .content aside.notice {
+    background: #A7D1ED;
+  }
+
+  .content aside.warning {
+    background: #E9AFAF;
+  }
+
+  .content aside.success {
+    background: #CCE9AF;
+  }
+
+  .toc-wrapper {
+    background-color: #0047ab;
+  }
+
+  .toc-wrapper>.search input {
+    background-color: #0047ab;
+  }
+</style>
