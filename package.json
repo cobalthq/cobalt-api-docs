@@ -1,6 +1,7 @@
 {
   "name": "cobalt-public-api-docs",
   "version": "1.0.0",
+  "private": true,
   "description": "Cobalt Public API docs",
   "repository": {
     "type": "git",
