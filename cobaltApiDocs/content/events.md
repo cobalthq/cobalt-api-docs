@@ -1,5 +1,5 @@
 ---
-weight: 15
+weight: 8
 title: Events
 ---
 

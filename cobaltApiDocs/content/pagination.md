@@ -1,5 +1,5 @@
 ---
-weight: 19
+weight: 11
 title: Pagination
 ---
 
