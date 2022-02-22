@@ -3,7 +3,7 @@ name: build
 on: push
 
 jobs:
-  check-links:
+  markdown:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
