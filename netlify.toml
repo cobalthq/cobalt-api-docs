@@ -3,18 +3,16 @@ publish = "cobaltApiDocs/public"
 command = "hugo --gc -s cobaltApiDocs --minify"
 
 [context.production.environment]
-HUGO_VERSION = "0.62.2"
+HUGO_VERSION = "0.92.2"
 
 [context.deploy-preview]
 command = "hugo -s cobaltApiDocs -D -F -b $DEPLOY_PRIME_URL"
 
 [context.deploy-preview.environment]
-HUGO_VERSION = "0.62.2"
+HUGO_VERSION = "0.92.2"
 
 [context.branch-deploy]
 command = "hugo -s cobaltApiDocs --gc -b $DEPLOY_PRIME_URL"
 
 [context.branch-deploy.environment]
-HUGO_VERSION = "0.62.2"
-
-
+HUGO_VERSION = "0.92.2"
