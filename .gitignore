@@ -1,3 +1,11 @@
-docuapi
+# tmp file when hugo is running
+.hugo_build.lock
+
+# the default build folder of hugo
 public/
-node_modules
+
+# minified resources
+resources/_gen/
+
+# JS dependencies
+node_modules/
