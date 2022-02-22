@@ -1,0 +1,18 @@
+{
+  "name": "cobalt-public-api-docs",
+  "version": "1.0.0",
+  "description": "Cobalt Public API docs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cobalthq/cobalt-public-api-docs.git"
+  },
+  "engines": {
+    "node": ">=16.14.0",
+    "npm": ">=8.3.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.6",
+    "postcss-cli": "^9.1.0"
+  }
+}
