@@ -21,6 +21,12 @@ brew install hugo
 brew update && brew upgrade hugo
 ```
 
+- Install `markdownlint-cli` to check markdown files against some common rules:
+
+```sh
+brew install markdownlint-cli
+```
+
 ## Local Development
 
 Public API docs have created with [hugo](https://github.com/gohugoio/hugo) and [docuapi](https://github.com/bep/docuapi).
@@ -29,6 +35,12 @@ Build site and run server:
 
 ```sh
 hugo server -D
+```
+
+- Check markdown files with `markdownlint-cli`:
+
+```sh
+markdownlint -c .markdownlint.yaml content
 ```
 
 ## Dependencies

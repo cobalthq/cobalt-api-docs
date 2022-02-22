@@ -1,18 +1,21 @@
 version: 2
 updates:
   - package-ecosystem: "github-actions"
+    open-pull-requests-limit: 3
     directory: "/"
     schedule:
       interval: "daily"
       time: "09:30"
       timezone: "Europe/Berlin"
   - package-ecosystem: "gomod"
+    open-pull-requests-limit: 3
     directory: "/"
     schedule:
       interval: "daily"
       time: "09:30"
       timezone: "Europe/Berlin"
   - package-ecosystem: "npm"
+    open-pull-requests-limit: 3
     directory: "/"
     schedule:
       interval: "daily"
