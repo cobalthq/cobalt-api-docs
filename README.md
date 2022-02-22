@@ -1,7 +1,7 @@
 Cobalt Public API Docs
 ===============================
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b42b3f4e-140b-472d-becf-a0ce06e197d5/deploy-status)](https://app.netlify.com/sites/cobalt-api/deploys)
-![](https://github.com/cobalthq/cobalt-public-api-docs/workflows/dependabot/badge.svg)
+![](https://github.com/cobalthq/cobalt-public-api-docs/workflows/build/badge.svg)
 
 These docs complement our OpenAPI Swagger docs with walkthroughs and examples of endpoints, fields, and query
 parameters. You can easily add or edit pages using Markdown from the `content/` directory. All pages utilize a `weight`
