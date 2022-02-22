@@ -15,4 +15,5 @@ MD033:
     - strong
 
 # MD025/single-title/single-h1 - Multiple top-level headings in the same document
-MD025: false
+MD025:
+  front_matter_title: ""

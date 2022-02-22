@@ -1,5 +1,5 @@
 ---
-weight: 17
+weight: 10
 title: Refresh Token
 ---
 
