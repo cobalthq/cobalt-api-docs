@@ -4,11 +4,11 @@ languageCode: en-us
 title: Cobalt API Documentation
 
 # theme settings
-theme: github.com/bep/docuapi
+theme: github.com/bep/docuapi/v2
 themesDir: themes
 module:
   imports:
-    - path: github.com/bep/docuapi
+    - path: github.com/bep/docuapi/v2
 
 # syntax highlighting
 pygmentsCodefences: true
