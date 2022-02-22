@@ -46,9 +46,3 @@ languages:
         target='_new'>Explore our API in Swagger</a>
       - <a href='https://cobaltio.zendesk.com/hc/en-us'
         target='_new'>Visit our Support Center</a>
-
-# allowed env variables
-security:
-  funcs:
-    getenv:
-      - ADD_GA
