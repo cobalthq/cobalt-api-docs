@@ -59,10 +59,10 @@ You will need to have [GoLang](https://go.dev/dl/) installed for this.
 The site uses Netlify's CD pipeline and is hosted at [docs.cobalt.io](https://docs.cobalt.io) using a Cloudflare CNAME
 pointed at [cobalt-api.netlify.app](https://cobalt-api.netlify.app).
 
-All commits to `master`, if the build is successful, will be automatically deployed to the production site (usually
+All commits to `main`, if the build is successful, will be automatically deployed to the production site (usually
 in < 1 minute).
 
 **Deploy previews**
 
-Any pull request against the `master` branch will listen for new commits and is set to auto-build, available for
+Any pull request against the `main` branch will listen for new commits and is set to auto-build, available for
 preview before merging (Click Details in the PR Check).
