@@ -7,6 +7,8 @@ These docs complement our OpenAPI Swagger docs with walkthroughs and examples of
 parameters. You can easily add or edit pages using Markdown from the `content/` directory. All pages utilize a `weight`
 property to indicate where they're nested in navigation.
 
+Public API docs have been created with [hugo](https://github.com/gohugoio/hugo) and [docuapi](https://github.com/bep/docuapi).
+
 ## Requirements
 
 - Install hugo:
@@ -28,8 +30,6 @@ brew install markdownlint-cli
 ```
 
 ## Local Development
-
-Public API docs have created with [hugo](https://github.com/gohugoio/hugo) and [docuapi](https://github.com/bep/docuapi).
 
 Build site and run server:
 
@@ -66,3 +66,8 @@ in < 1 minute).
 
 Any pull request against the `main` branch will listen for new commits and is set to auto-build, available for
 preview before merging (Click Details in the PR Check).
+
+## Troubleshooting
+
+If you get `found no layout file for "HTML" for kind "page"` warning when you start the server, you can clean up asset
+caches by running `hugo mod clean`.
