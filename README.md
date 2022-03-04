@@ -7,7 +7,7 @@ These docs complement our OpenAPI Swagger docs with walkthroughs and examples of
 parameters. You can easily add or edit pages using Markdown from the `content/` directory. All pages utilize a `weight`
 property to indicate where they're nested in navigation.
 
-Public API docs have created with [hugo](https://github.com/gohugoio/hugo) and [docuapi](https://github.com/bep/docuapi).
+Public API docs have been created with [hugo](https://github.com/gohugoio/hugo) and [docuapi](https://github.com/bep/docuapi).
 
 ## Requirements
 
