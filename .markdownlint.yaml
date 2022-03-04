@@ -13,6 +13,8 @@ MD033:
   allowed_elements:
     - aside
     - strong
+    - p
+    - script
 
 # MD025/single-title/single-h1 - Multiple top-level headings in the same document
 MD025:
