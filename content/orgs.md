@@ -1,11 +1,11 @@
 ---
 weight: 3
-title: Orgs
+title: Organizations
 ---
 
 # Orgs
 
-## Get All Orgs
+## Get All Organizations
 
 ```sh
 curl -X GET "https://api.cobalt.io/orgs" \
@@ -52,7 +52,7 @@ curl -X GET "https://api.cobalt.io/orgs" \
 
 This endpoint retrieves a list of organizations, i.e. *orgs*, that you belong to. Save the `token` field to be used in
 your `X-Org-Token` header in subsequent calls in querying for assets, findings, pentests and events that belong to that
-org.
+organization.
 
 ### HTTP Request
 
@@ -65,14 +65,14 @@ org.
 | cursor    | N/A     | Used for [pagination](#pagination), e.g. `https://api.cobalt.io/orgs?cursor=123asdzxc` |
 | limit     | `10`    | If specified, returns only `limit` orgs, e.g. `https://api.cobalt.io/orgs?limit=5`     |
 
-### Fields
+### Response Fields
 
-| Field   | Description                                                                          |
-|---------|--------------------------------------------------------------------------------------|
-| `id`    | The Cobalt id of the org, an alphanumeric string                                     |
-| `name`  | The name of the org                                                                  |
-| `token` | The org token you'll need in subsequent calls                                        |
-| `url`   | The links.ui.url will redirect an authorized user to this org in the Cobalt platform |
+| Field   | Description                                                                                   |
+|---------|-----------------------------------------------------------------------------------------------|
+| `id`    | The Cobalt id of the organization, an alphanumeric string                                     |
+| `name`  | The name of the organization                                                                  |
+| `token` | The organization token you'll need in subsequent calls                                        |
+| `url`   | The links.ui.url will redirect an authorized user to this organization in the Cobalt platform |
 
 <aside class="success">
 Remember — Save that org token for use in subsequent API calls as part of your header.

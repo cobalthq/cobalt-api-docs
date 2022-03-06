@@ -17,6 +17,7 @@ curl -X POST "https://api.cobalt.io/tokens/token-id-here/refresh" \
 {
   "id": "40",
   "secret": "your-new-personal-API-token-here",
+  "name": "my token",
   "expire_at": null
 }
 ```
@@ -35,10 +36,11 @@ If you've forgotten your token, you can always re-authenticate in the Cobalt web
 
 `POST https://api.cobalt.io/tokens/token-id-here/refresh`
 
-### Fields
+### Response Fields
 
 | Field       | Description
 |-------------|---------------------------------------------------------------|
 | `id`        | Your new API token id                                         |
 | `secret`    | Your new personal API token - note it for future API requests |
+| `name`      | Your API token name                                     |
 | `expire_at` | null (not currently implemented)                              |
