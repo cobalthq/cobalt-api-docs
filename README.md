@@ -13,35 +13,35 @@ Public API docs have been created with [hugo](https://github.com/gohugoio/hugo) 
 
 - Install hugo:
 
-```sh
-brew install hugo
-```
+  ```sh
+  brew install hugo
+  ```
 
 - Or update if you already have it installed:
 
-```sh
-brew update && brew upgrade hugo
-```
+  ```sh
+  brew update && brew upgrade hugo
+  ```
 
 - Install `markdownlint-cli` to check markdown files against some common rules:
 
-```sh
-brew install markdownlint-cli
-```
+  ```sh
+  brew install markdownlint-cli
+  ```
 
 ## Local Development
 
-Build site and run server:
+- Build site and run server:
 
-```sh
-hugo server -D
-```
+  ```sh
+  hugo server -D
+  ```
 
 - Check markdown files with `markdownlint-cli`:
 
-```sh
-markdownlint -c .markdownlint.yaml content
-```
+  ```sh
+  markdownlint -c .markdownlint.yaml content
+  ```
 
 ## Dependencies
 
@@ -52,12 +52,14 @@ you won't, as Dependabot will do it for you) run the following:
 go get github.com/bep/docuapi/v2
 ```
 
-You will need to have [GoLang](https://go.dev/dl/) installed for this.
+You will need to have [Go](https://go.dev/dl/) installed for this.
 
 ## Hosting
 
 The site uses Netlify's CD pipeline and is hosted at [docs.cobalt.io](https://docs.cobalt.io) using a Cloudflare CNAME
 pointed at [cobalt-api.netlify.app](https://cobalt-api.netlify.app).
+
+## Deployment
 
 All commits to `main`, if the build is successful, will be automatically deployed to the production site (usually
 in < 1 minute).
