@@ -42,5 +42,5 @@ If you've forgotten your token, you can always re-authenticate in the Cobalt web
 |-------------|---------------------------------------------------------------|
 | `id`        | Your new API token id                                         |
 | `secret`    | Your new personal API token - note it for future API requests |
-| `name`      | Your API token name                                     |
+| `name`      | Your API token name                                           |
 | `expire_at` | null (not currently implemented)                              |
