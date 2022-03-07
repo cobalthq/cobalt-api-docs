@@ -3,7 +3,7 @@ weight: 3
 title: Organizations
 ---
 
-# Orgs
+# Organizations
 
 ## Get All Organizations
 
