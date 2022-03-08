@@ -5,6 +5,8 @@ title: Introduction
 
 # Introduction
 
+Hello I'm v1!
+
 The [Cobalt](https://cobalt.io) API gives you REST access to Orgs, Assets, Pentests, Findings, and Events, and is
 currently read-only.
 

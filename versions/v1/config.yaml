@@ -1,0 +1,50 @@
+# core settings
+baseurl: https://cobalt-api.netlify.com/v1
+languageCode: en-us
+title: Cobalt API Documentation
+contentDir: versions/v1/content
+publishDir: versions/v1/publish
+
+# theme settings
+theme: github.com/bep/docuapi/v2
+themesDir: themes
+module:
+  imports:
+    - path: github.com/bep/docuapi/v2
+
+# syntax highlighting
+pygmentsCodefences: true
+pygmentsCodeFencesGuesSsyntax: false
+pygmentsOptions: ""
+pygmentsStyle: monokai
+pygmentsUseClasses: false
+defaultContentLanguage: en
+markup:
+  goldmark:
+    parser:
+      autoHeadingIDType: github-ascii
+    renderer:
+      unsafe: true
+
+# site params
+params:
+  search: true
+  language_tabs:
+    - key: shell
+      name: Shell
+disableKinds:
+  - taxonomyTerm
+
+# sidebar settings
+languages:
+  en:
+    languageName: English
+    weight: 1
+    title: Cobalt API Documentation
+    toc_footers:
+      - <a href='https://app.cobalt.io/settings/api-token' rel='nofollow'
+        target='_new'>Create your personal API token</a>
+      - <a href='https://app.swaggerhub.com/apis/CobaltLab/cobalt-api/'
+        target='_new'>Explore our API in Swagger</a>
+      - <a href='https://cobaltio.zendesk.com/hc/en-us'
+        target='_new'>Visit our Support Center</a>
