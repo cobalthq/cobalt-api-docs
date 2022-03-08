@@ -3,7 +3,7 @@ baseurl: https://cobalt-api.netlify.com/v1
 languageCode: en-us
 title: Cobalt API Documentation
 contentDir: versions/v1/content
-publishDir: versions/v1/publish
+publishDir: public/v1
 
 # theme settings
 theme: github.com/bep/docuapi/v2
