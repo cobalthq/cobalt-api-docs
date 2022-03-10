@@ -8,14 +8,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Check markdown files to detect broken links
+      - name: Check v1 markdown files to detect broken links
         uses: gaurav-nelson/github-action-markdown-link-check@1.0.13
         with:
-          folder-path: 'content'
+          folder-path: 'versions/v1/content'
           use-quiet-mode: 'no'
           use-verbose-mode: 'yes'
-      - name: Lint markdown files
+      - name: Check v2 markdown files to detect broken links
+        uses: gaurav-nelson/github-action-markdown-link-check@1.0.13
+        with:
+          folder-path: 'versions/v2/content'
+          use-quiet-mode: 'no'
+          use-verbose-mode: 'yes'
+      - name: Lint v1 markdown files
         uses: avto-dev/markdown-lint@v1.5.0
         with:
-          args: 'content/*.md'
+          args: 'versions/v1/content/*.md'
+          config: '.markdownlint.yaml'
+      - name: Lint v2 markdown files
+        uses: avto-dev/markdown-lint@v1.5.0
+        with:
+          args: 'versions/v2/content/*.md'
           config: '.markdownlint.yaml'
