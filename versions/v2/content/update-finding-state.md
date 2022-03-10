@@ -3,15 +3,9 @@ weight: 9
 title: Update Finding State
 ---
 
-## Update Finding State
+# Update Finding State
 
-### API V1
-
-This operation is not supported by `v1` of the API.
-
-### API V2
-
-#### View Available States
+## View Available States
 
 ```sh
 curl -X GET "https://api.cobalt.io/findings/vl_FINDING_ID/possible_states" \
@@ -36,7 +30,7 @@ curl -X GET "https://api.cobalt.io/findings/vl_FINDING_ID/possible_states" \
 }
 ```
 
-#### Update State
+## Update State
 
 ```sh
 curl -X PATCH "https://api.cobalt.io/findings/vl_FINDING_ID" \
