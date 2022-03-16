@@ -1,18 +1,32 @@
 [build]
 publish = "public"
-command = "hugo --gc --minify"
+command = "hugo --gc --minify --config='versions/v1/config.yaml' && hugo --gc --minify --config='versions/v2/config.yaml'"
 
 [context.production.environment]
 HUGO_VERSION = "0.92.2"
 
 [context.deploy-preview]
-command = "hugo -D -F -b $DEPLOY_PRIME_URL"
+command = "hugo -D -F --config='versions/v1/config.yaml' -b $DEPLOY_PRIME_URL && hugo -D -F --config='versions/v2/config.yaml' -b $DEPLOY_PRIME_URL"
 
 [context.deploy-preview.environment]
 HUGO_VERSION = "0.92.2"
 
 [context.branch-deploy]
-command = "hugo --gc -b $DEPLOY_PRIME_URL"
+command = "hugo --gc --config='versions/v1/config.yaml' -b $DEPLOY_PRIME_URL && hugo --gc --config='versions/v2/config.yaml' -b $DEPLOY_PRIME_URL"
 
 [context.branch-deploy.environment]
 HUGO_VERSION = "0.92.2"
+
+[[redirects]]
+  from = "/"
+  to = "/v1"
+
+  # The default HTTP status code is 301, but you can
+  # define a different one.
+  status = 302
+
+  # By default, redirects won’t be applied if there’s a file
+  # with the same path as the one defined in the `from` property.
+  # Setting `force` to `true` will make the redirect rule
+  # take precedence over any existing files.
+  force = true

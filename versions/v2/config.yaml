@@ -1,7 +1,9 @@
 # core settings
-baseurl: https://cobalt-api.netlify.com/
+baseurl: https://cobalt-api.netlify.com/v2
 languageCode: en-us
 title: Cobalt API Documentation
+contentDir: versions/v2/content
+publishDir: public/v2
 
 # theme settings
 theme: github.com/bep/docuapi/v2
@@ -40,6 +42,8 @@ languages:
     weight: 1
     title: Cobalt API Documentation
     toc_footers:
+      - <a href='/v1' rel='nofollow'
+        target='_new'>View `v1` documentation</a>
       - <a href='https://app.cobalt.io/settings/api-token' rel='nofollow'
         target='_new'>Create your personal API token</a>
       - <a href='https://app.swaggerhub.com/apis/CobaltLab/cobalt-api/'
