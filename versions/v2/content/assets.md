@@ -21,7 +21,7 @@ curl -X GET 'https://api.cobalt.io/assets' \
   "data": [
     {
       "resource": {
-        "id": "as_7sXwQxg7Z1XDybew5EJpWz",
+        "id": "an-asset-identifier-here",
         "title": "Azure External Network ",
         "description": "Test text",
         "asset_type": "external_network",
@@ -54,7 +54,7 @@ Parameter | Default | Description
 cursor | N/A | Used for [pagination](#pagination), e.g. `https://api.cobalt.io/assets?cursor=123asdzxc`
 limit | `10` | If specified, returns only `limit` assets, e.g. `https://api.cobalt.io/assets?limit=5`
 
-### Fields
+### Response Fields
 
 | Field         | Description                                                                                       |
 |---------------|---------------------------------------------------------------------------------------------------|
@@ -62,6 +62,7 @@ limit | `10` | If specified, returns only `limit` assets, e.g. `https://api.coba
 | `title`       | The title of the asset; set by user creating the asset                                            |
 | `description` | A description of the asset; set by user creating the asset                                        |
 | `asset_type`  | api, cloud_config, external_network, internal_network, mobile, web, web_plus_api, web_plus_mobile |
+| `attachments` | A list of asset attachments (including the logo)                                                  |
 | `url`         | The links.ui.url will redirect an authorized user to this asset in the Cobalt platform            |
 
 <aside class="success">
@@ -71,7 +72,7 @@ Remember — you can only request Assets scoped to the Org specified in the head
 ## Get One Asset
 
 ```sh
-curl -X GET 'https://api.cobalt.io/assets/as_7sXwQxg7Z1XDybew5EJpWz' \
+curl -X GET 'https://api.cobalt.io/assets/your-asset-identifier-here' \
   -H 'Accept: application/vnd.cobalt.v2+json' \
   -H 'Authorization: Bearer your-personal-api-token-here' \
   -H 'X-Org-Token: your-v2-org-token-here'
@@ -83,7 +84,7 @@ curl -X GET 'https://api.cobalt.io/assets/as_7sXwQxg7Z1XDybew5EJpWz' \
 {
   "data": {
     "resource": {
-      "id": "as_7sXwQxg7Z1XDybew5EJpWz",
+      "id": "your-asset-identifier-here",
       "title": "Azure External Network ",
       "description": "Test text",
       "asset_type": "external_network",
@@ -102,9 +103,9 @@ This endpoint retrieves a specific asset belonging to the org specified in the h
 
 ### HTTP Request
 
-`GET https://api.cobalt.io/assets/as_7sXwQxg7Z1XDybew5EJpWz`
+`GET https://api.cobalt.io/assets/your-asset-identifier-here`
 
-### Fields
+### Response Fields
 
 | Field         | Description                                                                                       |
 |---------------|---------------------------------------------------------------------------------------------------|
@@ -112,6 +113,7 @@ This endpoint retrieves a specific asset belonging to the org specified in the h
 | `title`       | The title of the asset; set by user creating the asset                                            |
 | `description` | A description of the asset; set by user creating the asset                                        |
 | `asset_type`  | api, cloud_config, external_network, internal_network, mobile, web, web_plus_api, web_plus_mobile |
+| `attachments` | A list of asset attachments (including the logo)                                                  |
 | `url`         | The links.ui.url will redirect an authorized user to this asset in the Cobalt platform            |
 
 <aside class="success">
@@ -155,6 +157,14 @@ This endpoint creates a new asset belonging to the org specified in the header.
 | `size`        | xs, s, m, l, xl                                                                                   |
 | `coverage`    | extra_light, light, standard, large, extra_large                                                  |
 
+### Sizes and Coverages
+
+When the `size` is `m` (medium), `l` (large), or `xl` (extra large), `coverage` can be any of the listed options.
+
+When the `size` is `s` (small), `coverage` can *not* be `extra_light`.
+
+When the `size` is `xs` (extra small), `coverage` can *not* be `extra_light` or `light`.
+
 ### Response
 
 On successful creation, a `201` response code will be returned.  A response header, `location`, will
@@ -171,7 +181,7 @@ Remember — you can only create an asset within the Org specified in the header
 ## Update Asset
 
 ```sh
-curl -X PUT 'https://api.cobalt.io/assets/as_7sXwQxg7Z1XDybew5EJpWz' \
+curl -X PUT 'https://api.cobalt.io/assets/your-asset-identifier-here' \
   -H 'Accept: application/vnd.cobalt.v2+json' \
   -H 'Authorization: Bearer your-personal-api-token-here' \
   -H 'Content-Type: application/vnd.cobalt.v2+json' \
@@ -191,7 +201,7 @@ This endpoint updates an asset belonging to the org specified in the header.
 
 ### HTTP Request
 
-`PUT https://api.cobalt.io/assets/as_7sXwQxg7Z1XDybew5EJpWz`
+`PUT https://api.cobalt.io/assets/your-asset-identifier-here`
 
 ### Body
 
@@ -214,7 +224,7 @@ Remember — you can only update an asset within the Org specified in the header
 ## Delete Asset
 
 ```sh
-curl -X DELETE 'https://api.cobalt.io/assets/as_7sXwQxg7Z1XDybew5EJpWz' \
+curl -X DELETE 'https://api.cobalt.io/assets/your-asset-identifier-here' \
   -H 'Accept: application/vnd.cobalt.v2+json' \
   -H 'Authorization: Bearer your-personal-api-token-here' \
   -H 'Content-Type: application/vnd.cobalt.v2+json' \
@@ -227,7 +237,7 @@ This endpoint deletes an asset belonging to the org specified in the header.
 
 ### HTTP Request
 
-`DELETE https://api.cobalt.io/assets/as_7sXwQxg7Z1XDybew5EJpWz`
+`DELETE https://api.cobalt.io/assets/your-asset-identifier-here`
 
 ### Response
 
