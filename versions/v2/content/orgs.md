@@ -20,9 +20,9 @@ curl -X GET "https://api.cobalt.io/orgs" \
   "data": [
     {
       "resource": {
-        "id": "or_A2bb4FE",
+        "id": "or_Uevoq7MyoYsPT9NPc3conL",
         "name": "Acme Co",
-        "token": "save-this-org-token"
+        "token": "save-this-v2-org-token"
       },
       "links": {
         "ui": {
@@ -32,9 +32,9 @@ curl -X GET "https://api.cobalt.io/orgs" \
     },
     {
       "resource": {
-        "id": "or_UX2Fg3",
+        "id": "or_SnUYXDBYd2qbaDSuNRNa5q",
         "name": "E Corp",
-        "token": "or-save-this-org-token"
+        "token": "or-save-this-v2-org-token"
       },
       "links": {
         "ui": {

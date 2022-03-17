@@ -11,7 +11,7 @@ title: Update Finding State
 curl -X GET "https://api.cobalt.io/findings/vl_FINDING_ID/possible_states" \
   -H "accept: application/vnd.cobalt.v2+json" \
   -H "Authorization: Bearer your-personal-api-token-here" \
-  -H "X-Org-Token: your-org-token-here"
+  -H "X-Org-Token: your-v2-org-token-here"
 ```
 
 > The above command returns JSON structured like this:
@@ -36,7 +36,7 @@ curl -X GET "https://api.cobalt.io/findings/vl_FINDING_ID/possible_states" \
 curl -X PATCH "https://api.cobalt.io/findings/vl_FINDING_ID" \
   -H "accept: application/vnd.cobalt.v2+json" \
   -H "Authorization: Bearer your-personal-api-token-here" \
-  -H "X-Org-Token: your-org-token-here" \
+  -H "X-Org-Token: your-v2-org-token-here" \
   -d '{"state":"triaging"}'
 ```
 
