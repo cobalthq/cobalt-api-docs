@@ -110,7 +110,7 @@ Cobalt Risk Classification:
 | cursor    | N/A     | Used for [pagination](#pagination), e.g. `https://api.cobalt.io/findings?cursor=123asdzxc` |
 | limit     | `1000`  | If specified, returns only `limit` findings, e.g. `https://api.cobalt.io/findings?limit=5` |
 
-### Fields
+### Response Fields
 
 | Field           | Enum Types                                                                                                             |
 |-----------------|------------------------------------------------------------------------------------------------------------------------|

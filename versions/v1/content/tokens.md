@@ -36,7 +36,7 @@ This endpoint retrieves a list of all tokens that belong to you.
 
 `GET https://api.cobalt.io/tokens`
 
-### Fields
+### Response Fields
 
 | Field             | Description                                                  |
 |-------------------|--------------------------------------------------------------|
