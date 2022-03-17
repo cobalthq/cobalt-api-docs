@@ -236,4 +236,3 @@ On successful deletion, a `204` response code will be returned.
 <aside class="success">
 Remember — you can only delete an asset within the Org specified in the header.
 </aside>
-
