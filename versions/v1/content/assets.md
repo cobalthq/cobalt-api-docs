@@ -54,13 +54,13 @@ Parameter | Default | Description
 cursor | N/A | Used for [pagination](#pagination), e.g. `https://api.cobalt.io/assets?cursor=123asdzxc`
 limit | `10` | If specified, returns only `limit` assets, e.g. `https://api.cobalt.io/assets?limit=5`
 
-### Fields
+### Response Fields
 
 | Field         | Description                                                                                       |
 |---------------|---------------------------------------------------------------------------------------------------|
 | `id`          | The Cobalt id of the asset                                                                        |
-| `title`       | The title of the asset                                                                            |
-| `description` | A description of the asset                                                                        |
+| `title`       | The title of the asset; set by user creating the asset                                            |
+| `description` | A description of the asset; set by user creating the asset                                        |
 | `asset_type`  | api, cloud_config, external_network, internal_network, mobile, web, web_plus_api, web_plus_mobile |
 | `url`         | The links.ui.url will redirect an authorized user to this asset in the Cobalt platform            |
 

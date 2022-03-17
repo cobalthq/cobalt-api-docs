@@ -110,15 +110,25 @@ Cobalt Risk Classification:
 | cursor    | N/A     | Used for [pagination](#pagination), e.g. `https://api.cobalt.io/findings?cursor=123asdzxc` |
 | limit     | `1000`  | If specified, returns only `limit` findings, e.g. `https://api.cobalt.io/findings?limit=5` |
 
-### Fields
+### Response Fields
 
-| Field           | Enum Types                                                                                            |
-|-----------------|-------------------------------------------------------------------------------------------------------|
-| `log`           | created, impact_changed, likelihood_changed, state_changed                                            |
-| `severity`      | null, low, medium, high  (aka `criticality`. will be null if likelihood/impact have not yet been set) |
-| `state`         | new, triaging, need_fix, wont_fix, valid_fix, check_fix, invalid, carried_over                        |
-| `type_category` | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                |
-| `url`           | The links.ui.url will redirect an authorized user to this finding in the Cobalt platform              |
+| Field           | Enum Types                                                                                                             |
+|-----------------|------------------------------------------------------------------------------------------------------------------------|
+| `log`           | created, impact_changed, likelihood_changed, state_changed                                                             |
+| `severity`      | null, low, medium, high  (aka `criticality`. will be null if likelihood/impact have not yet been set by the pentester) |
+| `state`         | new, triaging, need_fix, wont_fix, valid_fix, check_fix, invalid, carried_over                                         |
+| `type_category` | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                 |
+| `url`           | The links.ui.url will redirect an authorized user to this finding in the Cobalt platform                               |
+
+### State
+
+- `new`: The finding has been created but not yet triaged.
+- `triaging`: The finding is being evaluated.
+- `need_fix`: The finding was deemed valid and a fix either is being developed or will be developed in the future.
+- `wont_fix`: The finding was deemed valid but immaterial or meaningless and will not be addressed.
+- `check_fix`: A fix has been applied and now is awaiting validation by the pentester.
+- `invalid`: The finding was rejected as not being a true vulnerability.
+- `carried_over`: The finding was carried over from a previous pentest.
 
 <aside class="success">
 Remember — you can only request Findings scoped to the Org specified in the header.
