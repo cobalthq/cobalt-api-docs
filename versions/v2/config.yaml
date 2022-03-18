@@ -1,5 +1,5 @@
 # core settings
-baseurl: https://cobalt-api.netlify.com/v2
+baseurl: https://cobalt-public-api.netlify.com/v2
 languageCode: en-us
 title: Cobalt API Documentation
 contentDir: versions/v2/content

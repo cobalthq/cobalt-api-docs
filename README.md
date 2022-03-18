@@ -57,7 +57,7 @@ You will need to have [Go](https://go.dev/dl/) installed for this.
 ## Hosting
 
 The site uses Netlify's CD pipeline and is hosted at [docs.cobalt.io](https://docs.cobalt.io) using a Cloudflare CNAME
-pointed at [cobalt-api.netlify.app](https://cobalt-api.netlify.app).
+pointed at [cobalt-public-api.netlify.app](https://cobalt-public-api.netlify.app).
 
 ## Deployment
 
