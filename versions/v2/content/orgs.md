@@ -3,9 +3,9 @@ weight: 4
 title: Orgs
 ---
 
-# Orgs
+# Organizations
 
-## Get All Orgs
+## Get All Organizations
 
 ```sh
 curl -X GET "https://api.cobalt.io/orgs" \
@@ -65,7 +65,7 @@ org.
 | cursor    | N/A     | Used for [pagination](#pagination), e.g. `https://api.cobalt.io/orgs?cursor=123asdzxc` |
 | limit     | `10`    | If specified, returns only `limit` orgs, e.g. `https://api.cobalt.io/orgs?limit=5`     |
 
-### Fields
+### Response Fields
 
 | Field   | Description                                                                          |
 |---------|--------------------------------------------------------------------------------------|
