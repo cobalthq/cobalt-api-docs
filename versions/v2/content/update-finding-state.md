@@ -69,6 +69,8 @@ curl -X PATCH "https://api.cobalt.io/findings/vl_FINDING_ID" \
 
 > If successful, this command returns `204`.
 
+This endpoint updates the current state of a finding.
+
 ### HTTP Request
 
 `PATCH https://api.cobalt.io/findings/vl_FINDING_ID`
@@ -78,3 +80,9 @@ curl -X PATCH "https://api.cobalt.io/findings/vl_FINDING_ID" \
 | Parameter     | Description               |
 |---------------|---------------------------|
 | vl_FINDING_ID | Cobalt ID of the finding. |
+
+### Body
+
+| Field   | Description                            |
+|---------|----------------------------------------|
+| `state` | The desired next state of the finding. |
