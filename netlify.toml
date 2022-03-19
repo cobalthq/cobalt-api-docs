@@ -1,18 +1,17 @@
 [build]
-publish = "public"
 command = "hugo --gc --minify --config='versions/v1/config.yaml' && hugo --gc --minify --config='versions/v2/config.yaml'"
 
 [context.production.environment]
 HUGO_VERSION = "0.92.2"
 
 [context.deploy-preview]
-command = "hugo -D -F --config='versions/v1/config.yaml' -b $DEPLOY_PRIME_URL && hugo -D -F --config='versions/v2/config.yaml' -b $DEPLOY_PRIME_URL"
+command = "hugo --gc --minify --buildFuture --config='versions/v1/config.yaml' && hugo --gc --minify --buildFuture --config='versions/v2/config.yaml'"
 
 [context.deploy-preview.environment]
 HUGO_VERSION = "0.92.2"
 
 [context.branch-deploy]
-command = "hugo --gc --config='versions/v1/config.yaml' -b $DEPLOY_PRIME_URL && hugo --gc --config='versions/v2/config.yaml' -b $DEPLOY_PRIME_URL"
+command = "hugo --gc --minify --buildFuture --config='versions/v1/config.yaml' && hugo --gc --minify --buildFuture --config='versions/v2/config.yaml'"
 
 [context.branch-deploy.environment]
 HUGO_VERSION = "0.92.2"
