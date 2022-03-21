@@ -9,3 +9,6 @@ resources/_gen/
 
 # JS dependencies
 node_modules/
+
+# netlify CLI tmp folder
+.netlify/
