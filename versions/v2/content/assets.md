@@ -51,7 +51,7 @@ This endpoint retrieves a list of assets that belong to the org specified in the
 
 Parameter | Default | Description
 --------- | ------- | -----------
-cursor | N/A | Used for [pagination](#pagination), e.g. `https://api.cobalt.io/assets?cursor=123asdzxc`
+cursor | N/A | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/assets?cursor=123asdzxc`
 limit | `10` | If specified, returns only `limit` assets, e.g. `https://api.cobalt.io/assets?limit=5`
 
 ### Response Fields

@@ -34,13 +34,17 @@ Public API docs have been created with [hugo](https://github.com/gohugoio/hugo) 
 - Build site and run server:
 
   ```sh
-  hugo server -D
+  # V1
+  hugo server --config=versions/v1/config.yaml -D
+
+  # V2
+  hugo server --config=versions/v2/config.yaml -D
   ```
 
 - Check markdown files with `markdownlint-cli`:
 
   ```sh
-  markdownlint -c .markdownlint.yaml content
+  markdownlint -c .markdownlint.yaml versions
   ```
 
 ## Dependencies
