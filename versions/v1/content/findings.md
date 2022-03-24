@@ -88,9 +88,7 @@ This endpoint retrieves a list of all pentest findings that belong to the org sp
 
 We follow the standard risk model described by OWASP, where:
 
-```
-Risk = Impact * Likelihood
-```
+`Risk = Impact * Likelihood`
 
 Cobalt Risk Input Fields:
 
