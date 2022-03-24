@@ -86,18 +86,24 @@ This endpoint retrieves a list of all pentest findings that belong to the org sp
 
 ### Calculations
 
+We follow the standard risk model described by OWASP, where:
+
+`Risk = Impact * Likelihood`
+
 Cobalt Risk Input Fields:
 
-- Risk = Impact * Likelihood
 - `impact` := [1-5]
 - `likelihood` := [1-5]
 
-Cobalt Risk Classification:
+Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 
-- `severity` (aka `criticality`) :=
-- **high** = Risk @ 16+
-- **medium** = Risk @ 5-15
-- **low** = Risk @ 1-4
+| Category        | Score | Description                                                                                                                                                     |
+|-----------------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `critical`      | 25    | Includes vulnerabilities that require immediate attention.                                                                                                      |
+| `high`          | 16-24 | Impacts the security of your application/platform/hardware, including supported systems. Includes high probability vulnerabilities with a high business impact. |
+| `medium`        | 5-15  | Includes vulnerabilities that are: medium risk, medium impact; low risk, high impact; high risk, low impact.                                                    |
+| `low`           | 2-4   | Specifies common vulnerabilities with minimal impact.                                                                                                           |
+| `informational` | 1     | Notes vulnerabilities of minimal risk to your business.                                                                                                         |
 
 ### HTTP Request
 
