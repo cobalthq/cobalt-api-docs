@@ -95,10 +95,10 @@ Cobalt Risk Input Fields:
 - `impact` := [1-5]
 - `likelihood` := [1-5]
 
-Cobalt Risk Classification (`severity`, `criticality`):
+Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 
-| Category      | Score | Description                                                                                                                                                     |
-|---------------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Category        | Score | Description                                                                                                                                                     |
+|-----------------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `critical`      | 25    | Includes vulnerabilities that require immediate attention.                                                                                                      |
 | `high`          | 16-24 | Impacts the security of your application/platform/hardware, including supported systems. Includes high probability vulnerabilities with a high business impact. |
 | `medium`        | 5-15  | Includes vulnerabilities that are: medium risk, medium impact; low risk, high impact; high risk, low impact.                                                    |
