@@ -9,7 +9,7 @@ title: Refresh Token
 curl -X POST "https://api.cobalt.io/tokens/token-id-here/refresh" \
   -H "accept: application/vnd.cobalt.v2+json" \
   -H "Authorization: Bearer your-personal-api-token-here" \
-  -H "Mutation-Check: unique-identifier-to-prevent-unintentional-duplication"
+  -H "Idempotency-Key: unique-identifier-to-prevent-unintentional-duplication"
 ```
 
 > The above command returns JSON structured like this:
