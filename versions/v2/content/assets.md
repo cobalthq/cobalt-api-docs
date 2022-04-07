@@ -127,7 +127,7 @@ curl -X POST "https://api.cobalt.io/assets" \
   -H 'Accept: application/vnd.cobalt.v2+json' \
   -H 'Authorization: Bearer your-personal-api-token-here' \
   -H 'Content-Type: application/vnd.cobalt.v2+json' \
-  -H 'Mutation-Check: unique-identifier-to-prevent-unintentional-duplication' \
+  -H 'Idempotency-Key: unique-identifier-to-prevent-unintentional-duplication' \
   -H 'X-Org-Token: your-v2-org-token-here' \
   --data '{
             "title": "Test Asset",
@@ -169,10 +169,6 @@ When the `size` is `xs` (extra small), `coverage` can *not* be `extra_light` or 
 
 On successful creation, a `201` response code will be returned.  A response header, `location`, will
 contain the URL within Cobalt's API of the new asset.
-
-The `Mutation-Check` header must be unique within a period of time or else the creation will be
-rejected with a `409` response code.  This is to prevent accidental creation of duplicate assets by,
-for example, replaying a request.
 
 <aside class="success">
 Remember — you can only create an asset within the Org specified in the header.
