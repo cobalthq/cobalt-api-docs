@@ -77,7 +77,6 @@ This endpoint retrieves a specific Finding that belong to the Org specified in t
 - `invalid`: The finding was rejected as not being a true vulnerability.
 - `carried_over`: The finding was carried over from a previous pentest.
 
-
 <aside class="success">
 Remember — you can only request a Finding scoped to the Org specified in the header.
 </aside>
