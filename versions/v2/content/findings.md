@@ -29,7 +29,7 @@ curl -X GET "https://api.cobalt.io/findings/your-finding-identifier" \
     "likelihood": null,
     "severity": null,
     "affected_targets": [
-      "dsfa"
+      "target affected"
     ],
     "proof_of_concept": "a proof of concept",
     "suggested_fix": "a suggestion fix",
