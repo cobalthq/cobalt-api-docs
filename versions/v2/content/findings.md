@@ -32,7 +32,7 @@ curl -X GET "https://api.cobalt.io/findings/your-finding-identifier" \
       "target affected"
     ],
     "proof_of_concept": "a proof of concept",
-    "suggested_fix": "a suggestion fix",
+    "suggested_fix": "a suggested fix",
     "pentest_id": "an_pentest_identifier",
     "asset_id": "an_asset_identifier",
     "log": [
