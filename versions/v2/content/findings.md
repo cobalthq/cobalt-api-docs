@@ -9,7 +9,7 @@ title: Get Specific Findings
 
 ```sh
 curl -X GET "https://api.cobalt.io/findings/your-finding-identifier" \
-  -H "accept: application/vnd.cobalt.v2+json" \
+  -H "Accept: application/vnd.cobalt.v2+json" \
   -H "Authorization: Bearer your-personal-api-token-here" \
   -H "X-Org-Token: your-org-token-here"
 ```
