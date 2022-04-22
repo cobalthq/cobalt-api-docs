@@ -9,7 +9,7 @@ title: Tokens
 
 ```sh
 curl -X GET "https://api.cobalt.io/tokens" \
-  -H "accept: application/vnd.cobalt.v2+json" \
+  -H "Accept: application/vnd.cobalt.v2+json" \
   -H "Authorization: Bearer your-personal-api-token-here"
 ```
 

@@ -9,7 +9,7 @@ title: Orgs
 
 ```sh
 curl -X GET "https://api.cobalt.io/orgs" \
-  -H "accept: application/vnd.cobalt.v2+json" \
+  -H "Accept: application/vnd.cobalt.v2+json" \
   -H "Authorization: Bearer your-personal-api-token-here"
 ```
 

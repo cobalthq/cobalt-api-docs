@@ -7,7 +7,7 @@ title: Refresh Token
 
 ```sh
 curl -X POST "https://api.cobalt.io/tokens/token-id-here/refresh" \
-  -H "accept: application/vnd.cobalt.v2+json" \
+  -H "Accept: application/vnd.cobalt.v2+json" \
   -H "Authorization: Bearer your-personal-api-token-here" \
   -H "Idempotency-Key: unique-identifier-to-prevent-unintentional-duplication"
 ```
