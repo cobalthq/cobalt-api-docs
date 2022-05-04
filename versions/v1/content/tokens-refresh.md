@@ -7,8 +7,8 @@ title: Refresh Token
 
 ```sh
 curl -X POST "https://api.cobalt.io/tokens/token-id-here/refresh" \
-  -H "accept: application/vnd.cobalt.v1+json" \
   -H "Authorization: Bearer your-personal-api-token-here"
+  -H "Accept: application/vnd.cobalt.v1+json" \
 ```
 
 > The above command returns JSON structured like this:

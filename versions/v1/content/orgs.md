@@ -9,8 +9,8 @@ title: Organizations
 
 ```sh
 curl -X GET "https://api.cobalt.io/orgs" \
-  -H "accept: application/vnd.cobalt.v1+json" \
   -H "Authorization: Bearer your-personal-api-token-here"
+  -H "Accept: application/vnd.cobalt.v1+json" \
 ```
 
 > The above command returns JSON structured like this:
