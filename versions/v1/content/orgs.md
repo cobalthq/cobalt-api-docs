@@ -74,6 +74,7 @@ org.
 | `token` | The org token you'll need in subsequent calls                                        |
 | `url`   | The links.ui.url will redirect an authorized user to this org in the Cobalt platform |
 
-<aside class="success">
-Remember — Save that org token for use in subsequent API calls as part of your header.
+<aside class="notice">
+Remember - Save the <code>token</code> attribute from the response body. You will need it in subsequent calls as the
+value of the <code>X-Org-Token</code> header.
 </aside>

@@ -136,6 +136,6 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 - `invalid`: The finding was rejected as not being a true vulnerability.
 - `carried_over`: The finding was carried over from a previous pentest.
 
-<aside class="success">
-Remember — you can only request Findings scoped to the Org specified in the header.
+<aside class="notice">
+Remember - you can only request findings scoped to the organization specified in the <code>X-Org-Token</code> header.
 </aside>
