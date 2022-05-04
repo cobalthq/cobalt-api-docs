@@ -10,8 +10,8 @@ title: Assets
 ```sh
 curl -X GET 'https://api.cobalt.io/assets' \
   -H 'Accept: application/vnd.cobalt.v2+json' \
-  -H 'Authorization: Bearer your-personal-api-token-here' \
   -H 'X-Org-Token: your-v2-org-token-here'
+  -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
 ```
 
 > The above command returns JSON structured like this:
@@ -74,8 +74,8 @@ Remember — you can only request Assets scoped to the Org specified in the head
 ```sh
 curl -X GET 'https://api.cobalt.io/assets/your-asset-identifier-here' \
   -H 'Accept: application/vnd.cobalt.v2+json' \
-  -H 'Authorization: Bearer your-personal-api-token-here' \
   -H 'X-Org-Token: your-v2-org-token-here'
+  -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
 ```
 
 > The above command returns JSON structured like this:
@@ -125,7 +125,7 @@ Remember — you can only request an asset scoped to the Org specified in the he
 ```sh
 curl -X POST "https://api.cobalt.io/assets" \
   -H 'Accept: application/vnd.cobalt.v2+json' \
-  -H 'Authorization: Bearer your-personal-api-token-here' \
+  -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
   -H 'Content-Type: application/vnd.cobalt.v2+json' \
   -H 'Idempotency-Key: unique-identifier-to-prevent-unintentional-duplication' \
   -H 'X-Org-Token: your-v2-org-token-here' \
@@ -179,7 +179,7 @@ Remember — you can only create an asset within the Org specified in the header
 ```sh
 curl -X PUT 'https://api.cobalt.io/assets/your-asset-identifier-here' \
   -H 'Accept: application/vnd.cobalt.v2+json' \
-  -H 'Authorization: Bearer your-personal-api-token-here' \
+  -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
   -H 'Content-Type: application/vnd.cobalt.v2+json' \
   -H 'X-Org-Token: your-v2-org-token-here' \
   --data '{
@@ -222,7 +222,7 @@ Remember — you can only update an asset within the Org specified in the header
 ```sh
 curl -X DELETE 'https://api.cobalt.io/assets/your-asset-identifier-here' \
   -H 'Accept: application/vnd.cobalt.v2+json' \
-  -H 'Authorization: Bearer your-personal-api-token-here' \
+  -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
   -H 'Content-Type: application/vnd.cobalt.v2+json' \
   -H 'X-Org-Token: your-v2-org-token-here'
 ```

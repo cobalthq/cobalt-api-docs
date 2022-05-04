@@ -10,7 +10,7 @@ title: Tokens
 ```sh
 curl -X GET "https://api.cobalt.io/tokens" \
   -H "Accept: application/vnd.cobalt.v2+json" \
-  -H "Authorization: Bearer your-personal-api-token-here"
+  -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN"
 ```
 
 > The above command returns JSON structured like this:

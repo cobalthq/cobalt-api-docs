@@ -10,8 +10,8 @@ title: Findings
 ```sh
 curl -X GET "https://api.cobalt.io/findings" \
   -H "Accept: application/vnd.cobalt.v2+json" \
-  -H "Authorization: Bearer your-personal-api-token-here" \
   -H "X-Org-Token: your-org-token-here"
+  -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
 ```
 
 > The above command returns JSON structured like this:
@@ -145,8 +145,8 @@ Remember — you can only request Findings scoped to the Org specified in the he
 ```sh
 curl -X GET "https://api.cobalt.io/findings/your-finding-identifier" \
   -H "Accept: application/vnd.cobalt.v2+json" \
-  -H "Authorization: Bearer your-personal-api-token-here" \
   -H "X-Org-Token: your-org-token-here"
+  -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
 ```
 
 > The above command returns JSON structured like this:

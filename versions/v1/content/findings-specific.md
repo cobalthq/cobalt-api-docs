@@ -7,9 +7,9 @@ title: Get Specific Findings
 
 ```sh
 curl -X GET "https://api.cobalt.io/findings?pentest=pt_9Ig" \
-  -H "Authorization: Bearer your-personal-api-token-here" \
   -H "X-Org-Token: your-org-token-here"
   -H "Accept: application/vnd.cobalt.v1+json" \
+  -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
 ```
 
 > The above command returns JSON structured like this:
