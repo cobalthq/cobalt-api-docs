@@ -14,6 +14,6 @@ for the next page.
 
 `GET https://api.cobalt.io/resource?cursor=a1b2c3d4`
 
-<aside class="success">
-Remember — there is always a default value for the <code>limit</code> query parameter.
+<aside class="notice">
+Remember - there is always a default value for the <code>limit</code> query parameter.
 </aside>

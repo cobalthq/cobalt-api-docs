@@ -65,8 +65,8 @@ limit | `10` | If specified, returns only `limit` assets, e.g. `https://api.coba
 | `attachments` | A list of asset attachments (including the logo)                                                  |
 | `url`         | The links.ui.url will redirect an authorized user to this asset in the Cobalt platform            |
 
-<aside class="success">
-Remember — you can only request Assets scoped to the Org specified in the header.
+<aside class="notice">
+Remember - you can only request assets scoped to the organization specified in the <code>X-Org-Token</code> header.
 </aside>
 
 ## Get One Asset
@@ -116,8 +116,8 @@ This endpoint retrieves a specific asset belonging to the org specified in the h
 | `attachments` | A list of asset attachments (including the logo)                                                  |
 | `url`         | The links.ui.url will redirect an authorized user to this asset in the Cobalt platform            |
 
-<aside class="success">
-Remember — you can only request an asset scoped to the Org specified in the header.
+<aside class="notice">
+Remember - you can only request an asset scoped to the organization specified in the <code>X-Org-Token</code> header.
 </aside>
 
 ## Create Asset
@@ -170,8 +170,8 @@ When the `size` is `xs` (extra small), `coverage` can *not* be `extra_light` or 
 On successful creation, a `201` response code will be returned.  A response header, `location`, will
 contain the URL within Cobalt's API of the new asset.
 
-<aside class="success">
-Remember — you can only create an asset within the Org specified in the header.
+<aside class="notice">
+Remember - you can only create an asset within the organization specified in the <code>X-Org-Token</code> header.
 </aside>
 
 ## Update Asset
@@ -213,8 +213,8 @@ This endpoint updates an asset belonging to the org specified in the header.
 
 On a successful update, a `204` response code will be returned.
 
-<aside class="success">
-Remember — you can only update an asset within the Org specified in the header.
+<aside class="notice">
+Remember - you can only update an asset within the organization specified in the <code>X-Org-Token</code> header.
 </aside>
 
 ## Delete Asset
@@ -239,6 +239,6 @@ This endpoint deletes an asset belonging to the org specified in the header.
 
 On successful deletion, a `204` response code will be returned.
 
-<aside class="success">
-Remember — you can only delete an asset within the Org specified in the header.
+<aside class="notice">
+Remember - you can only delete an asset within the organization specified in the <code>X-Org-Token</code> header.
 </aside>

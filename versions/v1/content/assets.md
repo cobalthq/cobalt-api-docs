@@ -64,6 +64,6 @@ This endpoint retrieves a list of assets that belong to the org specified in the
 | `asset_type`  | api, cloud_config, external_network, internal_network, mobile, web, web_plus_api, web_plus_mobile |
 | `url`         | The links.ui.url will redirect an authorized user to this asset in the Cobalt platform            |
 
-<aside class="success">
-Remember — you can only request Assets scoped to the Org specified in the header.
+<aside class="notice">
+Remember - you can only request assets scoped to the organization specified in the <code>X-Org-Token</code> header.
 </aside>
