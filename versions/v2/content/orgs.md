@@ -1,6 +1,6 @@
 ---
 weight: 4
-title: Orgs
+title: Organizations
 ---
 
 # Organizations
@@ -44,8 +44,8 @@ curl -X GET "https://api.cobalt.io/orgs" \
     }
   ],
   "pagination": {
-    "next_page": "/orgs?cursor=123asdzxc",
-    "prev_page": "/orgs?cursor=123asdzxd"
+    "next_page": "/orgs?cursor=a1b2c3d4",
+    "prev_page": "/orgs?cursor=4d3c2b1a"
   }
 }
 ```
@@ -62,7 +62,7 @@ org.
 
 | Parameter | Default | Description                                                                              |
 |-----------|---------|------------------------------------------------------------------------------------------|
-| cursor    | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/orgs?cursor=123asdzxc` |
+| cursor    | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/orgs?cursor=a1b2c3d4`  |
 | limit     | `10`    | If specified, returns only `limit` orgs, e.g. `https://api.cobalt.io/orgs?limit=5`       |
 
 ### Response Fields

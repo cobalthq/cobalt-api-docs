@@ -35,8 +35,8 @@ curl -X GET 'https://api.cobalt.io/assets' \
     }
   ],
   "pagination": {
-    "next_page": "/assets?cursor=123asdzxc",
-    "prev_page": "/assets?cursor=123asdzxd"
+    "next_page": "/assets?cursor=a1b2c3d4",
+    "prev_page": "/assets?cursor=4d3c2b1a"
   }
 }
 ```
@@ -51,7 +51,7 @@ This endpoint retrieves a list of assets that belong to the org specified in the
 
 Parameter | Default | Description
 --------- | ------- | -----------
-cursor | N/A | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/assets?cursor=123asdzxc`
+cursor | N/A | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/assets?cursor=a1b2c3d4`
 limit | `10` | If specified, returns only `limit` assets, e.g. `https://api.cobalt.io/assets?limit=5`
 
 ### Response Fields
