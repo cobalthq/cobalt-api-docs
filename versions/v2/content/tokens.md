@@ -10,7 +10,7 @@ title: Tokens
 ```sh
 curl -X GET "https://api.cobalt.io/tokens" \
   -H "Accept: application/vnd.cobalt.v2+json" \
-  -H "Authorization: Bearer your-personal-api-token-here"
+  -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN"
 ```
 
 > The above command returns JSON structured like this:
@@ -44,7 +44,7 @@ This endpoint retrieves a list of all tokens that belong to you.
 
 Parameter | Default | Description
 --------- | ------- | -----------
-cursor    | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/tokens?cursor=123asdzxc`
+cursor    | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/tokens?cursor=a1b2c3d4`
 limit     | `10`    | If specified, returns only `limit` tokens, e.g. `https://api.cobalt.io/tokens?limit=5`
 
 ### Response Fields

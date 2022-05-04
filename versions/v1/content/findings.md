@@ -9,9 +9,9 @@ title: Findings
 
 ```sh
 curl -X GET "https://api.cobalt.io/findings" \
-  -H "accept: application/vnd.cobalt.v1+json" \
-  -H "Authorization: Bearer your-personal-api-token-here" \
-  -H "X-Org-Token: your-org-token-here"
+  -H "Accept: application/vnd.cobalt.v1+json" \
+  -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
+  -H "X-Org-Token: YOUR-V1-ORGANIZATION-TOKEN"
 ```
 
 > The above command returns JSON structured like this:
@@ -75,8 +75,8 @@ curl -X GET "https://api.cobalt.io/findings" \
     }
   ],
   "pagination": {
-    "next_page": "/findings?cursor=123asdzxc",
-    "prev_page": "/findings?cursor=123asdzxd"
+    "next_page": "/findings?cursor=a1b2c3d4",
+    "prev_page": "/findings?cursor=4d3c2b1a"
   }
 }
 ```
@@ -113,7 +113,7 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 
 | Parameter | Default | Description                                                                                  |
 |-----------|---------|----------------------------------------------------------------------------------------------|
-| cursor    | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/findings?cursor=123asdzxc` |
+| cursor    | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/findings?cursor=a1b2c3d4`  |
 | limit     | `1000`  | If specified, returns only `limit` findings, e.g. `https://api.cobalt.io/findings?limit=5`   |
 
 ### Response Fields

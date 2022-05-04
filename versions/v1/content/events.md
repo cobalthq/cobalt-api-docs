@@ -9,8 +9,8 @@ title: Events
 
 ```sh
 curl -X GET "https://api.cobalt.io/events" \
-  -H "accept: application/vnd.cobalt.v1+json" \
-  -H "Authorization: Bearer your-personal-api-token-here"
+  -H "Accept: application/vnd.cobalt.v1+json" \
+  -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN"
 ```
 
 > The above command returns JSON structured like this:
@@ -50,8 +50,8 @@ curl -X GET "https://api.cobalt.io/events" \
     }
   ],
   "pagination": {
-    "next_page": "/events?cursor=123asdzxc",
-    "prev_page": "/events?cursor=123asdzxd"
+    "next_page": "/events?cursor=a1b2c3d4",
+    "prev_page": "/events?cursor=4d3c2b1a"
   }
 }
 ```
@@ -66,5 +66,5 @@ This endpoint retrieves a list of all events for your account.
 
 | Parameter | Default | Description                                                                                |
 |-----------|---------|--------------------------------------------------------------------------------------------|
-| cursor    | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/events?cursor=123asdzxc` |
+| cursor    | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/events?cursor=a1b2c3d4`  |
 | limit     | `10`    | If specified, returns only `limit` events, e.g. `https://api.cobalt.io/events?limit=5`     |

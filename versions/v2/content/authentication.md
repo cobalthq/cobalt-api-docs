@@ -9,20 +9,20 @@ title: Authentication
 
 ```sh
 curl https://api.cobalt.io/orgs \
-  -H "Authorization: Bearer YOUR_PERSONAL_API_TOKEN"
+  -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN"
 ```
 
-> Make sure to replace `YOUR_PERSONAL_API_TOKEN` with your actual API token.
+> Make sure to replace `YOUR-PERSONAL-API-TOKEN` with your actual API token.
 
 Cobalt uses API tokens to allow access to various endpoints. You can create a new Cobalt API token from within your
 [Cobalt profile](https://app.cobalt.io/settings/api-token).
 
 Cobalt expects the API token to be included in all API requests to the server in a header that looks like the following:
 
-`Authorization: Bearer YOUR_PERSONAL_API_TOKEN`
+`Authorization: Bearer YOUR-PERSONAL-API-TOKEN`
 
 <aside class="notice">
-You must replace <strong>YOUR_PERSONAL_API_TOKEN</strong> with your personal API token. DO NOT remove the word Bearer.
+You must replace <strong>YOUR-PERSONAL-API-TOKEN</strong> with your personal API token. DO NOT remove the word Bearer.
 </aside>
 
 Currently only `v1` of the Cobalt API is supported in Swagger.  You'll need to manually call the

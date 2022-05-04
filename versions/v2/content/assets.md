@@ -10,8 +10,8 @@ title: Assets
 ```sh
 curl -X GET 'https://api.cobalt.io/assets' \
   -H 'Accept: application/vnd.cobalt.v2+json' \
-  -H 'Authorization: Bearer your-personal-api-token-here' \
-  -H 'X-Org-Token: your-v2-org-token-here'
+  -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
+  -H 'X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN'
 ```
 
 > The above command returns JSON structured like this:
@@ -35,8 +35,8 @@ curl -X GET 'https://api.cobalt.io/assets' \
     }
   ],
   "pagination": {
-    "next_page": "/assets?cursor=123asdzxc",
-    "prev_page": "/assets?cursor=123asdzxd"
+    "next_page": "/assets?cursor=a1b2c3d4",
+    "prev_page": "/assets?cursor=4d3c2b1a"
   }
 }
 ```
@@ -51,7 +51,7 @@ This endpoint retrieves a list of assets that belong to the org specified in the
 
 Parameter | Default | Description
 --------- | ------- | -----------
-cursor | N/A | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/assets?cursor=123asdzxc`
+cursor | N/A | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/assets?cursor=a1b2c3d4`
 limit | `10` | If specified, returns only `limit` assets, e.g. `https://api.cobalt.io/assets?limit=5`
 
 ### Response Fields
@@ -74,8 +74,8 @@ Remember — you can only request Assets scoped to the Org specified in the head
 ```sh
 curl -X GET 'https://api.cobalt.io/assets/your-asset-identifier-here' \
   -H 'Accept: application/vnd.cobalt.v2+json' \
-  -H 'Authorization: Bearer your-personal-api-token-here' \
-  -H 'X-Org-Token: your-v2-org-token-here'
+  -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
+  -H 'X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN'
 ```
 
 > The above command returns JSON structured like this:
@@ -125,10 +125,10 @@ Remember — you can only request an asset scoped to the Org specified in the he
 ```sh
 curl -X POST "https://api.cobalt.io/assets" \
   -H 'Accept: application/vnd.cobalt.v2+json' \
-  -H 'Authorization: Bearer your-personal-api-token-here' \
+  -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
   -H 'Content-Type: application/vnd.cobalt.v2+json' \
   -H 'Idempotency-Key: unique-identifier-to-prevent-unintentional-duplication' \
-  -H 'X-Org-Token: your-v2-org-token-here' \
+  -H 'X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN' \
   --data '{
             "title": "Test Asset",
             "description": "description",
@@ -179,9 +179,9 @@ Remember — you can only create an asset within the Org specified in the header
 ```sh
 curl -X PUT 'https://api.cobalt.io/assets/your-asset-identifier-here' \
   -H 'Accept: application/vnd.cobalt.v2+json' \
-  -H 'Authorization: Bearer your-personal-api-token-here' \
+  -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
   -H 'Content-Type: application/vnd.cobalt.v2+json' \
-  -H 'X-Org-Token: your-v2-org-token-here' \
+  -H 'X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN' \
   --data '{
             "title": "Updated Title",
             "description": "Updated description",
@@ -222,9 +222,9 @@ Remember — you can only update an asset within the Org specified in the header
 ```sh
 curl -X DELETE 'https://api.cobalt.io/assets/your-asset-identifier-here' \
   -H 'Accept: application/vnd.cobalt.v2+json' \
-  -H 'Authorization: Bearer your-personal-api-token-here' \
+  -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
   -H 'Content-Type: application/vnd.cobalt.v2+json' \
-  -H 'X-Org-Token: your-v2-org-token-here'
+  -H 'X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN'
 ```
 
 > The above command returns no data and a `204` response code when successful.

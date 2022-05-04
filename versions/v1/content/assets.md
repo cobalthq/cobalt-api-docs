@@ -9,9 +9,9 @@ title: Assets
 
 ```sh
 curl -X GET "https://api.cobalt.io/assets" \
-  -H "accept: application/vnd.cobalt.v1+json" \
-  -H "Authorization: Bearer your-personal-api-token-here" \
-  -H "X-Org-Token: your-org-token-here"
+  -H "Accept: application/vnd.cobalt.v1+json" \
+  -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
+  -H "X-Org-Token: YOUR-V1-ORGANIZATION-TOKEN"
 ```
 
 > The above command returns JSON structured like this:
@@ -35,8 +35,8 @@ curl -X GET "https://api.cobalt.io/assets" \
     }
   ],
   "pagination": {
-    "next_page": "/assets?cursor=123asdzxc",
-    "prev_page": "/assets?cursor=123asdzxd"
+    "next_page": "/assets?cursor=a1b2c3d4",
+    "prev_page": "/assets?cursor=4d3c2b1a"
   }
 }
 ```
@@ -49,10 +49,10 @@ This endpoint retrieves a list of assets that belong to the org specified in the
 
 ### URL Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-cursor | N/A | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/assets?cursor=123asdzxc`
-limit | `10` | If specified, returns only `limit` assets, e.g. `https://api.cobalt.io/assets?limit=5`
+| Parameter | Default | Description                                                                               |
+|-----------|---------|-------------------------------------------------------------------------------------------|
+| cursor    | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/assets?cursor=a1b2c3d4` |
+| limit     | `10`    | If specified, returns only `limit` assets, e.g. `https://api.cobalt.io/assets?limit=5`    |
 
 ### Response Fields
 
