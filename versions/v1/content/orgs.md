@@ -75,5 +75,6 @@ org.
 | `url`   | The links.ui.url will redirect an authorized user to this org in the Cobalt platform |
 
 <aside class="notice">
-Remember - Save the <code>token</code> attribute from the response body. You will need it in subsequent calls as the value of the <code>X-Org-Token</code> header.
+Remember - Save the <code>token</code> attribute from the response body. You will need it in subsequent calls as the
+value of the <code>X-Org-Token</code> header.
 </aside>
