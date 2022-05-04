@@ -8,8 +8,8 @@ title: Update Finding State
 ```sh
 curl -X GET "https://api.cobalt.io/findings/vl_FINDING_ID/possible_states" \
   -H "Accept: application/vnd.cobalt.v2+json" \
-  -H "X-Org-Token: your-org-token-here"
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
+  -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
 ```
 
 > The above command returns JSON structured like this:
@@ -62,8 +62,8 @@ This endpoint retrieves the current state of a finding as well as possible next 
 ```sh
 curl -X PATCH "https://api.cobalt.io/findings/vl_FINDING_ID" \
   -H "Accept: application/vnd.cobalt.v2+json" \
-  -H "X-Org-Token: your-org-token-here" \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
+  -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN" \
   -d '{"state":"triaging"}'
 ```
 

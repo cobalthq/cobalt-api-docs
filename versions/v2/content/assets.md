@@ -10,8 +10,8 @@ title: Assets
 ```sh
 curl -X GET 'https://api.cobalt.io/assets' \
   -H 'Accept: application/vnd.cobalt.v2+json' \
-  -H 'X-Org-Token: your-v2-org-token-here'
   -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
+  -H 'X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN'
 ```
 
 > The above command returns JSON structured like this:
@@ -74,8 +74,8 @@ Remember — you can only request Assets scoped to the Org specified in the head
 ```sh
 curl -X GET 'https://api.cobalt.io/assets/your-asset-identifier-here' \
   -H 'Accept: application/vnd.cobalt.v2+json' \
-  -H 'X-Org-Token: your-v2-org-token-here'
   -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
+  -H 'X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN'
 ```
 
 > The above command returns JSON structured like this:
@@ -128,7 +128,7 @@ curl -X POST "https://api.cobalt.io/assets" \
   -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
   -H 'Content-Type: application/vnd.cobalt.v2+json' \
   -H 'Idempotency-Key: unique-identifier-to-prevent-unintentional-duplication' \
-  -H 'X-Org-Token: your-v2-org-token-here' \
+  -H 'X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN' \
   --data '{
             "title": "Test Asset",
             "description": "description",
@@ -181,7 +181,7 @@ curl -X PUT 'https://api.cobalt.io/assets/your-asset-identifier-here' \
   -H 'Accept: application/vnd.cobalt.v2+json' \
   -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
   -H 'Content-Type: application/vnd.cobalt.v2+json' \
-  -H 'X-Org-Token: your-v2-org-token-here' \
+  -H 'X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN' \
   --data '{
             "title": "Updated Title",
             "description": "Updated description",
@@ -224,7 +224,7 @@ curl -X DELETE 'https://api.cobalt.io/assets/your-asset-identifier-here' \
   -H 'Accept: application/vnd.cobalt.v2+json' \
   -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
   -H 'Content-Type: application/vnd.cobalt.v2+json' \
-  -H 'X-Org-Token: your-v2-org-token-here'
+  -H 'X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN'
 ```
 
 > The above command returns no data and a `204` response code when successful.
