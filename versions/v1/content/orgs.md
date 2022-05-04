@@ -21,24 +21,24 @@ curl -X GET "https://api.cobalt.io/orgs" \
     {
       "resource": {
         "id": "or_A2bb4FE",
-        "name": "Acme Co",
-        "token": "save-this-org-token"
+        "name": "Acme Corp.",
+        "token": "e9d6daoknmkhd3c958f6e949b015041f8b0e8ad"
       },
       "links": {
         "ui": {
-          "url": "https://api.cobalt.io/links/long-web-app-redirect-to-acme-org"
+          "url": "https://api.cobalt.io/links/..."
         }
       }
     },
     {
       "resource": {
         "id": "or_UX2Fg3",
-        "name": "E Corp",
-        "token": "or-save-this-org-token"
+        "name": "Lorem Corp.",
+        "token": "f63681aapuskqm34cc1a11765a552e52b995cbed"
       },
       "links": {
         "ui": {
-          "url": "https://api.cobalt.io/links/long-web-app-redirect-to-e-corp-org"
+          "url": "https://api.cobalt.io/links/..."
         }
       }
     }
@@ -52,7 +52,7 @@ curl -X GET "https://api.cobalt.io/orgs" \
 
 This endpoint retrieves a list of organizations, i.e. *orgs*, that you belong to. Save the `token` field to be used in
 your `X-Org-Token` header in subsequent calls in querying for assets, findings, pentests and events that belong to that
-org.
+organization.
 
 ### HTTP Request
 
@@ -67,12 +67,12 @@ org.
 
 ### Response Fields
 
-| Field   | Description                                                                          |
-|---------|--------------------------------------------------------------------------------------|
-| `id`    | The Cobalt id of the org, an alphanumeric string                                     |
-| `name`  | The name of the org                                                                  |
-| `token` | The org token you'll need in subsequent calls                                        |
-| `url`   | The links.ui.url will redirect an authorized user to this org in the Cobalt platform |
+| Field          | Description                                                                              |
+|----------------|------------------------------------------------------------------------------------------|
+| `id`           | A unique ID representing the organization. An alphanumeric string                        |
+| `name`         | The name of the organization                                                             |
+| `token`        | The organization token you'll need in subsequent calls                                   |
+| `links.ui.url` | A link to redirect an authorized user to this organization in the Cobalt web application |
 
 <aside class="notice">
 Remember - Save the <code>token</code> attribute from the response body. You will need it in subsequent calls as the
