@@ -20,7 +20,7 @@ curl -X GET "https://api.cobalt.io/events" \
   "data": [
     {
       "resource": {
-        "id": "ac_xxxxxxxxxxx",
+        "id": "ac_Y35JcpGoakrjUSVjtVpXyH",
         "action": "comment_created",
         "subject": {
           "id": "ac_xxxxxxxxxxx",
