@@ -43,7 +43,7 @@ curl -X GET "https://api.cobalt.io/events" \
         "id": "ac_Y35JcpGoakrjUSVjtVpXyH",
         "action": "finding_created",
         "subject": {
-          "id": "ac_xxxxxxxxxxx",
+          "id": "ac_KMj6XjiYZvioRFB4gMfJeC",
           "type": "vulnerability"
         }
       }
