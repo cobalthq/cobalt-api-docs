@@ -25,7 +25,12 @@ curl -X GET "https://api.cobalt.io/assets" \
         "title": "Acme Corp. HR System",
         "description": "HR system of the Acme Corp. holding sensitive employee data",
         "asset_type": "web",
-        "attachments": []
+        "attachments": [
+          {
+            "token": "att_yYXZodA",
+            "download_url": "https://s3.amazonaws.com/acmecorp/uploads/attachment/file/12345/rainbow.jpeg?something=1"
+          }
+        ]
       },
       "links": {
         "ui": {

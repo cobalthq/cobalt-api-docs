@@ -19,21 +19,38 @@ curl -X GET "https://api.cobalt.io/findings?pentest=pt_9Ig" \
   "data": [
     {
       "resource": {
-        "id": "vu_2wXY3bq",
+        "id": "vu_ZzZuekb",
         "tag": "#PT3334_37",
-        "title": "SQL Injection",
-        "description": "A SQL injection attack...",
-        "type_category": "SQL Injection",
-        "labels": [],
+        "title": "XSS vulnerability",
+        "description": "Cross-Site Scripting (XSS) attacks are a type of injection, in which malicious scripts...",
+        "type_category": "Cross-Site Scripting (XSS)",
+        "labels": [
+          {
+            "name": "Your label"
+          }
+        ],
         "impact": 4,
         "likelihood": 4,
         "severity": "high",
-        "affected_targets": [ ""],
-        "proof_of_concept": null,
+        "affected_targets": [
+          "https://example.com",
+          "192.168.1.1"
+        ],
+        "proof_of_concept": "Here you can see...",
         "suggested_fix": "Ensure this...",
-        "pentest_id": "pt_9Ig",
+        "pentest_id": "pt_9Ig1234",
         "asset_id": "as_cwrsqsL",
-        "log": [],
+        "log": [
+          {
+            "action": "created",
+            "timestamp": "2021-04-01T15:13:24.322Z"
+          },
+          {
+            "action": "likelihood_changed",
+            "value": 4,
+            "timestamp": "2021-04-01T15:14:05.856Z"
+          }
+        ],
         "state": "need_fix"
       },
       "links": {
@@ -50,7 +67,7 @@ You can filter for findings scoped to a specific pentest or asset.
 
 ### HTTP Requests
 
-`GET https://api.cobalt.io/findings?pentest=pt_9Ig`
+`GET https://api.cobalt.io/findings?pentest=pt_9Ig1234`
 
 `GET https://api.cobalt.io/findings?asset=as_cwrsqsL`
 
