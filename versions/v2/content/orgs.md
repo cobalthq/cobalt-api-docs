@@ -69,7 +69,7 @@ organization.
 
 | Field          | Description                                                                              |
 |----------------|------------------------------------------------------------------------------------------|
-| `id`           | A unique ID representing the organization. Starts with or_                               |
+| `id`           | A unique ID representing the organization. Starts with `or_`                             |
 | `name`         | The name of the organization                                                             |
 | `token`        | The organization token you'll need in subsequent calls                                   |
 | `links.ui.url` | A link to redirect an authorized user to this organization in the Cobalt web application |

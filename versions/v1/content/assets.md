@@ -58,7 +58,7 @@ This endpoint retrieves a list of assets that belong to the organization specifi
 
 | Field          | Description                                                                                                                               |
 |----------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| `id`           | A unique ID representing the asset. Starts with as_                                                                                       |
+| `id`           | A unique ID representing the asset. Starts with `as_`                                                                                     |
 | `title`        | The title of the asset; set by user creating the asset                                                                                    |
 | `description`  | A description of the asset; set by user creating the asset                                                                                |
 | `asset_type`   | An asset type, such as; `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile` |
