@@ -40,7 +40,7 @@ curl -X GET "https://api.cobalt.io/events" \
     },
     {
       "resource": {
-        "id": "ac_xxxxxxxxxxx",
+        "id": "ac_Y35JcpGoakrjUSVjtVpXyH",
         "action": "finding_created",
         "subject": {
           "id": "ac_xxxxxxxxxxx",
