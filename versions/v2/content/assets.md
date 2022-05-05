@@ -109,7 +109,7 @@ curl -X GET "https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER" \
 }
 ```
 
-This endpoint retrieves a specific asset belonging to the organization specified in the <code>X-Org-Token</code> header.
+This endpoint retrieves a specific asset belonging to the organization specified in the `X-Org-Token` header.
 
 ### HTTP Request
 
@@ -151,7 +151,7 @@ curl -X POST "https://api.cobalt.io/assets" \
 > The above command returns no data and a `201` response code when successful. There will be a `location` header
 > pointing at the newly-created asset.
 
-This endpoint creates a new asset belonging to the organization specified in the <code>X-Org-Token</code> header.
+This endpoint creates a new asset belonging to the organization specified in the `X-Org-Token` header.
 
 ### HTTP Request
 
@@ -201,7 +201,7 @@ curl -X PUT 'https://api.cobalt.io/assets/AN-ASSET-IDENTIFIER' \
 
 > The above command returns no data and a `204` response code when successful.
 
-This endpoint updates an asset belonging to the organization specified in the <code>X-Org-Token</code> header.
+This endpoint updates an asset belonging to the organization specified in the `X-Org-Token` header.
 
 ### HTTP Request
 
