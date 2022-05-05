@@ -30,7 +30,7 @@ curl -X GET "https://api.cobalt.io/events" \
     },
     {
       "resource": {
-        "id": "ac_xxxxxxxxxxx",
+        "id": "ac_Y35JcpGoakrjUSVjtVpXyH",
         "action": "pentest_deleted",
         "subject": {
           "id": "ac_xxxxxxxxxxx",
