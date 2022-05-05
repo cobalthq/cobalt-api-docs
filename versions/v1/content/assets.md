@@ -22,14 +22,14 @@ curl -X GET "https://api.cobalt.io/assets" \
     {
       "resource": {
         "id": "as_rvZRC5Y",
-        "title": "Azure External Network ",
-        "description": "Test text",
-        "asset_type": "external_network",
+        "title": "Acme Corp. HR System",
+        "description": "HR system of the Acme Corp. holding sensitive employee data",
+        "asset_type": "web",
         "attachments": []
       },
       "links": {
         "ui": {
-          "url": "https://api.cobalt.io/links/long-web-app-redirect-to-this-asset"
+          "url": "https://api.cobalt.io/links/eyJ0eXBlIjoic29tZXRoaW5nIiwib3JnU2x1ZyI6ImNvYmFsdCIsInBlbnRlc3RUYWciOiJz="
         }
       }
     }
@@ -41,7 +41,7 @@ curl -X GET "https://api.cobalt.io/assets" \
 }
 ```
 
-This endpoint retrieves a list of assets that belong to the org specified in the header.
+This endpoint retrieves a list of assets that belong to the organization specified in the `X-Org-Token` header.
 
 ### HTTP Request
 
@@ -56,13 +56,13 @@ This endpoint retrieves a list of assets that belong to the org specified in the
 
 ### Response Fields
 
-| Field         | Description                                                                                       |
-|---------------|---------------------------------------------------------------------------------------------------|
-| `id`          | The Cobalt id of the asset                                                                        |
-| `title`       | The title of the asset; set by user creating the asset                                            |
-| `description` | A description of the asset; set by user creating the asset                                        |
-| `asset_type`  | api, cloud_config, external_network, internal_network, mobile, web, web_plus_api, web_plus_mobile |
-| `url`         | The links.ui.url will redirect an authorized user to this asset in the Cobalt platform            |
+| Field          | Description                                                                                                                               |
+|----------------|-------------------------------------------------------------------------------------------------------------------------------------------|
+| `id`           | A unique ID representing the asset. Starts with `as_`                                                                                     |
+| `title`        | The title of the asset; set by user creating the asset                                                                                    |
+| `description`  | A description of the asset; set by user creating the asset                                                                                |
+| `asset_type`   | An asset type, such as; `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile` |
+| `links.ui.url` | A link to redirect an authorized user to this asset in the Cobalt web application                                                         |
 
 <aside class="notice">
 Remember - you can only request assets scoped to the organization specified in the <code>X-Org-Token</code> header.
