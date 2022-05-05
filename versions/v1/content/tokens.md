@@ -26,7 +26,11 @@ curl -X GET "https://api.cobalt.io/tokens" \
         "expire_at": null
       }
     }
- ]
+  ],
+  "pagination": {
+    "next_page": null,
+    "prev_page": null
+  }
 }
 ```
 
@@ -35,6 +39,13 @@ This endpoint retrieves a list of all tokens that belong to you.
 ### HTTP Request
 
 `GET https://api.cobalt.io/tokens`
+
+### URL Parameters
+
+| Parameter | Default | Description                                                                                          |
+|-----------|---------|------------------------------------------------------------------------------------------------------|
+| `cursor`  | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/tokens?cursor=a1b2c3d4`            |
+| `limit`   | `10`    | If specified, returns only a specified amount of tokens, e.g. `https://api.cobalt.io/tokens?limit=5` |
 
 ### Response Fields
 
