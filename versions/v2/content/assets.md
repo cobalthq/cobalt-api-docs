@@ -28,13 +28,13 @@ curl -X GET "https://api.cobalt.io/assets" \
         "attachments": [
           {
             "id": "at_LA5GcEL4HRitFGCHREqmzL",
-            "download_url": "https://s3.amazonaws.com/..."
+            "download_url": "https://s3.amazonaws.com/acmecorp/uploads/attachment/file/12345/rainbow.jpeg?something=1"
           }
         ]
       },
       "links": {
         "ui": {
-          "url": "https://api.cobalt.io/links/..."
+          "url": "https://api.cobalt.io/links/eyJ0eXBlIjoic29tZXRoaW5nIiwib3JnU2x1ZyI6ImNvYmFsdCIsInBlbnRlc3RUYWciOiJz="
         }
       }
     }
@@ -96,13 +96,13 @@ curl -X GET "https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER" \
       "attachments": [
         {
           "id": "at_LA5GcEL4HRitFGCHREqmzL",
-          "download_url": "https://s3.amazonaws.com/..."
+          "download_url": "https://s3.amazonaws.com/acmecorp/uploads/attachment/file/12345/rainbow.jpeg?something=1"
         }
       ]
     },
     "links": {
       "ui": {
-        "url": "https://api.cobalt.io/links/..."
+        "url": "https://api.cobalt.io/links/eyJ0eXBlIjoic29tZXRoaW5nIiwib3JnU2x1ZyI6ImNvYmFsdCIsInBlbnRlc3RUYWciOiJz="
       }
     }
   }

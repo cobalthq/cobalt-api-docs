@@ -69,7 +69,7 @@ curl -X GET "https://api.cobalt.io/findings" \
       },
       "links": {
         "ui": {
-          "url": "https://api.cobalt.io/links/long-web-app-redirect-to-this-finding"
+          "url": "https://api.cobalt.io/links/eyJ0eXBlIjoic29tZXRoaW5nIiwib3JnU2x1ZyI6ImNvYmFsdCIsInBlbnRlc3RUYWciOiJz="
         }
       }
     }
