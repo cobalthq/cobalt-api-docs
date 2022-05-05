@@ -1,5 +1,5 @@
 ---
-weight: 8
+weight: 10
 title: Events
 ---
 
@@ -20,30 +20,30 @@ curl -X GET "https://api.cobalt.io/events" \
   "data": [
     {
       "resource": {
-        "id": "an-event-identifier-here",
+        "id": "ac_xxxxxxxxxxx",
         "action": "comment_created",
         "subject": {
-          "id": "an-event-identifier-here",
+          "id": "ac_xxxxxxxxxxx",
           "type": "comment"
         }
       }
     },
     {
       "resource": {
-        "id": "an-event-identifier-here",
+        "id": "ac_xxxxxxxxxxx",
         "action": "pentest_deleted",
         "subject": {
-          "id": "an-event-identifier-here",
+          "id": "ac_xxxxxxxxxxx",
           "type": "program"
         }
       }
     },
     {
       "resource": {
-        "id": "an-event-identifier-here",
+        "id": "ac_xxxxxxxxxxx",
         "action": "finding_created",
         "subject": {
-          "id": "an-event-identifier-here",
+          "id": "ac_xxxxxxxxxxx",
           "type": "vulnerability"
         }
       }
