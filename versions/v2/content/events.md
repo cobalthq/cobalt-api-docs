@@ -1,5 +1,5 @@
 ---
-weight: 8
+weight: 10
 title: Events
 ---
 
@@ -9,7 +9,7 @@ title: Events
 
 ```sh
 curl -X GET "https://api.cobalt.io/events" \
-  -H "Accept: application/vnd.cobalt.v1+json" \
+  -H "Accept: application/vnd.cobalt.v2+json" \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN"
 ```
 
@@ -20,10 +20,10 @@ curl -X GET "https://api.cobalt.io/events" \
   "data": [
     {
       "resource": {
-        "id": "277603",
+        "id": "ac_Y35JcpGoakrjUSVjtVpXyH",
         "action": "comment_created",
         "subject": {
-          "id": "277603",
+          "id": "ac_Y35JcpGoakrjUSVjtVpXyH",
           "type": "comment"
         },
         "timestamp": "2022-05-03T01:34:21.587Z"
@@ -31,10 +31,10 @@ curl -X GET "https://api.cobalt.io/events" \
     },
     {
       "resource": {
-        "id": "277600",
+        "id": "ac_Y35JcpGoakrjUSVjtVpXyP",
         "action": "pentest_deleted",
         "subject": {
-          "id": "277600",
+          "id": "ac_Y35JcpGoakrjUSVjtVpXyP",
           "type": "program"
         },
         "timestamp": "2022-05-03T01:34:21.587Z"
@@ -42,10 +42,10 @@ curl -X GET "https://api.cobalt.io/events" \
     },
     {
       "resource": {
-        "id": "277567",
+        "id": "ac_Y35JcpGoakrjUSVjtVpXyX",
         "action": "finding_created",
         "subject": {
-          "id": "277567",
+          "id": "ac_Y35JcpGoakrjUSVjtVpXyX",
           "type": "vulnerability"
         },
         "timestamp": "2022-05-03T01:34:21.587Z"
