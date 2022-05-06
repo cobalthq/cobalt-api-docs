@@ -130,6 +130,8 @@ This endpoint retrieves a specific asset belonging to the organization specified
 Remember - you can only request an asset scoped to the organization specified in the <code>X-Org-Token</code> header.
 </aside>
 
+<!---
+
 ## Create an Asset
 
 ```sh
@@ -148,7 +150,7 @@ curl -X POST "https://api.cobalt.io/assets" \
           }'
 ```
 
-> The above command returns no data and a `201` response code when successful. There will be a `location` header
+> The above command returns no data and a `201` response code when successful. There will be a `Location` header
 > pointing at the newly-created asset.
 
 This endpoint creates a new asset belonging to the organization specified in the `X-Org-Token` header.
@@ -175,7 +177,7 @@ This endpoint creates a new asset belonging to the organization specified in the
 
 ### Response
 
-On successful creation, a `201` response code will be returned. A response header, `location`, will contain the URL
+On successful creation, a `201` response code will be returned. A response header, `Location`, will contain the URL
 within Cobalt's API of the new asset.
 
 <aside class="notice">
@@ -224,6 +226,7 @@ On a successful update, a `204` response code will be returned.
 <aside class="notice">
 Remember - you can only update an asset within the organization specified in the <code>X-Org-Token</code> header.
 </aside>
+-->
 
 ## Delete an Asset
 
