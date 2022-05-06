@@ -8,7 +8,7 @@ title: API Versions
 <aside class="warning">
 You are currently viewing the previous version (v1) of Cobalt API. Please visit <a href="https://docs.cobalt.io/v2/">docs.cobalt.io/v2</a>
 for the latest (v2) version. If you've integrated with Cobalt API in the past by using the previous version (v1),
-please visit the <a href="https://google.com">API v1 to v2 migration guide</a>.
+please visit the <a href="https://docs.cobalt.io/v2/#changelog">Changelog</a>.
 </aside>
 
 ## Background
