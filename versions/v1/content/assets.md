@@ -68,6 +68,7 @@ This endpoint retrieves a list of assets that belong to the organization specifi
 | `description`  | A description of the asset; set by user creating the asset                                                                                |
 | `asset_type`   | An asset type, such as; `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile` |
 | `links.ui.url` | A link to redirect an authorized user to this asset in the Cobalt web application                                                         |
+| `attachments`  | A list of asset attachments (including the logo)                                                                                          |
 
 <aside class="notice">
 Remember - you can only request assets scoped to the organization specified in the <code>X-Org-Token</code> header.
