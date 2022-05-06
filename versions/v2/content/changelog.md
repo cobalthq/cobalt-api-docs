@@ -73,7 +73,7 @@ The `token` attribute of the `attachments` object in `v1` of [assets](#get-all-a
 
 | Header          | v1                             | v2                                   | Description                                |
 |-----------------|--------------------------------|--------------------------------------|--------------------------------------------|
-| Accept          | application/vnd.cobalt.v1+json | application/vnd.cobalt.v2+json       | --                                         |
+| Accept          | application/vnd.cobalt.v1+json | application/vnd.cobalt.v2+json       | Must be present in the request             |
 | Content-Type    | N/A                            | application/vnd.cobalt.v2+json       | Required for POST/PUT/DELETE HTTP methods  |
 | Idempotency-Key | N/A                            | Refer to [idempotency](#idempotency) | Suggested for POST/PUT/DELETE HTTP methods |
 
@@ -81,12 +81,12 @@ In v1, the Cobalt API was read-only, and in v2 we've added different endpoints w
 resources.
 
 With these additions in place, two new headers came into place; `Content-Type` and `Idempotency-Key`. The
-`Idempotency-Key` has explained in the [idempotency](#idempotency) section.
+`Idempotency-Key` is explained in the [idempotency](#idempotency) section.
 
 ## Pagination Defaults
 
 In v1, some endpoints had 10, and some others had 1000 as their pagination default value. In this release, we've
-updated the default pagination values of all endpoints to 10. Two endpoints got affected by this change:
+updated the default pagination values of all endpoints to 10. Two endpoints were affected by this change:
 
 | Endpoint                        | v1 (default)  | v2 (default) |
 |---------------------------------|---------------|--------------|
