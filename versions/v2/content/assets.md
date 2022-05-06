@@ -148,7 +148,7 @@ curl -X POST "https://api.cobalt.io/assets" \
           }'
 ```
 
-> The above command returns no data and a `201` response code when successful. There will be a `location` header
+> The above command returns no data and a `201` response code when successful. There will be a `Location` header
 > pointing at the newly-created asset.
 
 This endpoint creates a new asset belonging to the organization specified in the `X-Org-Token` header.
@@ -175,7 +175,7 @@ This endpoint creates a new asset belonging to the organization specified in the
 
 ### Response
 
-On successful creation, a `201` response code will be returned. A response header, `location`, will contain the URL
+On successful creation, a `201` response code will be returned. A response header, `Location`, will contain the URL
 within Cobalt's API of the new asset.
 
 <aside class="notice">
@@ -263,7 +263,7 @@ curl -X POST 'https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/attachments' \
   --form 'attachment=@"/path/to/image.jpg"'
 ```
 
-> The above command returns no data and a `201` response code when successful. There will be a `location` header
+> The above command returns no data and a `201` response code when successful. There will be a `Location` header
 > pointing at the newly-created attachment.
 
 This endpoint uploads a new attachment for an asset belonging to the organization specified in the `X-Org-Token` header.
@@ -285,7 +285,7 @@ This endpoint uploads a new attachment for an asset belonging to the organizatio
 
 ### Response
 
-On successful upload, a `201` response code will be returned. A response header, `location`, will contain the URL
+On successful upload, a `201` response code will be returned. A response header, `Location`, will contain the URL
 within Cobalt's API of the new attachment.
 
 <aside class="notice">
