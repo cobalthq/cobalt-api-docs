@@ -254,12 +254,12 @@ Remember - you can only delete an asset within the organization specified in the
 ## Upload an Attachment
 
 ```sh
-curl -X POST "https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/attachments" \
-  -H "Accept: application/vnd.cobalt.v2+json" \
-  -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
-  -H "Content-Type: multipart/form-data" \
+curl -X POST 'https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/attachments' \
+  -H 'Accept: application/vnd.cobalt.v2+json' \
+  -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
+  -H 'Content-Type: multipart/form-data' \
   -H 'Idempotency-Key: A-UNIQUE-IDENTIFIER-TO-PREVENT-UNINTENTIONAL-DUPLICATION' \
-  -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
+  -H 'X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN'
   --form 'attachment=@"/path/to/image.jpg"'
 ```
 
@@ -296,10 +296,10 @@ Remember - you can only upload an attachment for an asset within the organizatio
 ## Delete an Attachment
 
 ```sh
-curl -X DELETE "https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/attachments/YOUR-ATTACHMENT-IDENTIFIER" \
-  -H "Accept: application/vnd.cobalt.v2+json" \
-  -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
-  -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
+curl -X DELETE 'https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/attachments/YOUR-ATTACHMENT-IDENTIFIER' \
+  -H 'Accept: application/vnd.cobalt.v2+json' \
+  -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
+  -H 'X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN'
 ```
 
 > The above command returns no data and a `204` response code when successful.
@@ -323,12 +323,12 @@ Remember - you can only delete an attachment from an asset within the organizati
 ## Upload a Logo
 
 ```sh
-curl -X POST "https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/logo" \
-  -H "Accept: application/vnd.cobalt.v2+json" \
-  -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
-  -H "Content-Type: multipart/form-data" \
+curl -X POST 'https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/logo' \
+  -H 'Accept: application/vnd.cobalt.v2+json' \
+  -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
+  -H 'Content-Type: multipart/form-data' \
   -H 'Idempotency-Key: A-UNIQUE-IDENTIFIER-TO-PREVENT-UNINTENTIONAL-UPLOADS' \
-  -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
+  -H 'X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN'
   --form 'attachment=@"/path/to/image.jpg"'
 ```
 
