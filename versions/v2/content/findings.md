@@ -146,7 +146,7 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 Remember - you can only request findings scoped to the organization specified in the <code>X-Org-Token</code> header.
 </aside>
 
-## Get One Finding
+## Get a Finding
 
 ```sh
 curl -X GET "https://api.cobalt.io/findings/YOUR-FINDING-IDENTIFIER" \
