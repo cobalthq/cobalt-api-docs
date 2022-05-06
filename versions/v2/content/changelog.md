@@ -75,7 +75,7 @@ The `token` attribute of the `attachments` object in `v1` of [assets](#get-all-a
 |-----------------|--------------------------------|--------------------------------------|--------------------------------------------|
 | Accept          | application/vnd.cobalt.v1+json | application/vnd.cobalt.v2+json       | Must be present in the request             |
 | Content-Type    | N/A                            | application/vnd.cobalt.v2+json       | Required for POST/PUT/DELETE HTTP methods  |
-| Idempotency-Key | N/A                            | Refer to [idempotency](#idempotency) | Suggested for POST/PUT/DELETE HTTP methods |
+| Idempotency-Key | N/A                            | Refer to [idempotency](#idempotency) | Suggested for POST requests |
 
 In v1, the Cobalt API was read-only, and in v2 we've added different endpoints where you can create, update or delete
 resources.
