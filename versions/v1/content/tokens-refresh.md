@@ -38,7 +38,7 @@ new token.
 
 ### HTTP Request
 
-`POST https://api.cobalt.io/tokens/token-id-here/refresh`
+`POST https://api.cobalt.io/tokens/YOUR-TOKEN-ID/refresh`
 
 ### Response Fields
 

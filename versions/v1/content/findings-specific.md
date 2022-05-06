@@ -59,7 +59,7 @@ curl -X GET "https://api.cobalt.io/findings?pentest=pt_9Ig1234" \
         }
       }
     }
- ]
+  ]
 }
 ```
 
