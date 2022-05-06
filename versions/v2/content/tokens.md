@@ -17,20 +17,20 @@ curl -X GET "https://api.cobalt.io/tokens" \
 
 ```json
 {
-  "pagination": {
-    "next_page": null,
-    "prev_page": null
-  },
   "data": [
     {
       "resource": {
-        "id": "api_Dge3LsHMjtX8SGEk4a8nur",
+        "id": "api_Dge3LsHMjtX8SGEk4a8nux",
         "last_characters": "9qy7",
-        "name": "Your token name",
+        "name": "Lorem ipsum",
         "expire_at": null
       }
     }
-  ]
+  ],
+  "pagination": {
+    "next_page": null,
+    "prev_page": null
+  }
 }
 ```
 
@@ -49,9 +49,9 @@ This endpoint retrieves a list of all tokens that belong to you.
 
 ### Response Fields
 
-| Field             | Description                                         |
-|-------------------|-----------------------------------------------------|
-| `id`              | The Cobalt ID of the token, an alphanumeric string  |
-| `name`            | Name of the API token                               |
-| `last_characters` | Last four characters of your token                  |
-| `expire_at`       | null (not currently implemented)                    |
+| Field             | Description                                                                                          |
+|-------------------|------------------------------------------------------------------------------------------------------|
+| `id`              | A unique ID representing the token. Starts with `api_`                                               |
+| `name`            | Name of the API token                                                                                |
+| `last_characters` | Last four characters of your token, so that you can recognize tokens even if they have the same name |
+| `expire_at`       | null (not currently implemented)                                                                     |

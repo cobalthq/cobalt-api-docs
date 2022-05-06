@@ -6,7 +6,8 @@ title: Subscription
 # Subscription
 
 If you want to receive our API updates you can subscribe to our mailing list. We will be sending you a newsletter
-containing changes and improvements in our API once a month.
+containing changes and improvements in our API once a month. You can also unsubscribe anytime you want. Your e-mail
+address won't be shared with any other organization.
 
 <p>
   <!--[if lte IE 8]>

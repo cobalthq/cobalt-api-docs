@@ -20,13 +20,17 @@ curl -X GET "https://api.cobalt.io/tokens" \
   "data": [
     {
       "resource": {
-        "id": "34",
+        "id": "api_Dge3LsHMjtX8SGEk4a8nux",
         "last_characters": "9qy7",
-        "name": "Your token name",
+        "name": "Lorem ipsum",
         "expire_at": null
       }
     }
- ]
+  ],
+  "pagination": {
+    "next_page": null,
+    "prev_page": null
+  }
 }
 ```
 
@@ -36,11 +40,18 @@ This endpoint retrieves a list of all tokens that belong to you.
 
 `GET https://api.cobalt.io/tokens`
 
+### URL Parameters
+
+| Parameter | Default | Description                                                                                          |
+|-----------|---------|------------------------------------------------------------------------------------------------------|
+| `cursor`  | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/tokens?cursor=a1b2c3d4`            |
+| `limit`   | `10`    | If specified, returns only a specified amount of tokens, e.g. `https://api.cobalt.io/tokens?limit=5` |
+
 ### Response Fields
 
-| Field             | Description                                                  |
-|-------------------|--------------------------------------------------------------|
-| `id`              | Integer field used in the POST request to refresh your token |
-| `name`            | Name of the API token                                        |
-| `last_characters` | Last four characters of your token for recall                |
-| `expire_at`       | null (not currently implemented)                             |
+| Field             | Description                                                                                          |
+|-------------------|------------------------------------------------------------------------------------------------------|
+| `id`              | A unique ID representing the token. Starts with `api_`                                               |
+| `name`            | Name of the API token                                                                                |
+| `last_characters` | Last four characters of your token, so that you can recognize tokens even if they have the same name |
+| `expire_at`       | null (not currently implemented)                                                                     |
