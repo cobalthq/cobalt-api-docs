@@ -319,3 +319,43 @@ On successful deletion, a `204` response code will be returned.
 Remember - you can only delete an attachment from an asset within the organization specified in the
 <code>X-Org-Token</code> header.
 </aside>
+
+## Upload a Logo
+
+```sh
+curl -X POST "https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/logo" \
+  -H "Accept: application/vnd.cobalt.v2+json" \
+  -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
+  -H "Content-Type: multipart/form-data" \
+  -H 'Idempotency-Key: A-UNIQUE-IDENTIFIER-TO-PREVENT-UNINTENTIONAL-UPLOADS' \
+  -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
+  --form 'attachment=@"/path/to/image.jpg"'
+```
+
+> The above command returns no data and a `201` response code when successful.
+
+This endpoint updates the logo for an asset belonging to the organization specified in the `X-Org-Token` header.
+
+### HTTP Request
+
+`POST https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/logo`
+
+### Body
+
+| Form field   | Description                                           |
+|--------------|-------------------------------------------------------|
+| `attachment` | The file to upload as a logo. Must a path to the file |
+
+### File Requirements
+
+- The file must be an image, e.g. a `.png` or `.jpg`.
+- The file must be smaller than 10MB.
+
+### Response
+
+On successful upload, a `201` response code will be returned.
+
+<aside class="notice">
+Remember - you can only upload a logo for an asset within the organization specified in the
+<code>X-Org-Token</code> header.
+</aside>
