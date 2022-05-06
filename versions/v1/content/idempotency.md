@@ -1,5 +1,5 @@
 ---
-weight: 12
+weight: 11
 title: Idempotency
 ---
 

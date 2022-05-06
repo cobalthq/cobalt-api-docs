@@ -15,11 +15,12 @@ MD024:
 # MD033/no-inline-html - Inline HTML
 MD033:
   allowed_elements:
+    - a
     - aside
-    - strong
+    - code
     - p
     - script
-    - code
+    - strong
 
 # MD025/single-title/single-h1 - Multiple top-level headings in the same document
 MD025:
