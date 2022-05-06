@@ -115,12 +115,12 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 
 ### URL Parameters
 
-| Parameter | Default | Description                                                                                                    |
-|-----------|---------|----------------------------------------------------------------------------------------------------------------|
-| `cursor`  | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/findings?cursor=a1b2c3d4`                    |
-| `limit`   | `10`    | If specified, returns only a specified amount of findings, e.g. `https://api.cobalt.io/findings?limit=5`       |
-| `pentest` | N/A     | If specified, returns findings scoped to this pentest id, e.g. `https://api.cobalt.io/findings?pentest=pt_9Ig` |
-| `asset`   | N/A     | If specified, returns findings scoped to this asset id, e.g. `https://api.cobalt.io/findings?asset=as_cwrsqsL` |
+| Parameter | Default | Description                                                                                                        |
+|-----------|---------|--------------------------------------------------------------------------------------------------------------------|
+| `cursor`  | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/findings?cursor=a1b2c3d4`                        |
+| `limit`   | `10`    | If specified, returns only a specified amount of findings, e.g. `https://api.cobalt.io/findings?limit=5`           |
+| `pentest` | N/A     | If specified, returns findings scoped to this pentest id, e.g. `https://api.cobalt.io/findings?pentest=pt_9Ig1234` |
+| `asset`   | N/A     | If specified, returns findings scoped to this asset id, e.g. `https://api.cobalt.io/findings?asset=as_cwrsqsL`     |
 
 ### Response Fields
 

@@ -6,7 +6,7 @@ title: Get Specific Findings
 ## Get Specific Findings
 
 ```sh
-curl -X GET "https://api.cobalt.io/findings?pentest=pt_9Ig" \
+curl -X GET "https://api.cobalt.io/findings?pentest=pt_9Ig1234" \
   -H "Accept: application/vnd.cobalt.v1+json" \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
   -H "X-Org-Token: YOUR-V1-ORGANIZATION-TOKEN"
@@ -73,7 +73,7 @@ You can filter for findings scoped to a specific pentest or asset.
 
 ### URL Parameters
 
-| Parameter | Default | Description                                                                                                    |
-|-----------|---------|----------------------------------------------------------------------------------------------------------------|
-| `pentest` | N/A     | If specified, returns findings scoped to this pentest id, e.g. `https://api.cobalt.io/findings?pentest=pt_9Ig` |
-| `asset`   | N/A     | If specified, returns findings scoped to this asset id, e.g. `https://api.cobalt.io/findings?asset=as_cwrsqsL` |
+| Parameter | Default | Description                                                                                                        |
+|-----------|---------|--------------------------------------------------------------------------------------------------------------------|
+| `pentest` | N/A     | If specified, returns findings scoped to this pentest id, e.g. `https://api.cobalt.io/findings?pentest=pt_9Ig1234` |
+| `asset`   | N/A     | If specified, returns findings scoped to this asset id, e.g. `https://api.cobalt.io/findings?asset=as_cwrsqsL`     |
