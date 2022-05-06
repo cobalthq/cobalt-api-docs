@@ -23,29 +23,32 @@ curl -X GET "https://api.cobalt.io/events" \
         "id": "ac_Y35JcpGoakrjUSVjtVpXyH",
         "action": "comment_created",
         "subject": {
-          "id": "ac_KMj6XjiYZvioRFB4gMfJeC",
+          "id": "ac_Y35JcpGoakrjUSVjtVpXyH",
           "type": "comment"
-        }
+        },
+        "timestamp": "2022-05-03T01:34:21.587Z"
       }
     },
     {
       "resource": {
-        "id": "ac_Y35JcpGoakrjUSVjtVpXyH",
+        "id": "ac_Y35JcpGoakrjUSVjtVpXyP",
         "action": "pentest_deleted",
         "subject": {
-          "id": "ac_KMj6XjiYZvioRFB4gMfJeC",
+          "id": "ac_Y35JcpGoakrjUSVjtVpXyP",
           "type": "program"
-        }
+        },
+        "timestamp": "2022-05-03T01:34:21.587Z"
       }
     },
     {
       "resource": {
-        "id": "ac_Y35JcpGoakrjUSVjtVpXyH",
+        "id": "ac_Y35JcpGoakrjUSVjtVpXyX",
         "action": "finding_created",
         "subject": {
-          "id": "ac_KMj6XjiYZvioRFB4gMfJeC",
+          "id": "ac_Y35JcpGoakrjUSVjtVpXyX",
           "type": "vulnerability"
-        }
+        },
+        "timestamp": "2022-05-03T01:34:21.587Z"
       }
     }
   ],

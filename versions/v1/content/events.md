@@ -25,7 +25,8 @@ curl -X GET "https://api.cobalt.io/events" \
         "subject": {
           "id": "277603",
           "type": "comment"
-        }
+        },
+        "timestamp": "2022-05-03T01:34:21.587Z"
       }
     },
     {
@@ -35,7 +36,8 @@ curl -X GET "https://api.cobalt.io/events" \
         "subject": {
           "id": "277600",
           "type": "program"
-        }
+        },
+        "timestamp": "2022-05-03T01:34:21.587Z"
       }
     },
     {
@@ -45,7 +47,8 @@ curl -X GET "https://api.cobalt.io/events" \
         "subject": {
           "id": "277567",
           "type": "vulnerability"
-        }
+        },
+        "timestamp": "2022-05-03T01:34:21.587Z"
       }
     }
   ],
