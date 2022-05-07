@@ -311,6 +311,8 @@ specified in the header.
 
 `DELETE https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/attachments/YOUR-ATTACHMENT-IDENTIFIER`
 
+> You can obtain attachment identifiers from the response data of the `GET /assets` endpoint.
+
 ### Response
 
 On successful deletion, a `204` response code will be returned.
