@@ -96,8 +96,8 @@ We follow the standard risk model described by OWASP, where:
 
 Cobalt Risk Input Fields:
 
-- `impact` := [1-5]
-- `likelihood` := [1-5]
+- `impact`: 1, 2, 3, 4, or 5
+- `likelihood`: 1, 2, 3, 4, or 5
 
 Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 
@@ -146,7 +146,7 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 Remember - you can only request findings scoped to the organization specified in the <code>X-Org-Token</code> header.
 </aside>
 
-## Get One Finding
+## Get a Finding
 
 ```sh
 curl -X GET "https://api.cobalt.io/findings/YOUR-FINDING-IDENTIFIER" \

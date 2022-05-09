@@ -25,6 +25,7 @@ curl -X GET "https://api.cobalt.io/assets" \
         "title": "Acme Corp. HR System",
         "description": "HR system of the Acme Corp. holding sensitive employee data",
         "asset_type": "web",
+        "logo": "https://s3.amazonaws.com/acmecorp/uploads/attachment/file/12345/cat.jpeg?something=1",
         "attachments": [
           {
             "id": "at_LA5GcEL4HRitFGCHREqmzL",
@@ -67,8 +68,9 @@ This endpoint retrieves a list of assets that belong to the organization specifi
 | `title`        | The title of the asset; set by user creating the asset                                                                                    |
 | `description`  | A description of the asset; set by user creating the asset                                                                                |
 | `asset_type`   | An asset type, such as; `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile` |
+| `logo`         | A link pointing the location of the uploaded asset logo                                                                                   |
+| `attachments`  | A list of asset attachments                                                                                                               |
 | `links.ui.url` | A link to redirect an authorized user to this asset in the Cobalt web application                                                         |
-| `attachments`  | A list of asset attachments (including the logo)                                                                                          |
 
 <aside class="notice">
 Remember - you can only request assets scoped to the organization specified in the <code>X-Org-Token</code> header.
@@ -93,6 +95,7 @@ curl -X GET "https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER" \
       "title": "Acme Corp. HR System",
       "description": "HR system of the Acme Corp. holding sensitive employee data",
       "asset_type": "web",
+      "logo": "https://s3.amazonaws.com/acmecorp/uploads/attachment/file/12345/cat.jpeg?something=1",
       "attachments": [
         {
           "id": "at_LA5GcEL4HRitFGCHREqmzL",
@@ -123,12 +126,15 @@ This endpoint retrieves a specific asset belonging to the organization specified
 | `title`        | The title of the asset; set by user creating the asset                                                                                    |
 | `description`  | A description of the asset; set by user creating the asset                                                                                |
 | `asset_type`   | An asset type, such as; `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile` |
+| `logo`         | A link pointing the location of the uploaded asset logo                                                                                   |
 | `attachments`  | A list of asset attachments (including the logo)                                                                                          |
 | `links.ui.url` | A link to redirect an authorized user to this asset in the Cobalt web application                                                         |
 
 <aside class="notice">
 Remember - you can only request an asset scoped to the organization specified in the <code>X-Org-Token</code> header.
 </aside>
+
+<!---
 
 ## Create an Asset
 
@@ -148,7 +154,7 @@ curl -X POST "https://api.cobalt.io/assets" \
           }'
 ```
 
-> The above command returns no data and a `201` response code when successful. There will be a `location` header
+> The above command returns no data and a `201` response code when successful. There will be a `Location` header
 > pointing at the newly-created asset.
 
 This endpoint creates a new asset belonging to the organization specified in the `X-Org-Token` header.
@@ -175,7 +181,7 @@ This endpoint creates a new asset belonging to the organization specified in the
 
 ### Response
 
-On successful creation, a `201` response code will be returned. A response header, `location`, will contain the URL
+On successful creation, a `201` response code will be returned. A response header, `Location`, will contain the URL
 within Cobalt's API of the new asset.
 
 <aside class="notice">
@@ -224,6 +230,7 @@ On a successful update, a `204` response code will be returned.
 <aside class="notice">
 Remember - you can only update an asset within the organization specified in the <code>X-Org-Token</code> header.
 </aside>
+-->
 
 ## Delete an Asset
 

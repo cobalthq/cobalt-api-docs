@@ -18,7 +18,7 @@ HUGO_VERSION = "0.92.2"
 
 [[redirects]]
   from = "/"
-  to = "/v1"
+  to = "/v2"
 
   # The default HTTP status code is 301, but you can
   # define a different one.

@@ -22,7 +22,7 @@ curl -X GET "https://api.cobalt.io/orgs" \
       "resource": {
         "id": "or_Uevoq7MyoYsPT9NPc3conL",
         "name": "Acme Corp.",
-        "token": "e9d6da*****************0e8ad"
+        "token": "e9d6da*****************************0e8ad"
       },
       "links": {
         "ui": {
@@ -34,7 +34,7 @@ curl -X GET "https://api.cobalt.io/orgs" \
       "resource": {
         "id": "or_SnUYXDBYd2qbaDSuNRNa5q",
         "name": "Lorem Corp.",
-        "token": "f0e7eb*****************9k8j7h"
+        "token": "f1d6da*****************************0e8ad"
       },
       "links": {
         "ui": {
