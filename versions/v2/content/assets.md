@@ -285,8 +285,8 @@ This endpoint uploads a new attachment for an asset belonging to the organizatio
 
 ### Response
 
-On successful upload, a `201` response code will be returned. A response header, `Location`, will contain the URL
-within Cobalt's API of the new attachment which you can use only to DELETE the attachment.
+On successful upload, a `201` response code will be returned. A response header, `Location`, will contain the URL within
+Cobalt's API of the new attachment which you can use only to DELETE the attachment.
 
 <aside class="notice">
 Remember - you can only upload an attachment for an asset within the organization specified in the
@@ -304,8 +304,7 @@ curl -X DELETE 'https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/attachments/Y
 
 > The above command returns no data and a `204` response code when successful.
 
-This endpoint deletes an attachment from an asset belonging to the organization
-specified in the header.
+This endpoint deletes an attachment from an asset belonging to the organization specified in the header.
 
 ### HTTP Request
 
@@ -359,6 +358,6 @@ This endpoint updates the logo for an asset belonging to the organization specif
 On successful upload, a `201` response code will be returned.
 
 <aside class="notice">
-Remember - you can only upload a logo for an asset within the organization specified in the
-<code>X-Org-Token</code> header.
+Remember - you can only upload a logo for an asset within the organization specified in the <code>X-Org-Token</code>
+header.
 </aside>
