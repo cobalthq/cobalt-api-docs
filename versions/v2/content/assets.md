@@ -286,7 +286,7 @@ This endpoint uploads a new attachment for an asset belonging to the organizatio
 ### Response
 
 On successful upload, a `201` response code will be returned. A response header, `Location`, will contain the URL
-within Cobalt's API of the new attachment.
+within Cobalt's API of the new attachment which you can use only to DELETE the attachment.
 
 <aside class="notice">
 Remember - you can only upload an attachment for an asset within the organization specified in the
@@ -311,7 +311,8 @@ specified in the header.
 
 `DELETE https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/attachments/YOUR-ATTACHMENT-IDENTIFIER`
 
-> You can obtain attachment identifiers from the response data of the `GET /assets` endpoint.
+> You can obtain this URL from the `Location` response header of the create attachment endpoint, or build it by getting
+> the attachment identifier from the response data of the `GET /assets` endpoint.
 
 ### Response
 
