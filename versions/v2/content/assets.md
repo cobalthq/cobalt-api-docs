@@ -274,9 +274,9 @@ This endpoint uploads a new attachment for an asset belonging to the organizatio
 
 ### Body
 
-| Form field   | Description                                                  |
-|--------------|--------------------------------------------------------------|
-| `attachment` | The file to upload as an attachment. Must a path to the file |
+| Form field   | Description                          |
+|--------------|--------------------------------------|
+| `attachment` | The file to upload as an attachment. |
 
 ### File Requirements
 
@@ -344,9 +344,9 @@ This endpoint updates the logo for an asset belonging to the organization specif
 
 ### Body
 
-| Form field   | Description                                           |
-|--------------|-------------------------------------------------------|
-| `attachment` | The file to upload as a logo. Must a path to the file |
+| Form field   | Description                   |
+|--------------|-------------------------------|
+| `attachment` | The file to upload as a logo. |
 
 ### File Requirements
 
