@@ -25,6 +25,7 @@ curl -X GET "https://api.cobalt.io/assets" \
         "title": "Acme Corp. HR System",
         "description": "HR system of the Acme Corp. holding sensitive employee data",
         "asset_type": "web",
+        "logo": "https://s3.amazonaws.com/acmecorp/uploads/attachment/file/12345/cat.jpeg?something=1",
         "attachments": [
           {
             "token": "att_yYXZodA",
@@ -68,7 +69,8 @@ This endpoint retrieves a list of assets that belong to the organization specifi
 | `description`  | A description of the asset; set by user creating the asset                                                                                |
 | `asset_type`   | An asset type, such as; `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile` |
 | `links.ui.url` | A link to redirect an authorized user to this asset in the Cobalt web application                                                         |
-| `attachments`  | A list of asset attachments (including the logo)                                                                                          |
+| `logo`         | A link pointing the location of the uploaded asset logo                                                                                   |
+| `attachments`  | A list of asset attachments                                                                                                               |
 
 <aside class="notice">
 Remember - you can only request assets scoped to the organization specified in the <code>X-Org-Token</code> header.
