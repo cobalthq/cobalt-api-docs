@@ -1,5 +1,5 @@
 ---
-weight: 3
+weight: 4
 title: Organizations
 ---
 
@@ -22,7 +22,7 @@ curl -X GET "https://api.cobalt.io/orgs" \
       "resource": {
         "id": "or_A2bb4FE",
         "name": "Acme Corp.",
-        "token": "e9d6da*****************0e8ad"
+        "token": "e9d6da*********0e8ad"
       },
       "links": {
         "ui": {
@@ -34,7 +34,7 @@ curl -X GET "https://api.cobalt.io/orgs" \
       "resource": {
         "id": "or_UX2Fg3",
         "name": "Lorem Corp.",
-        "token": "f0e7eb*****************9k8j7h"
+        "token": "dfd6da*********0e8ad"
       },
       "links": {
         "ui": {

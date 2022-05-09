@@ -1,11 +1,11 @@
 ---
-weight: 13
+weight: 12
 title: Errors
 ---
 
 # Errors
 
-<aside class="warning">This error section helps you identify the type of error you're running into. If you think you're
+<aside class="notice">This error section helps you identify the type of error you're running into. If you think you're
 experiencing a bug, or seeing incorrect data please reach out: <strong>integrations@cobalt.io</strong></aside>
 
 The Cobalt API uses the following error codes:

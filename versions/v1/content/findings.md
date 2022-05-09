@@ -1,5 +1,5 @@
 ---
-weight: 6
+weight: 7
 title: Findings
 ---
 
@@ -21,11 +21,11 @@ curl -X GET "https://api.cobalt.io/findings" \
   "data": [
     {
       "resource": {
-        "id": "vu_2wXY3bq",
+        "id": "vu_ZzZuekb",
         "tag": "#PT3334_37",
-        "title": "SQL Injection",
-        "description": "A SQL injection attack...",
-        "type_category": "SQL Injection",
+        "title": "XSS vulnerability",
+        "description": "Cross-Site Scripting (XSS) attacks are a type of injection, in which malicious scripts...",
+        "type_category": "Cross-Site Scripting (XSS)",
         "labels": [
           {
             "name": "Your label"
@@ -34,8 +34,11 @@ curl -X GET "https://api.cobalt.io/findings" \
         "impact": 5,
         "likelihood": 4,
         "severity": "high",
-        "affected_targets": [ ""],
-        "proof_of_concept": null,
+        "affected_targets": [
+          "https://example.com",
+          "192.168.1.1"
+        ],
+        "proof_of_concept": "Here you can see...",
         "suggested_fix": "Ensure this...",
         "pentest_id": "pt_9Ig1234",
         "asset_id": "as_cwrsqsL",
@@ -81,8 +84,9 @@ curl -X GET "https://api.cobalt.io/findings" \
 }
 ```
 
-This endpoint retrieves a list of all pentest findings that belong to the org specified in the header, filterable by
-`pentest_id` or `asset_id`. The `log` array presents a history of each finding and corresponding timestamp.
+This endpoint retrieves a list of all pentest findings that belong to the organization specified in the `X-Org-Token`
+header, filterable by `pentest_id` or `asset_id`. The `log` array presents a history of each finding and corresponding
+timestamp.
 
 ### Calculations
 
@@ -92,8 +96,8 @@ We follow the standard risk model described by OWASP, where:
 
 Cobalt Risk Input Fields:
 
-- `impact` := [1-5]
-- `likelihood` := [1-5]
+- `impact`: 1, 2, 3, 4, or 5
+- `likelihood`: 1, 2, 3, 4, or 5
 
 Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 
@@ -109,22 +113,28 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 
 `GET https://api.cobalt.io/findings`
 
+`GET https://api.cobalt.io/findings?pentest=pt_9Ig1234`
+
+`GET https://api.cobalt.io/findings?asset=as_cwrsqsL`
+
 ### URL Parameters
 
-| Parameter | Default | Description                                                                                              |
-|-----------|---------|----------------------------------------------------------------------------------------------------------|
-| `cursor`  | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/findings?cursor=a1b2c3d4`              |
-| `limit`   | `1000`  | If specified, returns only a specified amount of findings, e.g. `https://api.cobalt.io/findings?limit=5` |
+| Parameter | Default | Description                                                                                                        |
+|-----------|---------|--------------------------------------------------------------------------------------------------------------------|
+| `cursor`  | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/findings?cursor=a1b2c3d4`                        |
+| `limit`   | `1000`  | If specified, returns only a specified amount of findings, e.g. `https://api.cobalt.io/findings?limit=5`           |
+| `pentest` | N/A     | If specified, returns findings scoped to this pentest id, e.g. `https://api.cobalt.io/findings?pentest=pt_9Ig1234` |
+| `asset`   | N/A     | If specified, returns findings scoped to this asset id, e.g. `https://api.cobalt.io/findings?asset=as_cwrsqsL`     |
 
 ### Response Fields
 
-| Field           | Enum Types                                                                                                             |
-|-----------------|------------------------------------------------------------------------------------------------------------------------|
-| `log`           | created, impact_changed, likelihood_changed, state_changed                                                             |
-| `severity`      | null, low, medium, high  (aka `criticality`. will be null if likelihood/impact have not yet been set by the pentester) |
-| `state`         | new, triaging, need_fix, wont_fix, valid_fix, check_fix, invalid, carried_over                                         |
-| `type_category` | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                 |
-| `url`           | The links.ui.url will redirect an authorized user to this finding in the Cobalt platform                               |
+| Field           | Enum Types                                                                                                                     |
+|-----------------|--------------------------------------------------------------------------------------------------------------------------------|
+| `log`           | `created`, `impact_changed`, `likelihood_changed`, `state_changed`                                                             |
+| `severity`      | `null`, `low`, `medium`, `high`  (aka `criticality`. will be null if likelihood/impact have not yet been set by the pentester) |
+| `state`         | `new`, `triaging`, `need_fix`, `wont_fix`, `valid_fix`, `check_fix`, `invalid`, `carried_over`                                 |
+| `type_category` | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                         |
+| `links.ui.url`  | A link to redirect an authorized user to this finding in the Cobalt web application                                            |
 
 ### State
 
