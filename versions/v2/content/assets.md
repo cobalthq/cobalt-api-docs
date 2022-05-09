@@ -280,7 +280,6 @@ This endpoint uploads a new attachment for an asset belonging to the organizatio
 
 ### File Requirements
 
-- The file must be an image, e.g. a `.png` or `.jpg`.
 - The file must be smaller than 10MB.
 
 ### Response
