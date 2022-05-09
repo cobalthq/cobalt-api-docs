@@ -335,7 +335,8 @@ curl -X POST 'https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/logo' \
 
 > The above command returns no data and a `201` response code when successful.
 
-This endpoint updates the logo for an asset belonging to the organization specified in the `X-Org-Token` header.
+This endpoint updates the logo for an asset belonging to the organization specified in the `X-Org-Token` header. This
+means the old logo is removed and replaced by the new logo.
 
 ### HTTP Request
 
