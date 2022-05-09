@@ -43,9 +43,9 @@ the `attachments.token` prefix has changed from `att` to `at`.
 We aren't expecting any of these to be breaking changes for the majority of our customers, but, if you have any
 validations in place, concerning prefixes or the length of strings, please update them accordingly.
 
-Please note - the `token` attribute of the [organizations](#organizations) endpoint will now return 48 characters,
-instead of 20. This value is also known as "organization token" all over the API docs, and is used as the value of
-`X-Org-Token` header when calling endpoints.
+Please note - the `token` attribute of the [organizations](#organizations) endpoint now returns a different string in
+v2. This value is also known as "organization token" all over the API docs, and is used as the value of `X-Org-Token`
+header when calling endpoints.
 
 ## Renamed Response Attributes
 
