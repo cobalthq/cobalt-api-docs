@@ -12,6 +12,9 @@ the following endpoints for more details:
 
 - [Get an Asset](./#get-an-asset)
 - [Delete an Asset](./#delete-an-asset)
+- [Upload an Asset Attachment](./#upload-an-attachment)
+- [Delete an Asset Attachment](./#delete-an-attachment)
+- [Upload an Asset Logo](./#upload-a-logo)
 - [Get a Pentest](./#get-a-pentest)
 - [Get a Finding](./#get-a-finding)
 - [View Available Finding States](./#view-available-finding-states)
