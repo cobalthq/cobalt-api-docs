@@ -134,8 +134,6 @@ This endpoint retrieves a specific asset belonging to the organization specified
 Remember - you can only request an asset scoped to the organization specified in the <code>X-Org-Token</code> header.
 </aside>
 
-<!---
-
 ## Create an Asset
 
 ```sh
@@ -148,9 +146,7 @@ curl -X POST "https://api.cobalt.io/assets" \
   --data '{
             "title": "Test Asset",
             "description": "Lorem ipsum",
-            "asset_type": "web",
-            "size": "m",
-            "coverage": "standard"
+            "asset_type": "web"
           }'
 ```
 
@@ -170,14 +166,17 @@ This endpoint creates a new asset belonging to the organization specified in the
 | `title`       | The title of the asset; set by user creating the asset                                                               |
 | `description` | A description of the asset; set by user creating the asset                                                           |
 | `asset_type`  | `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, or `web_plus_mobile` |
-| `size`        | `xs`, `s`, `m`, `l`, or `xl`                                                                                         |
-| `coverage`    | `extra_light`, `light`, `standard`, `large`, or `extra_large`                                                        |
 
-### Sizes and Coverages
+### Size and Coverage
 
-- When the `size` is `m` (medium), `l` (large), or `xl` (extra large), `coverage` can be any of the listed options.
-- When the `size` is `s` (small), `coverage` can *not* be `extra_light`.
-- When the `size` is `xs` (extra small), `coverage` can *not* be `extra_light` or `light`.
+We are currently working on simplifying the asset management by removing `size` and `coverage`.
+
+If you create an asset, the Cobalt API will set default values for `size` and `coverage`:
+
+- `size` is `m` (medium)
+- `coverage` is `standard`
+
+You can always update the asset size and coverage values directly in the Cobalt web application.
 
 ### Response
 
@@ -220,8 +219,18 @@ This endpoint updates an asset belonging to the organization specified in the `X
 | `title`       | The title of the asset; set by user creating the asset                                                               |
 | `description` | A description of the asset; set by user creating the asset                                                           |
 | `asset_type`  | `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, or `web_plus_mobile` |
-| `size`        | `xs`, `s`, `m`, `l`, or `xl`                                                                                         |
-| `coverage`    | `extra_light`, `light`, `standard`, `large`, or `extra_large`                                                        |
+
+### Size and Coverage
+
+We are currently working on simplifying the asset management by removing `size` and `coverage`.
+
+When you update an asset, the Cobalt API will not change the `size` and `coverage` values already set for the given asset.
+If the values are missing, the Cobalt API will use default ones:
+
+- `size` is `m` (medium)
+- `coverage` is `standard`
+
+You can always update the asset size and coverage values directly in the Cobalt web application.
 
 ### Response
 
@@ -230,7 +239,6 @@ On a successful update, a `204` response code will be returned.
 <aside class="notice">
 Remember - you can only update an asset within the organization specified in the <code>X-Org-Token</code> header.
 </aside>
--->
 
 ## Delete an Asset
 
