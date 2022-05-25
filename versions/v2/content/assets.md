@@ -167,17 +167,6 @@ This endpoint creates a new asset belonging to the organization specified in the
 | `description` | A description of the asset; set by user creating the asset                                                           |
 | `asset_type`  | `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, or `web_plus_mobile` |
 
-### Size and Coverage
-
-We are currently working on simplifying the asset management by removing `size` and `coverage`.
-
-If you create an asset, the Cobalt API will set default values for `size` and `coverage`:
-
-- `size` is `m` (medium)
-- `coverage` is `standard`
-
-You can always update the asset size and coverage values directly in the Cobalt web application.
-
 ### Response
 
 On successful creation, a `201` response code will be returned. A response header, `Location`, will contain the URL
@@ -219,18 +208,6 @@ This endpoint updates an asset belonging to the organization specified in the `X
 | `title`       | The title of the asset; set by user creating the asset                                                               |
 | `description` | A description of the asset; set by user creating the asset                                                           |
 | `asset_type`  | `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, or `web_plus_mobile` |
-
-### Size and Coverage
-
-We are currently working on simplifying the asset management by removing `size` and `coverage`.
-
-When you update an asset, the Cobalt API will not change the `size` and `coverage` values already set for the given asset.
-If the values are missing, the Cobalt API will use default ones:
-
-- `size` is `m` (medium)
-- `coverage` is `standard`
-
-You can always update the asset size and coverage values directly in the Cobalt web application.
 
 ### Response
 
