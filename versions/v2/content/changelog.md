@@ -11,6 +11,8 @@ In the v2 release, we've published some additional endpoints to extend the capab
 the following endpoints for more details:
 
 - [Get an Asset](./#get-an-asset)
+- [Create an Asset](./#create-an-asset)
+- [Update an Asset](./#update-an-asset)
 - [Delete an Asset](./#delete-an-asset)
 - [Upload an Asset Attachment](./#upload-an-attachment)
 - [Delete an Asset Attachment](./#delete-an-attachment)
