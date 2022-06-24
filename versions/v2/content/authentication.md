@@ -5,15 +5,6 @@ title: Authentication
 
 # Authentication
 
-> To authorize, give this a try:
-
-```sh
-curl https://api.cobalt.io/orgs \
-  -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN"
-```
-
-> Make sure to replace `YOUR-PERSONAL-API-TOKEN` with your actual API token.
-
 Cobalt uses API tokens to allow access to various endpoints. You can create a new Cobalt API token from within your
 [Cobalt profile](https://app.cobalt.io/settings/api-token).
 
