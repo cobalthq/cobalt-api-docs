@@ -208,6 +208,8 @@ This endpoint updates an asset belonging to the organization specified in the `X
 | `title`       | The title of the asset; set by user creating the asset                                                               |
 | `description` | A description of the asset; set by user creating the asset                                                           |
 | `asset_type`  | `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, or `web_plus_mobile` |
+| `size`        | `xs` (extra small), `s` (small), `m` (medium), `l` (large), `xl` (extra large) |
+| `coverage`        | `extra_light`, `light`, `standard`, `large`, `extra_large` |
 
 ### Response
 
