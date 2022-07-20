@@ -205,11 +205,11 @@ This endpoint updates an asset belonging to the organization specified in the `X
 
 | Field         | Description                                                                                                          |
 |---------------|----------------------------------------------------------------------------------------------------------------------|
-| `title`       | The title of the asset; set by user creating the asset                                                               |
-| `description` | A description of the asset; set by user creating the asset                                                           |
+| `title`       | The title of the asset; set by user creating the asset                                                                     |
+| `description` | A description of the asset; set by user creating the asset                                                                 |
 | `asset_type`  | Options: `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile` |
-| `size`        | Options: `xs` (extra small), `s` (small), `m` (medium), `l` (large), `xl` (extra large)                                       |
-| `coverage`    | Options: `extra_light`, `light`, `standard`, `large`, `extra_large`                                                           |
+| `size`        | Options: `xs` (extra small), `s` (small), `m` (medium), `l` (large), `xl` (extra large)                                    |
+| `coverage`    | Options: `extra_light`, `light`, `standard`, `large`, `extra_large`                                                        |
 
 ### Response
 
