@@ -21,6 +21,7 @@ the following endpoints for more details:
 - [Get a Finding](./#get-a-finding)
 - [View Available Finding States](./#view-available-finding-states)
 - [Update Finding State](./#update-finding-state)
+- [Get a Pentest Report](./#get-a-pentest-report)
 
 ## Identifier Changes
 
