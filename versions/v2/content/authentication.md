@@ -28,8 +28,8 @@ To explore our API, complete the following steps:
   the `ApiToken` label.
 - Close the Available Authorizations dialog box.
 
-Most (but not all) API calls are scoped to a specific organization.  This is done via the
-`X-Org-Token` header.  Any operations that require this will have that header as a required field.
+Most API calls are scoped to a specific organization, with the `X-Org-Token` header.  We include
+that header, as needed, in our API calls.
 
 To see which organizations you belong to:
 
@@ -38,7 +38,7 @@ To see which organizations you belong to:
 - Select the _Try it out_ button, and then select the _Execute_ button (note that you do **not**
   need to provide the `X-Org-Token` header here).
 - Scroll down to the `Response body`. Copy the `token` associated with your target organization
-  (`org`). This is your Org Token and should be provided in the `X-Org-Token` header when required.
+  (`org`). This is your Org Token.  Include it with the `X-Org-Token` header when required.
 
 <aside class="warning">
 If your organization uses SAML for authentication with Cobalt, API tokens are not currently disabled when a user is
