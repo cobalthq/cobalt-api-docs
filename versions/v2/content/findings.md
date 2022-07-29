@@ -68,7 +68,14 @@ curl -X GET "https://api.cobalt.io/findings" \
             "timestamp": "2021-04-01T15:14:57.845Z"
           }
         ],
-        "state": "check_fix"
+        "state": "check_fix",
+        "attachments": [
+          {
+            "id": "at_LA5GcEL4HRitFGCHREqmzL",
+            "file_name": "rainbow.jpeg",
+            "download_url": "https://s3.amazonaws.com/acmecorp/uploads/attachment/file/12345/rainbow.jpeg?something=1"
+          }
+        ]
       },
       "links": {
         "ui": {
@@ -130,6 +137,7 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 | `severity`      | `null`, `low`, `medium`, `high`  (aka `criticality`. will be null if likelihood/impact have not yet been set by the pentester) |
 | `state`         | `new`, `triaging`, `need_fix`, `wont_fix`, `valid_fix`, `check_fix`, `invalid`, `carried_over`                                 |
 | `type_category` | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                         |
+| `attachments`   | A list of finding attachments                                                                                                  |
 | `links.ui.url`  | A link to redirect an authorized user to this finding in the Cobalt web application                                            |
 
 ### State
