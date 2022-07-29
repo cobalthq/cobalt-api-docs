@@ -29,6 +29,7 @@ curl -X GET "https://api.cobalt.io/assets" \
         "attachments": [
           {
             "id": "at_LA5GcEL4HRitFGCHREqmzL",
+            "file_name": "rainbow.jpeg",
             "download_url": "https://s3.amazonaws.com/acmecorp/uploads/attachment/file/12345/rainbow.jpeg?something=1"
           }
         ]
@@ -99,6 +100,7 @@ curl -X GET "https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER" \
       "attachments": [
         {
           "id": "at_LA5GcEL4HRitFGCHREqmzL",
+          "file_name": "rainbow.jpeg",
           "download_url": "https://s3.amazonaws.com/acmecorp/uploads/attachment/file/12345/rainbow.jpeg?something=1"
         }
       ]
