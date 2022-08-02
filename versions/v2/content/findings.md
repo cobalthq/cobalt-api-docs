@@ -195,7 +195,14 @@ curl -X GET "https://api.cobalt.io/findings/YOUR-FINDING-IDENTIFIER" \
         "timestamp": "2021-09-22T18:43:01.677Z"
       }
     ],
-    "state": "new"
+    "state": "new",
+    "attachments": [
+      {
+        "id": "at_LA5GcEL4HRitFGCHREqmzL",
+        "file_name": "rainbow.jpeg",
+        "download_url": "https://s3.amazonaws.com/acmecorp/uploads/attachment/file/12345/rainbow.jpeg?something=1"
+      }
+    ]
   },
   "links": {
     "ui": {
@@ -219,6 +226,7 @@ This endpoint retrieves a specific finding that belong to the organization speci
 | `severity`      | null, low, medium, high  (aka `criticality`. will be null if likelihood/impact have not yet been set by the pentester) |
 | `state`         | new, triaging, need_fix, wont_fix, valid_fix, check_fix, invalid, carried_over                                         |
 | `type_category` | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                 |
+| `attachments`   | A list of finding attachments                                                                                          |
 | `url`           | The links.ui.url will redirect an authorized user to this finding in the Cobalt platform                               |
 
 ### State
