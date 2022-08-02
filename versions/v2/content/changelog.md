@@ -78,7 +78,8 @@ in `v2`.
 
 ## New Response Attributes
 
-The response from listing findings and getting a single finding now includes an `attachments` attribute that shows files attached to a finding. Finding attachments can be programmatically downloaded using this information. Click [here](./#findings) for more information.
+The response from listing findings and getting a single finding now includes an `attachments` attribute that shows files attached to a finding.
+Finding attachments can be programmatically downloaded using this information. Click [here](./#findings) for more information.
 
 ## Request Headers
 
