@@ -137,7 +137,7 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 | `severity`      | `null`, `low`, `medium`, `high`  (aka `criticality`. will be null if likelihood/impact have not yet been set by the pentester) |
 | `state`         | `new`, `triaging`, `need_fix`, `wont_fix`, `valid_fix`, `check_fix`, `invalid`, `carried_over`                                 |
 | `type_category` | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                         |
-| `attachments`   | A list of finding attachments                                                                                                  |
+| `attachments`   | A list of finding attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.                   |
 | `links.ui.url`  | A link to redirect an authorized user to this finding in the Cobalt web application                                            |
 
 ### State
@@ -226,7 +226,7 @@ This endpoint retrieves a specific finding that belong to the organization speci
 | `severity`      | null, low, medium, high  (aka `criticality`. will be null if likelihood/impact have not yet been set by the pentester) |
 | `state`         | new, triaging, need_fix, wont_fix, valid_fix, check_fix, invalid, carried_over                                         |
 | `type_category` | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                 |
-| `attachments`   | A list of finding attachments                                                                                          |
+| `attachments`   | A list of finding attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.           |
 | `url`           | The links.ui.url will redirect an authorized user to this finding in the Cobalt platform                               |
 
 ### State
