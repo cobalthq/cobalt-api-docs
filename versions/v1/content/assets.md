@@ -70,7 +70,7 @@ This endpoint retrieves a list of assets that belong to the organization specifi
 | `asset_type`   | An asset type, such as; `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile` |
 | `links.ui.url` | A link to redirect an authorized user to this asset in the Cobalt web application                                                         |
 | `logo`         | A link pointing the location of the uploaded asset logo                                                                                   |
-| `attachments`  | A list of asset attachments                                                                                                               |
+| `attachments`  | A list of asset attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.                                |
 
 <aside class="notice">
 Remember - you can only request assets scoped to the organization specified in the <code>X-Org-Token</code> header.

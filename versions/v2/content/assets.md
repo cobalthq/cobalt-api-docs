@@ -29,6 +29,7 @@ curl -X GET "https://api.cobalt.io/assets" \
         "attachments": [
           {
             "id": "at_LA5GcEL4HRitFGCHREqmzL",
+            "file_name": "rainbow.jpeg",
             "download_url": "https://s3.amazonaws.com/acmecorp/uploads/attachment/file/12345/rainbow.jpeg?something=1"
           }
         ]
@@ -69,7 +70,7 @@ This endpoint retrieves a list of assets that belong to the organization specifi
 | `description`  | A description of the asset; set by user creating the asset                                                                                |
 | `asset_type`   | An asset type, such as; `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile` |
 | `logo`         | A link pointing the location of the uploaded asset logo                                                                                   |
-| `attachments`  | A list of asset attachments                                                                                                               |
+| `attachments`  | A list of asset attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.                                |
 | `links.ui.url` | A link to redirect an authorized user to this asset in the Cobalt web application                                                         |
 
 <aside class="notice">
@@ -99,6 +100,7 @@ curl -X GET "https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER" \
       "attachments": [
         {
           "id": "at_LA5GcEL4HRitFGCHREqmzL",
+          "file_name": "rainbow.jpeg",
           "download_url": "https://s3.amazonaws.com/acmecorp/uploads/attachment/file/12345/rainbow.jpeg?something=1"
         }
       ]
@@ -127,7 +129,7 @@ This endpoint retrieves a specific asset belonging to the organization specified
 | `description`  | A description of the asset; set by user creating the asset                                                                                |
 | `asset_type`   | An asset type, such as; `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile` |
 | `logo`         | A link pointing the location of the uploaded asset logo                                                                                   |
-| `attachments`  | A list of asset attachments (including the logo)                                                                                          |
+| `attachments`  | A list of asset attachments (including the logo). Attachment download URLs are pre-authorized and will expire after 10 minutes.           |
 | `links.ui.url` | A link to redirect an authorized user to this asset in the Cobalt web application                                                         |
 
 <aside class="notice">
