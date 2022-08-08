@@ -12,3 +12,5 @@ node_modules/
 
 # netlify CLI tmp folder
 .netlify/
+
+.idea/

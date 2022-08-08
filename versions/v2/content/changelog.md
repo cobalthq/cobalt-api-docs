@@ -19,6 +19,7 @@ the following endpoints for more details:
 - [Upload an Asset Logo](./#upload-a-logo)
 - [Get a Pentest](./#get-a-pentest)
 - [Get a Pentest Report](./#get-a-pentest-report)
+- [Duplicate a Pentest](./#duplicate-a-pentest)
 - [Get a Finding](./#get-a-finding)
 - [View Available Finding States](./#view-available-finding-states)
 - [Update Finding State](./#update-finding-state)
