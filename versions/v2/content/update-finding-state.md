@@ -62,6 +62,7 @@ This endpoint retrieves the current state of a finding as well as possible next 
 ```sh
 curl -X PATCH "https://api.cobalt.io/findings/YOUR-FINDING-ID" \
   -H "Accept: application/vnd.cobalt.v2+json" \
+  -H 'Content-Type: application/vnd.cobalt.v2+json' \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
   -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN" \
   -d '{"state":"triaging"}'
