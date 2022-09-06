@@ -158,6 +158,10 @@ On successful creation, a `201` response code will be returned. A response heade
 within Cobalt's API of the new webhook.
 
 <aside class="notice">
+Multiple webhooks may not have the same name or URL within an organization.
+</aside>
+
+<aside class="notice">
 Remember - you can only create a webhook within the organization specified in the <code>X-Org-Token</code> header.
 </aside>
 
@@ -197,6 +201,10 @@ All body fields are optional. You only need to include the fields that should be
 ### Response
 
 On a successful update, a `204` response code will be returned.
+
+<aside class="notice">
+Multiple webhooks may not have the same name or URL within an organization.
+</aside>
 
 <aside class="notice">
 Remember - you can only update a webhook within the organization specified in the <code>X-Org-Token</code> header.
