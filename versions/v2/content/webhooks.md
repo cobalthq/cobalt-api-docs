@@ -52,7 +52,7 @@ This endpoint retrieves a list of all webhooks that belong to your organization.
 | Parameter | Default | Description                                                                                            |
 |-----------|---------|--------------------------------------------------------------------------------------------------------|
 | `cursor`  | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/webhooks?cursor=a1b2c3d4`            |
-| `limit`   | `10`    | If specified, returns only a specified amount of tokens, e.g. `https://api.cobalt.io/webhooks?limit=5` |
+| `limit`   | `10`    | If specified, returns only a specified amount of webhooks, e.g. `https://api.cobalt.io/webhooks?limit=5` |
 
 ### Response Fields
 
