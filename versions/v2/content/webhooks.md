@@ -176,7 +176,8 @@ curl -X PATCH 'https://api.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER' \
   --data '{
             "name": "FooBar",
             "authentication_token": "super_secret_token",
-            "active": false
+            "active": false,
+            "url": "https://example.local/webhook2"
           }'
 ```
 
@@ -197,6 +198,7 @@ All body fields are optional. You only need to include the fields that should be
 | name                 | The name of the webhook                            |
 | authentication_token | An arbitrary string value. We include this value in the `X-Authentication-Token` header when we send webhook events to you. You can use this to verify that the events you receive are really from Cobalt.                              |
 | active               | A boolean flag specifying if the webhook is active |
+| url                  | The URL to send events to                          |
 
 ### Response
 
