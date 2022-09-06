@@ -5,7 +5,8 @@ title: Webhooks
 
 # Webhooks
 
-Webhooks allow your system to be notified when events occur on the Cobalt Platform via HTTP POST requests. This eliminates the need to poll the API for updates.
+Webhooks allow your system to be notified when events occur on the Cobalt Platform via HTTP POST requests.
+This eliminates the need to poll the API for updates.
 
 ## Get all webhooks
 
@@ -134,7 +135,9 @@ curl -X POST "https://api.cobalt.io/webhooks" \
 
 This endpoint creates a new webhook belonging to your organization.
 
-When you attempt to create a webhook, we will send a test event to your endpoint to validate that events can be delivered successfully. Your endpoint must respond with the HTTP 204 status code. For details on test events, see the Webhook Events section below.
+When you attempt to create a webhook, we will send a test event to your endpoint to validate that events
+can be delivered successfully. Your endpoint must respond with the HTTP 204 status code. For details on
+test events, see the Webhook Events section below.
 
 ### HTTP Request
 
@@ -148,7 +151,6 @@ When you attempt to create a webhook, we will send a test event to your endpoint
 | active               | A boolean flag specifying if the webhook is active       |
 | authentication_token | An arbitrary string value. We include this value in the `X-Authentication-Token` header when we send webhook events to you. You can use this to verify that the events you receive are really from Cobalt.                                    |
 | url                  | The URL to send events to                                |
-
 
 ### Response
 
@@ -237,6 +239,7 @@ Webhook event properties:
 | timestamp     | The time that the event ocurred            |
 
 Action types:
+
 * TEST_EVENT
 * PENTEST_CREATED
 * FINDING_PUBLISHED
@@ -248,6 +251,7 @@ Subject properties:
 | type          | The type of the subject resource           |
 
 Subject types:
+
 * TEST_EVENT
 * PENTEST
 * FINDING
@@ -255,17 +259,30 @@ Subject types:
 ## Webhook Delivery and Health
 
 Delivery process:
-- An event occurs on the Cobalt Platform that you are subscribed to
-- Cobalt will attempt to send the event to your webhook endpoint via an HTTP POST request. If your endpoint responds with an HTTP `204` status then we will mark the delivery as successful.
-- If your endpoint does not respond with an HTTP `204` status then we will attempt to send the event 5 more times with 5 seconds between each request.
-- If none of the delivery attempt succeed, then we will mark your webhook endpoint as unhealthy and put the event into our failed events queue.
-- On an hourly interval we will attempt to redeliver failed events.
-- If your webhook endpoint becomes able to receive events again, we will mark your webhook endpoint as healthy.
-- If your webhook endpoint stays unhealthy for 48 hours then we will deactivate your webhook.
+
+* An event occurs on the Cobalt Platform that you are subscribed to
+* Cobalt will attempt to send the event to your webhook endpoint via an HTTP POST
+request. If your endpoint responds with an HTTP `204` status then we will mark the
+delivery as successful.
+* If your endpoint does not respond with an HTTP `204` status then we will attempt
+to send the event 5 more times with 5 seconds between each request.
+* If none of the delivery attempt succeed, then we will mark your webhook endpoint
+as unhealthy and put the event into our failed events queue.
+* On an hourly interval we will attempt to redeliver failed events.
+* If your webhook endpoint becomes able to receive events again, we will mark your
+webhook endpoint as healthy.
+* If your webhook endpoint stays unhealthy for 48 hours then we will deactivate your webhook.
 
 If your webhook becomes deactivated then you will need to activate it again via the API.
 
 ## Best Practices
 
-1. Set your webhook authentication token to a high-entrophy value of sufficient length. When you receive an event, check that the value in the `X-Authentication-Token` header matches your authentication token. This ensures that you do not process fraudulent webhook events from a threat actor.
-2. Don't add expensive operations to the endpoint that receives webhook events. A common pattern is to receive webhook events with a lightweight endpoint that publishes received events to a message queue that can be processed by your components containing business logic. This keeps the latency and failure rate of your webhook endpoint low.
+1. Set your webhook authentication token to a high-entrophy value of sufficient length.
+When you receive an event, check that the value in the `X-Authentication-Token` header
+matches your authentication token. This ensures that you do not process fraudulent
+webhook events from a threat actor.
+2. Don't add expensive operations to the endpoint that receives webhook events.
+A common pattern is to receive webhook events with a lightweight endpoint that
+publishes received events to a message queue that can be processed by your components
+containing business logic. This keeps the latency and failure rate of your webhook
+endpoint low.
