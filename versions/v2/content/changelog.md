@@ -24,6 +24,11 @@ the following endpoints for more details:
 - [Get a Finding](./#get-a-finding)
 - [View Available Finding States](./#view-available-finding-states)
 - [Update Finding State](./#update-finding-state)
+- [Get all Webhooks](./#get-all-webhooks)
+- [Get a Webhook](./#get-a-webhook)
+- [Create a Webhook](./#create-a-webhook)
+- [Update a Webhook](./#update-a-webhook)
+- [Delete a Webhook](./#delete-a-webhook)
 
 ## Identifier Changes
 
