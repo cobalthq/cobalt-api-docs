@@ -137,7 +137,7 @@ This endpoint creates a new webhook belonging to your organization.
 
 When you attempt to create a webhook, we will send a test event to your endpoint to validate that events
 can be delivered successfully. Your endpoint must respond with the HTTP 204 status code. For details on
-test events, see the Webhook Events section below.
+test events, see the [Webhook Events](./#webhook-events) section below.
 
 ### HTTP Request
 
