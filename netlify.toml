@@ -2,19 +2,19 @@
 command = "hugo --gc --minify --config='versions/v1/config.yaml' && hugo --gc --minify --config='versions/v2/config.yaml'"
 
 [context.production.environment]
-HUGO_VERSION = "0.100.1"
+HUGO_VERSION = "0.102.3"
 
 [context.deploy-preview]
 command = "hugo --gc --minify --buildFuture --config='versions/v1/config.yaml' && hugo --gc --minify --buildFuture --config='versions/v2/config.yaml'"
 
 [context.deploy-preview.environment]
-HUGO_VERSION = "0.100.1"
+HUGO_VERSION = "0.102.3"
 
 [context.branch-deploy]
 command = "hugo --gc --minify --buildFuture --config='versions/v1/config.yaml' && hugo --gc --minify --buildFuture --config='versions/v2/config.yaml'"
 
 [context.branch-deploy.environment]
-HUGO_VERSION = "0.100.1"
+HUGO_VERSION = "0.102.3"
 
 [[redirects]]
   from = "/"
