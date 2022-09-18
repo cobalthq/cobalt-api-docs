@@ -254,6 +254,7 @@ Webhook event properties:
 * `TEST_EVENT`
 * `PENTEST_CREATED`
 * `FINDING_PUBLISHED`
+* `FINDING_STATE_UPDATED`
 
 `subject` properties:
 
