@@ -49,22 +49,22 @@ This endpoint retrieves a list of all webhooks that belong to your organization.
 
 ### URL Parameters
 
-| Parameter | Default | Description                                                                                            |
-|-----------|---------|--------------------------------------------------------------------------------------------------------|
-| `cursor`  | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/webhooks?cursor=a1b2c3d4`            |
+| Parameter | Default | Description                                                                                              |
+|-----------|---------|----------------------------------------------------------------------------------------------------------|
+| `cursor`  | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/webhooks?cursor=a1b2c3d4`              |
 | `limit`   | `10`    | If specified, returns only a specified amount of webhooks, e.g. `https://api.cobalt.io/webhooks?limit=5` |
 
 ### Response Fields
 
-| Field                | Description                                                         |
-|----------------------|---------------------------------------------------------------------|
-| id                   | The ID of the webhook                                               |
-| name                 | The name of the webhook                                             |
-| url                  | The URL that webhook events are sent to                             |
-| active               | A boolean flag that indicates if the webhook is active              |
-| unhealthy_since      | The time that we began failing to deliver events to this webhook. If the webhook is unhealthy, this field will contain an ISO8601 time stamp. Ex: `2022-08-30T14:14:14.000Z`                                                                   |
-| authentication_token | We include this value in the `X-Authentication-Token` header when we send webhook events to you. You can use this to verify that the events you receive are really from Cobalt.                                                                          |
-| user                 | The ID of the user that created the webhook                         |
+| Field                | Description                                            |
+|----------------------|--------------------------------------------------------|
+| id                   | The ID of the webhook                                  |
+| name                 | The name of the webhook                                |
+| url                  | The URL that webhook events are sent to                |
+| active               | A boolean flag that indicates if the webhook is active |
+| unhealthy_since      | The time that we began failing to deliver events to this webhook. If the webhook is unhealthy, this field will contain an ISO8601 time stamp. Ex: `2022-08-30T14:14:14.000Z`    |
+| authentication_token | We include this value in the `X-Authentication-Token` header when we send webhook events to you. You can use this to verify that the events you receive are really from Cobalt. |
+| user                 | The ID of the user that created the webhook            |
 
 ## Get a webhook
 
@@ -105,8 +105,8 @@ This endpoint retrieves a specific webhook belonging to your organization.
 | name                 | The name of the webhook                                             |
 | url                  | The URL that webhook events are sent to                             |
 | active               | A boolean flag that indicates if the webhook is active              |
-| unhealthy_since      | The time that we began failing to deliver events to this webhook. If the webhook is unhealthy, this field will contain an ISO8601 time stamp. Ex: `2022-08-30T14:14:14.000Z`                                                                   |
-| authentication_token | We include this value in the `X-Authentication-Token` header when we send webhook events to you. You can use this to verify that the events you receive are really from Cobalt.                                                                          |
+| unhealthy_since      | The time that we began failing to deliver events to this webhook. If the webhook is unhealthy, this field will contain an ISO8601 time stamp. Ex: `2022-08-30T14:14:14.000Z`    |
+| authentication_token | We include this value in the `X-Authentication-Token` header when we send webhook events to you. You can use this to verify that the events you receive are really from Cobalt. |
 | user                 | The ID of the user that created the webhook                         |
 
 <aside class="notice">
@@ -149,7 +149,7 @@ test events, see the [Webhook Events](./#webhook-events) section below.
 |----------------------|----------------------------------------------------------|
 | name                 | The name of the webhook                                  |
 | active               | A boolean flag specifying if the webhook is active       |
-| authentication_token | An arbitrary string value. We include this value in the `X-Authentication-Token` header when we send webhook events to you. You can use this to verify that the events you receive are really from Cobalt.                                    |
+| authentication_token | An arbitrary string value. We include this value in the `X-Authentication-Token` header when we send webhook events to you. You can use this to verify that the events you receive are really from Cobalt. |
 | url                  | The URL to send events to                                |
 
 ### Response
@@ -196,7 +196,7 @@ All body fields are optional. You only need to include the fields that should be
 | Field                | Description                                        |
 |----------------------|----------------------------------------------------|
 | name                 | The name of the webhook                            |
-| authentication_token | An arbitrary string value. We include this value in the `X-Authentication-Token` header when we send webhook events to you. You can use this to verify that the events you receive are really from Cobalt.                              |
+| authentication_token | An arbitrary string value. We include this value in the `X-Authentication-Token` header when we send webhook events to you. You can use this to verify that the events you receive are really from Cobalt. |
 | active               | A boolean flag specifying if the webhook is active |
 | url                  | The URL to send events to                          |
 
@@ -241,6 +241,7 @@ Remember - you can only delete a webhook within the organization specified in th
 ## Webhook Events
 
 Webhook event properties:
+
 | Field         | Description                                |
 |---------------|--------------------------------------------|
 | id            | The ID of the webhook event                |
@@ -248,23 +249,37 @@ Webhook event properties:
 | subject       | The subject that the event is related to   |
 | timestamp     | The time that the event ocurred            |
 
-Action types:
+`action` types:
 
-* TEST_EVENT
-* PENTEST_CREATED
-* FINDING_PUBLISHED
+* `TEST_EVENT`
+* `PENTEST_CREATED`
+* `FINDING_PUBLISHED`
+* `FINDING_STATE_UPDATED`
 
-Subject properties:
+`subject` properties:
+
 | Field         | Description                                |
 |---------------|--------------------------------------------|
 | id            | The ID of the subject resource             |
 | type          | The type of the subject resource           |
 
-Subject types:
+`subject` types:
 
-* TEST_EVENT
-* PENTEST
-* FINDING
+* `TEST_EVENT`
+* `PENTEST`
+* `FINDING`
+
+```json
+{
+  "id": "eve_4tvptSU2SyqupRGQ4Jawdx",
+  "action": "PENTEST_CREATED",
+  "subject": {
+    "id": "eve_4tvptSU2SyqupRGQ4Jawdx",
+    "type": "PENTEST"
+  },
+  "timestamp": "2022-09-17T17:14:06.734Z"
+}
+```
 
 ## Webhook Delivery and Health
 
