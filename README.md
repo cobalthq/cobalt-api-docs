@@ -53,21 +53,21 @@ Dependencies in the repository are managed with Go Modules.
 
 - To update `docuapi` theme, run:
 
-```sh
-go get github.com/bep/docuapi/v2
-```
+  ```sh
+  go get github.com/bep/docuapi/v2
+  ```
 
 - To update `go`, edit the `go.mod` file:
 
-```sh
-go 1.19
-```
+  ```sh
+  go 1.19
+  ```
 
 - To update `hugo` on Netlify, edit the `netlify.toml` file:
 
-```sh
-HUGO_VERSION = "0.102.3"
-```
+  ```sh
+  HUGO_VERSION = "0.102.3"
+  ```
 
 ## Hosting
 
