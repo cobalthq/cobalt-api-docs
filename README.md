@@ -4,7 +4,7 @@ Cobalt API Docs
 ![](https://github.com/cobalthq/cobalt-public-api-docs/workflows/build/badge.svg)
 
 These docs complement our OpenAPI Swagger docs with walkthroughs and examples of endpoints, fields, and query
-parameters. You can easily add or edit pages using Markdown from the `content/` directory. All pages utilize a `weight`
+parameters. You can easily add or edit pages using Markdown from the `versions/` directory. All pages utilize a `weight`
 property to indicate where they're nested in navigation.
 
 Cobalt API docs have been created with [hugo](https://github.com/gohugoio/hugo) and [docuapi](https://github.com/bep/docuapi).
@@ -49,14 +49,25 @@ Cobalt API docs have been created with [hugo](https://github.com/gohugoio/hugo) 
 
 ## Dependencies
 
-Dependencies in the repository are managed with Go Modules. If you ever need to update the theme manually (probably
-you won't, as Dependabot will do it for you) run the following:
+Dependencies in the repository are managed with Go Modules.
 
-```sh
-go get github.com/bep/docuapi/v2
-```
+- To update `docuapi` theme, run:
 
-You will need to have [Go](https://go.dev/dl/) installed for this.
+  ```sh
+  go get github.com/bep/docuapi/v2
+  ```
+
+- To update `go`, edit the `go.mod` file:
+
+  ```sh
+  go 1.19
+  ```
+
+- To update `hugo` on Netlify, edit the `netlify.toml` file:
+
+  ```sh
+  HUGO_VERSION = "0.102.3"
+  ```
 
 ## Hosting
 
