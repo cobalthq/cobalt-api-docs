@@ -33,7 +33,6 @@ curl -X GET "https://api.cobalt.io/webhooks" \
         "url": "https://example.local",
         "active": true,
         "unhealthy_since": null,
-        "authentication_token": "my_secret_token",
         "user": "us_RxvqT5T3WCFrfTF74B6JLC"
       }
     }
@@ -63,7 +62,6 @@ This endpoint retrieves a list of all webhooks that belong to your organization.
 | url                  | The URL that webhook events are sent to                |
 | active               | A boolean flag that indicates if the webhook is active |
 | unhealthy_since      | The time that we began failing to deliver events to this webhook. If the webhook is unhealthy, this field will contain an ISO8601 time stamp. Ex: `2022-08-30T14:14:14.000Z`    |
-| authentication_token | We include this value in the `X-Authentication-Token` header when we send webhook events to you. You can use this to verify that the events you receive are really from Cobalt. |
 | user                 | The ID of the user that created the webhook            |
 
 ## Get a webhook
@@ -85,7 +83,6 @@ curl -X GET "https://api.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER" \
     "url": "https://example.local",
     "active": true,
     "unhealthy_since": null,
-    "authentication_token": "my_secret_token",
     "user": "us_RxvqT5T3WCFrfTF74B6JLC"
   }
 }
@@ -106,7 +103,6 @@ This endpoint retrieves a specific webhook belonging to your organization.
 | url                  | The URL that webhook events are sent to                             |
 | active               | A boolean flag that indicates if the webhook is active              |
 | unhealthy_since      | The time that we began failing to deliver events to this webhook. If the webhook is unhealthy, this field will contain an ISO8601 time stamp. Ex: `2022-08-30T14:14:14.000Z`    |
-| authentication_token | We include this value in the `X-Authentication-Token` header when we send webhook events to you. You can use this to verify that the events you receive are really from Cobalt. |
 | user                 | The ID of the user that created the webhook                         |
 
 <aside class="notice">
