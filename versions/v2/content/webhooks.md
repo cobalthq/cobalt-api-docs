@@ -132,8 +132,8 @@ curl -X POST "https://api.cobalt.io/webhooks" \
 This endpoint creates a new webhook belonging to your organization.
 
 When you attempt to create a webhook, we will send a test event to your endpoint to validate that events
-can be delivered successfully. Your endpoint must respond with the HTTP 204 status code. For details on
-test events, see the [Webhook Events](./#webhook-events) section below.
+can be delivered successfully. Your endpoint must respond with a successful HTTP response status code,
+e.g., 200, 201, 204, etc. For details on test events, see the [Webhook Events](./#webhook-events) section below.
 
 ### HTTP Request
 
