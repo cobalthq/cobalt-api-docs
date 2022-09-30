@@ -283,9 +283,9 @@ Delivery process:
 
 * An event occurs on the Cobalt Platform that you are subscribed to
 * Cobalt will attempt to send the event to your webhook endpoint via an HTTP POST
-request. If your endpoint responds with an HTTP `204` status then we will mark the
-delivery as successful.
-* If your endpoint does not respond with an HTTP `204` status then we will attempt
+request. If your endpoint responds with a successful HTTP response status code, e.g., 200, 201, 204,
+then we will mark the  delivery as successful.
+* If your endpoint does not respond with a successful HTTP status, then we will attempt
 to send the event 5 more times with 5 seconds between each request.
 * If none of the delivery attempt succeed, then we will mark your webhook endpoint
 as unhealthy and put the event into our failed events queue.
