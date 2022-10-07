@@ -121,7 +121,7 @@ curl -X POST "https://api.cobalt.io/webhooks" \
   --data '{
             "name": "My Webhook",
             "active": true,
-            "authentication_token": "my_secret_token",
+            "secret": "my_secret",
             "url": "https://example.local/webhook"
           }'
 ```
@@ -141,12 +141,12 @@ e.g., 200, 201, 204, etc. For details on test events, see the [Webhook Events](.
 
 ### Body
 
-| Field                | Description                                              |
-|----------------------|----------------------------------------------------------|
-| name                 | The name of the webhook                                  |
-| active               | A boolean flag specifying if the webhook is active       |
-| authentication_token | An arbitrary string value. We include this value in the `X-Authentication-Token` header when we send webhook events to you. You can use this to verify that the events you receive are really from Cobalt. |
-| url                  | The URL to send events to                                |
+| Field  | Description                                                                                                                                                                                  |
+|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| name   | The name of the webhook                                                                                                                                                                      |
+| active | A boolean flag specifying if the webhook is active                                                                                                                                           |
+| secret | An arbitrary string value. We include this value in the `X-Secret` header when we send webhook events to you. You can use this to verify that the events you receive are really from Cobalt. |
+| url    | The URL to send events to                                                                                                                                                                    |
 
 ### Response
 
@@ -171,7 +171,7 @@ curl -X PATCH 'https://api.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER' \
   -H 'X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN' \
   --data '{
             "name": "FooBar",
-            "authentication_token": "super_secret_token",
+            "secret": "super_secret",
             "active": false,
             "url": "https://example.local/webhook2"
           }'
@@ -189,12 +189,12 @@ This endpoint updates a webhook belonging to your organization.
 
 All body fields are optional. You only need to include the fields that should be updated.
 
-| Field                | Description                                        |
-|----------------------|----------------------------------------------------|
-| name                 | The name of the webhook                            |
-| authentication_token | An arbitrary string value. We include this value in the `X-Authentication-Token` header when we send webhook events to you. You can use this to verify that the events you receive are really from Cobalt. |
-| active               | A boolean flag specifying if the webhook is active |
-| url                  | The URL to send events to                          |
+| Field                | Description                                                                                                                                                                                  |
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| name                 | The name of the webhook                                                                                                                                                                      |
+| secret | An arbitrary string value. We include this value in the `X-Secret` header when we send webhook events to you. You can use this to verify that the events you receive are really from Cobalt. |
+| active               | A boolean flag specifying if the webhook is active                                                                                                                                           |
+| url                  | The URL to send events to                                                                                                                                                                    |
 
 ### Response
 
@@ -298,9 +298,9 @@ If your webhook becomes deactivated then you will need to activate it again via 
 
 ## Best Practices
 
-1. Set your webhook authentication token to a high-entrophy value of sufficient length.
-When you receive an event, check that the value in the `X-Authentication-Token` header
-matches your authentication token. This ensures that you do not process fraudulent
+1. Set your webhook secret to a high-entrophy value of sufficient length.
+When you receive an event, check that the value in the `X-Secret` header
+matches your secret. This ensures that you do not process fraudulent
 webhook events from a threat actor.
 2. Don't add expensive operations to the endpoint that receives webhook events.
 A common pattern is to receive webhook events with a lightweight endpoint that
