@@ -50,7 +50,7 @@ curl -X GET "https://api.cobalt.io/orgs" \
 }
 ```
 
-This endpoint retrieves a list of organizations, i.e. *orgs*, that you belong to. Save the `token` field to be used in
+This endpoint retrieves a list of organizations, or *orgs*, that you belong to. Save the `token` field to be used in
 your `X-Org-Token` header in subsequent calls in querying for assets, findings, pentests and events that belong to that
 organization.
 
