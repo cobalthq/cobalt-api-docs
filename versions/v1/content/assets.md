@@ -14,7 +14,7 @@ curl -X GET "https://api.cobalt.io/assets" \
   -H "X-Org-Token: YOUR-V1-ORGANIZATION-TOKEN"
 ```
 
-> The above command returns JSON structured like this:
+> This command returns JSON structured like this:
 
 ```json
 {
