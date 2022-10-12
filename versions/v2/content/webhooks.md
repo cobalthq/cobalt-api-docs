@@ -127,7 +127,7 @@ curl -X POST "https://api.cobalt.io/webhooks" \
 ```
 
 > The above command returns no data and a `201` response code when successful. There will be a `Location` header
-> pointing at the newly-created webhook.
+> pointing at the newly created webhook.
 
 This endpoint creates a new webhook belonging to your organization.
 
@@ -151,7 +151,7 @@ e.g., 200, 201, 204, etc. For details on test events, see the [Webhook Events](.
 ### Response
 
 On successful creation, a `201` response code will be returned. A response header, `Location`, will contain the URL
-within Cobalt's API of the new webhook.
+within Cobalt API of the new webhook.
 
 <aside class="notice">
 Multiple webhooks may not have the same name or URL within an organization.
@@ -284,7 +284,7 @@ Delivery process:
 * An event occurs on the Cobalt Platform that you are subscribed to
 * Cobalt will attempt to send the event to your webhook endpoint via an HTTP POST
 request. If your endpoint responds with a successful HTTP response status code, e.g., 200, 201, 204,
-then we will mark the  delivery as successful.
+then we will mark the delivery as successful.
 * If your endpoint does not respond with a successful HTTP status, then we will attempt
 to send the event 5 more times with 5 seconds between each request.
 * If none of the delivery attempt succeed, then we will mark your webhook endpoint
