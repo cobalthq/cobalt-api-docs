@@ -58,7 +58,7 @@ If you have problems with Vale in VSCode, you may need to:
 If you're successful, you'll see linting messages similar to what's shown in the following screenshot:
 
 <p align="center">
-    <img src="static/VSCodeDemo.png">
+    <img src="static/images/VSCodeDemo.png">
 </p>
 
 While we've set up Vale as a plugin for other IDEs (including vim), we haven't documented
