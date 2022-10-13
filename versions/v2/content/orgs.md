@@ -50,7 +50,7 @@ curl -X GET "https://api.cobalt.io/orgs" \
 }
 ```
 
-This endpoint retrieves a list of organizations, i.e. *orgs*, that you belong to. Save the `token` field to be used in
+This endpoint retrieves a list of organizations, or *orgs*, that you belong to. Save the `token` field to be used in
 your `X-Org-Token` header in subsequent calls in querying for assets, findings, pentests and events that belong to that
 organization.
 
@@ -60,10 +60,10 @@ organization.
 
 ### URL Parameters
 
-| Parameter | Default | Description                                                                                               |
-|-----------|---------|-----------------------------------------------------------------------------------------------------------|
-| `cursor`  | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/orgs?cursor=a1b2c3d4`                   |
-| `limit`   | `10`    | If specified, returns only a specified amount of organizations, e.g. `https://api.cobalt.io/orgs?limit=5` |
+| Parameter | Default | Description                                                                                                      |
+|-----------|---------|------------------------------------------------------------------------------------------------------------------|
+| `cursor`  | N/A     | Used for [pagination](./#pagination), for example `https://api.cobalt.io/orgs?cursor=a1b2c3d4`                   |
+| `limit`   | `10`    | If specified, returns only a specified amount of organizations, for example `https://api.cobalt.io/orgs?limit=5` |
 
 ### Response Fields
 

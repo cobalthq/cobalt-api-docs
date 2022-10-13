@@ -48,21 +48,21 @@ This endpoint retrieves a list of all webhooks that belong to your organization.
 
 ### URL Parameters
 
-| Parameter | Default | Description                                                                                              |
-|-----------|---------|----------------------------------------------------------------------------------------------------------|
-| `cursor`  | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/webhooks?cursor=a1b2c3d4`              |
-| `limit`   | `10`    | If specified, returns only a specified amount of webhooks, e.g. `https://api.cobalt.io/webhooks?limit=5` |
+| Parameter | Default | Description                                                                                                     |
+|-----------|---------|-----------------------------------------------------------------------------------------------------------------|
+| `cursor`  | N/A     | Used for [pagination](./#pagination), for example `https://api.cobalt.io/webhooks?cursor=a1b2c3d4`              |
+| `limit`   | `10`    | If specified, returns only a specified amount of webhooks, for example `https://api.cobalt.io/webhooks?limit=5` |
 
 ### Response Fields
 
-| Field                | Description                                            |
-|----------------------|--------------------------------------------------------|
-| id                   | The ID of the webhook                                  |
-| name                 | The name of the webhook                                |
-| url                  | The URL that webhook events are sent to                |
-| active               | A boolean flag that indicates if the webhook is active |
-| unhealthy_since      | The time that we began failing to deliver events to this webhook. If the webhook is unhealthy, this field will contain an ISO8601 time stamp. Ex: `2022-08-30T14:14:14.000Z`    |
-| user                 | The ID of the user that created the webhook            |
+| Field           | Description                                                                                                                                                                  |
+|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| id              | The ID of the webhook                                                                                                                                                        |
+| name            | The name of the webhook                                                                                                                                                      |
+| url             | The URL that webhook events are sent to                                                                                                                                      |
+| active          | A boolean flag that indicates if the webhook is active                                                                                                                       |
+| unhealthy_since | The time that we began failing to deliver events to this webhook. If the webhook is unhealthy, this field will contain an ISO8601 time stamp. Ex: `2022-08-30T14:14:14.000Z` |
+| user            | The ID of the user that created the webhook                                                                                                                                  |
 
 ## Get a webhook
 
@@ -133,7 +133,7 @@ This endpoint creates a new webhook belonging to your organization.
 
 When you attempt to create a webhook, we will send a test event to your endpoint to validate that events
 can be delivered successfully. Your endpoint must respond with a successful HTTP response status code,
-e.g., 200, 201, 204, etc. For details on test events, see the [Webhook Events](./#webhook-events) section below.
+for example, 200, 201, 204, etc. For details on test events, see the [Webhook Events](./#webhook-events) section below.
 
 ### HTTP Request
 
@@ -283,7 +283,7 @@ Delivery process:
 
 * An event occurs on the Cobalt Platform that you are subscribed to
 * Cobalt will attempt to send the event to your webhook endpoint via an HTTP POST
-request. If your endpoint responds with a successful HTTP response status code, e.g., 200, 201, 204,
+request. If your endpoint responds with a successful HTTP response status code, for example, 200, 201, 204,
 then we will mark the delivery as successful.
 * If your endpoint does not respond with a successful HTTP status, then we will attempt
 to send the event 5 more times with 5 seconds between each request.

@@ -55,10 +55,10 @@ This endpoint retrieves a list of assets that belong to the organization specifi
 
 ### URL Parameters
 
-| Parameter | Default | Description                                                                                          |
-|-----------|---------|------------------------------------------------------------------------------------------------------|
-| `cursor`  | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/assets?cursor=a1b2c3d4`            |
-| `limit`   | `10`    | If specified, returns only a specified amount of assets, e.g. `https://api.cobalt.io/assets?limit=5` |
+| Parameter | Default | Description                                                                                                 |
+|-----------|---------|-------------------------------------------------------------------------------------------------------------|
+| `cursor`  | N/A     | Used for [pagination](./#pagination), for example `https://api.cobalt.io/assets?cursor=a1b2c3d4`            |
+| `limit`   | `10`    | If specified, returns only a specified amount of assets, for example `https://api.cobalt.io/assets?limit=5` |
 
 ### Response Fields
 
