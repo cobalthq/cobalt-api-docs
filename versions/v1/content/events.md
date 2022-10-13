@@ -69,5 +69,5 @@ This endpoint retrieves a list of all events for your account.
 
 | Parameter | Default | Description                                                                                                 |
 |-----------|---------|-------------------------------------------------------------------------------------------------------------|
-| `cursor`  | N/A     | Used for [pagination](./#pagination), for example `https://api.cobalt.io/events?cursor=a1b2c3d4`            |
-| `limit`   | `10`    | If specified, returns only a specified amount of events, for example `https://api.cobalt.io/events?limit=5` |
+| `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/events?cursor=a1b2c3d4`            |
+| `limit`   | `10`    | If specified, returns only a specified amount of events. Example: `https://api.cobalt.io/events?limit=5` |

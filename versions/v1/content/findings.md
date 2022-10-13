@@ -121,10 +121,10 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 
 | Parameter | Default | Description                                                                                                               |
 |-----------|---------|---------------------------------------------------------------------------------------------------------------------------|
-| `cursor`  | N/A     | Used for [pagination](./#pagination), for example `https://api.cobalt.io/findings?cursor=a1b2c3d4`                        |
-| `limit`   | `1000`  | If specified, returns only a specified amount of findings, for example `https://api.cobalt.io/findings?limit=5`           |
-| `pentest` | N/A     | If specified, returns findings scoped to this pentest id, for example `https://api.cobalt.io/findings?pentest=pt_9Ig1234` |
-| `asset`   | N/A     | If specified, returns findings scoped to this asset id, for example `https://api.cobalt.io/findings?asset=as_cwrsqsL`     |
+| `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/findings?cursor=a1b2c3d4`                        |
+| `limit`   | `1000`  | If specified, returns only a specified amount of findings. Example: `https://api.cobalt.io/findings?limit=5`           |
+| `pentest` | N/A     | If specified, returns findings scoped to this pentest id. Example: `https://api.cobalt.io/findings?pentest=pt_9Ig1234` |
+| `asset`   | N/A     | If specified, returns findings scoped to this asset id. Example: `https://api.cobalt.io/findings?asset=as_cwrsqsL`     |
 
 ### Response Fields
 

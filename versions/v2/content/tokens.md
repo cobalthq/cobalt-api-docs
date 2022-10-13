@@ -44,8 +44,8 @@ This endpoint retrieves a list of all tokens that belong to you.
 
 | Parameter | Default | Description                                                                                                 |
 |-----------|---------|-------------------------------------------------------------------------------------------------------------|
-| `cursor`  | N/A     | Used for [pagination](./#pagination), for example `https://api.cobalt.io/tokens?cursor=a1b2c3d4`            |
-| `limit`   | `10`    | If specified, returns only a specified amount of tokens, for example `https://api.cobalt.io/tokens?limit=5` |
+| `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/tokens?cursor=a1b2c3d4`            |
+| `limit`   | `10`    | If specified, returns only a specified amount of tokens. Example: `https://api.cobalt.io/tokens?limit=5` |
 
 ### Response Fields
 
