@@ -276,7 +276,7 @@ This endpoint uploads a new attachment for an asset belonging to the organizatio
 
 ### File Requirements
 
-- The file must be smaller than 10MB.
+- The file must be smaller than 10 MB.
 
 ### Response
 
@@ -347,7 +347,7 @@ means the old logo is removed and replaced by the new logo.
 ### File Requirements
 
 - The file must be an image, for example a `.png` or `.jpg`.
-- The file must be smaller than 10MB.
+- The file must be smaller than 10 MB.
 
 ### Response
 
