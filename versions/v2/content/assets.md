@@ -171,8 +171,8 @@ This endpoint creates a new asset belonging to the organization specified in the
 
 ### Response
 
-On successful creation, a `201` response code will be returned. A response header, `Location`, will contain the URL
-within Cobalt API of the new asset.
+You get a `201` response code for a successful request. The `Location` response header contains the URL of the new
+asset within the Cobalt API.
 
 <aside class="notice">
 Remember - you can only create an asset within the organization specified in the <code>X-Org-Token</code> header.

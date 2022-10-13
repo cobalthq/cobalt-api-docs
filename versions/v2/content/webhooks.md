@@ -150,8 +150,8 @@ e.g., 200, 201, 204, etc. For details on test events, see the [Webhook Events](.
 
 ### Response
 
-On successful creation, a `201` response code will be returned. A response header, `Location`, will contain the URL
-within Cobalt API of the new webhook.
+You get a `201` response code for a successful request. The `Location` response header contains the URL of the new
+webhook within the Cobalt API.
 
 <aside class="notice">
 Multiple webhooks may not have the same name or URL within an organization.
