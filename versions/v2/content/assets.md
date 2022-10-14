@@ -56,10 +56,10 @@ This endpoint retrieves a list of assets that belong to the organization specifi
 
 ### URL Parameters
 
-| Parameter | Default | Description                                                                                          |
-|-----------|---------|------------------------------------------------------------------------------------------------------|
-| `cursor`  | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/assets?cursor=a1b2c3d4`            |
-| `limit`   | `10`    | If specified, returns only a specified amount of assets, e.g. `https://api.cobalt.io/assets?limit=5` |
+| Parameter | Default | Description                                                                                                 |
+|-----------|---------|-------------------------------------------------------------------------------------------------------------|
+| `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/assets?cursor=a1b2c3d4`            |
+| `limit`   | `10`    | If specified, returns only a specified amount of assets. Example: `https://api.cobalt.io/assets?limit=5` |
 
 ### Response Fields
 
@@ -153,7 +153,7 @@ curl -X POST "https://api.cobalt.io/assets" \
 ```
 
 > The above command returns no data and a `201` response code when successful. There will be a `Location` header
-> pointing at the newly-created asset.
+> pointing at the newly created asset.
 
 This endpoint creates a new asset belonging to the organization specified in the `X-Org-Token` header.
 
@@ -171,8 +171,8 @@ This endpoint creates a new asset belonging to the organization specified in the
 
 ### Response
 
-On successful creation, a `201` response code will be returned. A response header, `Location`, will contain the URL
-within Cobalt's API of the new asset.
+You get a `201` response code for a successful request. The `Location` response header contains the URL of the new
+asset within the Cobalt API.
 
 <aside class="notice">
 Remember - you can only create an asset within the organization specified in the <code>X-Org-Token</code> header.
@@ -260,7 +260,7 @@ curl -X POST 'https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/attachments' \
 ```
 
 > The above command returns no data and a `201` response code when successful. There will be a `Location` header
-> pointing at the newly-created attachment.
+> pointing at the newly created attachment.
 
 This endpoint uploads a new attachment for an asset belonging to the organization specified in the `X-Org-Token` header.
 
@@ -276,12 +276,12 @@ This endpoint uploads a new attachment for an asset belonging to the organizatio
 
 ### File Requirements
 
-- The file must be smaller than 10MB.
+- The file must be smaller than 10 MB.
 
 ### Response
 
 On successful upload, a `201` response code will be returned. A response header, `Location`, will contain the URL within
-Cobalt's API of the new attachment which you can use only to DELETE the attachment.
+Cobalt API of the new attachment which you can use only to DELETE the attachment.
 
 <aside class="notice">
 Remember - you can only upload an attachment for an asset within the organization specified in the
@@ -346,8 +346,8 @@ means the old logo is removed and replaced by the new logo.
 
 ### File Requirements
 
-- The file must be an image, e.g. a `.png` or `.jpg`.
-- The file must be smaller than 10MB.
+- The file must be an image, for example a `.png` or `.jpg`.
+- The file must be smaller than 10 MB.
 
 ### Response
 

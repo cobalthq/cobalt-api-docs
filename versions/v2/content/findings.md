@@ -122,12 +122,12 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 
 ### URL Parameters
 
-| Parameter | Default | Description                                                                                                                       |
-|-----------|---------|-----------------------------------------------------------------------------------------------------------------------------------|
-| `cursor`  | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/findings?cursor=a1b2c3d4`                                       |
-| `limit`   | `10`    | If specified, returns only a specified amount of findings, e.g. `https://api.cobalt.io/findings?limit=5`                          |
-| `pentest` | N/A     | If specified, returns findings scoped to this pentest id, e.g. `https://api.cobalt.io/findings?pentest=pt_PEtv4dqnwGV2efZhLw3BM5` |
-| `asset`   | N/A     | If specified, returns findings scoped to this asset id, e.g. `https://api.cobalt.io/findings?asset=as_HcChCMueiPQQgvckmZtRSd`     |
+| Parameter | Default | Description                                                                                                                              |
+|-----------|---------|------------------------------------------------------------------------------------------------------------------------------------------|
+| `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/findings?cursor=a1b2c3d4`                                       |
+| `limit`   | `10`    | If specified, returns only a specified amount of findings. Example: `https://api.cobalt.io/findings?limit=5`                          |
+| `pentest` | N/A     | If specified, returns findings scoped to this pentest id. Example: `https://api.cobalt.io/findings?pentest=pt_PEtv4dqnwGV2efZhLw3BM5` |
+| `asset`   | N/A     | If specified, returns findings scoped to this asset id. Example: `https://api.cobalt.io/findings?asset=as_HcChCMueiPQQgvckmZtRSd`     |
 
 ### Response Fields
 
@@ -220,14 +220,14 @@ This endpoint retrieves a specific finding that belong to the organization speci
 
 ### Response Fields
 
-| Field           | Enum Types                                                                                                             |
-|-----------------|------------------------------------------------------------------------------------------------------------------------|
-| `log`           | created, impact_changed, likelihood_changed, state_changed                                                             |
-| `severity`      | null, low, medium, high  (aka `criticality`. will be null if likelihood/impact have not yet been set by the pentester) |
-| `state`         | new, triaging, need_fix, wont_fix, valid_fix, check_fix, invalid, carried_over                                         |
-| `type_category` | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                 |
-| `attachments`   | A list of finding attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.           |
-| `url`           | The links.ui.url will redirect an authorized user to this finding in the Cobalt platform                               |
+| Field           | Enum Types                                                                                                            |
+|-----------------|-----------------------------------------------------------------------------------------------------------------------|
+| `log`           | created, impact_changed, likelihood_changed, state_changed                                                            |
+| `severity`      | null, low, medium, high (aka `criticality`. will be null if likelihood/impact have not yet been set by the pentester) |
+| `state`         | new, triaging, need_fix, wont_fix, valid_fix, check_fix, invalid, carried_over                                        |
+| `type_category` | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                |
+| `attachments`   | A list of finding attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.          |
+| `url`           | The links.ui.url will redirect an authorized user to this finding in the Cobalt platform                              |
 
 ### State
 

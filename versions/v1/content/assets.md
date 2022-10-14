@@ -14,7 +14,7 @@ curl -X GET "https://api.cobalt.io/assets" \
   -H "X-Org-Token: YOUR-V1-ORGANIZATION-TOKEN"
 ```
 
-> The above command returns JSON structured like this:
+> This command returns JSON structured like this:
 
 ```json
 {
@@ -55,10 +55,10 @@ This endpoint retrieves a list of assets that belong to the organization specifi
 
 ### URL Parameters
 
-| Parameter | Default | Description                                                                                          |
-|-----------|---------|------------------------------------------------------------------------------------------------------|
-| `cursor`  | N/A     | Used for [pagination](./#pagination), e.g. `https://api.cobalt.io/assets?cursor=a1b2c3d4`            |
-| `limit`   | `10`    | If specified, returns only a specified amount of assets, e.g. `https://api.cobalt.io/assets?limit=5` |
+| Parameter | Default | Description                                                                                                 |
+|-----------|---------|-------------------------------------------------------------------------------------------------------------|
+| `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/assets?cursor=a1b2c3d4`            |
+| `limit`   | `10`    | If specified, returns only a specified amount of assets. Example: `https://api.cobalt.io/assets?limit=5` |
 
 ### Response Fields
 

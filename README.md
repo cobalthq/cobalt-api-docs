@@ -88,3 +88,8 @@ preview before merging (Click Details in the PR Check).
 
 If you get `found no layout file for "HTML" for kind "page"` warning when you start the server, you can clean up asset
 caches by running `hugo mod clean`.
+
+
+## English Grammar Linter (Vale)
+
+For more information, see [GrammarLinter.md](./GrammarLinter.md)
