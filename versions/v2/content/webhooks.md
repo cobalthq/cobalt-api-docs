@@ -141,12 +141,12 @@ e.g., 200, 201, 204, etc. For details on test events, see the [Webhook Events](.
 
 ### Body
 
-| Field  | Description                                                                                                                                                                                                          |
-|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| name   | The name of the webhook                                                                                                                                                                                              |
-| active | A boolean flag specifying if the webhook is active                                                                                                                                                                   |
-| secret | An arbitrary string value. We include this value in the `X-Secret` header when we send webhook events to you. You can use this to verify that the events you receive are really from Cobalt. This field is optional. |
-| url    | The URL to send events to                                                                                                                                                                                            |
+| Field  | Description                                                                                                                                                                                                        |
+|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| name   | The name of the webhook                                                                                                                                                                                            |
+| active | A boolean flag specifying if the webhook is active                                                                                                                                                                 |
+| secret | An arbitrary string value. We include this value in the `X-Secret` header when we send webhook events to you. You can use this to verify that the events you receive are from Cobalt. This field is optional.      |
+| url    | The URL to send events to                                                                                                                                                                                          |
 
 ### Response
 
@@ -189,12 +189,12 @@ This endpoint updates a webhook belonging to your organization.
 
 All body fields are optional. You only need to include the fields that should be updated.
 
-| Field                | Description                                                                                                                                                                                  |
-|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| name                 | The name of the webhook                                                                                                                                                                      |
-| secret | An arbitrary string value. We include this value in the `X-Secret` header when we send webhook events to you. You can use this to verify that the events you receive are really from Cobalt. |
-| active               | A boolean flag specifying if the webhook is active                                                                                                                                           |
-| url                  | The URL to send events to                                                                                                                                                                    |
+| Field      | Description                                                                                                                                                                              |
+|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| name       | The name of the webhook                                                                                                                                                                  |
+| secret     | An arbitrary string value. We include this value in the `X-Secret` header when we send webhook events to you. You can use this to verify that the events you receive are from Cobalt.    |
+| active     | A boolean flag specifying if the webhook is active                                                                                                                                       |
+| url        | The URL to send events to                                                                                                                                                                |
 
 ### Response
 
