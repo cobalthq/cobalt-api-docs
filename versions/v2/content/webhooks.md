@@ -201,7 +201,7 @@ All body fields are optional. You only need to include the fields that should be
 On a successful update, a `204` response code will be returned.
 
 <aside class="notice">
-To delete a previous secret, set the secret field to an empty string.
+To remove the secret, set the secret field to an empty string.
 </aside>
 
 <aside class="notice">
