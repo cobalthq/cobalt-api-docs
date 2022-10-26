@@ -447,6 +447,7 @@ passwordless
 Patroni
 pdf
 pentest
+pentest's
 pentester
 pentests
 pentesters
