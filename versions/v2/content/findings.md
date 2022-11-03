@@ -69,6 +69,8 @@ curl -X GET "https://api.cobalt.io/findings" \
           }
         ],
         "state": "check_fix",
+        "created_at": "2022-09-26T18:35:18.759Z",
+        "updated_at": "2022-09-26T18:36:57.462Z",
         "attachments": [
           {
             "id": "at_LA5GcEL4HRitFGCHREqmzL",
@@ -196,6 +198,8 @@ curl -X GET "https://api.cobalt.io/findings/YOUR-FINDING-IDENTIFIER" \
       }
     ],
     "state": "new",
+    "created_at": "2022-09-26T18:35:18.759Z",
+    "updated_at": "2022-09-26T18:36:57.462Z",
     "attachments": [
       {
         "id": "at_LA5GcEL4HRitFGCHREqmzL",
