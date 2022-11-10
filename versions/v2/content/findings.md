@@ -124,14 +124,14 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 
 ### URL Parameters
 
-| Parameter  | Default | Description                                                                                                                                                                                                                                           |
-|------------|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `cursor`   | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/findings?cursor=a1b2c3d4`                                                                                                                                                       |
-| `limit`    | `10`    | If specified, returns only a specified amount of findings. Example: `https://api.cobalt.io/findings?limit=5`                                                                                                                                          |
-| `pentest`  | N/A     | If specified, returns findings scoped to this pentest id. Example: `https://api.cobalt.io/findings?pentest=pt_PEtv4dqnwGV2efZhLw3BM5`                                                                                                                 |
-| `asset`    | N/A     | If specified, returns findings scoped to this asset id. Example: `https://api.cobalt.io/findings?asset=as_HcChCMueiPQQgvckmZtRSd`                                                                                                                     |
-| `state`    | N/A     | If specified, returns findings that match `state` value exactly. See Response Fields below for example state values. Example: `https://api.cobalt.io/findings?state=check_fix`. Values not listed in Response Fields will return an empty list.       |
-| `severity` | N/A     | If specified, returns findings that match `severity` value exactly. See Response Fields below for example severity values. Example: `https://api.cobalt.io/findings?severity=medium`. Values not listed in Response Fields will return an empty list. |
+| Parameter  | Default | Description                                                                                                                                                                                                                               |
+|------------|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `cursor`   | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/findings?cursor=a1b2c3d4`                                                                                                                                           |
+| `limit`    | `10`    | If specified, returns only a specified amount of findings. Example: `https://api.cobalt.io/findings?limit=5`                                                                                                                              |
+| `pentest`  | N/A     | If specified, returns findings scoped to this pentest id. Example: `https://api.cobalt.io/findings?pentest=pt_PEtv4dqnwGV2efZhLw3BM5`                                                                                                     |
+| `asset`    | N/A     | If specified, returns findings scoped to this asset id. Example: `https://api.cobalt.io/findings?asset=as_HcChCMueiPQQgvckmZtRSd`                                                                                                         |
+| `state`    | N/A     | If specified, returns findings that match `state`. See Response Fields below for example `state` values. Example: `https://api.cobalt.io/findings?state=check_fix`. Values not listed in Response Fields will return an empty list.       |
+| `severity` | N/A     | If specified, returns findings that match `severity`. See Response Fields below for example `severity` values. Example: `https://api.cobalt.io/findings?severity=medium`. Values not listed in Response Fields will return an empty list. |
 
 ### Response Fields
 
