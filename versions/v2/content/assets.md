@@ -56,11 +56,11 @@ This endpoint retrieves a list of assets that belong to the organization specifi
 
 ### URL Parameters
 
-| Parameter    | Default | Description                                                                                                                                                                     |
-|--------------|---------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `cursor`     | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/assets?cursor=a1b2c3d4`                                                                                   |
-| `limit`      | `10`    | If specified, returns only a specified amount of assets. Example: `https://api.cobalt.io/assets?limit=5`                                                                        |
-| `asset_type` | N/A     | If specified, returns assets that match `asset_type` exactly. See Response Fields below for example `asset_type` values. Example: `https://api.cobalt.io/assets?asset_type=web` |
+| Parameter    | Default | Description                                                                                                                                                                                                                              |
+|--------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `cursor`     | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/assets?cursor=a1b2c3d4`                                                                                                                                            |
+| `limit`      | `10`    | If specified, returns only a specified amount of assets. Example: `https://api.cobalt.io/assets?limit=5`                                                                                                                                 |
+| `asset_type` | N/A     | If specified, returns assets that match `asset_type`. See Response Fields below for example `asset_type` values. Example: `https://api.cobalt.io/assets?asset_type=web`. Values not listed in Response Fields will return an empty list. |
 
 ### Response Fields
 
