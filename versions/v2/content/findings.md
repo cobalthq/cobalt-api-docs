@@ -124,8 +124,8 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 
 ### URL Parameters
 
-| Parameter | Default | Description                                                                                                                              |
-|-----------|---------|------------------------------------------------------------------------------------------------------------------------------------------|
+| Parameter | Default | Description                                                                                                                           |
+|-----------|---------|---------------------------------------------------------------------------------------------------------------------------------------|
 | `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/findings?cursor=a1b2c3d4`                                       |
 | `limit`   | `10`    | If specified, returns only a specified amount of findings. Example: `https://api.cobalt.io/findings?limit=5`                          |
 | `pentest` | N/A     | If specified, returns findings scoped to this pentest id. Example: `https://api.cobalt.io/findings?pentest=pt_PEtv4dqnwGV2efZhLw3BM5` |
