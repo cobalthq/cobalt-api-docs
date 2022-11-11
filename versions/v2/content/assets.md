@@ -189,9 +189,7 @@ curl -X PUT 'https://api.cobalt.io/assets/AN-ASSET-IDENTIFIER' \
   --data '{
             "title": "Updated title",
             "description": "Updated description",
-            "asset_type": "web",
-            "size": "m",
-            "coverage": "standard"
+            "asset_type": "web"
           }'
 ```
 
@@ -210,8 +208,6 @@ This endpoint updates an asset belonging to the organization specified in the `X
 | `title`       | The title of the asset; set by user creating the asset                                                                     |
 | `description` | A description of the asset; set by user creating the asset                                                                 |
 | `asset_type`  | Options: `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile` |
-| `size`        | Options: `xs` (extra small), `s` (small), `m` (medium), `l` (large), `xl` (extra large)                                    |
-| `coverage`    | Options: `extra_light`, `light`, `standard`, `large`, `extra_large`                                                        |
 
 ### Response
 
