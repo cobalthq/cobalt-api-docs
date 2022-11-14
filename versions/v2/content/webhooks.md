@@ -251,11 +251,13 @@ Webhook event properties:
 
 `action` types:
 
-* `TEST_EVENT`
-* `PENTEST_CREATED`
+* `FINDING_DELETED`
 * `FINDING_PUBLISHED`
 * `FINDING_STATE_UPDATED`
 * `FINDING_UPDATED`
+* `PENTEST_CREATED`
+* `PENTEST_STATE_UPDATED`
+* `TEST_EVENT`
 
 `subject` properties:
 
