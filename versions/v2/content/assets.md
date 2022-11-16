@@ -204,10 +204,10 @@ This endpoint updates an asset belonging to the organization specified in the `X
 
 ### Body
 
-| Field         | Description                                                                                                          |
-|---------------|----------------------------------------------------------------------------------------------------------------------|
+| Field         | Description                                                                                                                |
+|---------------|----------------------------------------------------------------------------------------------------------------------------|
 | `title`       | The title of the asset; set by user creating the asset                                                                     |
-| `description` | Optional; A description of the asset; set by user creating the asset                                                                 |
+| `description` | Optional; A description of the asset; set by user creating the asset                                                       |
 | `asset_type`  | Options: `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile` |
 
 ### Response
