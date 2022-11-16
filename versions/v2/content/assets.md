@@ -167,7 +167,7 @@ This endpoint creates a new asset belonging to the organization specified in the
 | Field         | Description                                                                                                          |
 |---------------|----------------------------------------------------------------------------------------------------------------------|
 | `title`       | The title of the asset; set by user creating the asset                                                               |
-| `description` | A description of the asset; set by user creating the asset                                                           |
+| `description` | Optional; A description of the asset; set by user creating the asset                                                 |
 | `asset_type`  | `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, or `web_plus_mobile` |
 
 ### Response
@@ -207,7 +207,7 @@ This endpoint updates an asset belonging to the organization specified in the `X
 | Field         | Description                                                                                                          |
 |---------------|----------------------------------------------------------------------------------------------------------------------|
 | `title`       | The title of the asset; set by user creating the asset                                                                     |
-| `description` | A description of the asset; set by user creating the asset                                                                 |
+| `description` | Optional; A description of the asset; set by user creating the asset                                                                 |
 | `asset_type`  | Options: `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile` |
 
 ### Response
