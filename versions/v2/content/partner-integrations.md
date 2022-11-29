@@ -5,9 +5,10 @@ title: Partner Integrations
 
 # Partner Integrations
 
-If you are developing a partner integration, we encourage you to set a custom `User-Agent` header
-identifying your integration in requests to the Cobalt API.
+We request that you set a custom `User-Agent` header when developing a partner integration.
+The custom `User-Agent` header should identify your integration.
 This allows us to identify traffic originating from your integration for analytical and troubleshooting purposes.
 
-Example custom header:
+### Example
+
 `User-Agent: PartnerCobaltIntegration/1.0.0`
