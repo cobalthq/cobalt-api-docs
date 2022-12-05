@@ -26,6 +26,12 @@ curl -X GET "https://api.cobalt.io/assets" \
         "description": "HR system of the Acme Corp. holding sensitive employee data",
         "asset_type": "web",
         "logo": "https://s3.amazonaws.com/acmecorp/uploads/attachment/file/12345/cat.jpeg?something=1",
+        "technology_stack": [
+          {
+            "cpe_id": 12345,
+            "title": "React 18.0.0"
+          }
+        ],
         "attachments": [
           {
             "id": "at_LA5GcEL4HRitFGCHREqmzL",
@@ -64,15 +70,16 @@ This endpoint retrieves a list of assets that belong to the organization specifi
 
 ### Response Fields
 
-| Field          | Description                                                                                                                               |
-|----------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| `id`           | A unique ID representing the asset. Starts with `as_`                                                                                     |
-| `title`        | The title of the asset; set by user creating the asset                                                                                    |
-| `description`  | A description of the asset; set by user creating the asset                                                                                |
-| `asset_type`   | An asset type, such as; `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile` |
-| `logo`         | A link pointing the location of the uploaded asset logo                                                                                   |
-| `attachments`  | A list of asset attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.                                |
-| `links.ui.url` | A link to redirect an authorized user to this asset in the Cobalt web application                                                         |
+| Field              | Description                                                                                                                                        |
+|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| `id`               | A unique ID representing the asset. Starts with `as_`                                                                                              |
+| `title`            | The title of the asset; set by user creating the asset                                                                                             |
+| `description`      | A description of the asset; set by user creating the asset                                                                                         |
+| `asset_type`       | An asset type, such as; `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile`          |
+| `logo`             | A link pointing the location of the uploaded asset logo                                                                                            |
+| `technology_stack` | A list of technology stacks. Each element contains the CPE ID designated by the CPE database and a title of the technology. Example: React 18.0.0. |
+| `attachments`      | A list of asset attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.                                         |
+| `links.ui.url`     | A link to redirect an authorized user to this asset in the Cobalt web application                                                                  |
 
 <aside class="notice">
 Remember - you can only request assets scoped to the organization specified in the <code>X-Org-Token</code> header.
@@ -98,6 +105,12 @@ curl -X GET "https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER" \
       "description": "HR system of the Acme Corp. holding sensitive employee data",
       "asset_type": "web",
       "logo": "https://s3.amazonaws.com/acmecorp/uploads/attachment/file/12345/cat.jpeg?something=1",
+      "technology_stack": [
+        {
+          "cpe_id": 12345,
+          "title": "React 18.0.0"
+        }
+      ],
       "attachments": [
         {
           "id": "at_LA5GcEL4HRitFGCHREqmzL",
@@ -123,15 +136,16 @@ This endpoint retrieves a specific asset belonging to the organization specified
 
 ### Response Fields
 
-| Field          | Description                                                                                                                               |
-|----------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| `id`           | A unique ID representing the asset. Starts with `as_`                                                                                     |
-| `title`        | The title of the asset; set by user creating the asset                                                                                    |
-| `description`  | A description of the asset; set by user creating the asset                                                                                |
-| `asset_type`   | An asset type, such as; `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile` |
-| `logo`         | A link pointing the location of the uploaded asset logo                                                                                   |
-| `attachments`  | A list of asset attachments (including the logo). Attachment download URLs are pre-authorized and will expire after 10 minutes.           |
-| `links.ui.url` | A link to redirect an authorized user to this asset in the Cobalt web application                                                         |
+| Field              | Description                                                                                                                                        |
+|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| `id`               | A unique ID representing the asset. Starts with `as_`                                                                                              |
+| `title`            | The title of the asset; set by user creating the asset                                                                                             |
+| `description`      | A description of the asset; set by user creating the asset                                                                                         |
+| `asset_type`       | An asset type, such as; `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile`          |
+| `logo`             | A link pointing the location of the uploaded asset logo                                                                                            |
+| `technology_stack` | A list of technology stacks. Each element contains the CPE ID designated by the CPE database and a title of the technology. Example: React 18.0.0. |
+| `attachments`      | A list of asset attachments (including the logo). Attachment download URLs are pre-authorized and will expire after 10 minutes.                    |
+| `links.ui.url`     | A link to redirect an authorized user to this asset in the Cobalt web application                                                                  |
 
 <aside class="notice">
 Remember - you can only request an asset scoped to the organization specified in the <code>X-Org-Token</code> header.
