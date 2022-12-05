@@ -56,11 +56,12 @@ This endpoint retrieves a list of assets that belong to the organization specifi
 
 ### URL Parameters
 
-| Parameter    | Default | Description                                                                                                                                                                                                                                |
-|--------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `cursor`     | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/assets?cursor=a1b2c3d4`                                                                                                                                              |
-| `limit`      | `10`    | If specified, returns only a specified amount of assets. Example: `https://api.cobalt.io/assets?limit=5`                                                                                                                                   |
-| `asset_type` | N/A     | If specified, returns assets that match `asset_type`. See Response Fields below for example `asset_type` values. Example: `https://api.cobalt.io/assets?asset_type=web`. Returns an empty list if no assets match the `asset_type` filter. |
+| Parameter    | Default | Description                                                                                                                                                                                                                                                                                   |
+|--------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `cursor`     | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/assets?cursor=a1b2c3d4`                                                                                                                                                                                                 |
+| `limit`      | `10`    | If specified, returns only a specified amount of assets. Example: `https://api.cobalt.io/assets?limit=5`                                                                                                                                                                                      |
+| `asset_type` | N/A     | If specified, returns assets that match `asset_type`. See Response Fields below for example `asset_type` values. Example: `https://api.cobalt.io/assets?asset_type=web`. Returns an empty list if no assets match the `asset_type` filter.                                                    |
+| `sort`       | N/A     | If specified, returns assets sorted by one of the chosen parameters: `asset_type`. When defined, records are returned in ascending order by the sort parameter. To return in descending order, use a `-` before the sort parameter. Example: `https://api.cobalt.io/assets?sort=-asset_type`. |
 
 ### Response Fields
 
