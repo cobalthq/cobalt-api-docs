@@ -3,9 +3,9 @@ Cobalt API Docs
 [![Netlify Status](https://api.netlify.com/api/v1/badges/0506a95f-525c-4751-be84-49fc892edf7f/deploy-status)](https://app.netlify.com/sites/cobalt-public-api/deploys)
 ![](https://github.com/cobalthq/cobalt-public-api-docs/workflows/build/badge.svg)
 
-These docs complement our OpenAPI Swagger docs with walkthroughs and examples of endpoints, fields, and query
-parameters. You can easily add or edit pages using Markdown from the `versions/` directory. All pages utilize a `weight`
-property to indicate where they're nested in navigation.
+These docs explain Cobalt API with walkthroughs and examples of endpoints, fields, and query parameters. You can
+easily add or edit pages using Markdown from the `versions/` directory. All pages utilize a `weight` property to
+indicate where they're nested in navigation.
 
 Cobalt API docs have been created with [hugo](https://github.com/gohugoio/hugo) and [docuapi](https://github.com/bep/docuapi).
 
