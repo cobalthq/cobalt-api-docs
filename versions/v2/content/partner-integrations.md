@@ -5,7 +5,7 @@ title: Partner Integrations
 
 # Partner Integrations
 
-We request that you set a custom `User-Agent` header when developing a partner integration.
+We request that you please set a custom `User-Agent` header when developing a partner integration.
 The custom `User-Agent` header should identify your integration.
 This allows us to identify traffic originating from your integration for analytical and troubleshooting purposes.
 
