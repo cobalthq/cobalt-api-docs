@@ -2,7 +2,7 @@
 
 At Cobalt, we follow the writing guidelines outlined in the [Google developer documentation style guide](https://developers.google.com/style), with the following exceptions:
 
-- We use title case in [document titles and headings](https://developers.google.com/style/capitalization#capitalization-in-titles-and-headings). To check your title, use [this title capitalization tool](https://capitalizemytitle.com/).
+- We use title case in [document titles and headings](https://developers.google.com/style/capitalization#capitalization-in-titles-and-headings). To check your title, use [this title capitalization tool](https://capitalizemytitle.com/style/Chicago/).
 - Security-specific terms such as _blacklist_ or _whitelist_ are acceptable.
 
 Refer to the following guidelines:
