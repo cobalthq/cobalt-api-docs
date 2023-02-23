@@ -10,8 +10,6 @@ Refer to the following guidelines:
 - **Methods**. To learn how to describe API methods, see [Methods](https://developers.google.com/style/api-reference-comments#methods) in [API reference code comments](https://developers.google.com/style/api-reference-comments).
 - **Placeholders**. To learn more about formatting placeholders, see [Format placeholders](https://developers.google.com/style/placeholders).
 
-For more information about designing APIs, see the [API design guide](https://cloud.google.com/apis/design) by Google.
-
 ## Other Resources
 
 Here are some more useful resources:
