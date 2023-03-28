@@ -39,8 +39,11 @@ curl -X GET "https://api.cobalt.io/findings" \
           "192.168.1.1"
         ],
         "proof_of_concept": "Here you can see...",
+        "severity_justification": "The vulnerability can cause a lot of damage",
         "suggested_fix": "Ensure this...",
+        "prerequisites": "Credentials are needed",
         "pentest_id": "pt_PEtv4dqnwGV2efZhLw3BM5",
+        "http_request": "HTTP GET / ...",
         "asset_id": "as_HcChCMueiPQQgvckmZtRSd",
         "log": [
           {
@@ -141,14 +144,17 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 
 ### Response Fields
 
-| Field           | Enum Types                                                                                                                     |
-|-----------------|--------------------------------------------------------------------------------------------------------------------------------|
-| `log`           | `created`, `impact_changed`, `likelihood_changed`, `state_changed`                                                             |
-| `severity`      | `null`, `low`, `medium`, `high`  (aka `criticality`. will be null if likelihood/impact have not yet been set by the pentester) |
-| `state`         | `new`, `triaging`, `need_fix`, `wont_fix`, `valid_fix`, `check_fix`, `invalid`, `carried_over`                                 |
-| `type_category` | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                         |
-| `attachments`   | A list of finding attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.                   |
-| `links.ui.url`  | A link to redirect an authorized user to this finding in the Cobalt web application                                            |
+| Field                    | Enum Types                                                                                                                     |
+|--------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| `log`                    | `created`, `impact_changed`, `likelihood_changed`, `state_changed`                                                             |
+| `severity`               | `null`, `low`, `medium`, `high`  (aka `criticality`. will be null if likelihood/impact have not yet been set by the pentester) |
+| `severity_justification` | Optional; The justification for the severity rating                                                                            |
+| `prerequisites`          | Optional; The prerequisites required for reproducing the vulnerability                                                         |
+| `http_request`           | Optional; An example HTTP request for reproducing the vulnerability                                                            |
+| `state`                  | `new`, `triaging`, `need_fix`, `wont_fix`, `valid_fix`, `check_fix`, `invalid`, `carried_over`                                 |
+| `type_category`          | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                         |
+| `attachments`            | A list of finding attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.                   |
+| `links.ui.url`           | A link to redirect an authorized user to this finding in the Cobalt web application                                            |
 
 ### State
 
@@ -196,8 +202,11 @@ curl -X GET "https://api.cobalt.io/findings/YOUR-FINDING-IDENTIFIER" \
       "192.168.1.1"
     ],
     "proof_of_concept": "Here you can see...",
+    "severity_justification": "The vulnerability can cause a lot of damage",
     "suggested_fix": "Ensure this...",
+    "prerequisites": "Credentials are needed",
     "pentest_id": "pt_PEtv4dqnwGV2efZhLw3BM5",
+    "http_request": "HTTP GET / ...",
     "asset_id": "as_HcChCMueiPQQgvckmZtRSd",
     "log": [
       {
@@ -232,14 +241,17 @@ This endpoint retrieves a specific finding that belong to the organization speci
 
 ### Response Fields
 
-| Field           | Enum Types                                                                                                            |
-|-----------------|-----------------------------------------------------------------------------------------------------------------------|
-| `log`           | created, impact_changed, likelihood_changed, state_changed                                                            |
-| `severity`      | null, low, medium, high (aka `criticality`. will be null if likelihood/impact have not yet been set by the pentester) |
-| `state`         | new, triaging, need_fix, wont_fix, valid_fix, check_fix, invalid, carried_over                                        |
-| `type_category` | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                |
-| `attachments`   | A list of finding attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.          |
-| `url`           | The links.ui.url will redirect an authorized user to this finding in the Cobalt platform                              |
+| Field                    | Enum Types                                                                                                            |
+|--------------------------|-----------------------------------------------------------------------------------------------------------------------|
+| `log`                    | created, impact_changed, likelihood_changed, state_changed                                                            |
+| `severity`               | null, low, medium, high (aka `criticality`. will be null if likelihood/impact have not yet been set by the pentester) |
+| `severity_justification` | Optional; The justification for the severity rating                                                                   |
+| `prerequisites`          | Optional; The prerequisites required for reproducing the vulnerability                                                |
+| `http_request`           | Optional; An example HTTP request for reproducing the vulnerability                                                   |
+| `state`                  | new, triaging, need_fix, wont_fix, valid_fix, check_fix, invalid, carried_over                                        |
+| `type_category`          | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                |
+| `attachments`            | A list of finding attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.          |
+| `url`                    | The links.ui.url will redirect an authorized user to this finding in the Cobalt platform                              |
 
 ### State
 

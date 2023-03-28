@@ -33,7 +33,15 @@ curl -X GET "https://api.cobalt.io/webhooks" \
         "url": "https://example.local",
         "active": true,
         "unhealthy_since": null,
-        "user": "us_RxvqT5T3WCFrfTF74B6JLC"
+        "user": "us_RxvqT5T3WCFrfTF74B6JLC",
+        "subscribed_event_types": [
+          "PENTEST_CREATED",
+          "PENTEST_STATE_UPDATED",
+          "FINDING_DELETED",
+          "FINDING_PUBLISHED",
+          "FINDING_STATE_UPDATED",
+          "FINDING_UPDATED"
+        ]
       }
     }
   ]
@@ -55,14 +63,15 @@ This endpoint retrieves a list of all webhooks that belong to your organization.
 
 ### Response Fields
 
-| Field           | Description                                                                                                                                                                  |
-|-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id              | The ID of the webhook                                                                                                                                                        |
-| name            | The name of the webhook                                                                                                                                                      |
-| url             | The URL that webhook events are sent to                                                                                                                                      |
-| active          | A boolean flag that indicates if the webhook is active                                                                                                                       |
-| unhealthy_since | The time that we began failing to deliver events to this webhook. If the webhook is unhealthy, this field will contain an ISO8601 time stamp. Ex: `2022-08-30T14:14:14.000Z` |
-| user            | The ID of the user that created the webhook                                                                                                                                  |
+| Field                  | Description                                                                                                                                                                  |
+|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| id                     | The ID of the webhook                                                                                                                                                        |
+| name                   | The name of the webhook                                                                                                                                                      |
+| url                    | The URL that webhook events are sent to                                                                                                                                      |
+| active                 | A boolean flag that indicates if the webhook is active                                                                                                                       |
+| unhealthy_since        | The time that we began failing to deliver events to this webhook. If the webhook is unhealthy, this field will contain an ISO8601 time stamp. Ex: `2022-08-30T14:14:14.000Z` |
+| user                   | The ID of the user that created the webhook                                                                                                                                  |
+| subscribed_event_types | The event types that the webhook is subscribed to. See [possible event types here](#webhook-events). Webhook event filtering functionality is not yet enabled for customers. |
 
 ## Get a webhook
 
@@ -83,7 +92,15 @@ curl -X GET "https://api.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER" \
     "url": "https://example.local",
     "active": true,
     "unhealthy_since": null,
-    "user": "us_RxvqT5T3WCFrfTF74B6JLC"
+    "user": "us_RxvqT5T3WCFrfTF74B6JLC",
+    "subscribed_event_types": [
+      "PENTEST_CREATED",
+      "PENTEST_STATE_UPDATED",
+      "FINDING_DELETED",
+      "FINDING_PUBLISHED",
+      "FINDING_STATE_UPDATED",
+      "FINDING_UPDATED"
+    ]
   }
 }
 ```
@@ -96,14 +113,15 @@ This endpoint retrieves a specific webhook belonging to your organization.
 
 ### Response Fields
 
-| Field                | Description                                                         |
-|----------------------|---------------------------------------------------------------------|
-| id                   | The ID of the webhook                                               |
-| name                 | The name of the webhook                                             |
-| url                  | The URL that webhook events are sent to                             |
-| active               | A boolean flag that indicates if the webhook is active              |
-| unhealthy_since      | The time that we began failing to deliver events to this webhook. If the webhook is unhealthy, this field will contain an ISO8601 time stamp. Example: `2022-08-30T14:14:14.000Z`    |
-| user                 | The ID of the user that created the webhook                         |
+| Field                  | Description                                                                                                                                                                       |
+|------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| id                     | The ID of the webhook                                                                                                                                                             |
+| name                   | The name of the webhook                                                                                                                                                           |
+| url                    | The URL that webhook events are sent to                                                                                                                                           |
+| active                 | A boolean flag that indicates if the webhook is active                                                                                                                            |
+| unhealthy_since        | The time that we began failing to deliver events to this webhook. If the webhook is unhealthy, this field will contain an ISO8601 time stamp. Example: `2022-08-30T14:14:14.000Z` |
+| user                   | The ID of the user that created the webhook                                                                                                                                       |
+| subscribed_event_types | The event types that the webhook is subscribed to. See [possible event types here](#webhook-events). Webhook event filtering functionality is not yet enabled for customers.      |
 
 <aside class="notice">
 Remember - you can only request a webhook scoped to the organization specified in the <code>X-Org-Token</code> header.
@@ -122,7 +140,10 @@ curl -X POST "https://api.cobalt.io/webhooks" \
             "name": "My Webhook",
             "active": true,
             "secret": "my_secret",
-            "url": "https://example.local/webhook"
+            "url": "https://example.local/webhook",
+            "subscribed_event_types": [
+              "FINDING_PUBLISHED"
+            ]
           }'
 ```
 
@@ -141,12 +162,13 @@ for example, 200, 201, 204, etc. For details on test events, see the [Webhook Ev
 
 ### Body
 
-| Field  | Description                                                                                                                                                                                                        |
-|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| name   | The name of the webhook                                                                                                                                                                                            |
-| active | A boolean flag specifying if the webhook is active                                                                                                                                                                 |
-| secret | An arbitrary string value. We include this value in the `X-Secret` header when we send webhook events to you. You can use this to verify that the events you receive are from Cobalt. This field is optional.      |
-| url    | The URL to send events to                                                                                                                                                                                          |
+| Field                  | Description                                                                                                                                                                                                   |
+|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| name                   | The name of the webhook                                                                                                                                                                                       |
+| active                 | A boolean flag specifying if the webhook is active                                                                                                                                                            |
+| secret                 | An arbitrary string value. We include this value in the `X-Secret` header when we send webhook events to you. You can use this to verify that the events you receive are from Cobalt. This field is optional. |
+| url                    | The URL to send events to                                                                                                                                                                                     |
+| subscribed_event_types | Optional. The event types that the webhook should be subscribed to. Defaults to all event types when not specified. May not be an empty list. See [possible event types here](#webhook-events). This field may be used, however, webhook event filtering functionality is not yet enabled for customers. |
 
 ### Response
 
@@ -173,7 +195,10 @@ curl -X PATCH 'https://api.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER' \
             "name": "FooBar",
             "secret": "super_secret",
             "active": false,
-            "url": "https://example.local/webhook2"
+            "url": "https://example.local/webhook2",
+            "subscribed_event_types": [
+              "FINDING_PUBLISHED"
+            ]
           }'
 ```
 
@@ -189,12 +214,13 @@ This endpoint updates a webhook belonging to your organization.
 
 All body fields are optional. You only need to include the fields that should be updated.
 
-| Field      | Description                                                                                                                                                                              |
-|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| name       | The name of the webhook                                                                                                                                                                  |
-| secret     | An arbitrary string value. We include this value in the `X-Secret` header when we send webhook events to you. You can use this to verify that the events you receive are from Cobalt.    |
-| active     | A boolean flag specifying if the webhook is active                                                                                                                                       |
-| url        | The URL to send events to                                                                                                                                                                |
+| Field                  | Description                                                                                                                                                                                                                                                                                                    |
+|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| name                   | The name of the webhook                                                                                                                                                                                                                                                                                        |
+| secret                 | An arbitrary string value. We include this value in the `X-Secret` header when we send webhook events to you. You can use this to verify that the events you receive are from Cobalt.                                                                                                                          |
+| active                 | A boolean flag specifying if the webhook is active                                                                                                                                                                                                                                                             |
+| url                    | The URL to send events to                                                                                                                                                                                                                                                                                      |
+| subscribed_event_types | The event types that the webhook should be subscribed to. May not be an empty list. Non-specified event types that are currently subscribed to will be un-subscribed from. Specified event types that are not currently subscribed to will be subscribed to. See [possible event types here](#webhook-events). This field may be used, however, webhook event filtering functionality is not yet enabled for customers. |
 
 ### Response
 
