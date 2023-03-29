@@ -6,7 +6,6 @@ title: Rate Limits
 # Rate Limits
 
 The Cobalt API sets rate limits API requests to manage request volume and maintain system availability.
-Here are some details on the rate limit policy that Cobalt API implements:
 
 - Rate limiting follows a **fixed-window policy**, with a maximum number of requests allowed in a specific
 time window.
