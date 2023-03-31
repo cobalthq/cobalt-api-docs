@@ -24,7 +24,7 @@ time window.
 Example: `X-Rate-Limit-Get-Limit: 100`
 - `X-Rate-Limit-Mutate-Limit`: Indicates the maximum number of Mutate requests allowed per time window.
 Example: `X-Rate-Limit-Mutate-Limit: 20`
-- `X-Rate-Limit-Remaining`: Indicates the number of requests remaining in the time window
+- `X-Rate-Limit-Remaining`: Indicates the number of requests remaining in the time window.
 Example: `X-Rate-Limit-Remaining: 93`
 
 ## When the Rate Limit Is Exceeded
