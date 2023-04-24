@@ -84,7 +84,7 @@ This endpoint retrieves a list of assets that belong to the organization specifi
 | `logo`              | A link pointing the location of the uploaded asset logo                                                                                                                                                   |
 | `technology_stack`  | A list of technology stacks. Each element contains the title of the technology. Example: React 18.0.0.                                                                                                    |
 | `attachments`       | A list of asset attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.                                                                                                |
-| `custom_references` | A list of custom references. A custom reference has a `name` attributee. Example: `[{"name": "third-party system-id"}, {"name": "some-tag-id"}]`                                                          |
+| `custom_references` | A list of custom references. A custom reference has a `name` attribute. Example: `[{"name": "third-party system-id"}, {"name": "some-tag-id"}]`                                                           |
 | `links.ui.url`      | A link to redirect an authorized user to this asset in the Cobalt web application                                                                                                                         |
 
 <aside class="notice">
