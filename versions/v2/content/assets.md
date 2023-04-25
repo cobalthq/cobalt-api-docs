@@ -37,6 +37,11 @@ curl -X GET "https://api.cobalt.io/assets" \
             "file_name": "rainbow.jpeg",
             "download_url": "https://s3.amazonaws.com/acmecorp/uploads/attachment/file/12345/rainbow.jpeg?something=1"
           }
+        ],
+        "custom_references": [
+          {
+            "name": "tag1"
+          }
         ]
       },
       "links": {
@@ -61,25 +66,27 @@ This endpoint retrieves a list of assets that belong to the organization specifi
 
 ### URL Parameters
 
-| Parameter    | Default | Description                                                                                                                                                                                                                                                                                   |
-|--------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `cursor`     | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/assets?cursor=a1b2c3d4`                                                                                                                                                                                                 |
-| `limit`      | `10`    | If specified, returns only a specified amount of assets. Example: `https://api.cobalt.io/assets?limit=5`                                                                                                                                                                                      |
-| `asset_type` | N/A     | If specified, returns assets that match `asset_type`. See Response Fields below for example `asset_type` values. Example: `https://api.cobalt.io/assets?asset_type=web`. Returns an empty list if no assets match the `asset_type` filter.                                                    |
-| `sort`       | N/A     | If specified, returns assets sorted by one of the chosen parameters: `asset_type`. When defined, records are returned in ascending order by the sort parameter. To return in descending order, use a `-` before the sort parameter. Example: `https://api.cobalt.io/assets?sort=-asset_type`. |
+| Parameter                          | Default | Description                                                                                                                                                                                                                                                                                                        |
+|------------------------------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `cursor`                           | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/assets?cursor=a1b2c3d4`                                                                                                                                                                                                                      |
+| `limit`                            | `10`    | If specified, returns only a specified amount of assets. Example: `https://api.cobalt.io/assets?limit=5`                                                                                                                                                                                                           |
+| `asset_type`                       | N/A     | If specified, returns assets that match `asset_type`. See Response Fields below for example `asset_type` values. Example: `https://api.cobalt.io/assets?asset_type=web`. Returns an empty list if no assets match the `asset_type` filter.                                                                         |
+| `custom_references_contains_all[]` | N/A     | If specified, returns assets that contain all matching `custom_references`. This query parameter can be specified multiple times. Returns an empty list if no matches are found. Example: `https://api.cobalt.io/assets?custom_references_contains_all[]=third party&custom_references_contains_all[]=some-tag-id` |
+| `sort`                             | N/A     | If specified, returns assets sorted by one of the chosen parameters: `asset_type`. When defined, records are returned in ascending order by the sort parameter. To return in descending order, use a `-` before the sort parameter. Example: `https://api.cobalt.io/assets?sort=-asset_type`.                      |
 
 ### Response Fields
 
-| Field              | Description                                                                                                                                                                                               |
-|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `id`               | A unique ID representing the asset. Starts with `as_`                                                                                                                                                     |
-| `title`            | The title of the asset; set by user creating the asset                                                                                                                                                    |
-| `description`      | A description of the asset; set by user creating the asset                                                                                                                                                |
-| `asset_type`       | An asset type, such as; `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile`, `wireless_network`, `iot`, `thick_client`, `physical`, `other` |
-| `logo`             | A link pointing the location of the uploaded asset logo                                                                                                                                                   |
-| `technology_stack` | A list of technology stacks. Each element contains the title of the technology. Example: React 18.0.0.                                                                                                    |
-| `attachments`      | A list of asset attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.                                                                                                |
-| `links.ui.url`     | A link to redirect an authorized user to this asset in the Cobalt web application                                                                                                                         |
+| Field               | Description                                                                                                                                                                                               |
+|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `id`                | A unique ID representing the asset. Starts with `as_`                                                                                                                                                     |
+| `title`             | The title of the asset; set by user creating the asset                                                                                                                                                    |
+| `description`       | A description of the asset; set by user creating the asset                                                                                                                                                |
+| `asset_type`        | An asset type, such as; `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile`, `wireless_network`, `iot`, `thick_client`, `physical`, `other` |
+| `logo`              | A link pointing the location of the uploaded asset logo                                                                                                                                                   |
+| `technology_stack`  | A list of technology stacks. Each element contains the title of the technology. Example: React 18.0.0.                                                                                                    |
+| `attachments`       | A list of asset attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.                                                                                                |
+| `custom_references` | A list of custom references. A custom reference has a `name` attribute. Example: `[{"name": "third-party system-id"}, {"name": "some-tag-id"}]`                                                           |
+| `links.ui.url`      | A link to redirect an authorized user to this asset in the Cobalt web application                                                                                                                         |
 
 <aside class="notice">
 Remember - you can only request assets scoped to the organization specified in the <code>X-Org-Token</code> header.
@@ -116,6 +123,11 @@ curl -X GET "https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER" \
           "file_name": "rainbow.jpeg",
           "download_url": "https://s3.amazonaws.com/acmecorp/uploads/attachment/file/12345/rainbow.jpeg?something=1"
         }
+      ],
+      "custom_references": [
+        {
+          "name": "tag1"
+        }
       ]
     },
     "links": {
@@ -135,16 +147,17 @@ This endpoint retrieves a specific asset belonging to the organization specified
 
 ### Response Fields
 
-| Field              | Description                                                                                                                                                                                               |
-|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `id`               | A unique ID representing the asset. Starts with `as_`                                                                                                                                                     |
-| `title`            | The title of the asset; set by user creating the asset                                                                                                                                                    |
-| `description`      | A description of the asset; set by user creating the asset                                                                                                                                                |
-| `asset_type`       | An asset type, such as; `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile`, `wireless_network`, `iot`, `thick_client`, `physical`, `other` |
-| `logo`             | A link pointing the location of the uploaded asset logo                                                                                                                                                   |
-| `technology_stack` | A list of technology stacks. Each element contains the title of the technology. Example: React 18.0.0.                                                                                                    |
-| `attachments`      | A list of asset attachments (including the logo). Attachment download URLs are pre-authorized and will expire after 10 minutes.                                                                           |
-| `links.ui.url`     | A link to redirect an authorized user to this asset in the Cobalt web application                                                                                                                         |
+| Field               | Description                                                                                                                                                                                               |
+|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `id`                | A unique ID representing the asset. Starts with `as_`                                                                                                                                                     |
+| `title`             | The title of the asset; set by user creating the asset                                                                                                                                                    |
+| `description`       | A description of the asset; set by user creating the asset                                                                                                                                                |
+| `asset_type`        | An asset type, such as; `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile`, `wireless_network`, `iot`, `thick_client`, `physical`, `other` |
+| `logo`              | A link pointing the location of the uploaded asset logo                                                                                                                                                   |
+| `technology_stack`  | A list of technology stacks. Each element contains the title of the technology. Example: React 18.0.0.                                                                                                    |
+| `attachments`       | A list of asset attachments (including the logo). Attachment download URLs are pre-authorized and will expire after 10 minutes.                                                                           |
+| `custom_references` | A list of custom references. A custom reference has a `name` attribute. Example: `[{"name": "third-party system-id"}, {"name": "some-tag-id"}]`                                                           |
+| `links.ui.url`      | A link to redirect an authorized user to this asset in the Cobalt web application                                                                                                                         |
 
 <aside class="notice">
 Remember - you can only request an asset scoped to the organization specified in the <code>X-Org-Token</code> header.
@@ -162,7 +175,8 @@ curl -X POST "https://api.cobalt.io/assets" \
   --data '{
             "title": "Test Asset",
             "description": "Lorem ipsum",
-            "asset_type": "web"
+            "asset_type": "web",
+            "custom_references": []
           }'
 ```
 
@@ -177,11 +191,12 @@ This endpoint creates a new asset belonging to the organization specified in the
 
 ### Body
 
-| Field         | Description                                                                                                                                                                          |
-|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `title`       | The title of the asset; set by user creating the asset                                                                                                                               |
-| `description` | Optional; A description of the asset; set by user creating the asset                                                                                                                 |
-| `asset_type`  | `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile`, `wireless_network`, `iot`, `thick_client`, `physical`, or `other` |
+| Field               | Description                                                                                                                                                                                       |
+|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `title`             | The title of the asset; set by user creating the asset                                                                                                                                            |
+| `description`       | Optional; A description of the asset; set by user creating the asset                                                                                                                              |
+| `asset_type`        | `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile`, `wireless_network`, `iot`, `thick_client`, `physical`, or `other`              |
+| `custom_references` | Optional; A list of custom references. A custom reference has a `name` attribute. Example: `[{"name": "third-party system-id"}, {"name": "some-tag-id"}]`. Defaults to empty list if not provided |
 
 ### Response
 
@@ -203,7 +218,8 @@ curl -X PUT 'https://api.cobalt.io/assets/AN-ASSET-IDENTIFIER' \
   --data '{
             "title": "Updated title",
             "description": "Updated description",
-            "asset_type": "web"
+            "asset_type": "web",
+            "custom_references: []
           }'
 ```
 
@@ -217,11 +233,12 @@ This endpoint updates an asset belonging to the organization specified in the `X
 
 ### Body
 
-| Field         | Description                                                                                                                                                                                |
-|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `title`       | The title of the asset; set by user creating the asset                                                                                                                                     |
-| `description` | Optional; A description of the asset; set by user creating the asset                                                                                                                       |
-| `asset_type`  | Options: `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile`, `wireless_network`, `iot`, `thick_client`, `physical`, `other` |
+| Field               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `title`             | The title of the asset; set by user creating the asset                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `description`       | Optional; A description of the asset; set by user creating the asset                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `asset_type`        | Options: `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile`, `wireless_network`, `iot`, `thick_client`, `physical`, `other`                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `custom_references` | Optional; A list of custom references. A custom reference has a `name` attribute. Example: `[{"name": "third-party system-id"}, {"name": "some-tag-id"}]`. If `custom_references` field is not provided in the `PUT` request, no changes will occur to the asset custom references. Any `custom_references` that **already exist for the asset and are not provided** in the `PUT` request will be deleted. Any `custom_references` **that already exist for the asset and are provided** in the `PUT` request will remain. Any `custom_references` that do not exist for the asset and are provided in the `PUT` request will be created. |
 
 ### Response
 
@@ -243,7 +260,8 @@ curl -X DELETE 'https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER' \
 
 > The above command returns no data and a `204` response code when successful.
 
-This endpoint deletes an asset belonging to the organization specified in the header.
+This endpoint deletes an asset belonging to the organization specified in the header. Note that deleting an asset will
+also delete all associated `custom_references` for the asset.
 
 ### HTTP Request
 
