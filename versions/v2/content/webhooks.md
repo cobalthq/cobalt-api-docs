@@ -162,13 +162,13 @@ for example, 200, 201, 204, etc. For details on test events, see the [Webhook Ev
 
 ### Body
 
-| Field                  | Description                                                                                                                                                                                                   |
-|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| name                   | The name of the webhook                                                                                                                                                                                       |
-| active                 | A boolean flag specifying if the webhook is active                                                                                                                                                            |
-| secret                 | An arbitrary string value. We include this value in the `X-Secret` header when we send webhook events to you. You can use this to verify that the events you receive are from Cobalt. This field is optional. |
-| url                    | The URL to send events to                                                                                                                                                                                     |
-| subscribed_event_types | Optional. The event types that the webhook should be subscribed to. Defaults to all event types when not specified. May not be an empty list. See [possible event types here](#webhook-events). This field may be used, however, webhook event filtering functionality is not yet enabled for customers. |
+| Field                  | Description                                                                                                                                                                                                                                                                                    |
+|------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| name                   | The name of the webhook                                                                                                                                                                                                                                                                        |
+| active                 | A boolean flag specifying if the webhook is active                                                                                                                                                                                                                                             |
+| secret                 | An arbitrary string value. We include this value in the `X-Secret` header when we send webhook events to you. You can use this to verify that the events you receive are from Cobalt. This field is optional.                                                                                  |
+| url                    | The URL to send events to                                                                                                                                                                                                                                                                      |
+| subscribed_event_types | The event types that the webhook should be subscribed to. Defaults to all event types when not specified. May not be an empty list. See [possible event types here](#webhook-events). This field may be used, however, webhook event filtering functionality is not yet enabled for customers. |
 
 ### Response
 
