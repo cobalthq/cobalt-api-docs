@@ -71,7 +71,7 @@ This endpoint retrieves a list of all webhooks that belong to your organization.
 | active                 | A boolean flag that indicates if the webhook is active                                                                                                                       |
 | unhealthy_since        | The time that we began failing to deliver events to this webhook. If the webhook is unhealthy, this field will contain an ISO8601 time stamp. Ex: `2022-08-30T14:14:14.000Z` |
 | user                   | The ID of the user that created the webhook                                                                                                                                  |
-| subscribed_event_types | The event types that the webhook is subscribed to. See [possible event types here](#webhook-events). Webhook event filtering functionality is not yet enabled for customers. |
+| subscribed_event_types | The event types that the webhook is subscribed to. See [possible event types here](#webhook-events).                                                                         |
 
 ## Get a webhook
 
