@@ -8,7 +8,8 @@ title: Webhooks
 Webhooks allow you to send real-time notifications to your system when specific events occur on the Cobalt platform.
 We send updates to your URL through HTTP POST requests. This eliminates the need to poll the API for updates.
 
-You can also configure webhooks in the Cobalt web app. <a href="https://developer.cobalt.io/integrations/webhooks/" target="_blank">Learn more</a>.
+You can also configure webhooks in the Cobalt web app.
+<a href="https://developer.cobalt.io/integrations/webhooks/" target="_blank">Learn more</a>.
 
 ## Get All Webhooks
 
