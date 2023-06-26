@@ -14,7 +14,7 @@ curl -X GET "https://api.cobalt.io/assets" \
   -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
 ```
 
-> The above command returns JSON structured like this:
+> Response Sample
 
 ```json
 {
@@ -58,25 +58,27 @@ curl -X GET "https://api.cobalt.io/assets" \
 }
 ```
 
-This endpoint retrieves a list of assets that belong to the organization specified in the `X-Org-Token` header.
+Returns all assets that belong to an organization.
+
+{{% add-org-token %}}
 
 ### HTTP Request
 
 `GET https://api.cobalt.io/assets`
 
-### URL Parameters
+### Query Parameters
 
-| Parameter             | Default | Description                                                                                                                                                                                                                                                                                   |
+| Name             | Default | Description                                                                                                                                                                                                                                                                                   |
 |-----------------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `cursor`              | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/assets?cursor=a1b2c3d4`                                                                                                                                                                                                 |
-| `limit`               | `10`    | If specified, returns only a specified amount of assets. Example: `https://api.cobalt.io/assets?limit=5`                                                                                                                                                                                      |
-| `asset_type`          | N/A     | If specified, returns assets that match `asset_type`. See Response Fields below for example `asset_type` values. Example: `https://api.cobalt.io/assets?asset_type=web`. Returns an empty list if no assets match the `asset_type` filter.                                                    |
+| `cursor`              | N/A     | {{% cursor %}} Example: `https://api.cobalt.io/assets?cursor=a1b2c3d4`                                                                                                                                                                                                 |
+| `limit`               | `10`    | {{% limit %}} Example: `https://api.cobalt.io/assets?limit=5`                                                                                                                                                                                      |
+| `asset_type`          | N/A     | If specified, returns assets that match `asset_type`. See Response Parameters below for example `asset_type` values. Example: `https://api.cobalt.io/assets?asset_type=web`. Returns an empty list if no assets match the `asset_type` filter.                                                    |
 | `tags_contains_all[]` | N/A     | If specified, returns assets that contain all matching `tags`. This query parameter can be specified multiple times. Returns an empty list if no matches are found. Example: `https://api.cobalt.io/assets?tags_contains_all[]=third party&tags_contains_all[]=some-tag-id`                   |
 | `sort`                | N/A     | If specified, returns assets sorted by one of the chosen parameters: `asset_type`. When defined, records are returned in ascending order by the sort parameter. To return in descending order, use a `-` before the sort parameter. Example: `https://api.cobalt.io/assets?sort=-asset_type`. |
 
-### Response Fields
+### Response Parameters
 
-| Field              | Description                                                                                                                                                                                               |
+| Name              | Description                                                                                                                                                                                               |
 |--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `id`               | A unique ID representing the asset. Starts with `as_`                                                                                                                                                     |
 | `title`            | The title of the asset; set by user creating the asset                                                                                                                                                    |
@@ -88,10 +90,6 @@ This endpoint retrieves a list of assets that belong to the organization specifi
 | `tags`             | A list of tags. A tag has a `name` attribute. Example: `[{"name": "third-party system-id"}, {"name": "some-tag-id"}]`                                                                                     |
 | `links.ui.url`     | A link to redirect an authorized user to this asset in the Cobalt web application                                                                                                                         |
 
-<aside class="notice">
-Remember - you can only request assets scoped to the organization specified in the <code>X-Org-Token</code> header.
-</aside>
-
 ## Get an Asset
 
 ```sh
@@ -101,7 +99,7 @@ curl -X GET "https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER" \
   -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
 ```
 
-> The above command returns JSON structured like this:
+> Response Sample
 
 ```json
 {
@@ -139,15 +137,17 @@ curl -X GET "https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER" \
 }
 ```
 
-This endpoint retrieves a specific asset belonging to the organization specified in the `X-Org-Token` header.
+Returns an asset that belongs to an organization.
+
+{{% add-org-token %}}
 
 ### HTTP Request
 
 `GET https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER`
 
-### Response Fields
+### Response Parameters
 
-| Field              | Description                                                                                                                                                                                               |
+| Name              | Description                                                                                                                                                                                               |
 |--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `id`               | A unique ID representing the asset. Starts with `as_`                                                                                                                                                     |
 | `title`            | The title of the asset; set by user creating the asset                                                                                                                                                    |
@@ -158,10 +158,6 @@ This endpoint retrieves a specific asset belonging to the organization specified
 | `attachments`      | A list of asset attachments (including the logo). Attachment download URLs are pre-authorized and will expire after 10 minutes.                                                                           |
 | `tags`             | A list of tags. A tag has a `name` attribute. Example: `[{"name": "third-party system-id"}, {"name": "some-tag-id"}]`                                                                                     |
 | `links.ui.url`     | A link to redirect an authorized user to this asset in the Cobalt web application                                                                                                                         |
-
-<aside class="notice">
-Remember - you can only request an asset scoped to the organization specified in the <code>X-Org-Token</code> header.
-</aside>
 
 ## Create an Asset
 
@@ -180,18 +176,20 @@ curl -X POST "https://api.cobalt.io/assets" \
           }'
 ```
 
-> The above command returns no data and a `201` response code when successful. There will be a `Location` header
+> {{% 201-code %}} There will be a `Location` header
 > pointing at the newly created asset.
 
-This endpoint creates a new asset belonging to the organization specified in the `X-Org-Token` header.
+Creates a new asset for an organization.
+
+{{% add-org-token %}}
 
 ### HTTP Request
 
 `POST https://api.cobalt.io/assets`
 
-### Body
+### Request Body
 
-| Field         | Description                                                                                                                                                                          |
+| Name         | Description                                                                                                                                                                          |
 |---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `title`       | The title of the asset; set by user creating the asset                                                                                                                               |
 | `description` | Optional; A description of the asset; set by user creating the asset                                                                                                                 |
@@ -200,12 +198,8 @@ This endpoint creates a new asset belonging to the organization specified in the
 
 ### Response
 
-You get a `201` response code for a successful request. The `Location` response header contains the URL of the new
+{{% 201-code %}} The `Location` response header contains the URL of the new
 asset within the Cobalt API.
-
-<aside class="notice">
-Remember - you can only create an asset within the organization specified in the <code>X-Org-Token</code> header.
-</aside>
 
 ## Update an Asset
 
@@ -223,17 +217,19 @@ curl -X PUT 'https://api.cobalt.io/assets/AN-ASSET-IDENTIFIER' \
           }'
 ```
 
-> The above command returns no data and a `204` response code when successful.
+> {{% 204-code %}}
 
-This endpoint updates an asset belonging to the organization specified in the `X-Org-Token` header.
+Updates an asset with the provided details.
+
+{{% add-org-token %}}
 
 ### HTTP Request
 
 `PUT https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER`
 
-### Body
+### Request Body
 
-| Field         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Name         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `title`       | The title of the asset; set by user creating the asset                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | `description` | Optional; A description of the asset; set by user creating the asset                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
@@ -242,11 +238,7 @@ This endpoint updates an asset belonging to the organization specified in the `X
 
 ### Response
 
-On a successful update, a `204` response code will be returned.
-
-<aside class="notice">
-Remember - you can only update an asset within the organization specified in the <code>X-Org-Token</code> header.
-</aside>
+{{% 204-code %}}
 
 ## Delete an Asset
 
@@ -258,10 +250,12 @@ curl -X DELETE 'https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER' \
   -H 'X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN'
 ```
 
-> The above command returns no data and a `204` response code when successful.
+> {{% 204-code %}}
 
-This endpoint deletes an asset belonging to the organization specified in the header. Note that deleting an asset will
-also delete all associated `tags` for the asset.
+Deletes an asset that belongs to an organization.
+This request also deletes all `tags` associated with the asset.
+
+{{% add-org-token %}}
 
 ### HTTP Request
 
@@ -269,11 +263,7 @@ also delete all associated `tags` for the asset.
 
 ### Response
 
-On successful deletion, a `204` response code will be returned.
-
-<aside class="notice">
-Remember - you can only delete an asset within the organization specified in the <code>X-Org-Token</code> header.
-</aside>
+{{% 204-code %}}
 
 ## Upload an Attachment
 
@@ -287,34 +277,31 @@ curl -X POST 'https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/attachments' \
   --form 'attachment=@"/path/to/image.jpg"'
 ```
 
-> The above command returns no data and a `201` response code when successful. There will be a `Location` header
+> {{% 201-code %}} There will be a `Location` header
 > pointing at the newly created attachment.
 
-This endpoint uploads a new attachment for an asset belonging to the organization specified in the `X-Org-Token` header.
+Adds an attachment to an asset.
+
+{{% add-org-token %}}
 
 ### HTTP Request
 
 `POST https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/attachments`
 
-### Body
+### Request Body
 
-| Form field   | Description                          |
+| Form Field   | Description                          |
 |--------------|--------------------------------------|
 | `attachment` | The file to upload as an attachment. |
 
 ### File Requirements
 
-- The file must be smaller than 10 MB.
+The file must be smaller than 10 MB.
 
 ### Response
 
-On successful upload, a `201` response code will be returned. A response header, `Location`, will contain the URL within
+{{% 201-code %}} A response header, `Location`, will contain the URL within
 Cobalt API of the new attachment which you can use only to DELETE the attachment.
-
-<aside class="notice">
-Remember - you can only upload an attachment for an asset within the organization specified in the
-<code>X-Org-Token</code> header.
-</aside>
 
 ## Delete an Attachment
 
@@ -325,9 +312,11 @@ curl -X DELETE 'https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/attachments/Y
   -H 'X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN'
 ```
 
-> The above command returns no data and a `204` response code when successful.
+> {{% 204-code %}}
 
-This endpoint deletes an attachment from an asset belonging to the organization specified in the header.
+Deletes an attachment from an asset.
+
+{{% add-org-token %}}
 
 ### HTTP Request
 
@@ -338,12 +327,7 @@ This endpoint deletes an attachment from an asset belonging to the organization 
 
 ### Response
 
-On successful deletion, a `204` response code will be returned.
-
-<aside class="notice">
-Remember - you can only delete an attachment from an asset within the organization specified in the
-<code>X-Org-Token</code> header.
-</aside>
+{{% 204-code %}}
 
 ## Upload a Logo
 
@@ -357,18 +341,19 @@ curl -X POST 'https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/logo' \
   --form 'attachment=@"/path/to/image.jpg"'
 ```
 
-> The above command returns no data and a `201` response code when successful.
+> {{% 201-code %}}
 
-This endpoint updates the logo for an asset belonging to the organization specified in the `X-Org-Token` header. This
-means the old logo is removed and replaced by the new logo.
+Adds a new logo to an asset. This request removes the old logo and replaces it with a new logo.
+
+{{% add-org-token %}}
 
 ### HTTP Request
 
 `POST https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/logo`
 
-### Body
+### Request Body
 
-| Form field   | Description                   |
+| Form Field   | Description                   |
 |--------------|-------------------------------|
 | `attachment` | The file to upload as a logo. |
 
@@ -379,9 +364,4 @@ means the old logo is removed and replaced by the new logo.
 
 ### Response
 
-On successful upload, a `201` response code will be returned.
-
-<aside class="notice">
-Remember - you can only upload a logo for an asset within the organization specified in the <code>X-Org-Token</code>
-header.
-</aside>
+{{% 201-code %}}

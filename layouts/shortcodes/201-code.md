@@ -1,0 +1,1 @@
+A successful request returns a `201 Created` response code.

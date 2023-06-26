@@ -14,7 +14,7 @@ curl -X GET "https://api.cobalt.io/findings" \
   -H "X-Org-Token: YOUR-V1-ORGANIZATION-TOKEN"
 ```
 
-> The above command returns JSON structured like this:
+> Response Sample
 
 ```json
 {
@@ -84,9 +84,9 @@ curl -X GET "https://api.cobalt.io/findings" \
 }
 ```
 
-This endpoint retrieves a list of all pentest findings that belong to the organization specified in the `X-Org-Token`
-header, filterable by `pentest_id` or `asset_id`. The `log` array presents a history of each finding and corresponding
-timestamp.
+Returns all findings that belong to an organization.
+
+{{% add-org-token %}}
 
 ### Calculations
 
@@ -113,22 +113,18 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 
 `GET https://api.cobalt.io/findings`
 
-`GET https://api.cobalt.io/findings?pentest=pt_9Ig1234`
+### Query Parameters
 
-`GET https://api.cobalt.io/findings?asset=as_cwrsqsL`
-
-### URL Parameters
-
-| Parameter | Default | Description                                                                                                               |
+| Name | Default | Description                                                                                                               |
 |-----------|---------|---------------------------------------------------------------------------------------------------------------------------|
-| `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/findings?cursor=a1b2c3d4`                        |
-| `limit`   | `1000`  | If specified, returns only a specified amount of findings. Example: `https://api.cobalt.io/findings?limit=5`           |
+| `cursor`  | N/A     | {{% cursor %}} Example: `https://api.cobalt.io/findings?cursor=a1b2c3d4`                        |
+| `limit`   | `1000`  | {{% limit %}} Example: `https://api.cobalt.io/findings?limit=5`           |
 | `pentest` | N/A     | If specified, returns findings scoped to this pentest id. Example: `https://api.cobalt.io/findings?pentest=pt_9Ig1234` |
 | `asset`   | N/A     | If specified, returns findings scoped to this asset id. Example: `https://api.cobalt.io/findings?asset=as_cwrsqsL`     |
 
-### Response Fields
+### Response Parameters
 
-| Field           | Enum Types                                                                                                                     |
+| Name           | Description                |
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------|
 | `log`           | `created`, `impact_changed`, `likelihood_changed`, `state_changed`                                                             |
 | `severity`      | `null`, `low`, `medium`, `high`  (aka `criticality`. will be null if likelihood/impact have not yet been set by the pentester) |
@@ -145,7 +141,3 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 - `check_fix`: A fix has been applied and now is awaiting validation by the pentester.
 - `invalid`: The finding was rejected as not being a true vulnerability.
 - `carried_over`: The finding was carried over from a previous pentest.
-
-<aside class="notice">
-Remember - you can only request findings scoped to the organization specified in the <code>X-Org-Token</code> header.
-</aside>

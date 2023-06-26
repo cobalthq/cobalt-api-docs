@@ -12,7 +12,7 @@ curl -X GET "https://api.cobalt.io/findings/YOUR-FINDING-ID/possible_states" \
   -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
 ```
 
-> The above command returns JSON structured like this:
+> Response Sample
 
 ```json
 {
@@ -28,21 +28,23 @@ curl -X GET "https://api.cobalt.io/findings/YOUR-FINDING-ID/possible_states" \
 }
 ```
 
-This endpoint retrieves the current state of a finding as well as possible next states.
+Returns the current state of a finding and possible next states.
+
+{{% add-org-token %}}
 
 ### HTTP Request
 
 `GET https://api.cobalt.io/findings/YOUR-FINDING-ID/possible_states`
 
-### URL Parameters
+### Query Parameters
 
-| Parameter         | Description                                                  |
+| Name         | Description                                                  |
 |-------------------|--------------------------------------------------------------|
 | `YOUR-FINDING-ID` | A unique ID representing the organization. Starts with `vl_` |
 
-### Response Fields
+### Response Parameters
 
-| Field             | Description                                               |
+| Name             | Description                                               |
 |-------------------|-----------------------------------------------------------|
 | `current_state`   | The current state of the finding.                         |
 | `possible_states` | A list of states that the finding can be transitioned to. |
@@ -68,22 +70,24 @@ curl -X PATCH "https://api.cobalt.io/findings/YOUR-FINDING-ID" \
   -d '{"state":"triaging"}'
 ```
 
-> If successful, this command returns `204`.
+> {{% 204-code %}}
 
-This endpoint updates the current state of a finding.
+Updates the current state of a finding.
+
+{{% add-org-token %}}
 
 ### HTTP Request
 
 `PATCH https://api.cobalt.io/findings/YOUR-FINDING-ID`
 
-### URL Parameters
+### Query Parameters
 
-| Parameter         | Description                                                  |
+| Name         | Description                                                  |
 |-------------------|--------------------------------------------------------------|
 | `YOUR-FINDING-ID` | A unique ID representing the organization. Starts with `vl_` |
 
-### Body
+### Request Body
 
-| Field   | Description                                                                  |
+| Name   | Description                                                                  |
 |---------|------------------------------------------------------------------------------|
 | `state` | The desired next state of the finding. Should be one of the possible states. |

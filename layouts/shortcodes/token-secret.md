@@ -1,0 +1,1 @@
+Your new personal API token. Keep it in a safe place and don't share it with anyone.

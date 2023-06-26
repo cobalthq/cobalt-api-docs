@@ -1,0 +1,1 @@
+The token of the organization. Include the token as a value in the `X-Org-Token` request header.

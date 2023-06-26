@@ -43,8 +43,8 @@ languages:
     title: Cobalt API Documentation
     toc_footers:
       - <a href='/v1' rel='nofollow'
-        target='_new'>View `v1` documentation</a>
+        target='_new'>View API v1 Documentation</a>
       - <a href='https://app.cobalt.io/settings/api-token' rel='nofollow'
-        target='_new'>Create your personal API token</a>
-      - <a href='https://cobaltio.zendesk.com/hc/en-us'
-        target='_new'>Visit our Support Center</a>
+        target='_new'>Create Your Personal API Token</a>
+      - <a href='https://developer.cobalt.io/'
+        target='_new'>Read Cobalt Documentation</a>

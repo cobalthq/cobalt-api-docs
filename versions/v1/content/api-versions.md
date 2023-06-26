@@ -6,19 +6,18 @@ title: API Versions
 # API Versions
 
 <aside class="warning">
-You are currently viewing the documentation of v1 of Cobalt API. Please visit <a href="https://docs.cobalt.io/v2/">docs.cobalt.io/v2</a>
-for the documentation of v2 of Cobalt API. If you've integrated with Cobalt API in the past by using v1,
-you can use the <a href="https://docs.cobalt.io/v2/#changelog">Changelog</a> to migrate to v2.
+You're viewing the documentation for an older version of the Cobalt API (v1). Please visit the <a href="https://docs.cobalt.io/v2/">documentation</a>
+for the latest version (v2). If you've integrated with the Cobalt API in the past using v1,
+please see the <a href="https://docs.cobalt.io/v2/#changelog">Changelog</a> to migrate to v2.
 </aside>
 
 ## Background
 
-When the Cobalt API was introduced in 2021, it was read-only but plans were already in place to add
-write support. Initially this was envisioned as being added to `v1` of the API.
+When we introduced the Cobalt API in 2021, it was read-only. Initially, we planned to add write support to v1 of the API.
 
-A close examination of `v1` of the API will reveal an odd mix of identifiers - numeric IDs, tokens,
-and so on. For the sake of simplicity and consistency Cobalt decided to migrate to a common identifier
-format. Due to the difficulty of maintaining full compatibility across different combinations of
-identifiers, we decided to introduce `v2` of the API exclusively using the new identifier format.
+After a careful review of v1, we discovered an odd mix of identifiers—numeric IDs, tokens,
+and so on. We decided to switch to a common identifier format for simplicity and consistency.
+Because it's difficult to maintain full compatibility between different combinations of
+identifiers, we decided to introduce v2 of the API that uses only the new identifier format.
 
-`v1` is currently maintained but will not see any new features.
+We maintain v1 of the API, but we won't add any new features to it.

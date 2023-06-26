@@ -5,9 +5,9 @@ title: Partner Integrations
 
 # Partner Integrations
 
-We request that you please set a custom `User-Agent` header when developing a partner integration.
-The custom `User-Agent` header should identify your integration.
-This allows us to identify traffic originating from your integration for analytical and troubleshooting purposes.
+When developing a partner integration, please set a custom `User-Agent` header.
+The custom `User-Agent` allows us to identify your integration and the traffic originating from it
+for analysis and troubleshooting purposes.
 
 Format:
 `User-Agent: [IntegrationName]/[IntegrationVersion]`
@@ -15,4 +15,4 @@ Format:
 Example:
 `User-Agent: PartnerCobaltIntegration/1.0.0`
 
-The `User-Agent` header is not required, but we strongly encourage partner integrations to send this header.
+The `User-Agent` header is not required, but we strongly encourage you to send it.

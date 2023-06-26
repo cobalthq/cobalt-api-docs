@@ -1,14 +1,16 @@
 ---
-weight: 11
+weight: 10
 title: Webhooks
 ---
 
 # Webhooks
 
-Webhooks allow your system to be notified when events occur on the Cobalt Platform via HTTP POST requests.
-This eliminates the need to poll the API for updates.
+Webhooks allow you to send real-time notifications to your system when specific events occur on the Cobalt platform.
+We send updates to your URL through HTTP POST requests. This eliminates the need to poll the API for updates.
 
-## Get all webhooks
+You can also configure webhooks in the Cobalt web app. <a href="https://developer.cobalt.io/integrations/webhooks/" target="_blank">Learn more</a>.
+
+## Get All Webhooks
 
 ```sh
 curl -X GET "https://api.cobalt.io/webhooks" \
@@ -17,7 +19,7 @@ curl -X GET "https://api.cobalt.io/webhooks" \
   -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
 ```
 
-> The above command returns JSON structured like this:
+> Response Sample
 
 ```json
 {
@@ -48,32 +50,34 @@ curl -X GET "https://api.cobalt.io/webhooks" \
 }
 ```
 
-This endpoint retrieves a list of all webhooks that belong to your organization.
+Returns a list of all webhooks that belong to an organization.
+
+{{% add-org-token %}}
 
 ### HTTP Request
 
 `GET https://api.cobalt.io/webhooks`
 
-### URL Parameters
+### Query Parameters
 
-| Parameter | Default | Description                                                                                                     |
+| Name | Default | Description                                                                                                     |
 |-----------|---------|-----------------------------------------------------------------------------------------------------------------|
-| `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/webhooks?cursor=a1b2c3d4`              |
-| `limit`   | `10`    | If specified, returns only a specified amount of webhooks. Example: `https://api.cobalt.io/webhooks?limit=5` |
+| `cursor`  | N/A     | {{% cursor %}} Example: `https://api.cobalt.io/webhooks?cursor=a1b2c3d4`              |
+| `limit`   | `10`    | {{% limit %}} Example: `https://api.cobalt.io/webhooks?limit=5` |
 
-### Response Fields
+### Response Parameters
 
-| Field                  | Description                                                                                                                                                                  |
+| Name                  | Description                                                                                                                                                                  |
 |------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id                     | The ID of the webhook                                                                                                                                                        |
-| name                   | The name of the webhook                                                                                                                                                      |
-| url                    | The URL that webhook events are sent to                                                                                                                                      |
-| active                 | A boolean flag that indicates if the webhook is active                                                                                                                       |
-| unhealthy_since        | The time that we began failing to deliver events to this webhook. If the webhook is unhealthy, this field will contain an ISO8601 time stamp. Ex: `2022-08-30T14:14:14.000Z` |
-| user                   | The ID of the user that created the webhook                                                                                                                                  |
-| subscribed_event_types | The event types that the webhook is subscribed to. See [possible event types here](#webhook-events).                                                                         |
+| `id`                     | The ID of the webhook                                                                                                                                                        |
+| `name`                   | The name of the webhook                                                                                                                                                      |
+| `url`                    | The URL that webhook events are sent to                                                                                                                                      |
+| `active`                 | A boolean flag that indicates if the webhook is active                                                                                                                       |
+| `unhealthy_since`        | The time that we began failing to deliver events to this webhook. If the webhook is unhealthy, this field will contain an ISO8601 time stamp. Example: `2022-08-30T14:14:14.000Z` |
+| `user`                   | The ID of the user that created the webhook                                                                                                                                  |
+| `subscribed_event_types` | The event types that the webhook is subscribed to. See [possible event types here](#webhook-events).                                                                         |
 
-## Get a webhook
+## Get a Webhook
 
 ```sh
 curl -X GET "https://api.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER" \
@@ -82,7 +86,7 @@ curl -X GET "https://api.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER" \
   -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
 ```
 
-> The above command returns JSON structured like this:
+> Response Sample
 
 ```json
 {
@@ -105,29 +109,27 @@ curl -X GET "https://api.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER" \
 }
 ```
 
-This endpoint retrieves a specific webhook belonging to your organization.
+Returns a webhook that belongs to an organization.
+
+{{% add-org-token %}}
 
 ### HTTP Request
 
 `GET https://api.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER`
 
-### Response Fields
+### Response Parameters
 
-| Field                  | Description                                                                                                                                                                       |
+| Name                  | Description                                                                                                                                                                       |
 |------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| id                     | The ID of the webhook                                                                                                                                                             |
-| name                   | The name of the webhook                                                                                                                                                           |
-| url                    | The URL that webhook events are sent to                                                                                                                                           |
-| active                 | A boolean flag that indicates if the webhook is active                                                                                                                            |
-| unhealthy_since        | The time that we began failing to deliver events to this webhook. If the webhook is unhealthy, this field will contain an ISO8601 time stamp. Example: `2022-08-30T14:14:14.000Z` |
-| user                   | The ID of the user that created the webhook                                                                                                                                       |
-| subscribed_event_types | The event types that the webhook is subscribed to. See [possible event types here](#webhook-events)                                                                               |
+| `id`                     | The ID of the webhook                                                                                                                                                             |
+| `name`                   | The name of the webhook                                                                                                                                                           |
+| `url`                    | The URL that webhook events are sent to                                                                                                                                           |
+| `active`                 | A boolean flag that indicates if the webhook is active                                                                                                                            |
+| `unhealthy_since`        | The time that we began failing to deliver events to this webhook. If the webhook is unhealthy, this field will contain an ISO8601 time stamp. Example: `2022-08-30T14:14:14.000Z` |
+| `user`                   | The ID of the user that created the webhook                                                                                                                                       |
+| `subscribed_event_types` | [Event types](#webhook-events) that the webhook is subscribed to.                                                                         |
 
-<aside class="notice">
-Remember - you can only request a webhook scoped to the organization specified in the <code>X-Org-Token</code> header.
-</aside>
-
-## Create a webhook
+## Create a Webhook
 
 ```sh
 curl -X POST "https://api.cobalt.io/webhooks" \
@@ -147,43 +149,36 @@ curl -X POST "https://api.cobalt.io/webhooks" \
           }'
 ```
 
-> The above command returns no data and a `201` response code when successful. There will be a `Location` header
-> pointing at the newly created webhook.
+> {{% 201-code %}} The `Location` response header contains the URL of the new webhook within the Cobalt API.
 
-This endpoint creates a new webhook belonging to your organization.
+Creates a new webhook for an organization.
 
-When you attempt to create a webhook, we will send a test event to your endpoint to validate that events
-can be delivered successfully. Your endpoint must respond with a successful HTTP response status code,
-for example, 200, 201, 204, etc. For details on test events, see the [Webhook Events](./#webhook-events) section below.
+When you attempt to create a webhook, we send a test event to your endpoint to validate the webhook.
+Your endpoint must respond with a successful HTTP response status code, such as `200`, `201`, or `204`.
+For details on test events, see [Webhook Events](./#webhook-events).
+
+{{% add-org-token %}}
 
 ### HTTP Request
 
 `POST https://api.cobalt.io/webhooks`
 
-### Body
+### Request Body
 
-| Field                  | Description                                                                                                                                                                                                   |
+| Name                  | Description                                                                                                                                                                                                   |
 |------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| name                   | The name of the webhook                                                                                                                                                                                       |
-| active                 | A boolean flag specifying if the webhook is active                                                                                                                                                            |
-| secret                 | An arbitrary string value. We include this value in the `X-Secret` header when we send webhook events to you. You can use this to verify that the events you receive are from Cobalt. This field is optional. |
-| url                    | The URL to send events to                                                                                                                                                                                     |
-| subscribed_event_types | The event types that the webhook should be subscribed to. May not be an empty list. See [possible event types here](#webhook-events).                                                                         |
+| `name`                   | The name of the webhook. Use a unique name for each webhook within an organization.                          |
+| `active`                 | A boolean flag specifying if the webhook is active                                                                                                                                                            |
+| `secret`                 | An arbitrary string value. We include this value in the `X-Secret` header when we send webhook events to you. You can use this to verify that the events you receive are from Cobalt. This field is optional. |
+| `url`                    | The URL to send events to                                                                                                                                                                                     |
+| `subscribed_event_types` | The event types that the webhook should be subscribed to. May not be an empty list. See [possible event types here](#webhook-events).                                                                         |
 
 ### Response
 
-You get a `201` response code for a successful request. The `Location` response header contains the URL of the new
+{{% 201-code %}} The `Location` response header contains the URL of the new
 webhook within the Cobalt API.
 
-<aside class="notice">
-Multiple webhooks may not have the same name or URL within an organization.
-</aside>
-
-<aside class="notice">
-Remember - you can only create a webhook within the organization specified in the <code>X-Org-Token</code> header.
-</aside>
-
-## Update a webhook
+## Update a Webhook
 
 ```sh
 curl -X PATCH 'https://api.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER' \
@@ -202,43 +197,33 @@ curl -X PATCH 'https://api.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER' \
           }'
 ```
 
-> The above command returns no data and a `204` response code when successful.
+> {{% 204-code %}}
 
-This endpoint updates a webhook belonging to your organization.
+Updates a webhook with the provided details.
+
+{{% add-org-token %}}
 
 ### HTTP Request
 
 `PATCH https://api.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER`
 
-### Body
+### Request Body
 
-All body fields are optional. You only need to include the fields that should be updated.
+All parameters in the request body are optional. Include the fields that you want to update.
 
-| Field                  | Description                                                                                                                                                                                                                                                                                                    |
+| Name                  | Description                                                                                                                                                                                                                                                                                                    |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| name                   | The name of the webhook                                                                                                                                                                                                                                                                                        |
-| secret                 | An arbitrary string value. We include this value in the `X-Secret` header when we send webhook events to you. You can use this to verify that the events you receive are from Cobalt.                                                                                                                          |
-| active                 | A boolean flag specifying if the webhook is active                                                                                                                                                                                                                                                             |
-| url                    | The URL to send events to                                                                                                                                                                                                                                                                                      |
-| subscribed_event_types | The event types that the webhook should be subscribed to. May not be an empty list. Non-specified event types that are currently subscribed to will be un-subscribed from. Specified event types that are not currently subscribed to will be subscribed to. See [possible event types here](#webhook-events). |
+| `name`                   | The name of the webhook. Use a unique name for each webhook within an organization.                          |
+| `secret`                 | An arbitrary string value. We include this value in the `X-Secret` header when we send webhook events to you. You can use this to verify that the events you receive are from Cobalt. To remove the secret, set the secret field to an empty string.                                                                                                                         |
+| `active`                 | A boolean parameter specifying if the webhook is active.                                                                                                                                                                                                                                                             |
+| `url`                    | The URL to send webhook events to.                                                                                                                                                                                                                                                                                      |
+| `subscribed_event_types` | The event types that the webhook should be subscribed to. May not be an empty list. Non-specified event types that are currently subscribed to will be un-subscribed from. Specified event types that are not currently subscribed to will be subscribed to. See [possible event types here](#webhook-events). |
 
 ### Response
 
-On a successful update, a `204` response code will be returned.
+{{% 204-code %}}
 
-<aside class="notice">
-To remove the secret, set the secret field to an empty string.
-</aside>
-
-<aside class="notice">
-Multiple webhooks may not have the same name or URL within an organization.
-</aside>
-
-<aside class="notice">
-Remember - you can only update a webhook within the organization specified in the <code>X-Org-Token</code> header.
-</aside>
-
-## Delete a webhook
+## Delete a Webhook
 
 ```sh
 curl -X DELETE 'https://api.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER' \
@@ -248,9 +233,11 @@ curl -X DELETE 'https://api.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER' \
   -H 'X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN'
 ```
 
-> The above command returns no data and a `204` response code when successful.
+> {{% 204-code %}}
 
-This endpoint deletes a webhook belonging to your organization.
+Deletes a webhook that belongs to an organization.
+
+{{% add-org-token %}}
 
 ### HTTP Request
 
@@ -258,45 +245,11 @@ This endpoint deletes a webhook belonging to your organization.
 
 ### Response
 
-On successful deletion, a `204` response code will be returned.
-
-<aside class="notice">
-Remember - you can only delete a webhook within the organization specified in the <code>X-Org-Token</code> header.
-</aside>
+{{% 204-code %}} The response contains no data.
 
 ## Webhook Events
 
-Webhook event properties:
-
-| Field         | Description                                |
-|---------------|--------------------------------------------|
-| id            | The ID of the webhook event                |
-| action        | The action that the event is related to    |
-| subject       | The subject that the event is related to   |
-| timestamp     | The time that the event ocurred            |
-
-`action` types:
-
-* `FINDING_DELETED`
-* `FINDING_PUBLISHED`
-* `FINDING_STATE_UPDATED`
-* `FINDING_UPDATED`
-* `PENTEST_CREATED`
-* `PENTEST_STATE_UPDATED`
-* `TEST_EVENT`
-
-`subject` properties:
-
-| Field         | Description                                |
-|---------------|--------------------------------------------|
-| id            | The ID of the subject resource             |
-| type          | The type of the subject resource           |
-
-`subject` types:
-
-* `TEST_EVENT`
-* `PENTEST`
-* `FINDING`
+> Object Sample
 
 ```json
 {
@@ -310,32 +263,64 @@ Webhook event properties:
 }
 ```
 
+Webhook event properties:
+
+| Name         | Description                                |
+|---------------|--------------------------------------------|
+| `id`            | The ID of the webhook event                |
+| `action`        | The action that the event is related to    |
+| `subject`       | The subject that the event is related to   |
+| `timestamp`     | The time that the event ocurred            |
+
+`action` types:
+
+* `FINDING_DELETED`
+* `FINDING_PUBLISHED`
+* `FINDING_STATE_UPDATED`
+* `FINDING_UPDATED`
+* `PENTEST_CREATED`
+* `PENTEST_STATE_UPDATED`
+* `TEST_EVENT`
+
+`subject` properties:
+
+| Name         | Description                                |
+|---------------|--------------------------------------------|
+| `id`            | The ID of the subject resource             |
+| `type`          | The type of the subject resource           |
+
+`subject` types:
+
+* `TEST_EVENT`
+* `PENTEST`
+* `FINDING`
+
 ## Webhook Delivery and Health
 
 Delivery process:
 
-* An event occurs on the Cobalt Platform that you are subscribed to
-* Cobalt will attempt to send the event to your webhook endpoint via an HTTP POST
-request. If your endpoint responds with a successful HTTP response status code, for example, 200, 201, or 204,
-then we will mark the delivery as successful.
-* If your endpoint does not respond with a successful HTTP status, then we will attempt
-to send the event 5 more times with 5 seconds between each request.
-* If none of the delivery attempt succeed, then we will mark your webhook endpoint
-as unhealthy and put the event into our failed events queue.
-* On an hourly interval we will attempt to redeliver failed events.
-* If your webhook endpoint becomes able to receive events again, we will mark your
-webhook endpoint as healthy.
-* If your webhook endpoint stays unhealthy for 48 hours then we will deactivate your webhook.
+1. An event that you're subscribed to occurs on the Cobalt platform.
+1. We attempt to send the event to your webhook endpoint through an HTTP POST request.
+    * If your endpoint responds with a successful HTTP response status code, such as `200`, `201`, or `204`,
+    we mark the delivery as successful.
+    * If your endpoint doesn't respond with a successful HTTP response status code, we take the following steps.
+1. We attempt to send the event 5 more times with an interval of 5 seconds between each request.
+    * If the delivery is successful, we mark your webhook as healthy.
+    * If none of the delivery attempts succeed, we mark your webhook endpoint
+    as unhealthy and put the event into our failed events queue.
+1. We attempt to redeliver failed events with an interval of one hour.
+    * If your webhook endpoint becomes able to receive events again, we mark the webhook as healthy.
+    * If your webhook endpoint stays unhealthy for 48 hours, we deactivate your webhook.
 
-If your webhook becomes deactivated then you will need to activate it again via the API.
+If your webhook becomes deactivated, reactivate it through the API.
 
 ## Best Practices
 
-1. Set your webhook secret to a high-entrophy value of sufficient length.
-When you receive an event, check that the value in the `X-Secret` header
+* Set your webhook secret to a high-entrophy value of sufficient length.
+When you receive an event, verify that the value in the `X-Secret` header
 matches your secret. This ensures that you do not process fraudulent
 webhook events from a threat actor.
-2. Don't add expensive operations to the endpoint that receives webhook events.
+* Don't add expensive operations to the endpoint that receives webhook events.
 A common pattern is to receive webhook events with a lightweight endpoint that
 publishes received events to a message queue that can be processed by your components
 containing business logic. This keeps the latency and failure rate of your webhook

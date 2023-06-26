@@ -14,7 +14,7 @@ curl -X GET "https://api.cobalt.io/findings" \
   -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
 ```
 
-> The above command returns JSON structured like this:
+> Response Sample
 
 ```json
 {
@@ -96,9 +96,9 @@ curl -X GET "https://api.cobalt.io/findings" \
 }
 ```
 
-This endpoint retrieves a list of all pentest findings that belong to the organization specified in the `X-Org-Token`
-header, filterable by `pentest_id` or `asset_id`. The `log` array presents a history of each finding and corresponding
-timestamp.
+Returns all findings that belong to an organization.
+
+{{% add-org-token %}}
 
 ### Calculations
 
@@ -125,16 +125,16 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 
 `GET https://api.cobalt.io/findings`
 
-### URL Parameters
+### Query Parameters
 
-| Parameter               | Default | Description                                                                                                                                                                                                                                                                                                                                      |
+| Name               | Default | Description                                                                                                                                                                                                                                                                                                                                      |
 |-------------------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `cursor`                | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/findings?cursor=a1b2c3d4`                                                                                                                                                                                                                                                  |
-| `limit`                 | `10`    | If specified, returns only a specified amount of findings. Example: `https://api.cobalt.io/findings?limit=5`                                                                                                                                                                                                                                     |
+| `cursor`                | N/A     | {{% cursor %}} Example: `https://api.cobalt.io/findings?cursor=a1b2c3d4`                                                                                                                                                                                                                                                  |
+| `limit`                 | `10`    | {{% limit %}} Example: `https://api.cobalt.io/findings?limit=5`                                                                                                                                                                                                                                     |
 | `pentest`               | N/A     | If specified, returns findings scoped to this pentest id. Example: `https://api.cobalt.io/findings?pentest=pt_PEtv4dqnwGV2efZhLw3BM5`                                                                                                                                                                                                            |
 | `asset`                 | N/A     | If specified, returns findings scoped to this asset id. Example: `https://api.cobalt.io/findings?asset=as_HcChCMueiPQQgvckmZtRSd`                                                                                                                                                                                                                |
-| `state`                 | N/A     | If specified, returns findings that match `state`. See Response Fields below for example `state` values. Example: `https://api.cobalt.io/findings?state=check_fix`. Returns an empty list if no findings match the `state` filter.                                                                                                               |
-| `severity`              | N/A     | If specified, returns findings that match `severity`. See Response Fields below for example `severity` values. Example: `https://api.cobalt.io/findings?severity=medium`. Returns an empty list if no findings match the `severity` filter.                                                                                                      |
+| `state`                 | N/A     | If specified, returns findings that match `state`. See Response Parameters below for example `state` values. Example: `https://api.cobalt.io/findings?state=check_fix`. Returns an empty list if no findings match the `state` filter.                                                                                                               |
+| `severity`              | N/A     | If specified, returns findings that match `severity`. See Response Parameters below for example `severity` values. Example: `https://api.cobalt.io/findings?severity=medium`. Returns an empty list if no findings match the `severity` filter.                                                                                                      |
 | `labels_contains_all[]` | N/A     | If specified, returns findings that contain all specified labels. This query parameter can be specified multiple times. Returns an empty list if no matches are found. Example: `https://api.cobalt.io/findings?labels_contains_all[]=Awaiting Feedback&labels_contains_all[]=Retest Blocked`                                                    |
 | `sort`                  | N/A     | If specified, returns findings sorted by one of the chosen parameters: `severity`, `impact`, `state`, `created_at` and `updated_at`. When defined, findings are sorted in ascending order by the sort parameter. To sort in descending order, use a `-` before the sort parameter. Example: `https://api.cobalt.io/findings?sort=-severity`.     |
 | `created_at_lte`        | N/A     | If specified, returns findings where the created_at timestamp is less than or equal to the input timestamp. ISO8601 is the supported input timestamp format. Returns an empty list if no findings match the filter. Example: `https://api.cobalt.io/findings?created_at_lte=2020-02-20T15:28:10.335Z`                                            |
@@ -142,9 +142,9 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 | `updated_at_lte`        | N/A     | If specified, returns findings where the updated_at timestamp is less than or equal to the input timestamp. ISO8601 is the supported input timestamp format. Returns an empty list if no findings match the filter. Example: `https://api.cobalt.io/findings?updated_at_lte=2020-02-20T15:28:10.335Z`                                            |
 | `updated_at_gte`        | N/A     | If specified, returns findings where the updated_at timestamp is greater than or equal to the input timestamp. ISO8601 is the supported input timestamp format. Returns an empty list if no findings match the filter. Example: `https://api.cobalt.io/findings?updated_at_gte=2020-02-20T15:28:10.335Z`                                         |
 
-### Response Fields
+### Response Parameters
 
-| Field                    | Enum Types                                                                                                                     |
+| Name                    | Description     |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------------------|
 | `log`                    | `created`, `impact_changed`, `likelihood_changed`, `state_changed`                                                             |
 | `severity`               | `null`, `low`, `medium`, `high`  (aka `criticality`. will be null if likelihood/impact have not yet been set by the pentester) |
@@ -166,10 +166,6 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 - `invalid`: The finding was rejected as not being a true vulnerability.
 - `carried_over`: The finding was carried over from a previous pentest.
 
-<aside class="notice">
-Remember - you can only request findings scoped to the organization specified in the <code>X-Org-Token</code> header.
-</aside>
-
 ## Get a Finding
 
 ```sh
@@ -179,7 +175,7 @@ curl -X GET "https://api.cobalt.io/findings/YOUR-FINDING-IDENTIFIER" \
   -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
 ```
 
-> The above command returns JSON structured like this:
+> Response Sample
 
 ```json
 {
@@ -233,15 +229,17 @@ curl -X GET "https://api.cobalt.io/findings/YOUR-FINDING-IDENTIFIER" \
 }
 ```
 
-This endpoint retrieves a specific finding that belong to the organization specified in the `X-Org-Token` header.
+Returns a finding that belongs to an organization.
+
+{{% add-org-token %}}
 
 ### HTTP Request
 
 `GET https://api.cobalt.io/findings/YOUR-FINDING-IDENTIFIER`
 
-### Response Fields
+### Response Parameters
 
-| Field                    | Enum Types                                                                                                            |
+| Name     | Description     |
 |--------------------------|-----------------------------------------------------------------------------------------------------------------------|
 | `log`                    | created, impact_changed, likelihood_changed, state_changed                                                            |
 | `severity`               | null, low, medium, high (aka `criticality`. will be null if likelihood/impact have not yet been set by the pentester) |
@@ -262,7 +260,3 @@ This endpoint retrieves a specific finding that belong to the organization speci
 - `check_fix`: A fix has been applied and now is awaiting validation by the pentester.
 - `invalid`: The finding was rejected as not being a true vulnerability.
 - `carried_over`: The finding was carried over from a previous pentest.
-
-<aside class="notice">
-Remember - you can only request a finding scoped to the organization specified in the <code>X-Org-Token</code> header.
-</aside>

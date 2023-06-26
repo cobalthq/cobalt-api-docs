@@ -13,7 +13,7 @@ curl -X GET "https://api.cobalt.io/orgs" \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN"
 ```
 
-> The above command returns JSON structured like this:
+> Response Sample
 
 ```json
 {
@@ -50,31 +50,24 @@ curl -X GET "https://api.cobalt.io/orgs" \
 }
 ```
 
-This endpoint retrieves a list of organizations, or *orgs*, that you belong to. Save the `token` field to be used in
-your `X-Org-Token` header in subsequent calls in querying for assets, findings, pentests and events that belong to that
-organization.
+{{% organizations-intro %}}
 
 ### HTTP Request
 
 `GET https://api.cobalt.io/orgs`
 
-### URL Parameters
+### Query Parameters
 
-| Parameter | Default | Description                                                                                                      |
+| Name | Default | Description                                                                                                      |
 |-----------|---------|------------------------------------------------------------------------------------------------------------------|
-| `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/orgs?cursor=a1b2c3d4`                   |
-| `limit`   | `10`    | If specified, returns only a specified amount of organizations. Example: `https://api.cobalt.io/orgs?limit=5` |
+| `cursor`  | N/A     | {{% cursor %}} Example: `https://api.cobalt.io/orgs?cursor=a1b2c3d4`                   |
+| `limit`   | `10`    | {{% limit %}} Example: `https://api.cobalt.io/orgs?limit=5` |
 
-### Response Fields
+### Response Parameters
 
-| Field          | Description                                                                              |
+| Name          | Description                                                                              |
 |----------------|------------------------------------------------------------------------------------------|
-| `id`           | A unique ID representing the organization. Starts with `or_`                             |
-| `name`         | The name of the organization                                                             |
-| `token`        | The organization token you'll need in subsequent calls                                   |
-| `links.ui.url` | A link to redirect an authorized user to this organization in the Cobalt web application |
-
-<aside class="notice">
-Remember - Save the <code>token</code> attribute from the response body. You will need it in subsequent calls as the
-value of the <code>X-Org-Token</code> header.
-</aside>
+| `id`           | {{% org-id %}}                             |
+| `name`         | {{% org-name %}}                                                             |
+| `token`        | {{% org-token-definition %}}                                   |
+| `links.ui.url` | {{% org-links-ui-url %}} |

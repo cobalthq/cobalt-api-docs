@@ -1,0 +1,1 @@
+The last four characters of the API token. You can recognize tokens by their last four characters even if they have the same name.

@@ -1,0 +1,1 @@
+A successful request returns a `204 No Content` response code.

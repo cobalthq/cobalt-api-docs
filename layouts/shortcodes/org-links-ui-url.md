@@ -1,0 +1,1 @@
+A link to redirect an authorized user to this organization in the Cobalt web application.

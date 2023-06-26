@@ -6,6 +6,6 @@ title: API Versions
 # API Versions
 
 <aside class="success">
-You are currently viewing the latest version (v2) of Cobalt API. If you've integrated with Cobalt API in the past
-by using the previous version (v1), please visit the <a href="./#changelog">Changelog section</a>.
+You're viewing the documentation for the latest version of the Cobalt API (v2). If you've integrated with the Cobalt API
+in the past using v1, please see the <a href="./#changelog">Changelog</a> to migrate to v2.
 </aside>

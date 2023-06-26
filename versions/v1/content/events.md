@@ -13,7 +13,7 @@ curl -X GET "https://api.cobalt.io/events" \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN"
 ```
 
-> The above command returns JSON structured like this:
+> Response Sample
 
 ```json
 {
@@ -59,15 +59,15 @@ curl -X GET "https://api.cobalt.io/events" \
 }
 ```
 
-This endpoint retrieves a list of all events for your account.
+Returns all events for your account.
 
 ### HTTP Request
 
 `GET https://api.cobalt.io/events`
 
-### URL Parameters
+### Query Parameters
 
-| Parameter | Default | Description                                                                                                 |
+| Name | Default | Description                                                                                                 |
 |-----------|---------|-------------------------------------------------------------------------------------------------------------|
-| `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/events?cursor=a1b2c3d4`            |
-| `limit`   | `10`    | If specified, returns only a specified amount of events. Example: `https://api.cobalt.io/events?limit=5` |
+| `cursor`  | N/A     | {{% cursor %}} Example: `https://api.cobalt.io/events?cursor=a1b2c3d4`            |
+| `limit`   | `10`    | {{% limit %}} Example: `https://api.cobalt.io/events?limit=5` |

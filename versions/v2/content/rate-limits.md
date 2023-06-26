@@ -29,5 +29,5 @@ Example: `X-Rate-Limit-Remaining: 93`
 
 ## When the Rate Limit Is Exceeded
 
-When a user exceeds the rate limit, the API returns a `509 BANDWIDTH_LIMIT_EXCEEDED` HTTP response code along with [the
-headers above](#http-response-headers). The rate limit resets after the specified time window.
+When a user exceeds the rate limit, the API returns a `509 BANDWIDTH_LIMIT_EXCEEDED` HTTP response code along with the
+listed [response headers](#http-response-headers). The rate limit resets after the specified time window.

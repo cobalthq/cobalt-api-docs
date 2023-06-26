@@ -14,7 +14,7 @@ curl -X GET "https://api.cobalt.io/assets" \
   -H "X-Org-Token: YOUR-V1-ORGANIZATION-TOKEN"
 ```
 
-> This command returns JSON structured like this:
+> Response Sample
 
 ```json
 {
@@ -47,22 +47,24 @@ curl -X GET "https://api.cobalt.io/assets" \
 }
 ```
 
-This endpoint retrieves a list of assets that belong to the organization specified in the `X-Org-Token` header.
+Returns all assets that belong to an organization.
+
+{{% add-org-token %}}
 
 ### HTTP Request
 
 `GET https://api.cobalt.io/assets`
 
-### URL Parameters
+### Query Parameters
 
-| Parameter | Default | Description                                                                                                 |
+| Name | Default | Description                                                                                                 |
 |-----------|---------|-------------------------------------------------------------------------------------------------------------|
-| `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/assets?cursor=a1b2c3d4`            |
-| `limit`   | `10`    | If specified, returns only a specified amount of assets. Example: `https://api.cobalt.io/assets?limit=5` |
+| `cursor`  | N/A     | {{% cursor %}} Example: `https://api.cobalt.io/assets?cursor=a1b2c3d4`            |
+| `limit`   | `10`    | {{% limit %}} Example: `https://api.cobalt.io/assets?limit=5` |
 
-### Response Fields
+### Response Parameters
 
-| Field          | Description                                                                                                                               |
+| Name          | Description                                                                                                                               |
 |----------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | `id`           | A unique ID representing the asset. Starts with `as_`                                                                                     |
 | `title`        | The title of the asset; set by user creating the asset                                                                                    |
@@ -71,7 +73,3 @@ This endpoint retrieves a list of assets that belong to the organization specifi
 | `links.ui.url` | A link to redirect an authorized user to this asset in the Cobalt web application                                                         |
 | `logo`         | A link pointing the location of the uploaded asset logo                                                                                   |
 | `attachments`  | A list of asset attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.                                |
-
-<aside class="notice">
-Remember - you can only request assets scoped to the organization specified in the <code>X-Org-Token</code> header.
-</aside>

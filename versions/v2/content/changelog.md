@@ -7,36 +7,40 @@ title: Changelog
 
 ## New Endpoints
 
-In the v2 release, we've published some additional endpoints to extend the capabilities of Cobalt API. Please refer to
+In the v2 release, we published additional endpoints to extend the capabilities of the Cobalt API. Please refer to
 the following endpoints for more details:
 
-- [Get an Asset](./#get-an-asset)
-- [Create an Asset](./#create-an-asset)
-- [Update an Asset](./#update-an-asset)
-- [Delete an Asset](./#delete-an-asset)
-- [Upload an Asset Attachment](./#upload-an-attachment)
-- [Delete an Asset Attachment](./#delete-an-attachment)
-- [Upload an Asset Logo](./#upload-a-logo)
-- [Get a Pentest](./#get-a-pentest)
-- [Get a Pentest Report](./#get-a-pentest-report)
-- [Duplicate a Pentest](./#duplicate-a-pentest)
-- [Delete a Pentest](./#delete-a-pentest)
-- [Get a Finding](./#get-a-finding)
-- [View Available Finding States](./#view-available-finding-states)
-- [Update Finding State](./#update-finding-state)
-- [Get all Webhooks](./#get-all-webhooks)
-- [Get a Webhook](./#get-a-webhook)
-- [Create a Webhook](./#create-a-webhook)
-- [Update a Webhook](./#update-a-webhook)
-- [Delete a Webhook](./#delete-a-webhook)
+- **Assets**:
+  - [Get an Asset](./#get-an-asset)
+  - [Create an Asset](./#create-an-asset)
+  - [Update an Asset](./#update-an-asset)
+  - [Delete an Asset](./#delete-an-asset)
+  - [Upload an Asset Attachment](./#upload-an-attachment)
+  - [Delete an Asset Attachment](./#delete-an-attachment)
+  - [Upload an Asset Logo](./#upload-a-logo)
+- **Pentests**:
+  - [Get a Pentest](./#get-a-pentest)
+  - [Get a Pentest Report](./#get-a-pentest-report)
+  - [Duplicate a Pentest](./#duplicate-a-pentest)
+  - [Delete a Pentest](./#delete-a-pentest)
+- **Findings**:
+  - [Get a Finding](./#get-a-finding)
+  - [View Available Finding States](./#view-available-finding-states)
+  - [Update Finding State](./#update-finding-state)
+- **Webhooks**:
+  - [Get All Webhooks](./#get-all-webhooks)
+  - [Get a Webhook](./#get-a-webhook)
+  - [Create a Webhook](./#create-a-webhook)
+  - [Update a Webhook](./#update-a-webhook)
+  - [Delete a Webhook](./#delete-a-webhook)
 
 ## Identifier Changes
 
-In Cobalt API v2, we've focused on standardizing and extending identifiers for all endpoints. As a result, either
-the structure or the length of some identifiers has changed. You can see a side-by-side comparison of v1 and v2
-with some sample identifiers below:
+In v2, we focused on standardizing and extending identifiers for all endpoints. As a result, either
+the structure or the length of some identifiers has changed. You can compare the format of identifiers for v1 and v2
+in the table below.
 
-| Endpoint                          | Response field      | v1 (example)         | v2 (example)                                     |
+| Endpoint                          | Response Parameter      | Example for v1         | Example for v2                                     |
 |-----------------------------------|---------------------|----------------------|--------------------------------------------------|
 | [organizations](./#organizations) | `id`                | or_A2bb4FE           | or_Uevoq7MyoYsPT9NPc3conL                        |
 | [organizations](./#organizations) | `token`             | ABCDEFGHJ12345678901 | ASDFGHJKLQWERTYUM1234567890ABCDEFGH1234567891234 |
@@ -49,21 +53,20 @@ with some sample identifiers below:
 | [events](./#events)               | `id`                | 277603               | ac_Y35JcpGoakrjUSVjtVpXyH                        |
 | [events](./#events)               | `subject.id`        | 277603               | ac_Y35JcpGoakrjUSVjtVpXyH                        |
 
-For the majority of endpoints, the only change is the length of the identifier. However, there are some prefix and type
-changes too. For example, the identifier prefix of the findings endpoint has changed from `vu` to `vl`. Similarly,
-the `attachments.token` prefix has changed from `att` to `at`.
+For most endpoints, only the identifier length has changed. We also changed the prefix and type
+of some identifiers. For example, the `id` prefix in the [findings](./#findings) endpoint has changed from `vu` to `vl`.
+Similarly, the `attachments.token` prefix has changed from `att` to `at`.
 
-We aren't expecting any of these to be breaking changes for the majority of our customers, but, if you have any
-validations in place, concerning prefixes or the length of strings, please update them accordingly.
+We don't expect any of these changes to be disruptive for most of our customers. However, if you have any
+validations of prefixes or string lengths in place, please update them accordingly.
 
-Please note - the `token` attribute of the [organizations](./#organizations) endpoint now returns a different string in
-v2. This value is also known as "organization token" all over the API docs, and is used as the value of `X-Org-Token`
-header when calling endpoints.
+The `token` attribute in the [organizations](./#organizations) endpoint returns a different string in v2.
+In our API documentation, we refer to this value as the [organization token](./#organization-token).
+Add the token value to the `X-Org-Token` header in your requests.
 
 ## Renamed Response Attributes
 
-The `token` attribute of the `attachments` object in `v1` of [assets](./#get-all-assets) endpoint was renamed to `id`
-in `v2`.
+> Attribute Samples
 
 ```json
 {
@@ -83,32 +86,35 @@ in `v2`.
 }
 ```
 
+In v2, we renamed the `token` attribute of the `attachments` object in the [assets](./#get-all-assets)
+endpoint to `id`.
+
 ## New Response Attributes
 
-The response from listing findings and getting a single finding now includes an `attachments` attribute that
-shows files attached to a finding. Finding attachments can be programmatically downloaded using this
-information. Click [here](./#findings) for more information.
+In v2, when you retrieve [findings](./#findings), the response contains the `attachments` attribute that
+shows files attached to a finding. You can download attachments programmatically using this information.
 
 ## Request Headers
 
 | Header          | v1                             | v2                                     | Description                                |
 |-----------------|--------------------------------|----------------------------------------|--------------------------------------------|
-| Accept          | application/vnd.cobalt.v1+json | application/vnd.cobalt.v2+json         | Must be present in the request             |
-| Content-Type    | N/A                            | application/vnd.cobalt.v2+json         | Required for POST/PUT/DELETE HTTP methods  |
-| Idempotency-Key | N/A                            | Refer to [idempotency](./#idempotency) | Suggested for POST requests                |
+| `Accept`          | `application/vnd.cobalt.v1+json` | `application/vnd.cobalt.v2+json`         | Required for all requests.             |
+| `Content-Type`    | N/A                            | `application/vnd.cobalt.v2+json`         | Required for `POST`, `PUT`, and `DELETE` requests.  |
+| `Idempotency-Key` | N/A                            | Refer to [Idempotency](./#idempotency). | Recommended for `POST` requests.                |
 
-In v1, the Cobalt API was read-only, and in v2 we've added different endpoints where you can create, update or delete
-resources.
+In v1, the Cobalt API was read-only. In v2, we added endpoints for creating, updating, and deleting resources.
 
-With these additions in place, two new headers came into place; `Content-Type` and `Idempotency-Key`. The
-`Idempotency-Key` is explained in the [idempotency](./#idempotency) section.
+To support these changes, we added the following headers:
+
+- `Content-Type`
+- `Idempotency-Key`
 
 ## Pagination Defaults
 
-In v1, some endpoints had 10, and some others had 1000 as their pagination default value. In this release, we've
-updated the default pagination values of all endpoints to 10. Two endpoints were affected by this change:
+In v1, the default pagination value was 10 for some endpoints and 1000 for others. In v2, we
+set the default pagination value for all endpoints to 10. This change affected the following endpoints:
 
-| Endpoint                     | v1 (default)  | v2 (default) |
+| Endpoint                     | Default for v1  | Default for v2  |
 |------------------------------|---------------|--------------|
-| [pentests](./#organizations) | 1000          | 10           |
-| [findings](./#organizations) | 1000          | 10           |
+| [pentests](./#pentests) | 1000          | 10           |
+| [findings](./#findings) | 1000          | 10           |
