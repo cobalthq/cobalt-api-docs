@@ -1,0 +1,1 @@
+The URL of the uploaded asset logo.

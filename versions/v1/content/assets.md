@@ -66,10 +66,14 @@ Returns all assets that belong to an organization.
 
 | Name          | Description                                                                                                                               |
 |----------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| `id`           | A unique ID representing the asset. Starts with `as_`                                                                                     |
-| `title`        | The title of the asset; set by user creating the asset                                                                                    |
-| `description`  | A description of the asset; set by user creating the asset                                                                                |
-| `asset_type`   | An asset type, such as; `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile` |
-| `links.ui.url` | A link to redirect an authorized user to this asset in the Cobalt web application                                                         |
-| `logo`         | A link pointing the location of the uploaded asset logo                                                                                   |
-| `attachments`  | A list of asset attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.                                |
+| `id`           | {{% asset-id %}} |
+| `title`        | {{% asset-title %}} |
+| `description`  | {{% asset-description %}} |
+| `asset_type`   | {{% asset-type %}} |
+| `links.ui.url` | {{% links-ui-url %}} |
+| `logo`         | {{% asset-logo %}} |
+| `attachments`  | {{% asset-attachments %}} |
+
+### Asset Types
+
+{{% asset-types-list %}}

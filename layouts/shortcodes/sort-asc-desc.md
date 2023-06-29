@@ -1,0 +1,1 @@
+Items are sorted in ascending order by the sort parameter. To sort items in descending order, add `-` before the sort parameter.

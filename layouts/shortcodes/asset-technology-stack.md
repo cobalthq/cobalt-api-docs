@@ -1,0 +1,1 @@
+A list of technologies in the technology stack. Each element contains the title of the technology. Example: React 18.0.0.

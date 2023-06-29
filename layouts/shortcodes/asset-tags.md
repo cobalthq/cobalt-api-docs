@@ -1,0 +1,1 @@
+A list of asset tags. A tag has a `name` attribute. Example: `[{"name": "third-party system-id"}, {"name": "some-tag-id"}]`

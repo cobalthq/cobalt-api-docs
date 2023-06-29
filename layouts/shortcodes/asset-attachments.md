@@ -1,0 +1,1 @@
+A list of asset attachments. Attachment donwload URLs are pre-authorized and are valid for 10 minutes.

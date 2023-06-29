@@ -72,23 +72,27 @@ Returns all assets that belong to an organization.
 |-----------------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `cursor`              | N/A     | {{% cursor %}} Example: `https://api.cobalt.io/assets?cursor=a1b2c3d4`                                                                                                                                                                                                 |
 | `limit`               | `10`    | {{% limit %}} Example: `https://api.cobalt.io/assets?limit=5`                                                                                                                                                                                      |
-| `asset_type`          | N/A     | If specified, returns assets that match `asset_type`. See Response Parameters below for example `asset_type` values. Example: `https://api.cobalt.io/assets?asset_type=web`. Returns an empty list if no assets match the `asset_type` filter.                                                    |
-| `tags_contains_all[]` | N/A     | If specified, returns assets that contain all matching `tags`. This query parameter can be specified multiple times. Returns an empty list if no matches are found. Example: `https://api.cobalt.io/assets?tags_contains_all[]=third party&tags_contains_all[]=some-tag-id`                   |
-| `sort`                | N/A     | If specified, returns assets sorted by one of the chosen parameters: `asset_type`. When defined, records are returned in ascending order by the sort parameter. To return in descending order, use a `-` before the sort parameter. Example: `https://api.cobalt.io/assets?sort=-asset_type`. |
+| `asset_type`          | N/A     | If specified, returns assets that match `asset_type`. See possible values in [Asset Types](./#asset-types). Example: `https://api.cobalt.io/assets?asset_type=web`. Returns an empty list if no assets match the `asset_type` filter.                                                    |
+| `tags_contains_all[]` | N/A     | If specified, returns assets that contain all matching `tags`. You can use this parameter multiple times. Returns an empty list if no matches are found. Example: `https://api.cobalt.io/assets?tags_contains_all[]=third party&tags_contains_all[]=some-tag-id`                   |
+| `sort`                | N/A     | If specified, returns assets sorted by `asset_type`. {{% sort-asc-desc %}} Example: `https://api.cobalt.io/assets?sort=-asset_type`. |
 
 ### Response Parameters
 
 | Name              | Description                                                                                                                                                                                               |
 |--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `id`               | A unique ID representing the asset. Starts with `as_`                                                                                                                                                     |
-| `title`            | The title of the asset; set by user creating the asset                                                                                                                                                    |
-| `description`      | A description of the asset; set by user creating the asset                                                                                                                                                |
-| `asset_type`       | An asset type, such as; `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile`, `wireless_network`, `iot`, `thick_client`, `physical`, `other` |
-| `logo`             | A link pointing the location of the uploaded asset logo                                                                                                                                                   |
-| `technology_stack` | A list of technology stacks. Each element contains the title of the technology. Example: React 18.0.0.                                                                                                    |
-| `attachments`      | A list of asset attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.                                                                                                |
-| `tags`             | A list of tags. A tag has a `name` attribute. Example: `[{"name": "third-party system-id"}, {"name": "some-tag-id"}]`                                                                                     |
-| `links.ui.url`     | A link to redirect an authorized user to this asset in the Cobalt web application                                                                                                                         |
+| `id`               | {{% asset-id %}} |
+| `title`            | {{% asset-title %}} |
+| `description`      | {{% asset-description %}} |
+| `asset_type`       | {{% asset-type %}} |
+| `logo`             | {{% asset-logo %}} |
+| `technology_stack` | {{% asset-technology-stack %}} |
+| `attachments`      | {{% asset-attachments %}} |
+| `tags`             | {{% asset-tags %}} |
+| `links.ui.url`     | {{% links-ui-url %}} |
+
+### Asset Types
+
+{{% asset-types-list %}}
 
 ## Get an Asset
 
@@ -149,15 +153,15 @@ Returns an asset that belongs to an organization.
 
 | Name              | Description                                                                                                                                                                                               |
 |--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `id`               | A unique ID representing the asset. Starts with `as_`                                                                                                                                                     |
-| `title`            | The title of the asset; set by user creating the asset                                                                                                                                                    |
-| `description`      | A description of the asset; set by user creating the asset                                                                                                                                                |
-| `asset_type`       | An asset type, such as; `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile`, `wireless_network`, `iot`, `thick_client`, `physical`, `other` |
-| `logo`             | A link pointing the location of the uploaded asset logo                                                                                                                                                   |
-| `technology_stack` | A list of technology stacks. Each element contains the title of the technology. Example: React 18.0.0.                                                                                                    |
-| `attachments`      | A list of asset attachments (including the logo). Attachment download URLs are pre-authorized and will expire after 10 minutes.                                                                           |
-| `tags`             | A list of tags. A tag has a `name` attribute. Example: `[{"name": "third-party system-id"}, {"name": "some-tag-id"}]`                                                                                     |
-| `links.ui.url`     | A link to redirect an authorized user to this asset in the Cobalt web application                                                                                                                         |
+| `id`               | {{% asset-id %}} |
+| `title`            | {{% asset-title %}} |
+| `description`      | {{% asset-description %}} |
+| `asset_type`       | {{% asset-type %}} |
+| `logo`             | {{% asset-logo %}} |
+| `technology_stack` | {{% asset-technology-stack %}} |
+| `attachments`      | {{% asset-attachments %}} |
+| `tags`             | {{% asset-tags %}} |
+| `links.ui.url`     | {{% links-ui-url %}} |
 
 ## Create an Asset
 
@@ -176,8 +180,7 @@ curl -X POST "https://api.cobalt.io/assets" \
           }'
 ```
 
-> {{% 201-code %}} There will be a `Location` header
-> pointing at the newly created asset.
+> {{% 201-code %}}
 
 Creates a new asset for an organization.
 
@@ -191,10 +194,10 @@ Creates a new asset for an organization.
 
 | Name         | Description                                                                                                                                                                          |
 |---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `title`       | The title of the asset; set by user creating the asset                                                                                                                               |
-| `description` | Optional; A description of the asset; set by user creating the asset                                                                                                                 |
-| `asset_type`  | `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile`, `wireless_network`, `iot`, `thick_client`, `physical`, or `other` |
-| `tags`        | Optional; A list of tags. A tag has a `name` attribute. Example: `[{"name": "third-party system-id"}, {"name": "some-tag-id"}]`. Defaults to empty list if not provided              |
+| `title`       | {{% asset-title %}} |
+| `description` | Optional. {{% asset-description %}} |
+| `asset_type`  | {{% asset-type %}} |
+| `tags`        | Optional. {{% asset-tags %}} Defaults to an empty list if not provided. |
 
 ### Response
 
@@ -231,10 +234,11 @@ Updates an asset with the provided details.
 
 | Name         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `title`       | The title of the asset; set by user creating the asset                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| `description` | Optional; A description of the asset; set by user creating the asset                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| `asset_type`  | Options: `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile`, `wireless_network`, `iot`, `thick_client`, `physical`, `other`                                                                                                                                                                                                                                                                                                                                                      |
-| `tags`        | Optional; A list of tags. A tag has a `name` attribute. Example: `[{"name": "third-party system-id"}, {"name": "some-tag-id"}]`. If `tags` field is not provided in the `PUT` request, no changes will occur to the asset tags. Any `tags` that **already exist for the asset and are not provided** in the `PUT` request will be deleted. Any `tags` **that already exist for the asset and are provided** in the `PUT` request will remain. Any `tags` that do not exist for the asset and are provided in the `PUT` request will be created. |
+| `title`       | {{% asset-title %}} |
+| `description` | Optional. {{% asset-description %}} |
+| `asset_type`  | {{% asset-type %}} |
+| `tags`        | Optional. {{% asset-tags %}} If the `tags` field is not provided in the `PUT` request, no changes will be made to the asset tags. Any `tags` that **already exist for the asset and are not provided** in the `PUT` request will be deleted. Any `tags` **that already exist for the asset and are provided** in the `PUT` request will remain. Any `tags` that don't exist for the asset and are provided in the `PUT` request will be created. |
+
 
 ### Response
 
@@ -277,8 +281,7 @@ curl -X POST 'https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/attachments' \
   --form 'attachment=@"/path/to/image.jpg"'
 ```
 
-> {{% 201-code %}} There will be a `Location` header
-> pointing at the newly created attachment.
+> {{% 201-code %}}
 
 Adds an attachment to an asset.
 
@@ -292,7 +295,7 @@ Adds an attachment to an asset.
 
 | Form Field   | Description                          |
 |--------------|--------------------------------------|
-| `attachment` | The file to upload as an attachment. |
+| `attachment` | The file to upload to the asset as an attachment. |
 
 ### File Requirements
 
@@ -300,8 +303,9 @@ The file must be smaller than 10 MB.
 
 ### Response
 
-{{% 201-code %}} A response header, `Location`, will contain the URL within
-Cobalt API of the new attachment which you can use only to DELETE the attachment.
+{{% 201-code %}}
+The `Location` response header contains the URL of the new attachment within the Cobalt API.
+You can use this URL only to [delete the attachmnent](./#delete-an-attachment).
 
 ## Delete an Attachment
 
@@ -322,8 +326,12 @@ Deletes an attachment from an asset.
 
 `DELETE https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/attachments/YOUR-ATTACHMENT-IDENTIFIER`
 
-> You can obtain this URL from the `Location` response header of the create attachment endpoint, or build it by getting
-> the attachment identifier from the response data of the `GET /assets` endpoint.
+### Path Parameters
+
+| Name | Description                                            |
+|----------|---------                                           |
+| `YOUR-ASSET-IDENTIFIER` | {{% asset-id %}} |
+| `YOUR-ATTACHMENT-IDENTIFIER` | The ID of the asset attachment. You can get this value from the `Location` response header of the request to [upload an attachment](./#upload-an-attachment). You can also build this value by getting the attachment ID from the response body of the request to [get all assets](./#get-all-assets). |
 
 ### Response
 
@@ -355,11 +363,11 @@ Adds a new logo to an asset. This request removes the old logo and replaces it w
 
 | Form Field   | Description                   |
 |--------------|-------------------------------|
-| `attachment` | The file to upload as a logo. |
+| `attachment` | The file to upload to the asset as a logo. |
 
 ### File Requirements
 
-- The file must be an image, for example a `.png` or `.jpg`.
+- The file must be an image, such as a PNG or JPEG file.
 - The file must be smaller than 10 MB.
 
 ### Response

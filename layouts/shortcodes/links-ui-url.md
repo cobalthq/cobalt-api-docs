@@ -1,0 +1,1 @@
+The URL to redirect an authorized user to this resource in the Cobalt web application.

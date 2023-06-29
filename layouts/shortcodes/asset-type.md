@@ -1,0 +1,1 @@
+The type of the asset. See possible values in [Asset Types](./#asset-types).
