@@ -239,7 +239,6 @@ Updates an asset with the provided details.
 | `asset_type`  | {{% asset-type %}} |
 | `tags`        | Optional. {{% asset-tags %}} If the `tags` field is not provided in the `PUT` request, no changes will be made to the asset tags. Any `tags` that **already exist for the asset and are not provided** in the `PUT` request will be deleted. Any `tags` **that already exist for the asset and are provided** in the `PUT` request will remain. Any `tags` that don't exist for the asset and are provided in the `PUT` request will be created. |
 
-
 ### Response
 
 {{% 204-code %}}
