@@ -341,7 +341,7 @@ as unhealthy and put the event into our failed events queue.
 webhook endpoint as healthy.
 * If your webhook endpoint stays unhealthy for 48 hours then we will deactivate your webhook.
 
-If your webhook becomes deactivated then you will need to activate it again via the API.
+If your webhook becomes deactivated then you will need to activate it again via the user interface or the API.
 
 ## Best Practices
 
