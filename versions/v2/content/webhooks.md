@@ -334,7 +334,7 @@ request. If your endpoint responds with a successful HTTP response status code, 
 then we will mark the delivery as successful.
 * If your endpoint does not respond with a successful HTTP status, then we will attempt
 to send the event 5 more times with 5 seconds between each request.
-* If none of the delivery attempt succeed, then we will mark your webhook endpoint
+* If none of the delivery attempts succeed, then we will mark your webhook endpoint
 as unhealthy and put the event into our failed events queue.
 * On an hourly interval we will attempt to redeliver failed events.
 * If your webhook endpoint becomes able to receive events again, we will mark your
