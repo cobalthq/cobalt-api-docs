@@ -7,6 +7,7 @@ title: Webhooks
 
 Webhooks allow your system to be notified when events occur on the Cobalt Platform via HTTP POST requests.
 This eliminates the need to poll the API for updates.
+Webhooks may also be managed within the Integrations Hub in the Cobalt Platform.
 
 ## Get all webhooks
 
