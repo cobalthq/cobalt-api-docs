@@ -300,13 +300,14 @@ Webhook event properties:
 
 ```json
 {
-  "id": "eve_4tvptSU2SyqupRGQ4Jawdx",
+  "id": "eve_Rg7m1DgCeXcRbsyzB4KPYA",
   "action": "PENTEST_CREATED",
   "subject": {
-    "id": "eve_4tvptSU2SyqupRGQ4Jawdx",
+    "id": "pt_BepESWncwNyzgs7x1go4Ts",
     "type": "PENTEST"
   },
-  "timestamp": "2022-09-17T17:14:06.734Z"
+  "details": null,
+  "timestamp": "2023-07-25T19:30:40.009Z"
 }
 ```
 
