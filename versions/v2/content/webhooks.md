@@ -305,7 +305,7 @@ is appropriate for the subject type.
 
 Examples:
 
-* A `FINDING_PUBLISHED` event would have a subject ID with the format: `vl_xxxxxxxxxxxxxxxxxxxxxx`. 
+* A `FINDING_PUBLISHED` event would have a subject ID with the format: `vl_xxxxxxxxxxxxxxxxxxxxxx`.
   The full information about the finding that was published can be found by making a `GET`
   request to the API endpoint: `/findings/vl_xxxxxxxxxxxxxxxxxxxxxx`.
 * A `PENTEST_CREATED` event would have a subject ID with the format: `pt_xxxxxxxxxxxxxxxxxxxxxx`.
