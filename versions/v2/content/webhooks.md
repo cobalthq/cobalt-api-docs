@@ -7,6 +7,7 @@ title: Webhooks
 
 Webhooks allow your system to be notified when events occur on the Cobalt Platform via HTTP POST requests.
 This eliminates the need to poll the API for updates.
+You can also manage your webhooks within the Integrations Hub in the Cobalt Platform.
 
 ## Get all webhooks
 
@@ -298,15 +299,29 @@ Webhook event properties:
 * `PENTEST`
 * `FINDING`
 
+The format of the subject ID will change based on the type of the subject.
+The full information about the event subject can be fetched from the `GET` API route that
+is appropriate for the subject type.
+
+Examples:
+
+* A `FINDING_PUBLISHED` event would have a subject ID with the format: `vl_xxxxxxxxxxxxxxxxxxxxxx`.
+  The full information about the finding that was published can be found by making a `GET`
+  request to the API endpoint: `/findings/vl_xxxxxxxxxxxxxxxxxxxxxx`.
+* A `PENTEST_CREATED` event would have a subject ID with the format: `pt_xxxxxxxxxxxxxxxxxxxxxx`.
+  The full information about the pentest that was created can be found by making a `GET`
+  request to the API endpoint: `/pentests/pt_xxxxxxxxxxxxxxxxxxxxxx`.
+
 ```json
 {
-  "id": "eve_4tvptSU2SyqupRGQ4Jawdx",
+  "id": "eve_Rg7m1DgCeXcRbsyzB4KPYA",
   "action": "PENTEST_CREATED",
   "subject": {
-    "id": "eve_4tvptSU2SyqupRGQ4Jawdx",
+    "id": "pt_BepESWncwNyzgs7x1go4Ts",
     "type": "PENTEST"
   },
-  "timestamp": "2022-09-17T17:14:06.734Z"
+  "details": null,
+  "timestamp": "2023-07-25T19:30:40.009Z"
 }
 ```
 
@@ -320,14 +335,14 @@ request. If your endpoint responds with a successful HTTP response status code, 
 then we will mark the delivery as successful.
 * If your endpoint does not respond with a successful HTTP status, then we will attempt
 to send the event 5 more times with 5 seconds between each request.
-* If none of the delivery attempt succeed, then we will mark your webhook endpoint
+* If none of the delivery attempts succeed, then we will mark your webhook endpoint
 as unhealthy and put the event into our failed events queue.
 * On an hourly interval we will attempt to redeliver failed events.
 * If your webhook endpoint becomes able to receive events again, we will mark your
 webhook endpoint as healthy.
 * If your webhook endpoint stays unhealthy for 48 hours then we will deactivate your webhook.
 
-If your webhook becomes deactivated then you will need to activate it again via the API.
+If your webhook becomes deactivated then you will need to activate it again via the user interface or the API.
 
 ## Best Practices
 
