@@ -61,8 +61,7 @@ This endpoint retrieves a list of all tokens that belong to you.
 ```sh
 curl -X POST "https://api.cobalt.io/tokens/YOUR-TOKEN-ID/refresh" \
   -H "Accept: application/vnd.cobalt.v2+json" \
-  -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
-  -H "Idempotency-Key: A-UNIQUE-IDENTIFIER-TO-PREVENT-UNINTENTIONAL-DUPLICATION"
+  -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN"
 ```
 
 > The above command returns JSON structured like this:
