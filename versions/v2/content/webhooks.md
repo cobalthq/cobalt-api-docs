@@ -191,6 +191,7 @@ curl -X PATCH 'https://api.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER' \
   -H 'Accept: application/vnd.cobalt.v2+json' \
   -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
   -H 'Content-Type: application/vnd.cobalt.v2+json' \
+  -H 'Idempotency-Key: A-UNIQUE-IDENTIFIER-TO-PREVENT-UNINTENTIONAL-DUPLICATION' \
   -H 'X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN' \
   --data '{
             "name": "FooBar",
