@@ -88,8 +88,8 @@ Process:
   work.
 
 If you've forgotten your token, you can always re-authenticate in the Cobalt web app.
-Go to your [profile](https://app.cobalt.io/settings/api-token), revoke the old token you've forgotten, and generate a
-new token.
+Go to your <a href='https://app.cobalt.io/settings/api-token' rel='nofollow' target='_new'>profile</a>,
+revoke the old token you've forgotten, and generate a new token.
 
 ### HTTP Request
 

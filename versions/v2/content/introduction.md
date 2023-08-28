@@ -5,7 +5,7 @@ title: Introduction
 
 # Introduction
 
-The [Cobalt](https://cobalt.io) API gives you REST access to Organizations, Assets, Pentests, Findings, and
+The <a href='https://cobalt.io' rel='nofollow' target='_new'>Cobalt</a> API gives you REST access to Organizations, Assets, Pentests, Findings, and
 Events.
 
 <aside class="notice">

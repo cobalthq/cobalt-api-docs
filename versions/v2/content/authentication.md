@@ -6,7 +6,7 @@ title: Authentication
 # Authentication
 
 Cobalt uses API tokens to allow access to various endpoints. You can create a new Cobalt API token from within your
-[Cobalt profile](https://app.cobalt.io/settings/api-token).
+<a href='https://app.cobalt.io/settings/api-token' rel='nofollow' target='_new'>Cobalt profile</a>.
 
 Cobalt expects the API token to be included in all API requests to the server in a header that looks like the following:
 
@@ -21,7 +21,7 @@ in our API calls.
 
 To see which organizations you belong to:
 
-- [Send a GET request](https://docs.cobalt.io/v2/#get-all-organizations) to the `/orgs` endpoint.
+- [Send a GET request](./#get-all-organizations) to the `/orgs` endpoint.
 - Copy the `token` attribute associated with your target organization from response.
 - Include it as a header (`X-Org-Token`) to your requests when required.
 
