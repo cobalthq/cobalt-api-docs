@@ -108,7 +108,7 @@ With these additions in place, two new headers came into place; `Content-Type` a
 In v1, some endpoints had 10, and some others had 1000 as their pagination default value. In this release, we've
 updated the default pagination values of all endpoints to 10. Two endpoints were affected by this change:
 
-| Endpoint                     | v1 (default)  | v2 (default) |
-|------------------------------|---------------|--------------|
-| [pentests](./#organizations) | 1000          | 10           |
-| [findings](./#organizations) | 1000          | 10           |
+| Endpoint                | v1 (default)  | v2 (default) |
+|-------------------------|---------------|--------------|
+| [pentests](./#pentests) | 1000          | 10           |
+| [findings](./#findings) | 1000          | 10           |
