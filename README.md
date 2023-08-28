@@ -71,8 +71,7 @@ Dependencies in the repository are managed with Go Modules.
 
 ## Hosting
 
-The site uses Netlify's CD pipeline and is hosted at [docs.cobalt.io](https://docs.cobalt.io) using a Cloudflare CNAME
-pointed at [cobalt-public-api.netlify.app](https://cobalt-public-api.netlify.app).
+The site uses Netlify's CD pipeline and is hosted at [cobalt-public-api.netlify.app](https://cobalt-public-api.netlify.app).
 
 ## Deployment
 
