@@ -5,10 +5,12 @@ title: API Versions
 
 # API Versions
 
+<!-- markdown-link-check-disable -->
 <aside class="warning">
 You are currently viewing the documentation of v1 of Cobalt API. <a href="/v2">Click here</a>
 for the documentation of v2 of Cobalt API.
 </aside>
+<!-- markdown-link-check-enable -->
 
 ## Background
 
