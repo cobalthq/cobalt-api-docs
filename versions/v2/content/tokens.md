@@ -42,8 +42,8 @@ This endpoint retrieves a list of all tokens that belong to you.
 
 ### URL Parameters
 
-| Parameter | Default | Description                                                                                                 |
-|-----------|---------|-------------------------------------------------------------------------------------------------------------|
+| Parameter | Default | Description                                                                                              |
+|-----------|---------|----------------------------------------------------------------------------------------------------------|
 | `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/tokens?cursor=a1b2c3d4`            |
 | `limit`   | `10`    | If specified, returns only a specified amount of tokens. Example: `https://api.cobalt.io/tokens?limit=5` |
 
@@ -88,8 +88,8 @@ Process:
   work.
 
 If you've forgotten your token, you can always re-authenticate in the Cobalt web app.
-Go to your [profile](https://app.cobalt.io/settings/api-token), revoke the old token you've forgotten, and generate a
-new token.
+Go to your <a href='https://app.cobalt.io/settings/api-token' rel='nofollow' target='_new'>profile</a>,
+revoke the old token you've forgotten, and generate a new token.
 
 ### HTTP Request
 

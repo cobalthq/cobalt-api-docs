@@ -60,8 +60,8 @@ organization.
 
 ### URL Parameters
 
-| Parameter | Default | Description                                                                                                      |
-|-----------|---------|------------------------------------------------------------------------------------------------------------------|
+| Parameter | Default | Description                                                                                                   |
+|-----------|---------|---------------------------------------------------------------------------------------------------------------|
 | `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/orgs?cursor=a1b2c3d4`                   |
 | `limit`   | `10`    | If specified, returns only a specified amount of organizations. Example: `https://api.cobalt.io/orgs?limit=5` |
 

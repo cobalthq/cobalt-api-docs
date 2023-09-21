@@ -5,11 +5,11 @@ title: Idempotency
 
 # Idempotency
 
-The API supports [idempotency](https://en.wikipedia.org/wiki/Idempotence) for safely retrying requests without
-accidentally performing the same operation twice. This is useful when an API call is disrupted in transit and
-you do not receive a response. For example, if a request to create an asset does not respond due to a network
-connection error, you can retry the request with the same idempotency key to guarantee that no more than one
-asset is created.
+The API supports <a href='https://en.wikipedia.org/wiki/Idempotence' rel='nofollow' target='_new'>idempotency</a>
+for safely retrying requests without accidentally performing the same operation twice. This is useful when an API
+call is disrupted in transit and you do not receive a response. For example, if a request to create an asset does
+not respond due to a network connection error, you can retry the request with the same idempotency key to guarantee
+that no more than one asset is created.
 
 To perform an idempotent request, provide an additional `Idempotency-Key: <key>` header to the request. The
 header name `Mutation-Check` is also supported for backwards compatibility with previous versions of the API.

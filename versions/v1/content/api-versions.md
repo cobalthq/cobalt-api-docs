@@ -5,11 +5,12 @@ title: API Versions
 
 # API Versions
 
+<!-- markdown-link-check-disable -->
 <aside class="warning">
-You are currently viewing the documentation of v1 of Cobalt API. Please visit <a href="https://docs.cobalt.io/v2/">docs.cobalt.io/v2</a>
-for the documentation of v2 of Cobalt API. If you've integrated with Cobalt API in the past by using v1,
-you can use the <a href="https://docs.cobalt.io/v2/#changelog">Changelog</a> to migrate to v2.
+You are currently viewing the documentation of v1 of Cobalt API. <a href="/v2">Click here</a>
+for the documentation of v2 of Cobalt API.
 </aside>
+<!-- markdown-link-check-enable -->
 
 ## Background
 
