@@ -8,7 +8,7 @@ title: Tokens
 ## Get All Tokens
 
 ```sh
-curl -X GET "https://api.cobalt.io/tokens" \
+curl -X GET "https://api.us.cobalt.io/tokens" \
   -H "Accept: application/vnd.cobalt.v2+json" \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN"
 ```
@@ -38,14 +38,14 @@ This endpoint retrieves a list of all tokens that belong to you.
 
 ### HTTP Request
 
-`GET https://api.cobalt.io/tokens`
+`GET https://api.us.cobalt.io/tokens`
 
 ### URL Parameters
 
 | Parameter | Default | Description                                                                                              |
 |-----------|---------|----------------------------------------------------------------------------------------------------------|
-| `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/tokens?cursor=a1b2c3d4`            |
-| `limit`   | `10`    | If specified, returns only a specified amount of tokens. Example: `https://api.cobalt.io/tokens?limit=5` |
+| `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.us.cobalt.io/tokens?cursor=a1b2c3d4`            |
+| `limit`   | `10`    | If specified, returns only a specified amount of tokens. Example: `https://api.us.cobalt.io/tokens?limit=5` |
 
 ### Response Fields
 
@@ -59,7 +59,7 @@ This endpoint retrieves a list of all tokens that belong to you.
 ## Refresh Token
 
 ```sh
-curl -X POST "https://api.cobalt.io/tokens/YOUR-TOKEN-ID/refresh" \
+curl -X POST "https://api.us.cobalt.io/tokens/YOUR-TOKEN-ID/refresh" \
   -H "Accept: application/vnd.cobalt.v2+json" \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN"
 ```
@@ -93,7 +93,7 @@ revoke the old token you've forgotten, and generate a new token.
 
 ### HTTP Request
 
-`POST https://api.cobalt.io/tokens/YOUR-TOKEN-ID/refresh`
+`POST https://api.us.cobalt.io/tokens/YOUR-TOKEN-ID/refresh`
 
 ### Response Fields
 

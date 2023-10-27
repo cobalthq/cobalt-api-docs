@@ -8,7 +8,7 @@ title: Assets
 ## Get All Assets
 
 ```sh
-curl -X GET "https://api.cobalt.io/assets" \
+curl -X GET "https://api.us.cobalt.io/assets" \
   -H "Accept: application/vnd.cobalt.v1+json" \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
   -H "X-Org-Token: YOUR-V1-ORGANIZATION-TOKEN"
@@ -35,7 +35,7 @@ curl -X GET "https://api.cobalt.io/assets" \
       },
       "links": {
         "ui": {
-          "url": "https://api.cobalt.io/links/eyJ0eXBlIjoic29tZXRoaW5nIiwib3JnU2x1ZyI6ImNvYmFsdCIsInBlbnRlc3RUYWciOiJz="
+          "url": "https://api.us.cobalt.io/links/eyJ0eXBlIjoic29tZXRoaW5nIiwib3JnU2x1ZyI6ImNvYmFsdCIsInBlbnRlc3RUYWciOiJz="
         }
       }
     }
@@ -51,14 +51,14 @@ This endpoint retrieves a list of assets that belong to the organization specifi
 
 ### HTTP Request
 
-`GET https://api.cobalt.io/assets`
+`GET https://api.us.cobalt.io/assets`
 
 ### URL Parameters
 
 | Parameter | Default | Description                                                                                              |
 |-----------|---------|----------------------------------------------------------------------------------------------------------|
-| `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/assets?cursor=a1b2c3d4`            |
-| `limit`   | `10`    | If specified, returns only a specified amount of assets. Example: `https://api.cobalt.io/assets?limit=5` |
+| `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.us.cobalt.io/assets?cursor=a1b2c3d4`            |
+| `limit`   | `10`    | If specified, returns only a specified amount of assets. Example: `https://api.us.cobalt.io/assets?limit=5` |
 
 ### Response Fields
 

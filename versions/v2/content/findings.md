@@ -8,7 +8,7 @@ title: Findings
 ## Get All Findings
 
 ```sh
-curl -X GET "https://api.cobalt.io/findings" \
+curl -X GET "https://api.us.cobalt.io/findings" \
   -H "Accept: application/vnd.cobalt.v2+json" \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
   -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
@@ -84,7 +84,7 @@ curl -X GET "https://api.cobalt.io/findings" \
       },
       "links": {
         "ui": {
-          "url": "https://api.cobalt.io/links/eyJ0eXBlIjoic29tZXRoaW5nIiwib3JnU2x1ZyI6ImNvYmFsdCIsInBlbnRlc3RUYWciOiJz="
+          "url": "https://api.us.cobalt.io/links/eyJ0eXBlIjoic29tZXRoaW5nIiwib3JnU2x1ZyI6ImNvYmFsdCIsInBlbnRlc3RUYWciOiJz="
         }
       }
     }
@@ -123,24 +123,24 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 
 ### HTTP Request
 
-`GET https://api.cobalt.io/findings`
+`GET https://api.us.cobalt.io/findings`
 
 ### URL Parameters
 
 | Parameter               | Default | Description                                                                                                                                                                                                                                                                                                                                      |
 |-------------------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `cursor`                | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/findings?cursor=a1b2c3d4`                                                                                                                                                                                                                                                  |
-| `limit`                 | `10`    | If specified, returns only a specified amount of findings. Example: `https://api.cobalt.io/findings?limit=5`                                                                                                                                                                                                                                     |
-| `pentest`               | N/A     | If specified, returns findings scoped to this pentest id. Example: `https://api.cobalt.io/findings?pentest=pt_PEtv4dqnwGV2efZhLw3BM5`                                                                                                                                                                                                            |
-| `asset`                 | N/A     | If specified, returns findings scoped to this asset id. Example: `https://api.cobalt.io/findings?asset=as_HcChCMueiPQQgvckmZtRSd`                                                                                                                                                                                                                |
-| `state`                 | N/A     | If specified, returns findings that match `state`. See Response Fields below for example `state` values. Example: `https://api.cobalt.io/findings?state=check_fix`. Returns an empty list if no findings match the `state` filter.                                                                                                               |
-| `severity`              | N/A     | If specified, returns findings that match `severity`. See Response Fields below for example `severity` values. Example: `https://api.cobalt.io/findings?severity=medium`. Returns an empty list if no findings match the `severity` filter.                                                                                                      |
-| `labels_contains_all[]` | N/A     | If specified, returns findings that contain all specified labels. This query parameter can be specified multiple times. Returns an empty list if no matches are found. Example: `https://api.cobalt.io/findings?labels_contains_all[]=Awaiting Feedback&labels_contains_all[]=Retest Blocked`                                                    |
-| `sort`                  | N/A     | If specified, returns findings sorted by one of the chosen parameters: `severity`, `impact`, `state`, `created_at` and `updated_at`. When defined, findings are sorted in ascending order by the sort parameter. To sort in descending order, use a `-` before the sort parameter. Example: `https://api.cobalt.io/findings?sort=-severity`.     |
-| `created_at_lte`        | N/A     | If specified, returns findings where the created_at timestamp is less than or equal to the input timestamp. ISO8601 is the supported input timestamp format. Returns an empty list if no findings match the filter. Example: `https://api.cobalt.io/findings?created_at_lte=2020-02-20T15:28:10.335Z`                                            |
-| `created_at_gte`        | N/A     | If specified, returns findings where the created_at timestamp is greater than or equal to the input timestamp. ISO8601 is the supported input timestamp format. Returns an empty list if no findings match the filter. Example: `https://api.cobalt.io/findings?created_at_gte=2020-02-20T15:28:10.335Z`                                         |
-| `updated_at_lte`        | N/A     | If specified, returns findings where the updated_at timestamp is less than or equal to the input timestamp. ISO8601 is the supported input timestamp format. Returns an empty list if no findings match the filter. Example: `https://api.cobalt.io/findings?updated_at_lte=2020-02-20T15:28:10.335Z`                                            |
-| `updated_at_gte`        | N/A     | If specified, returns findings where the updated_at timestamp is greater than or equal to the input timestamp. ISO8601 is the supported input timestamp format. Returns an empty list if no findings match the filter. Example: `https://api.cobalt.io/findings?updated_at_gte=2020-02-20T15:28:10.335Z`                                         |
+| `cursor`                | N/A     | Used for [pagination](./#pagination). Example: `https://api.us.cobalt.io/findings?cursor=a1b2c3d4`                                                                                                                                                                                                                                                  |
+| `limit`                 | `10`    | If specified, returns only a specified amount of findings. Example: `https://api.us.cobalt.io/findings?limit=5`                                                                                                                                                                                                                                     |
+| `pentest`               | N/A     | If specified, returns findings scoped to this pentest id. Example: `https://api.us.cobalt.io/findings?pentest=pt_PEtv4dqnwGV2efZhLw3BM5`                                                                                                                                                                                                            |
+| `asset`                 | N/A     | If specified, returns findings scoped to this asset id. Example: `https://api.us.cobalt.io/findings?asset=as_HcChCMueiPQQgvckmZtRSd`                                                                                                                                                                                                                |
+| `state`                 | N/A     | If specified, returns findings that match `state`. See Response Fields below for example `state` values. Example: `https://api.us.cobalt.io/findings?state=check_fix`. Returns an empty list if no findings match the `state` filter.                                                                                                               |
+| `severity`              | N/A     | If specified, returns findings that match `severity`. See Response Fields below for example `severity` values. Example: `https://api.us.cobalt.io/findings?severity=medium`. Returns an empty list if no findings match the `severity` filter.                                                                                                      |
+| `labels_contains_all[]` | N/A     | If specified, returns findings that contain all specified labels. This query parameter can be specified multiple times. Returns an empty list if no matches are found. Example: `https://api.us.cobalt.io/findings?labels_contains_all[]=Awaiting Feedback&labels_contains_all[]=Retest Blocked`                                                    |
+| `sort`                  | N/A     | If specified, returns findings sorted by one of the chosen parameters: `severity`, `impact`, `state`, `created_at` and `updated_at`. When defined, findings are sorted in ascending order by the sort parameter. To sort in descending order, use a `-` before the sort parameter. Example: `https://api.us.cobalt.io/findings?sort=-severity`.     |
+| `created_at_lte`        | N/A     | If specified, returns findings where the created_at timestamp is less than or equal to the input timestamp. ISO8601 is the supported input timestamp format. Returns an empty list if no findings match the filter. Example: `https://api.us.cobalt.io/findings?created_at_lte=2020-02-20T15:28:10.335Z`                                            |
+| `created_at_gte`        | N/A     | If specified, returns findings where the created_at timestamp is greater than or equal to the input timestamp. ISO8601 is the supported input timestamp format. Returns an empty list if no findings match the filter. Example: `https://api.us.cobalt.io/findings?created_at_gte=2020-02-20T15:28:10.335Z`                                         |
+| `updated_at_lte`        | N/A     | If specified, returns findings where the updated_at timestamp is less than or equal to the input timestamp. ISO8601 is the supported input timestamp format. Returns an empty list if no findings match the filter. Example: `https://api.us.cobalt.io/findings?updated_at_lte=2020-02-20T15:28:10.335Z`                                            |
+| `updated_at_gte`        | N/A     | If specified, returns findings where the updated_at timestamp is greater than or equal to the input timestamp. ISO8601 is the supported input timestamp format. Returns an empty list if no findings match the filter. Example: `https://api.us.cobalt.io/findings?updated_at_gte=2020-02-20T15:28:10.335Z`                                         |
 
 ### Response Fields
 
@@ -173,7 +173,7 @@ Remember - you can only request findings scoped to the organization specified in
 ## Get a Finding
 
 ```sh
-curl -X GET "https://api.cobalt.io/findings/YOUR-FINDING-IDENTIFIER" \
+curl -X GET "https://api.us.cobalt.io/findings/YOUR-FINDING-IDENTIFIER" \
   -H "Accept: application/vnd.cobalt.v2+json" \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
   -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
@@ -227,7 +227,7 @@ curl -X GET "https://api.cobalt.io/findings/YOUR-FINDING-IDENTIFIER" \
   },
   "links": {
     "ui": {
-      "url": "https://api.cobalt.io/links/eyJ0eXBlIjoic29tZXRoaW5nIiwib3JnU2x1ZyI6ImNvYmFsdCIsInBlbnRlc3RUYWciOiJz="
+      "url": "https://api.us.cobalt.io/links/eyJ0eXBlIjoic29tZXRoaW5nIiwib3JnU2x1ZyI6ImNvYmFsdCIsInBlbnRlc3RUYWciOiJz="
     }
   }
 }
@@ -237,7 +237,7 @@ This endpoint retrieves a specific finding that belong to the organization speci
 
 ### HTTP Request
 
-`GET https://api.cobalt.io/findings/YOUR-FINDING-IDENTIFIER`
+`GET https://api.us.cobalt.io/findings/YOUR-FINDING-IDENTIFIER`
 
 ### Response Fields
 
