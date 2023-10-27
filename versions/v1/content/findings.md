@@ -8,7 +8,7 @@ title: Findings
 ## Get All Findings
 
 ```sh
-curl -X GET "https://api.cobalt.io/findings" \
+curl -X GET "https://api.us.cobalt.io/findings" \
   -H "Accept: application/vnd.cobalt.v1+json" \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
   -H "X-Org-Token: YOUR-V1-ORGANIZATION-TOKEN"
@@ -72,7 +72,7 @@ curl -X GET "https://api.cobalt.io/findings" \
       },
       "links": {
         "ui": {
-          "url": "https://api.cobalt.io/links/eyJ0eXBlIjoic29tZXRoaW5nIiwib3JnU2x1ZyI6ImNvYmFsdCIsInBlbnRlc3RUYWciOiJz="
+          "url": "https://api.us.cobalt.io/links/eyJ0eXBlIjoic29tZXRoaW5nIiwib3JnU2x1ZyI6ImNvYmFsdCIsInBlbnRlc3RUYWciOiJz="
         }
       }
     }
@@ -111,20 +111,20 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 
 ### HTTP Request
 
-`GET https://api.cobalt.io/findings`
+`GET https://api.us.cobalt.io/findings`
 
-`GET https://api.cobalt.io/findings?pentest=pt_9Ig1234`
+`GET https://api.us.cobalt.io/findings?pentest=pt_9Ig1234`
 
-`GET https://api.cobalt.io/findings?asset=as_cwrsqsL`
+`GET https://api.us.cobalt.io/findings?asset=as_cwrsqsL`
 
 ### URL Parameters
 
 | Parameter | Default | Description                                                                                                               |
 |-----------|---------|---------------------------------------------------------------------------------------------------------------------------|
-| `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/findings?cursor=a1b2c3d4`                        |
-| `limit`   | `1000`  | If specified, returns only a specified amount of findings. Example: `https://api.cobalt.io/findings?limit=5`           |
-| `pentest` | N/A     | If specified, returns findings scoped to this pentest id. Example: `https://api.cobalt.io/findings?pentest=pt_9Ig1234` |
-| `asset`   | N/A     | If specified, returns findings scoped to this asset id. Example: `https://api.cobalt.io/findings?asset=as_cwrsqsL`     |
+| `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.us.cobalt.io/findings?cursor=a1b2c3d4`                        |
+| `limit`   | `1000`  | If specified, returns only a specified amount of findings. Example: `https://api.us.cobalt.io/findings?limit=5`           |
+| `pentest` | N/A     | If specified, returns findings scoped to this pentest id. Example: `https://api.us.cobalt.io/findings?pentest=pt_9Ig1234` |
+| `asset`   | N/A     | If specified, returns findings scoped to this asset id. Example: `https://api.us.cobalt.io/findings?asset=as_cwrsqsL`     |
 
 ### Response Fields
 

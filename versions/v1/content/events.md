@@ -8,7 +8,7 @@ title: Events
 ## Get All Events
 
 ```sh
-curl -X GET "https://api.cobalt.io/events" \
+curl -X GET "https://api.us.cobalt.io/events" \
   -H "Accept: application/vnd.cobalt.v1+json" \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN"
 ```
@@ -63,11 +63,11 @@ This endpoint retrieves a list of all events for your account.
 
 ### HTTP Request
 
-`GET https://api.cobalt.io/events`
+`GET https://api.us.cobalt.io/events`
 
 ### URL Parameters
 
 | Parameter | Default | Description                                                                                                 |
 |-----------|---------|-------------------------------------------------------------------------------------------------------------|
-| `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/events?cursor=a1b2c3d4`            |
-| `limit`   | `10`    | If specified, returns only a specified amount of events. Example: `https://api.cobalt.io/events?limit=5` |
+| `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.us.cobalt.io/events?cursor=a1b2c3d4`            |
+| `limit`   | `10`    | If specified, returns only a specified amount of events. Example: `https://api.us.cobalt.io/events?limit=5` |

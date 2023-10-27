@@ -12,7 +12,7 @@ To paginate append the `next_page` or `prev_page` value to the base API URL.
 For example, if the `next_page` value in a response is `/resource?cursor=a1b2c3d4` you can send the following request
 for the next page.
 
-`GET https://api.cobalt.io/resource?cursor=a1b2c3d4`
+`GET https://api.us.cobalt.io/resource?cursor=a1b2c3d4`
 
 <aside class="notice">
 Remember - there is always a default value for the <code>limit</code> query parameter.

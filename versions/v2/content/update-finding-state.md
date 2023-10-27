@@ -6,7 +6,7 @@ title: Update Finding State
 ## View Available Finding States
 
 ```sh
-curl -X GET "https://api.cobalt.io/findings/YOUR-FINDING-ID/possible_states" \
+curl -X GET "https://api.us.cobalt.io/findings/YOUR-FINDING-ID/possible_states" \
   -H "Accept: application/vnd.cobalt.v2+json" \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
   -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
@@ -32,7 +32,7 @@ This endpoint retrieves the current state of a finding as well as possible next 
 
 ### HTTP Request
 
-`GET https://api.cobalt.io/findings/YOUR-FINDING-ID/possible_states`
+`GET https://api.us.cobalt.io/findings/YOUR-FINDING-ID/possible_states`
 
 ### URL Parameters
 
@@ -60,7 +60,7 @@ This endpoint retrieves the current state of a finding as well as possible next 
 ## Update Finding State
 
 ```sh
-curl -X PATCH "https://api.cobalt.io/findings/YOUR-FINDING-ID" \
+curl -X PATCH "https://api.us.cobalt.io/findings/YOUR-FINDING-ID" \
   -H "Accept: application/vnd.cobalt.v2+json" \
   -H 'Content-Type: application/vnd.cobalt.v2+json' \
   -H "Idempotency-Key: A-UNIQUE-IDENTIFIER-TO-PREVENT-UNINTENTIONAL-DUPLICATION" \
@@ -75,7 +75,7 @@ This endpoint updates the current state of a finding.
 
 ### HTTP Request
 
-`PATCH https://api.cobalt.io/findings/YOUR-FINDING-ID`
+`PATCH https://api.us.cobalt.io/findings/YOUR-FINDING-ID`
 
 ### URL Parameters
 
