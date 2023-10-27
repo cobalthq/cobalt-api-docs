@@ -12,7 +12,7 @@ You can also manage your webhooks within the Integrations Hub in the Cobalt Plat
 ## Get all webhooks
 
 ```sh
-curl -X GET "https://api.cobalt.io/webhooks" \
+curl -X GET "https://api.us.cobalt.io/webhooks" \
   -H "Accept: application/vnd.cobalt.v2+json" \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
   -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
@@ -53,14 +53,14 @@ This endpoint retrieves a list of all webhooks that belong to your organization.
 
 ### HTTP Request
 
-`GET https://api.cobalt.io/webhooks`
+`GET https://api.us.cobalt.io/webhooks`
 
 ### URL Parameters
 
 | Parameter | Default | Description                                                                                                  |
 |-----------|---------|--------------------------------------------------------------------------------------------------------------|
-| `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/webhooks?cursor=a1b2c3d4`              |
-| `limit`   | `10`    | If specified, returns only a specified amount of webhooks. Example: `https://api.cobalt.io/webhooks?limit=5` |
+| `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.us.cobalt.io/webhooks?cursor=a1b2c3d4`              |
+| `limit`   | `10`    | If specified, returns only a specified amount of webhooks. Example: `https://api.us.cobalt.io/webhooks?limit=5` |
 
 ### Response Fields
 
@@ -77,7 +77,7 @@ This endpoint retrieves a list of all webhooks that belong to your organization.
 ## Get a webhook
 
 ```sh
-curl -X GET "https://api.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER" \
+curl -X GET "https://api.us.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER" \
   -H "Accept: application/vnd.cobalt.v2+json" \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
   -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
@@ -110,7 +110,7 @@ This endpoint retrieves a specific webhook belonging to your organization.
 
 ### HTTP Request
 
-`GET https://api.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER`
+`GET https://api.us.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER`
 
 ### Response Fields
 
@@ -131,7 +131,7 @@ Remember - you can only request a webhook scoped to the organization specified i
 ## Create a webhook
 
 ```sh
-curl -X POST "https://api.cobalt.io/webhooks" \
+curl -X POST "https://api.us.cobalt.io/webhooks" \
   -H 'Accept: application/vnd.cobalt.v2+json' \
   -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
   -H 'Content-Type: application/vnd.cobalt.v2+json' \
@@ -159,7 +159,7 @@ for example, 200, 201, 204, etc. For details on test events, see the [Webhook Ev
 
 ### HTTP Request
 
-`POST https://api.cobalt.io/webhooks`
+`POST https://api.us.cobalt.io/webhooks`
 
 ### Body
 
@@ -187,7 +187,7 @@ Remember - you can only create a webhook within the organization specified in th
 ## Update a webhook
 
 ```sh
-curl -X PATCH 'https://api.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER' \
+curl -X PATCH 'https://api.us.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER' \
   -H 'Accept: application/vnd.cobalt.v2+json' \
   -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
   -H 'Content-Type: application/vnd.cobalt.v2+json' \
@@ -210,7 +210,7 @@ This endpoint updates a webhook belonging to your organization.
 
 ### HTTP Request
 
-`PATCH https://api.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER`
+`PATCH https://api.us.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER`
 
 ### Body
 
@@ -243,7 +243,7 @@ Remember - you can only update a webhook within the organization specified in th
 ## Delete a webhook
 
 ```sh
-curl -X DELETE 'https://api.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER' \
+curl -X DELETE 'https://api.us.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER' \
   -H 'Accept: application/vnd.cobalt.v2+json' \
   -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
   -H 'Content-Type: application/vnd.cobalt.v2+json' \
@@ -256,7 +256,7 @@ This endpoint deletes a webhook belonging to your organization.
 
 ### HTTP Request
 
-`DELETE https://api.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER`
+`DELETE https://api.us.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER`
 
 ### Response
 

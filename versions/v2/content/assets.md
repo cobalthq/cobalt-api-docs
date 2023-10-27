@@ -8,7 +8,7 @@ title: Assets
 ## Get All Assets
 
 ```sh
-curl -X GET "https://api.cobalt.io/assets" \
+curl -X GET "https://api.us.cobalt.io/assets" \
   -H "Accept: application/vnd.cobalt.v2+json" \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
   -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
@@ -46,7 +46,7 @@ curl -X GET "https://api.cobalt.io/assets" \
       },
       "links": {
         "ui": {
-          "url": "https://api.cobalt.io/links/eyJ0eXBlIjoic29tZXRoaW5nIiwib3JnU2x1ZyI6ImNvYmFsdCIsInBlbnRlc3RUYWciOiJz="
+          "url": "https://api.us.cobalt.io/links/eyJ0eXBlIjoic29tZXRoaW5nIiwib3JnU2x1ZyI6ImNvYmFsdCIsInBlbnRlc3RUYWciOiJz="
         }
       }
     }
@@ -62,17 +62,17 @@ This endpoint retrieves a list of assets that belong to the organization specifi
 
 ### HTTP Request
 
-`GET https://api.cobalt.io/assets`
+`GET https://api.us.cobalt.io/assets`
 
 ### URL Parameters
 
 | Parameter             | Default | Description                                                                                                                                                                                                                                                                                   |
 |-----------------------|---------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `cursor`              | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/assets?cursor=a1b2c3d4`                                                                                                                                                                                                 |
-| `limit`               | `10`    | If specified, returns only a specified amount of assets. Example: `https://api.cobalt.io/assets?limit=5`                                                                                                                                                                                      |
-| `asset_type`          | N/A     | If specified, returns assets that match `asset_type`. See Response Fields below for example `asset_type` values. Example: `https://api.cobalt.io/assets?asset_type=web`. Returns an empty list if no assets match the `asset_type` filter.                                                    |
-| `tags_contains_all[]` | N/A     | If specified, returns assets that contain all matching `tags`. This query parameter can be specified multiple times. Returns an empty list if no matches are found. Example: `https://api.cobalt.io/assets?tags_contains_all[]=third party&tags_contains_all[]=some-tag-id`                   |
-| `sort`                | N/A     | If specified, returns assets sorted by one of the chosen parameters: `asset_type`. When defined, records are returned in ascending order by the sort parameter. To return in descending order, use a `-` before the sort parameter. Example: `https://api.cobalt.io/assets?sort=-asset_type`. |
+| `cursor`              | N/A     | Used for [pagination](./#pagination). Example: `https://api.us.cobalt.io/assets?cursor=a1b2c3d4`                                                                                                                                                                                                 |
+| `limit`               | `10`    | If specified, returns only a specified amount of assets. Example: `https://api.us.cobalt.io/assets?limit=5`                                                                                                                                                                                      |
+| `asset_type`          | N/A     | If specified, returns assets that match `asset_type`. See Response Fields below for example `asset_type` values. Example: `https://api.us.cobalt.io/assets?asset_type=web`. Returns an empty list if no assets match the `asset_type` filter.                                                    |
+| `tags_contains_all[]` | N/A     | If specified, returns assets that contain all matching `tags`. This query parameter can be specified multiple times. Returns an empty list if no matches are found. Example: `https://api.us.cobalt.io/assets?tags_contains_all[]=third party&tags_contains_all[]=some-tag-id`                   |
+| `sort`                | N/A     | If specified, returns assets sorted by one of the chosen parameters: `asset_type`. When defined, records are returned in ascending order by the sort parameter. To return in descending order, use a `-` before the sort parameter. Example: `https://api.us.cobalt.io/assets?sort=-asset_type`. |
 
 ### Response Fields
 
@@ -95,7 +95,7 @@ Remember - you can only request assets scoped to the organization specified in t
 ## Get an Asset
 
 ```sh
-curl -X GET "https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER" \
+curl -X GET "https://api.us.cobalt.io/assets/YOUR-ASSET-IDENTIFIER" \
   -H "Accept: application/vnd.cobalt.v2+json" \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
   -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
@@ -132,7 +132,7 @@ curl -X GET "https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER" \
     },
     "links": {
       "ui": {
-        "url": "https://api.cobalt.io/links/eyJ0eXBlIjoic29tZXRoaW5nIiwib3JnU2x1ZyI6ImNvYmFsdCIsInBlbnRlc3RUYWciOiJz="
+        "url": "https://api.us.cobalt.io/links/eyJ0eXBlIjoic29tZXRoaW5nIiwib3JnU2x1ZyI6ImNvYmFsdCIsInBlbnRlc3RUYWciOiJz="
       }
     }
   }
@@ -143,7 +143,7 @@ This endpoint retrieves a specific asset belonging to the organization specified
 
 ### HTTP Request
 
-`GET https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER`
+`GET https://api.us.cobalt.io/assets/YOUR-ASSET-IDENTIFIER`
 
 ### Response Fields
 
@@ -166,7 +166,7 @@ Remember - you can only request an asset scoped to the organization specified in
 ## Create an Asset
 
 ```sh
-curl -X POST "https://api.cobalt.io/assets" \
+curl -X POST "https://api.us.cobalt.io/assets" \
   -H 'Accept: application/vnd.cobalt.v2+json' \
   -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
   -H 'Content-Type: application/vnd.cobalt.v2+json' \
@@ -187,7 +187,7 @@ This endpoint creates a new asset belonging to the organization specified in the
 
 ### HTTP Request
 
-`POST https://api.cobalt.io/assets`
+`POST https://api.us.cobalt.io/assets`
 
 ### Body
 
@@ -210,7 +210,7 @@ Remember - you can only create an asset within the organization specified in the
 ## Update an Asset
 
 ```sh
-curl -X PUT 'https://api.cobalt.io/assets/AN-ASSET-IDENTIFIER' \
+curl -X PUT 'https://api.us.cobalt.io/assets/AN-ASSET-IDENTIFIER' \
   -H 'Accept: application/vnd.cobalt.v2+json' \
   -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
   -H 'Content-Type: application/vnd.cobalt.v2+json' \
@@ -230,7 +230,7 @@ This endpoint updates an asset belonging to the organization specified in the `X
 
 ### HTTP Request
 
-`PUT https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER`
+`PUT https://api.us.cobalt.io/assets/YOUR-ASSET-IDENTIFIER`
 
 ### Body
 
@@ -252,7 +252,7 @@ Remember - you can only update an asset within the organization specified in the
 ## Delete an Asset
 
 ```sh
-curl -X DELETE 'https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER' \
+curl -X DELETE 'https://api.us.cobalt.io/assets/YOUR-ASSET-IDENTIFIER' \
   -H 'Accept: application/vnd.cobalt.v2+json' \
   -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
   -H 'Content-Type: application/vnd.cobalt.v2+json' \
@@ -266,7 +266,7 @@ also delete all associated `tags` for the asset.
 
 ### HTTP Request
 
-`DELETE https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER`
+`DELETE https://api.us.cobalt.io/assets/YOUR-ASSET-IDENTIFIER`
 
 ### Response
 
@@ -279,7 +279,7 @@ Remember - you can only delete an asset within the organization specified in the
 ## Upload an Attachment
 
 ```sh
-curl -X POST 'https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/attachments' \
+curl -X POST 'https://api.us.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/attachments' \
   -H 'Accept: application/vnd.cobalt.v2+json' \
   -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
   -H 'Content-Type: multipart/form-data' \
@@ -295,7 +295,7 @@ This endpoint uploads a new attachment for an asset belonging to the organizatio
 
 ### HTTP Request
 
-`POST https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/attachments`
+`POST https://api.us.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/attachments`
 
 ### Body
 
@@ -320,7 +320,7 @@ Remember - you can only upload an attachment for an asset within the organizatio
 ## Delete an Attachment
 
 ```sh
-curl -X DELETE 'https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/attachments/YOUR-ATTACHMENT-IDENTIFIER' \
+curl -X DELETE 'https://api.us.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/attachments/YOUR-ATTACHMENT-IDENTIFIER' \
   -H 'Accept: application/vnd.cobalt.v2+json' \
   -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
   -H 'X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN'
@@ -332,7 +332,7 @@ This endpoint deletes an attachment from an asset belonging to the organization 
 
 ### HTTP Request
 
-`DELETE https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/attachments/YOUR-ATTACHMENT-IDENTIFIER`
+`DELETE https://api.us.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/attachments/YOUR-ATTACHMENT-IDENTIFIER`
 
 > You can obtain this URL from the `Location` response header of the create attachment endpoint, or build it by getting
 > the attachment identifier from the response data of the `GET /assets` endpoint.
@@ -349,7 +349,7 @@ Remember - you can only delete an attachment from an asset within the organizati
 ## Upload a Logo
 
 ```sh
-curl -X POST 'https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/logo' \
+curl -X POST 'https://api.us.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/logo' \
   -H 'Accept: application/vnd.cobalt.v2+json' \
   -H 'Authorization: Bearer YOUR-PERSONAL-API-TOKEN' \
   -H 'Content-Type: multipart/form-data' \
@@ -365,7 +365,7 @@ means the old logo is removed and replaced by the new logo.
 
 ### HTTP Request
 
-`POST https://api.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/logo`
+`POST https://api.us.cobalt.io/assets/YOUR-ASSET-IDENTIFIER/logo`
 
 ### Body
 

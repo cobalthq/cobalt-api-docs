@@ -8,7 +8,7 @@ title: Organizations
 ## Get All Organizations
 
 ```sh
-curl -X GET "https://api.cobalt.io/orgs" \
+curl -X GET "https://api.us.cobalt.io/orgs" \
   -H "Accept: application/vnd.cobalt.v1+json" \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN"
 ```
@@ -26,7 +26,7 @@ curl -X GET "https://api.cobalt.io/orgs" \
       },
       "links": {
         "ui": {
-          "url": "https://api.cobalt.io/links/eyJ0eXBlIjoic29tZXRoaW5nIiwib3JnU2x1ZyI6ImNvYmFsdCIsInBlbnRlc3RUYWciOiJz="
+          "url": "https://api.us.cobalt.io/links/eyJ0eXBlIjoic29tZXRoaW5nIiwib3JnU2x1ZyI6ImNvYmFsdCIsInBlbnRlc3RUYWciOiJz="
         }
       }
     },
@@ -38,7 +38,7 @@ curl -X GET "https://api.cobalt.io/orgs" \
       },
       "links": {
         "ui": {
-          "url": "https://api.cobalt.io/links/eyJ0eXBlIjoic29tZXRoaW5nIiwib3JnU2x1ZyI6ImNvYmFsdCIsInBlbnRlc3RUYWciOiJz="
+          "url": "https://api.us.cobalt.io/links/eyJ0eXBlIjoic29tZXRoaW5nIiwib3JnU2x1ZyI6ImNvYmFsdCIsInBlbnRlc3RUYWciOiJz="
         }
       }
     }
@@ -56,14 +56,14 @@ organization.
 
 ### HTTP Request
 
-`GET https://api.cobalt.io/orgs`
+`GET https://api.us.cobalt.io/orgs`
 
 ### URL Parameters
 
 | Parameter | Default | Description                                                                                                   |
 |-----------|---------|---------------------------------------------------------------------------------------------------------------|
-| `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.cobalt.io/orgs?cursor=a1b2c3d4`                   |
-| `limit`   | `10`    | If specified, returns only a specified amount of organizations. Example: `https://api.cobalt.io/orgs?limit=5` |
+| `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.us.cobalt.io/orgs?cursor=a1b2c3d4`                   |
+| `limit`   | `10`    | If specified, returns only a specified amount of organizations. Example: `https://api.us.cobalt.io/orgs?limit=5` |
 
 ### Response Fields
 
