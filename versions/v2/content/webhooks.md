@@ -148,8 +148,24 @@ curl -X POST "https://api.us.cobalt.io/webhooks" \
           }'
 ```
 
-> The above command returns no data and a `201` response code when successful. There will be a `Location` header
-> pointing at the newly created webhook.
+> The above command returns the details of the created webhook and a `201` response code when successful. 
+> There will be a `Location` header pointing at the newly created webhook.
+
+```json
+{
+  "resource": {
+    "id": "wb_38URp3gxZqfkjEXmkybrrs",
+    "name": "My Webhook",
+    "url": "https://example.local/webhook",
+    "active": true,
+    "unhealthy_since": null,
+    "user": "us_RxvqT5T3WCFrfTF74B6JLC",
+    "subscribed_event_types": [
+      "FINDING_PUBLISHED"
+    ]
+  }
+}
+```
 
 This endpoint creates a new webhook belonging to your organization.
 
