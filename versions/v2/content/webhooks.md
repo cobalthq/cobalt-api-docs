@@ -189,8 +189,9 @@ for example, 200, 201, 204, etc. For details on test events, see the [Webhook Ev
 
 ### Response
 
-You get a `201` response code for a successful request. The `Location` response header contains the URL of the new
-webhook within the Cobalt API.
+When the request is successful, you get a `201` response code and the details of the created webhook.
+The response body fields are the same as documented [here](#get-a-webhook).
+The `Location` response header contains the URL of the new webhook within the Cobalt API.
 
 <aside class="notice">
 Multiple webhooks may not have the same name or URL within an organization.
@@ -258,7 +259,8 @@ All body fields are optional. You only need to include the fields that should be
 
 ### Response
 
-On a successful update, a `204` response code will be returned.
+On a successful update, a `200` response code and the details of the updated webhook will be returned.
+The response body fields are the same as documented [here](#get-a-webhook).
 
 <aside class="notice">
 To remove the secret, set the secret field to an empty string.
