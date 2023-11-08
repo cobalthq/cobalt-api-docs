@@ -220,7 +220,23 @@ curl -X PATCH 'https://api.us.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER' \
           }'
 ```
 
-> The above command returns no data and a `204` response code when successful.
+> The above command returns the details of the updated webhook and a `200` response code when successful.
+
+```json
+{
+  "resource": {
+    "id": "wb_38URp3gxZqfkjEXmkybrrs",
+    "name": "FooBar",
+    "url": "https://example.local/webhook2",
+    "active": false,
+    "unhealthy_since": null,
+    "user": "us_RxvqT5T3WCFrfTF74B6JLC",
+    "subscribed_event_types": [
+      "FINDING_PUBLISHED"
+    ]
+  }
+}
+```
 
 This endpoint updates a webhook belonging to your organization.
 
