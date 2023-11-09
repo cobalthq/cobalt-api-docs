@@ -148,8 +148,24 @@ curl -X POST "https://api.us.cobalt.io/webhooks" \
           }'
 ```
 
-> The above command returns no data and a `201` response code when successful. There will be a `Location` header
-> pointing at the newly created webhook.
+> The above command returns the details of the created webhook and a `201` response code when successful. 
+> There will be a `Location` header pointing at the newly created webhook.
+
+```json
+{
+  "resource": {
+    "id": "wb_38URp3gxZqfkjEXmkybrrs",
+    "name": "My Webhook",
+    "url": "https://example.local/webhook",
+    "active": true,
+    "unhealthy_since": null,
+    "user": "us_RxvqT5T3WCFrfTF74B6JLC",
+    "subscribed_event_types": [
+      "FINDING_PUBLISHED"
+    ]
+  }
+}
+```
 
 This endpoint creates a new webhook belonging to your organization.
 
@@ -173,8 +189,9 @@ for example, 200, 201, 204, etc. For details on test events, see the [Webhook Ev
 
 ### Response
 
-You get a `201` response code for a successful request. The `Location` response header contains the URL of the new
-webhook within the Cobalt API.
+When the request is successful, you get a `201` response code and the details of the created webhook.
+The response body fields are the same as documented [here](#get-a-webhook).
+The `Location` response header contains the URL of the new webhook within the Cobalt API.
 
 <aside class="notice">
 Multiple webhooks may not have the same name or URL within an organization.
@@ -204,7 +221,23 @@ curl -X PATCH 'https://api.us.cobalt.io/webhooks/YOUR-WEBHOOK-IDENTIFIER' \
           }'
 ```
 
-> The above command returns no data and a `204` response code when successful.
+> The above command returns the details of the updated webhook and a `200` response code when successful.
+
+```json
+{
+  "resource": {
+    "id": "wb_38URp3gxZqfkjEXmkybrrs",
+    "name": "FooBar",
+    "url": "https://example.local/webhook2",
+    "active": false,
+    "unhealthy_since": null,
+    "user": "us_RxvqT5T3WCFrfTF74B6JLC",
+    "subscribed_event_types": [
+      "FINDING_PUBLISHED"
+    ]
+  }
+}
+```
 
 This endpoint updates a webhook belonging to your organization.
 
@@ -226,7 +259,8 @@ All body fields are optional. You only need to include the fields that should be
 
 ### Response
 
-On a successful update, a `204` response code will be returned.
+On a successful update, a `200` response code and the details of the updated webhook will be returned.
+The response body fields are the same as documented [here](#get-a-webhook).
 
 <aside class="notice">
 To remove the secret, set the secret field to an empty string.
