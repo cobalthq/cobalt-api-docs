@@ -3,8 +3,6 @@ weight: 3
 title: EU Data center
 ---
 
-<!-- markdown-link-check-disable -->
-
 # EU Data Center
 
 <aside class="notice">
@@ -35,5 +33,3 @@ You should replace it with:
 By following the steps outlined above, you can ensure that your API calls correctly target our EU Data center.
 If you encounter any issues or need further assistance, please don't hesitate to contact us:
 <strong>[integrations@cobalt.io](mailto:integrations@cobalt.io)</strong>.
-
-<!-- markdown-link-check-enable -->
