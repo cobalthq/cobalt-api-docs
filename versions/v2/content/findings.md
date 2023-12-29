@@ -160,10 +160,10 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 ### Image Attachments
 
 Several finding response fields support image attachments. By default, these attachments are rendered in our response JSON as markdown. For example:
-`![screenshot.png](https://api.us.cobalt.io/v1/attachments/att_xxxxxxx/preview)`
+`![screenshot.png](https://api.us.cobalt.io/v1/attachments/att_xxxxxxx/preview)`.
 This format is not useful for users who want to programmatically download the attachments and associate them with a specific position in the finding response.
 For this use case, we support a token format, which renders the attachment as a token that can be used to download the attachment. For example:
-`<CobaltImageAttachment at_KYKDAhZPXuQ4BW23g8i9QN>`
+`<CobaltImageAttachment at_KYKDAhZPXuQ4BW23g8i9QN>`.
 The token format allows users to employ a technology such as RegEx to search the finding response fields for image attachments and extract the image attachment IDs. In the example token, `at_KYKDAhZPXuQ4BW23g8i9QN` is the attachment ID.
 Users can use the attachment ID to locate the full attachment information by searching the `attachments` array in the finding response for an object with a matching ID.
 The attachment object includes a `download_url` field that can be used to download the attachment.
@@ -274,10 +274,10 @@ This endpoint retrieves a specific finding that belong to the organization speci
 ### Image Attachments
 
 Several finding response fields support image attachments. By default, these attachments are rendered in our response JSON as markdown. For example:
-`![screenshot.png](https://api.us.cobalt.io/v1/attachments/att_xxxxxxx/preview)`
+`![screenshot.png](https://api.us.cobalt.io/v1/attachments/att_xxxxxxx/preview)`.
 This format is not useful for users who want to programmatically download the attachments and associate them with a specific position in the finding response.
 For this use case, we support a token format, which renders the attachment as a token that can be used to download the attachment. For example:
-`<CobaltImageAttachment at_KYKDAhZPXuQ4BW23g8i9QN>`
+`<CobaltImageAttachment at_KYKDAhZPXuQ4BW23g8i9QN>`.
 The token format allows users to employ a technology such as RegEx to search the finding response fields for image attachments and extract the image attachment IDs. In the example token, `at_KYKDAhZPXuQ4BW23g8i9QN` is the attachment ID.
 Users can use the attachment ID to locate the full attachment information by searching the `attachments` array in the finding response for an object with a matching ID.
 The attachment object includes a `download_url` field that can be used to download the attachment.
