@@ -141,7 +141,7 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 | `created_at_gte`                  | N/A        | If specified, returns findings where the created_at timestamp is greater than or equal to the input timestamp. ISO8601 is the supported input timestamp format. Returns an empty list if no findings match the filter. Example: `https://api.us.cobalt.io/findings?created_at_gte=2020-02-20T15:28:10.335Z`                                     |
 | `updated_at_lte`                  | N/A        | If specified, returns findings where the updated_at timestamp is less than or equal to the input timestamp. ISO8601 is the supported input timestamp format. Returns an empty list if no findings match the filter. Example: `https://api.us.cobalt.io/findings?updated_at_lte=2020-02-20T15:28:10.335Z`                                        |
 | `updated_at_gte`                  | N/A        | If specified, returns findings where the updated_at timestamp is greater than or equal to the input timestamp. ISO8601 is the supported input timestamp format. Returns an empty list if no findings match the filter. Example: `https://api.us.cobalt.io/findings?updated_at_gte=2020-02-20T15:28:10.335Z`                                     |
-| `image_attachments_render_format` | `markdown` | If specified, returns image attachments with the specified render format. Supported values are `markdown` and `token`. Example: `https://api.us.cobalt.io/findings?image_attachments_render_format=token`. See the Response Fields section for more information                                                                                 | 
+| `image_attachments_render_format` | `markdown` | If specified, returns image attachments with the specified render format. Supported values are `markdown` and `token`. Example: `https://api.us.cobalt.io/findings?image_attachments_render_format=token`. See the Image Attachments section for more information                                                                               | 
 
 ### Response Fields
 
@@ -157,7 +157,7 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 | `attachments`            | A list of finding attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.                   |
 | `links.ui.url`           | A link to redirect an authorized user to this finding in the Cobalt web application                                            |
 
-#### Image Attachments
+### Image Attachments
 
 Several finding fields support image attachments. By default, these attachments will be rendered in our response JSON as markdown. Example: `![screenshot.png](https://api.us.cobalt.io/v1/attachments/att_xxxxxxx/preview)`.
 This format is not useful for users that want to programmatically download the attachments and associate them to a certain position in the finding response.
