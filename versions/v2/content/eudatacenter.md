@@ -3,6 +3,8 @@ weight: 3
 title: EU Data center
 ---
 
+<!-- markdown-link-check-disable -->
+
 # EU Data Center
 <aside class="notice">
 The information provided in this section is specifically tailored for customers who are using our EU Data center (app.eu.cobalt.io).
@@ -22,3 +24,5 @@ You should replace it with:
 ```https://api.eu.cobalt.io/example-endpoint```
 
 By following the steps outlined above, you can ensure that your API calls correctly target our EU Data center. If you encounter any issues or need further assistance, please don't hesitate to contact us: <strong>[integrations@cobalt.io](mailto:integrations@cobalt.io)</strong>.
+
+<!-- markdown-link-check-enable -->
