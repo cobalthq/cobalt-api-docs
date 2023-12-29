@@ -19,10 +19,10 @@ API calls will differ from the examples in our documentation, which use the US v
 
 ## Procedure
 
-1. Identify the base URL: The base URL for customers using our EU Data center is https://api.eu.cobalt.io.
+1. Identify the base URL: The base URL for customers using our EU Data center is `https://api.eu.cobalt.io`.
    This is the URL you should use when making API calls.
 2. Replace the base URL in examples: All examples provided in our documentation use the US version of the base
-   URL (https://api.us.cobalt.io). When following these examples, you will need to replace the US
+   URL (`https://api.us.cobalt.io`). When following these examples, you will need to replace the US
    base URL with the EU base URL.
 3. For example, if an API call in the documentation is shown as:
 
