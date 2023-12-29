@@ -161,7 +161,7 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 
 Several finding fields support image attachments. By default, these attachments will be rendered in our response JSON as markdown. Example: `![screenshot.png](https://api.us.cobalt.io/v1/attachments/att_xxxxxxx/preview)`.
 This format is not useful for users that want to programmatically download the attachments and associate them to a certain position in the finding response.
-For this use case, we support a `token` format, which will render the attachment as a token that can be used to download the attachment. Example: `<CobaltImageAttachment at_KYKDAhZPXuQ4BW23g8i9QN>`.
+For this use case, we support a `token` format which will render the attachment as a token that can be used to download the attachment. Example: `<CobaltImageAttachment at_KYKDAhZPXuQ4BW23g8i9QN>`.
 The token format allows users to use a technology such as RegEx to search the finding response fields for image attachments and extract the image attachment IDs. Within the example token, `at_KYKDAhZPXuQ4BW23g8i9QN` is the attachment ID.
 Using the attachment ID, users can find the full attachment information by searching the `attachments` array in the finding response for an attachment object with a matching ID.
 The attachment object contains a `download_url` field that can be used to download the attachment.
