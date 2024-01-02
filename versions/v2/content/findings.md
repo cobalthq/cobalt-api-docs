@@ -127,20 +127,21 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 
 ### URL Parameters
 
-| Parameter               | Default | Description                                                                                                                                                                                                                                                                                                                                      |
-|-------------------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `cursor`                | N/A     | Used for [pagination](./#pagination). Example: `https://api.us.cobalt.io/findings?cursor=a1b2c3d4`                                                                                                                                                                                                                                                  |
-| `limit`                 | `10`    | If specified, returns only a specified amount of findings. Example: `https://api.us.cobalt.io/findings?limit=5`                                                                                                                                                                                                                                     |
-| `pentest`               | N/A     | If specified, returns findings scoped to this pentest id. Example: `https://api.us.cobalt.io/findings?pentest=pt_PEtv4dqnwGV2efZhLw3BM5`                                                                                                                                                                                                            |
-| `asset`                 | N/A     | If specified, returns findings scoped to this asset id. Example: `https://api.us.cobalt.io/findings?asset=as_HcChCMueiPQQgvckmZtRSd`                                                                                                                                                                                                                |
-| `state`                 | N/A     | If specified, returns findings that match `state`. See Response Fields below for example `state` values. Example: `https://api.us.cobalt.io/findings?state=check_fix`. Returns an empty list if no findings match the `state` filter.                                                                                                               |
-| `severity`              | N/A     | If specified, returns findings that match `severity`. See Response Fields below for example `severity` values. Example: `https://api.us.cobalt.io/findings?severity=medium`. Returns an empty list if no findings match the `severity` filter.                                                                                                      |
-| `labels_contains_all[]` | N/A     | If specified, returns findings that contain all specified labels. This query parameter can be specified multiple times. Returns an empty list if no matches are found. Example: `https://api.us.cobalt.io/findings?labels_contains_all[]=Awaiting Feedback&labels_contains_all[]=Retest Blocked`                                                    |
-| `sort`                  | N/A     | If specified, returns findings sorted by one of the chosen parameters: `severity`, `impact`, `state`, `created_at` and `updated_at`. When defined, findings are sorted in ascending order by the sort parameter. To sort in descending order, use a `-` before the sort parameter. Example: `https://api.us.cobalt.io/findings?sort=-severity`.     |
-| `created_at_lte`        | N/A     | If specified, returns findings where the created_at timestamp is less than or equal to the input timestamp. ISO8601 is the supported input timestamp format. Returns an empty list if no findings match the filter. Example: `https://api.us.cobalt.io/findings?created_at_lte=2020-02-20T15:28:10.335Z`                                            |
-| `created_at_gte`        | N/A     | If specified, returns findings where the created_at timestamp is greater than or equal to the input timestamp. ISO8601 is the supported input timestamp format. Returns an empty list if no findings match the filter. Example: `https://api.us.cobalt.io/findings?created_at_gte=2020-02-20T15:28:10.335Z`                                         |
-| `updated_at_lte`        | N/A     | If specified, returns findings where the updated_at timestamp is less than or equal to the input timestamp. ISO8601 is the supported input timestamp format. Returns an empty list if no findings match the filter. Example: `https://api.us.cobalt.io/findings?updated_at_lte=2020-02-20T15:28:10.335Z`                                            |
-| `updated_at_gte`        | N/A     | If specified, returns findings where the updated_at timestamp is greater than or equal to the input timestamp. ISO8601 is the supported input timestamp format. Returns an empty list if no findings match the filter. Example: `https://api.us.cobalt.io/findings?updated_at_gte=2020-02-20T15:28:10.335Z`                                         |
+| Parameter                         | Default    | Description                                                                                                                                                                                                                                                                                                                                     |
+|-----------------------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `cursor`                          | N/A        | Used for [pagination](./#pagination). Example: `https://api.us.cobalt.io/findings?cursor=a1b2c3d4`                                                                                                                                                                                                                                              |
+| `limit`                           | `10`       | If specified, returns only a specified amount of findings. Example: `https://api.us.cobalt.io/findings?limit=5`                                                                                                                                                                                                                                 |
+| `pentest`                         | N/A        | If specified, returns findings scoped to this pentest id. Example: `https://api.us.cobalt.io/findings?pentest=pt_PEtv4dqnwGV2efZhLw3BM5`                                                                                                                                                                                                        |
+| `asset`                           | N/A        | If specified, returns findings scoped to this asset id. Example: `https://api.us.cobalt.io/findings?asset=as_HcChCMueiPQQgvckmZtRSd`                                                                                                                                                                                                            |
+| `state`                           | N/A        | If specified, returns findings that match `state`. See Response Fields below for example `state` values. Example: `https://api.us.cobalt.io/findings?state=check_fix`. Returns an empty list if no findings match the `state` filter.                                                                                                           |
+| `severity`                        | N/A        | If specified, returns findings that match `severity`. See Response Fields below for example `severity` values. Example: `https://api.us.cobalt.io/findings?severity=medium`. Returns an empty list if no findings match the `severity` filter.                                                                                                  |
+| `labels_contains_all[]`           | N/A        | If specified, returns findings that contain all specified labels. This query parameter can be specified multiple times. Returns an empty list if no matches are found. Example: `https://api.us.cobalt.io/findings?labels_contains_all[]=Awaiting Feedback&labels_contains_all[]=Retest Blocked`                                                |
+| `sort`                            | N/A        | If specified, returns findings sorted by one of the chosen parameters: `severity`, `impact`, `state`, `created_at` and `updated_at`. When defined, findings are sorted in ascending order by the sort parameter. To sort in descending order, use a `-` before the sort parameter. Example: `https://api.us.cobalt.io/findings?sort=-severity`. |
+| `created_at_lte`                  | N/A        | If specified, returns findings where the created_at timestamp is less than or equal to the input timestamp. ISO8601 is the supported input timestamp format. Returns an empty list if no findings match the filter. Example: `https://api.us.cobalt.io/findings?created_at_lte=2020-02-20T15:28:10.335Z`                                        |
+| `created_at_gte`                  | N/A        | If specified, returns findings where the created_at timestamp is greater than or equal to the input timestamp. ISO8601 is the supported input timestamp format. Returns an empty list if no findings match the filter. Example: `https://api.us.cobalt.io/findings?created_at_gte=2020-02-20T15:28:10.335Z`                                     |
+| `updated_at_lte`                  | N/A        | If specified, returns findings where the updated_at timestamp is less than or equal to the input timestamp. ISO8601 is the supported input timestamp format. Returns an empty list if no findings match the filter. Example: `https://api.us.cobalt.io/findings?updated_at_lte=2020-02-20T15:28:10.335Z`                                        |
+| `updated_at_gte`                  | N/A        | If specified, returns findings where the updated_at timestamp is greater than or equal to the input timestamp. ISO8601 is the supported input timestamp format. Returns an empty list if no findings match the filter. Example: `https://api.us.cobalt.io/findings?updated_at_gte=2020-02-20T15:28:10.335Z`                                     |
+| `image_attachments_render_format` | `markdown` | If specified, returns image attachments with the specified render format. Supported values are `markdown` and `token`. Example: `https://api.us.cobalt.io/findings?image_attachments_render_format=token`. See the Image Attachments section for more information                                                                               | 
 
 ### Response Fields
 
@@ -155,6 +156,17 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 | `type_category`          | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                         |
 | `attachments`            | A list of finding attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.                   |
 | `links.ui.url`           | A link to redirect an authorized user to this finding in the Cobalt web application                                            |
+
+### Image Attachments
+
+Several finding response fields support image attachments. By default, these attachments are rendered in our response JSON as markdown. For example:
+`![screenshot.png](https://api.us.cobalt.io/v1/attachments/att_xxxxxxx/preview)`.
+This format is not useful for users who want to programmatically download the attachments and associate them with a specific position in the finding response.
+For this use case, we support a token format, which renders the attachment as a token that can be used to download the attachment. For example:
+`<CobaltImageAttachment at_KYKDAhZPXuQ4BW23g8i9QN>`.
+The token format allows users to employ a technology such as RegEx to search the finding response fields for image attachments and extract the image attachment IDs. In the example token, `at_KYKDAhZPXuQ4BW23g8i9QN` is the attachment ID.
+Users can use the attachment ID to locate the full attachment information by searching the `attachments` array in the finding response for an object with a matching ID.
+The attachment object includes a `download_url` field that can be used to download the attachment.
 
 ### State
 
@@ -239,6 +251,12 @@ This endpoint retrieves a specific finding that belong to the organization speci
 
 `GET https://api.us.cobalt.io/findings/YOUR-FINDING-IDENTIFIER`
 
+### URL Parameters
+
+| Parameter                         | Default    | Description                                                                                                                                                                                                                                                                                |
+|-----------------------------------|------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `image_attachments_render_format` | `markdown` | If specified, returns image attachments with the specified render format. Supported values are `markdown` and `token`. Example: `https://api.us.cobalt.io/findings/YOUR-FINDING-IDENTIFIER?image_attachments_render_format=token`. See the Image Attachments section for more information  | 
+
 ### Response Fields
 
 | Field                    | Enum Types                                                                                                            |
@@ -252,6 +270,17 @@ This endpoint retrieves a specific finding that belong to the organization speci
 | `type_category`          | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                |
 | `attachments`            | A list of finding attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.          |
 | `url`                    | The links.ui.url will redirect an authorized user to this finding in the Cobalt platform                              |
+
+### Image Attachments
+
+Several finding response fields support image attachments. By default, these attachments are rendered in our response JSON as markdown. For example:
+`![screenshot.png](https://api.us.cobalt.io/v1/attachments/att_xxxxxxx/preview)`.
+This format is not useful for users who want to programmatically download the attachments and associate them with a specific position in the finding response.
+For this use case, we support a token format, which renders the attachment as a token that can be used to download the attachment. For example:
+`<CobaltImageAttachment at_KYKDAhZPXuQ4BW23g8i9QN>`.
+The token format allows users to employ a technology such as RegEx to search the finding response fields for image attachments and extract the image attachment IDs. In the example token, `at_KYKDAhZPXuQ4BW23g8i9QN` is the attachment ID.
+Users can use the attachment ID to locate the full attachment information by searching the `attachments` array in the finding response for an object with a matching ID.
+The attachment object includes a `download_url` field that can be used to download the attachment.
 
 ### State
 
