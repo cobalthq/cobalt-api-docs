@@ -148,7 +148,7 @@ curl -X POST "https://api.us.cobalt.io/webhooks" \
           }'
 ```
 
-> The above command returns the details of the created webhook and a `201` response code when successful. 
+> The above command returns the details of the created webhook and a `201` response code when successful.
 > There will be a `Location` header pointing at the newly created webhook.
 
 ```json
