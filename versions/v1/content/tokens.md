@@ -21,7 +21,7 @@ curl -X GET "https://api.us.cobalt.io/tokens" \
     {
       "resource": {
         "id": "api_Dge3LsHMjtX8SGEk4a8nux",
-        "last_characters": "9qy7",
+        "last_characters": "redacted",
         "name": "Lorem ipsum",
         "expire_at": null
       }
@@ -49,12 +49,12 @@ This endpoint retrieves a list of all tokens that belong to you.
 
 ### Response Fields
 
-| Field             | Description                                                                                          |
-|-------------------|------------------------------------------------------------------------------------------------------|
-| `id`              | A unique ID representing the token. Starts with `api_`                                               |
-| `name`            | Name of the API token                                                                                |
-| `last_characters` | Last four characters of your token, so that you can recognize tokens even if they have the same name |
-| `expire_at`       | null (not currently implemented)                                                                     |
+| Field             | Description                                            |
+|-------------------|--------------------------------------------------------|
+| `id`              | A unique ID representing the token. Starts with `api_` |
+| `name`            | Name of the API token                                  |
+| `last_characters` | This property is deprecated. Do not use it.            |
+| `expire_at`       | null (not currently implemented)                       |
 
 ## Refresh Token
 
