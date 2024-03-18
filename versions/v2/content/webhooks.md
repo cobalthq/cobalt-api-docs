@@ -475,3 +475,36 @@ Subject associations:
 | asset_id    | false    |
 
 Event details: None
+
+## Finding Published Event
+
+``` json
+{
+  "id": "eve_6c355k5S7JnKBLAU4niKcZ",
+  "action": "FINDING_PUBLISHED",
+  "subject": {
+    "id": "vl_Mj56fMKWzkp55XLxC2xEuL",
+    "type": "FINDING",
+    "associations": {
+      "pentest_id": "pt_72jWq2hJ3arozEWq9HU7Mk",
+      "asset_id": "as_7PFxAamzsqDNixMcQoR723"
+    }
+  },
+  "details": null,
+  "timestamp": "2024-03-18T17:20:40.384Z"
+}
+```
+
+This event is fired when a finding is published for triaging.
+
+Action: `FINDING_PUBLISHED`
+Subject type: `FINDING`
+
+Subject associations:
+
+| Association | Nullable |
+|-------------|----------|
+| pentest_id  | false    |
+| asset_id    | false    |
+
+Event details: None
