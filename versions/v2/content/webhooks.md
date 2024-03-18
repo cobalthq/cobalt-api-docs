@@ -442,3 +442,36 @@ Subject associations:
 | asset_id    | false    |
 
 Event details: None
+
+## Finding Deleted Event
+
+``` json
+{
+  "id": "eve_QTDZnhhHzQAbrADCbp4iZs",
+  "action": "FINDING_DELETED",
+  "subject": {
+    "id": "vl_NQ1AmofsRQYich6nGda4Vh",
+    "type": "FINDING",
+    "associations": {
+      "pentest_id": "pt_72jWq2hJ3arozEWq9HU7Mk",
+      "asset_id": "as_7PFxAamzsqDNixMcQoR723"
+    }
+  },
+  "details": null,
+  "timestamp": "2024-03-18T17:18:10.355Z"
+}
+```
+
+This event is fired when a finding is deleted.
+
+Action: `FINDING_DELETED`
+Subject type: `FINDING`
+
+Subject associations:
+
+| Association | Nullable |
+|-------------|----------|
+| pentest_id  | false    |
+| asset_id    | false    |
+
+Event details: None
