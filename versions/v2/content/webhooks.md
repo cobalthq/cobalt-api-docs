@@ -304,13 +304,13 @@ Remember - you can only delete a webhook within the organization specified in th
 
 Webhook event properties:
 
-| Field         | Nullable | Description                                          |
-|---------------|----------|------------------------------------------------------|
-| id            | false    | The ID of the webhook event                          |
-| action        | false    | The action that the event is related to              |
-| subject       | false    | The subject that the event is related to             |
-| details       | true     | An object containing additional details of the event |
-| timestamp     | false    | The time that the event occurred                     |
+| Field         | Nullable | Description                              |
+|---------------|----------|------------------------------------------|
+| id            | false    | The ID of the webhook event              |
+| action        | false    | The action that the event is related to  |
+| subject       | false    | The subject that the event is related to |
+| details       | true     | Additional details of the event          |
+| timestamp     | false    | The time that the event occurred         |
 
 `action` types:
 
@@ -324,11 +324,11 @@ Webhook event properties:
 
 `subject` properties:
 
-| Field         | Nullable | Description                                         |
-|---------------|----------|-----------------------------------------------------|
-| id            | false    | The ID of the subject resource                      |
-| type          | false    | The type of the subject resource                    |
-| associations  | true     | An object containing the IDs of associated entities |
+| Field         | Nullable | Description                      |
+|---------------|----------|----------------------------------|
+| id            | false    | The ID of the subject resource   |
+| type          | false    | The type of the subject resource |
+| associations  | true     | IDs of associated entities       |
 
 `subject` types:
 
