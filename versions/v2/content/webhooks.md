@@ -402,6 +402,7 @@ Examples:
 This event is fired when a new pentest is created.
 
 Action: `PENTEST_CREATED`
+
 Subject type: `PENTEST`
 
 Subject associations:
@@ -433,6 +434,7 @@ Event details: None
 This event is fired when a pentest's state is updated.
 
 Action: `PENTEST_STATE_UPDATED`
+
 Subject type: `PENTEST`
 
 Subject associations:
@@ -465,6 +467,7 @@ Event details: None
 This event is fired when a finding is deleted.
 
 Action: `FINDING_DELETED`
+
 Subject type: `FINDING`
 
 Subject associations:
@@ -498,6 +501,7 @@ Event details: None
 This event is fired when a finding is published for triaging.
 
 Action: `FINDING_PUBLISHED`
+
 Subject type: `FINDING`
 
 Subject associations:
@@ -534,6 +538,7 @@ Event details: None
 This event is fired when a finding's state is updated.
 
 Action: `FINDING_STATE_UPDATED`
+
 Subject type: `FINDING`
 
 Subject associations:
@@ -572,6 +577,7 @@ Event details:
 This event is fired when a finding's content (not state) is updated.
 
 Action: `FINDING_UPDATED`
+
 Subject type: `FINDING`
 
 Subject associations:
