@@ -508,3 +508,44 @@ Subject associations:
 | asset_id    | false    |
 
 Event details: None
+
+## Finding State Updated Event
+
+``` json
+{
+  "id": "eve_9M1HKUV8GsjWVkozDLNaid",
+  "action": "FINDING_STATE_UPDATED",
+  "subject": {
+    "id": "vl_Mj56fMKWzkp55XLxC2xEuL",
+    "type": "FINDING",
+    "associations": {
+      "pentest_id": "pt_72jWq2hJ3arozEWq9HU7Mk",
+      "asset_id": "as_7PFxAamzsqDNixMcQoR723"
+    }
+  },
+  "details": {
+    "previous_state": "triaging",
+    "current_state": "need_fix"
+  },
+  "timestamp": "2024-03-18T17:23:57.207Z"
+}
+```
+
+This event is fired when a finding's state is updated.
+
+Action: `FINDING_STATE_UPDATED`
+Subject type: `FINDING`
+
+Subject associations:
+
+| Association | Nullable |
+|-------------|----------|
+| pentest_id  | false    |
+| asset_id    | false    |
+
+Event details:
+
+| Detail         | Nullable | Description                       |
+|----------------|----------|-----------------------------------|
+| previous_state | false    | The previous state of the finding |
+| current_state  | false    | The current state of the finding  |
