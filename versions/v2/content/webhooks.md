@@ -382,19 +382,6 @@ Examples:
 
 ## Pentest Created Event
 
-This event is fired when a new pentest is created.
-
-Action: `PENTEST_CREATED`
-Subject type: `PENTEST`
-
-Subject associations:
-
-| Association | Nullable |
-| ----------- |----------|
-| asset_id    | false    |
-
-Event details: None
-
 ```json
 {
   "id": "eve_G2FcwQF2HD1Fvw8v6kWzut",
@@ -411,11 +398,9 @@ Event details: None
 }
 ```
 
-## Pentest State Updated Event
+This event is fired when a new pentest is created.
 
-This event is fired when a pentest's state is updated.
-
-Action: `PENTEST_STATE_UPDATED`
+Action: `PENTEST_CREATED`
 Subject type: `PENTEST`
 
 Subject associations:
@@ -425,6 +410,8 @@ Subject associations:
 | asset_id    | false    |
 
 Event details: None
+
+## Pentest State Updated Event
 
 ``` json
 {
@@ -441,3 +428,16 @@ Event details: None
   "timestamp": "2024-03-18T16:49:31.217Z"
 }
 ```
+
+This event is fired when a pentest's state is updated.
+
+Action: `PENTEST_STATE_UPDATED`
+Subject type: `PENTEST`
+
+Subject associations:
+
+| Association | Nullable |
+| ----------- |----------|
+| asset_id    | false    |
+
+Event details: None
