@@ -355,7 +355,10 @@ Examples:
   "action": "PENTEST_CREATED",
   "subject": {
     "id": "pt_BepESWncwNyzgs7x1go4Ts",
-    "type": "PENTEST"
+    "type": "PENTEST",
+    "associations": {
+      "asset_id": "as_GZgcehapJUNh6mjNuqsE4T"
+    }
   },
   "details": null,
   "timestamp": "2023-07-25T19:30:40.009Z"
