@@ -366,17 +366,17 @@ Event details: None
 
 ```json
 {
-  "id": "eve_Rg7m1DgCeXcRbsyzB4KPYA",
+  "id": "eve_G2FcwQF2HD1Fvw8v6kWzut",
   "action": "PENTEST_CREATED",
   "subject": {
-    "id": "pt_BepESWncwNyzgs7x1go4Ts",
+    "id": "pt_JZb7yF5jtPzHkGbdv9gTm1",
     "type": "PENTEST",
     "associations": {
-      "asset_id": "as_GZgcehapJUNh6mjNuqsE4T"
+      "asset_id": "as_Je7VmdguBKDgnBeVAHvvzg"
     }
   },
   "details": null,
-  "timestamp": "2023-07-25T19:30:40.009Z"
+  "timestamp": "2024-03-18T16:48:07.876Z"
 }
 ```
 
