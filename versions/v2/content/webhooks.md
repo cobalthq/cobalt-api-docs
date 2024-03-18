@@ -358,11 +358,11 @@ Subject type: `PENTEST`
 
 Subject associations:
 
-| Association | Description                               |
-| ----------- |-------------------------------------------|
-| asset_id    | The ID of the asset the pentest will test |
+| Association | Nullable |
+| ----------- |----------|
+| asset_id    | false    |
 
-Details: None
+Event details: None
 
 ```json
 {
