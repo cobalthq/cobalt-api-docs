@@ -323,10 +323,11 @@ Webhook event properties:
 
 `subject` properties:
 
-| Field         | Description                                |
-|---------------|--------------------------------------------|
-| id            | The ID of the subject resource             |
-| type          | The type of the subject resource           |
+| Field         | Description                                         |
+|---------------|-----------------------------------------------------|
+| id            | The ID of the subject resource                      |
+| type          | The type of the subject resource                    |
+| associations  | An object containing the IDs of associated entities |
 
 `subject` types:
 
