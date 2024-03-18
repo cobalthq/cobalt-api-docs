@@ -304,12 +304,13 @@ Remember - you can only delete a webhook within the organization specified in th
 
 Webhook event properties:
 
-| Field         | Description                                |
-|---------------|--------------------------------------------|
-| id            | The ID of the webhook event                |
-| action        | The action that the event is related to    |
-| subject       | The subject that the event is related to   |
-| timestamp     | The time that the event ocurred            |
+| Field         | Description                                          |
+|---------------|------------------------------------------------------|
+| id            | The ID of the webhook event                          |
+| action        | The action that the event is related to              |
+| subject       | The subject that the event is related to             |
+| details       | An object containing additional details of the event |
+| timestamp     | The time that the event ocurred                      |
 
 `action` types:
 
