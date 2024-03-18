@@ -349,6 +349,21 @@ Examples:
   The full information about the pentest that was created can be found by making a `GET`
   request to the API endpoint: `/pentests/pt_xxxxxxxxxxxxxxxxxxxxxx`.
 
+### Pentest Created Event
+
+This event is fired when a new pentest is created.
+
+Action: `PENTEST_CREATED`
+Subject type: `PENTEST`
+
+Subject associations:
+
+| Association | Description                               |
+| ----------- |-------------------------------------------|
+| asset_id    | The ID of the asset the pentest will test |
+
+Details: None
+
 ```json
 {
   "id": "eve_Rg7m1DgCeXcRbsyzB4KPYA",
