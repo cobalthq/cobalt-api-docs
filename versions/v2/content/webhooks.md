@@ -380,6 +380,37 @@ Event details: None
 }
 ```
 
+### Pentest State Updated Event
+
+This event is fired when a pentest's state is updated.
+
+Action: `PENTEST_STATE_UPDATED`
+Subject type: `PENTEST`
+
+Subject associations:
+
+| Association | Nullable |
+| ----------- |----------|
+| asset_id    | false    |
+
+Event details: None
+
+``` json
+{
+  "id": "eve_NViSofme6fkUeHA4DLMJ4Z",
+  "action": "PENTEST_STATE_UPDATED",
+  "subject": {
+    "id": "pt_JZb7yF5jtPzHkGbdv9gTm1",
+    "type": "PENTEST",
+    "associations": {
+      "asset_id": "as_Je7VmdguBKDgnBeVAHvvzg"
+    }
+  },
+  "details": null,
+  "timestamp": "2024-03-18T16:49:31.217Z"
+}
+```
+
 ## Webhook Delivery and Health
 
 Delivery process:
