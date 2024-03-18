@@ -549,3 +549,36 @@ Event details:
 |----------------|----------|-----------------------------------|
 | previous_state | false    | The previous state of the finding |
 | current_state  | false    | The current state of the finding  |
+
+## Finding Updated Event
+
+``` json
+{
+  "id": "eve_8Q4oVYu7yi1WDE6oEwKGg9",
+  "action": "FINDING_UPDATED",
+  "subject": {
+    "id": "vl_Mj56fMKWzkp55XLxC2xEuL",
+    "type": "FINDING",
+    "associations": {
+      "pentest_id": "pt_72jWq2hJ3arozEWq9HU7Mk",
+      "asset_id": "as_7PFxAamzsqDNixMcQoR723"
+    }
+  },
+  "details": null,
+  "timestamp": "2024-03-18T17:28:26.415Z"
+}
+```
+
+This event is fired when a finding's content (not state) is updated.
+
+Action: `FINDING_UPDATED`
+Subject type: `FINDING`
+
+Subject associations:
+
+| Association | Nullable |
+|-------------|----------|
+| pentest_id  | false    |
+| asset_id    | false    |
+
+Event details: None
