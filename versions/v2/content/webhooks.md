@@ -57,8 +57,8 @@ This endpoint retrieves a list of all webhooks that belong to your organization.
 
 ### URL Parameters
 
-| Parameter | Default | Description                                                                                                  |
-|-----------|---------|--------------------------------------------------------------------------------------------------------------|
+| Parameter | Default | Description                                                                                                     |
+|-----------|---------|-----------------------------------------------------------------------------------------------------------------|
 | `cursor`  | N/A     | Used for [pagination](./#pagination). Example: `https://api.us.cobalt.io/webhooks?cursor=a1b2c3d4`              |
 | `limit`   | `10`    | If specified, returns only a specified amount of webhooks. Example: `https://api.us.cobalt.io/webhooks?limit=5` |
 
@@ -72,7 +72,7 @@ This endpoint retrieves a list of all webhooks that belong to your organization.
 | active                 | A boolean flag that indicates if the webhook is active                                                                                                                       |
 | unhealthy_since        | The time that we began failing to deliver events to this webhook. If the webhook is unhealthy, this field will contain an ISO8601 time stamp. Ex: `2022-08-30T14:14:14.000Z` |
 | user                   | The ID of the user that created the webhook                                                                                                                                  |
-| subscribed_event_types | The event types that the webhook is subscribed to. See [possible event types here](#webhook-events).                                                                         |
+| subscribed_event_types | The event types that the webhook is subscribed to. See [possible event types here](#webhook-event-general-structure).                                                        |
 
 ## Get a webhook
 
@@ -122,7 +122,7 @@ This endpoint retrieves a specific webhook belonging to your organization.
 | active                 | A boolean flag that indicates if the webhook is active                                                                                                                            |
 | unhealthy_since        | The time that we began failing to deliver events to this webhook. If the webhook is unhealthy, this field will contain an ISO8601 time stamp. Example: `2022-08-30T14:14:14.000Z` |
 | user                   | The ID of the user that created the webhook                                                                                                                                       |
-| subscribed_event_types | The event types that the webhook is subscribed to. See [possible event types here](#webhook-events)                                                                               |
+| subscribed_event_types | The event types that the webhook is subscribed to. See [possible event types here](#webhook-event-general-structure)                                                              |
 
 <aside class="notice">
 Remember - you can only request a webhook scoped to the organization specified in the <code>X-Org-Token</code> header.
@@ -171,7 +171,8 @@ This endpoint creates a new webhook belonging to your organization.
 
 When you attempt to create a webhook, we will send a test event to your endpoint to validate that events
 can be delivered successfully. Your endpoint must respond with a successful HTTP response status code,
-for example, 200, 201, 204, etc. For details on test events, see the [Webhook Events](./#webhook-events) section below.
+for example, 200, 201, 204, etc. For details on test events, see the
+[Webhook Events](#webhook-event-general-structure) section below.
 
 ### HTTP Request
 
@@ -185,7 +186,7 @@ for example, 200, 201, 204, etc. For details on test events, see the [Webhook Ev
 | active                 | A boolean flag specifying if the webhook is active                                                                                                                                                            |
 | secret                 | An arbitrary string value. We include this value in the `X-Secret` header when we send webhook events to you. You can use this to verify that the events you receive are from Cobalt. This field is optional. |
 | url                    | The URL to send events to                                                                                                                                                                                     |
-| subscribed_event_types | The event types that the webhook should be subscribed to. May not be an empty list. See [possible event types here](#webhook-events).                                                                         |
+| subscribed_event_types | The event types that the webhook should be subscribed to. May not be an empty list. See [possible event types here](#webhook-event-general-structure).                                                        |
 
 ### Response
 
@@ -249,13 +250,13 @@ This endpoint updates a webhook belonging to your organization.
 
 All body fields are optional. You only need to include the fields that should be updated.
 
-| Field                  | Description                                                                                                                                                                                                                                                                                                    |
-|------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| name                   | The name of the webhook                                                                                                                                                                                                                                                                                        |
-| secret                 | An arbitrary string value. We include this value in the `X-Secret` header when we send webhook events to you. You can use this to verify that the events you receive are from Cobalt.                                                                                                                          |
-| active                 | A boolean flag specifying if the webhook is active                                                                                                                                                                                                                                                             |
-| url                    | The URL to send events to                                                                                                                                                                                                                                                                                      |
-| subscribed_event_types | The event types that the webhook should be subscribed to. May not be an empty list. Non-specified event types that are currently subscribed to will be un-subscribed from. Specified event types that are not currently subscribed to will be subscribed to. See [possible event types here](#webhook-events). |
+| Field                  | Description                                                                                                                                                                                                                                                                                                                     |
+|------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| name                   | The name of the webhook                                                                                                                                                                                                                                                                                                         |
+| secret                 | An arbitrary string value. We include this value in the `X-Secret` header when we send webhook events to you. You can use this to verify that the events you receive are from Cobalt.                                                                                                                                           |
+| active                 | A boolean flag specifying if the webhook is active                                                                                                                                                                                                                                                                              |
+| url                    | The URL to send events to                                                                                                                                                                                                                                                                                                       |
+| subscribed_event_types | The event types that the webhook should be subscribed to. May not be an empty list. Non-specified event types that are currently subscribed to will be un-subscribed from. Specified event types that are not currently subscribed to will be subscribed to. See [possible event types here](#webhook-event-general-structure). |
 
 ### Response
 
@@ -300,66 +301,6 @@ On successful deletion, a `204` response code will be returned.
 Remember - you can only delete a webhook within the organization specified in the <code>X-Org-Token</code> header.
 </aside>
 
-## Webhook Events
-
-Webhook event properties:
-
-| Field         | Description                                |
-|---------------|--------------------------------------------|
-| id            | The ID of the webhook event                |
-| action        | The action that the event is related to    |
-| subject       | The subject that the event is related to   |
-| timestamp     | The time that the event ocurred            |
-
-`action` types:
-
-* `FINDING_DELETED`
-* `FINDING_PUBLISHED`
-* `FINDING_STATE_UPDATED`
-* `FINDING_UPDATED`
-* `PENTEST_CREATED`
-* `PENTEST_STATE_UPDATED`
-* `TEST_EVENT`
-
-`subject` properties:
-
-| Field         | Description                                |
-|---------------|--------------------------------------------|
-| id            | The ID of the subject resource             |
-| type          | The type of the subject resource           |
-
-`subject` types:
-
-* `TEST_EVENT`
-* `PENTEST`
-* `FINDING`
-
-The format of the subject ID will change based on the type of the subject.
-The full information about the event subject can be fetched from the `GET` API route that
-is appropriate for the subject type.
-
-Examples:
-
-* A `FINDING_PUBLISHED` event would have a subject ID with the format: `vl_xxxxxxxxxxxxxxxxxxxxxx`.
-  The full information about the finding that was published can be found by making a `GET`
-  request to the API endpoint: `/findings/vl_xxxxxxxxxxxxxxxxxxxxxx`.
-* A `PENTEST_CREATED` event would have a subject ID with the format: `pt_xxxxxxxxxxxxxxxxxxxxxx`.
-  The full information about the pentest that was created can be found by making a `GET`
-  request to the API endpoint: `/pentests/pt_xxxxxxxxxxxxxxxxxxxxxx`.
-
-```json
-{
-  "id": "eve_Rg7m1DgCeXcRbsyzB4KPYA",
-  "action": "PENTEST_CREATED",
-  "subject": {
-    "id": "pt_BepESWncwNyzgs7x1go4Ts",
-    "type": "PENTEST"
-  },
-  "details": null,
-  "timestamp": "2023-07-25T19:30:40.009Z"
-}
-```
-
 ## Webhook Delivery and Health
 
 Delivery process:
@@ -390,3 +331,260 @@ A common pattern is to receive webhook events with a lightweight endpoint that
 publishes received events to a message queue that can be processed by your components
 containing business logic. This keeps the latency and failure rate of your webhook
 endpoint low.
+
+## Webhook Event General Structure
+
+Webhook event properties:
+
+| Field         | Nullable | Description                              |
+|---------------|----------|------------------------------------------|
+| id            | false    | The ID of the webhook event              |
+| action        | false    | The action that the event is related to  |
+| subject       | false    | The subject that the event is related to |
+| details       | true     | Additional details of the event          |
+| timestamp     | false    | The time that the event occurred         |
+
+`action` types:
+
+* `FINDING_DELETED`
+* `FINDING_PUBLISHED`
+* `FINDING_STATE_UPDATED`
+* `FINDING_UPDATED`
+* `PENTEST_CREATED`
+* `PENTEST_STATE_UPDATED`
+* `TEST_EVENT`
+
+`subject` properties:
+
+| Field         | Nullable | Description                      |
+|---------------|----------|----------------------------------|
+| id            | false    | The ID of the subject resource   |
+| type          | false    | The type of the subject resource |
+| associations  | true     | IDs of associated entities       |
+
+`subject` types:
+
+* `TEST_EVENT`
+* `PENTEST`
+* `FINDING`
+
+The format of the subject ID will change based on the type of the subject.
+The full information about the event subject can be fetched from the `GET` API route that
+is appropriate for the subject type.
+
+Examples:
+
+* A `FINDING_PUBLISHED` event would have a subject ID with the format: `vl_xxxxxxxxxxxxxxxxxxxxxx`.
+  The full information about the finding that was published can be found by making a `GET`
+  request to the API endpoint: `/findings/vl_xxxxxxxxxxxxxxxxxxxxxx`.
+* A `PENTEST_CREATED` event would have a subject ID with the format: `pt_xxxxxxxxxxxxxxxxxxxxxx`.
+  The full information about the pentest that was created can be found by making a `GET`
+  request to the API endpoint: `/pentests/pt_xxxxxxxxxxxxxxxxxxxxxx`.
+
+## Pentest Created Event
+
+```json
+{
+  "id": "eve_G2FcwQF2HD1Fvw8v6kWzut",
+  "action": "PENTEST_CREATED",
+  "subject": {
+    "id": "pt_JZb7yF5jtPzHkGbdv9gTm1",
+    "type": "PENTEST",
+    "associations": {
+      "asset_id": "as_Je7VmdguBKDgnBeVAHvvzg"
+    }
+  },
+  "details": null,
+  "timestamp": "2024-03-18T16:48:07.876Z"
+}
+```
+
+This event is fired when a new pentest is created.
+
+Action: `PENTEST_CREATED`
+
+Subject type: `PENTEST`
+
+Subject associations:
+
+| Association | Nullable |
+| ----------- |----------|
+| asset_id    | false    |
+
+Event details: None
+
+## Pentest State Updated Event
+
+``` json
+{
+  "id": "eve_NViSofme6fkUeHA4DLMJ4Z",
+  "action": "PENTEST_STATE_UPDATED",
+  "subject": {
+    "id": "pt_JZb7yF5jtPzHkGbdv9gTm1",
+    "type": "PENTEST",
+    "associations": {
+      "asset_id": "as_Je7VmdguBKDgnBeVAHvvzg"
+    }
+  },
+  "details": null,
+  "timestamp": "2024-03-18T16:49:31.217Z"
+}
+```
+
+This event is fired when a pentest's state is updated.
+
+Action: `PENTEST_STATE_UPDATED`
+
+Subject type: `PENTEST`
+
+Subject associations:
+
+| Association | Nullable |
+| ----------- |----------|
+| asset_id    | false    |
+
+Event details: None
+
+## Finding Deleted Event
+
+``` json
+{
+  "id": "eve_QTDZnhhHzQAbrADCbp4iZs",
+  "action": "FINDING_DELETED",
+  "subject": {
+    "id": "vl_NQ1AmofsRQYich6nGda4Vh",
+    "type": "FINDING",
+    "associations": {
+      "pentest_id": "pt_72jWq2hJ3arozEWq9HU7Mk",
+      "asset_id": "as_7PFxAamzsqDNixMcQoR723"
+    }
+  },
+  "details": null,
+  "timestamp": "2024-03-18T17:18:10.355Z"
+}
+```
+
+This event is fired when a finding is deleted.
+
+Action: `FINDING_DELETED`
+
+Subject type: `FINDING`
+
+Subject associations:
+
+| Association | Nullable |
+|-------------|----------|
+| pentest_id  | false    |
+| asset_id    | false    |
+
+Event details: None
+
+## Finding Published Event
+
+``` json
+{
+  "id": "eve_6c355k5S7JnKBLAU4niKcZ",
+  "action": "FINDING_PUBLISHED",
+  "subject": {
+    "id": "vl_Mj56fMKWzkp55XLxC2xEuL",
+    "type": "FINDING",
+    "associations": {
+      "pentest_id": "pt_72jWq2hJ3arozEWq9HU7Mk",
+      "asset_id": "as_7PFxAamzsqDNixMcQoR723"
+    }
+  },
+  "details": null,
+  "timestamp": "2024-03-18T17:20:40.384Z"
+}
+```
+
+This event is fired when a finding is published for triaging.
+
+Action: `FINDING_PUBLISHED`
+
+Subject type: `FINDING`
+
+Subject associations:
+
+| Association | Nullable |
+|-------------|----------|
+| pentest_id  | false    |
+| asset_id    | false    |
+
+Event details: None
+
+## Finding State Updated Event
+
+``` json
+{
+  "id": "eve_9M1HKUV8GsjWVkozDLNaid",
+  "action": "FINDING_STATE_UPDATED",
+  "subject": {
+    "id": "vl_Mj56fMKWzkp55XLxC2xEuL",
+    "type": "FINDING",
+    "associations": {
+      "pentest_id": "pt_72jWq2hJ3arozEWq9HU7Mk",
+      "asset_id": "as_7PFxAamzsqDNixMcQoR723"
+    }
+  },
+  "details": {
+    "previous_state": "triaging",
+    "current_state": "need_fix"
+  },
+  "timestamp": "2024-03-18T17:23:57.207Z"
+}
+```
+
+This event is fired when a finding's state is updated.
+
+Action: `FINDING_STATE_UPDATED`
+
+Subject type: `FINDING`
+
+Subject associations:
+
+| Association | Nullable |
+|-------------|----------|
+| pentest_id  | false    |
+| asset_id    | false    |
+
+Event details:
+
+| Detail         | Nullable | Description                       |
+|----------------|----------|-----------------------------------|
+| previous_state | false    | The previous state of the finding |
+| current_state  | false    | The current state of the finding  |
+
+## Finding Updated Event
+
+``` json
+{
+  "id": "eve_8Q4oVYu7yi1WDE6oEwKGg9",
+  "action": "FINDING_UPDATED",
+  "subject": {
+    "id": "vl_Mj56fMKWzkp55XLxC2xEuL",
+    "type": "FINDING",
+    "associations": {
+      "pentest_id": "pt_72jWq2hJ3arozEWq9HU7Mk",
+      "asset_id": "as_7PFxAamzsqDNixMcQoR723"
+    }
+  },
+  "details": null,
+  "timestamp": "2024-03-18T17:28:26.415Z"
+}
+```
+
+This event is fired when a finding's content (not state) is updated.
+
+Action: `FINDING_UPDATED`
+
+Subject type: `FINDING`
+
+Subject associations:
+
+| Association | Nullable |
+|-------------|----------|
+| pentest_id  | false    |
+| asset_id    | false    |
+
+Event details: None
