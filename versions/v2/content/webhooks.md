@@ -300,7 +300,38 @@ On successful deletion, a `204` response code will be returned.
 Remember - you can only delete a webhook within the organization specified in the <code>X-Org-Token</code> header.
 </aside>
 
-## Webhook Events
+## Webhook Delivery and Health
+
+Delivery process:
+
+* An event occurs on the Cobalt Platform that you are subscribed to
+* Cobalt will attempt to send the event to your webhook endpoint via an HTTP POST
+request. If your endpoint responds with a successful HTTP response status code, for example, 200, 201, or 204,
+then we will mark the delivery as successful.
+* If your endpoint does not respond with a successful HTTP status, then we will attempt
+to send the event 5 more times with 5 seconds between each request.
+* If none of the delivery attempts succeed, then we will mark your webhook endpoint
+as unhealthy and put the event into our failed events queue.
+* On an hourly interval we will attempt to redeliver failed events.
+* If your webhook endpoint becomes able to receive events again, we will mark your
+webhook endpoint as healthy.
+* If your webhook endpoint stays unhealthy for 48 hours then we will deactivate your webhook.
+
+If your webhook becomes deactivated then you will need to activate it again via the user interface or the API.
+
+## Best Practices
+
+1. Set your webhook secret to a high-entrophy value of sufficient length.
+When you receive an event, check that the value in the `X-Secret` header
+matches your secret. This ensures that you do not process fraudulent
+webhook events from a threat actor.
+2. Don't add expensive operations to the endpoint that receives webhook events.
+A common pattern is to receive webhook events with a lightweight endpoint that
+publishes received events to a message queue that can be processed by your components
+containing business logic. This keeps the latency and failure rate of your webhook
+endpoint low.
+
+## Webhook Event General Structure
 
 Webhook event properties:
 
@@ -349,7 +380,7 @@ Examples:
   The full information about the pentest that was created can be found by making a `GET`
   request to the API endpoint: `/pentests/pt_xxxxxxxxxxxxxxxxxxxxxx`.
 
-### Pentest Created Event
+## Pentest Created Event
 
 This event is fired when a new pentest is created.
 
@@ -380,7 +411,7 @@ Event details: None
 }
 ```
 
-### Pentest State Updated Event
+## Pentest State Updated Event
 
 This event is fired when a pentest's state is updated.
 
@@ -410,34 +441,3 @@ Event details: None
   "timestamp": "2024-03-18T16:49:31.217Z"
 }
 ```
-
-## Webhook Delivery and Health
-
-Delivery process:
-
-* An event occurs on the Cobalt Platform that you are subscribed to
-* Cobalt will attempt to send the event to your webhook endpoint via an HTTP POST
-request. If your endpoint responds with a successful HTTP response status code, for example, 200, 201, or 204,
-then we will mark the delivery as successful.
-* If your endpoint does not respond with a successful HTTP status, then we will attempt
-to send the event 5 more times with 5 seconds between each request.
-* If none of the delivery attempts succeed, then we will mark your webhook endpoint
-as unhealthy and put the event into our failed events queue.
-* On an hourly interval we will attempt to redeliver failed events.
-* If your webhook endpoint becomes able to receive events again, we will mark your
-webhook endpoint as healthy.
-* If your webhook endpoint stays unhealthy for 48 hours then we will deactivate your webhook.
-
-If your webhook becomes deactivated then you will need to activate it again via the user interface or the API.
-
-## Best Practices
-
-1. Set your webhook secret to a high-entrophy value of sufficient length.
-When you receive an event, check that the value in the `X-Secret` header
-matches your secret. This ensures that you do not process fraudulent
-webhook events from a threat actor.
-2. Don't add expensive operations to the endpoint that receives webhook events.
-A common pattern is to receive webhook events with a lightweight endpoint that
-publishes received events to a message queue that can be processed by your components
-containing business logic. This keeps the latency and failure rate of your webhook
-endpoint low.
