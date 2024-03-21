@@ -180,7 +180,7 @@ curl -X POST "https://api.us.cobalt.io/assets" \
           }'
 ```
 
-> The above command returns the created asset and a `201` response code when successful. There will be a `Location` 
+> The above command returns the created asset and a `201` response code when successful. There will be a `Location`
 > header pointing at the newly created asset.
 
 ``` json
