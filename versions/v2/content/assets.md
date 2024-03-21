@@ -180,8 +180,30 @@ curl -X POST "https://api.us.cobalt.io/assets" \
           }'
 ```
 
-> The above command returns no data and a `201` response code when successful. There will be a `Location` header
-> pointing at the newly created asset.
+> The above command returns the created asset and a `201` response code when successful. There will be a `Location`
+> header pointing at the newly created asset.
+
+``` json
+{
+  "data": {
+    "resource": {
+      "id": "as_REXzZ1jXCxEvVvCx3MRMHN",
+      "title": "Test Asset",
+      "description": "Lorem ipsum",
+      "asset_type": "web",
+      "logo": null,
+      "technology_stack": [],
+      "attachments": [],
+      "tags": []
+    },
+    "links": {
+      "ui": {
+        "url": "https://api.us.cobalt.io/links/eyJ0eXBlIjoiQVNTRVQiLCJvcmdTbHVnIjoiZ2t1aG5zLXRlc3Qtb3JnIiwicGVudGVzdFRhZyI6IiIsImZpbmRpbmdJZCI6IiIsImFzc2V0VGFnIjoiYXNfR2ZqODZqTSJ9"
+      }
+    }
+  }
+}
+```
 
 This endpoint creates a new asset belonging to the organization specified in the `X-Org-Token` header.
 
@@ -202,6 +224,18 @@ This endpoint creates a new asset belonging to the organization specified in the
 
 You get a `201` response code for a successful request. The `Location` response header contains the URL of the new
 asset within the Cobalt API.
+
+| Field              | Description                                                                                                                                                                                               |
+|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `id`               | A unique ID representing the asset. Starts with `as_`                                                                                                                                                     |
+| `title`            | The title of the asset; set by user creating the asset                                                                                                                                                    |
+| `description`      | A description of the asset; set by user creating the asset                                                                                                                                                |
+| `asset_type`       | An asset type, such as; `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile`, `wireless_network`, `iot`, `thick_client`, `physical`, `other` |
+| `logo`             | A link pointing the location of the uploaded asset logo                                                                                                                                                   |
+| `technology_stack` | A list of technology stacks. Each element contains the title of the technology. Example: React 18.0.0.                                                                                                    |
+| `attachments`      | A list of asset attachments (including the logo). Attachment download URLs are pre-authorized and will expire after 10 minutes.                                                                           |
+| `tags`             | A list of tags. A tag has a `name` attribute. Example: `[{"name": "third-party system-id"}, {"name": "some-tag-id"}]`                                                                                     |
+| `links.ui.url`     | A link to redirect an authorized user to this asset in the Cobalt web application                                                                                                                         |
 
 <aside class="notice">
 Remember - you can only create an asset within the organization specified in the <code>X-Org-Token</code> header.
