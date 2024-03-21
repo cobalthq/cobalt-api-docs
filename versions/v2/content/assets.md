@@ -220,7 +220,7 @@ This endpoint creates a new asset belonging to the organization specified in the
 | `asset_type`  | `api`, `cloud_config`, `external_network`, `internal_network`, `mobile`, `web`, `web_plus_api`, `web_plus_mobile`, `wireless_network`, `iot`, `thick_client`, `physical`, or `other` |
 | `tags`        | Optional; A list of tags. A tag has a `name` attribute. Example: `[{"name": "third-party system-id"}, {"name": "some-tag-id"}]`. Defaults to empty list if not provided              |
 
-### Response Fields
+### Response
 
 You get a `201` response code for a successful request. The `Location` response header contains the URL of the new
 asset within the Cobalt API.
