@@ -180,8 +180,30 @@ curl -X POST "https://api.us.cobalt.io/assets" \
           }'
 ```
 
-> The above command returns no data and a `201` response code when successful. There will be a `Location` header
-> pointing at the newly created asset.
+> The above command returns the created asset and a `201` response code when successful. There will be a `Location` 
+> header pointing at the newly created asset.
+
+``` json
+{
+  "data": {
+    "resource": {
+      "id": "as_REXzZ1jXCxEvVvCx3MRMHN",
+      "title": "Test Asset",
+      "description": "Lorem ipsum",
+      "asset_type": "web",
+      "logo": null,
+      "technology_stack": [],
+      "attachments": [],
+      "tags": []
+    },
+    "links": {
+      "ui": {
+        "url": "https://api.us.cobalt.io/links/eyJ0eXBlIjoiQVNTRVQiLCJvcmdTbHVnIjoiZ2t1aG5zLXRlc3Qtb3JnIiwicGVudGVzdFRhZyI6IiIsImZpbmRpbmdJZCI6IiIsImFzc2V0VGFnIjoiYXNfR2ZqODZqTSJ9"
+      }
+    }
+  }
+}
+```
 
 This endpoint creates a new asset belonging to the organization specified in the `X-Org-Token` header.
 
