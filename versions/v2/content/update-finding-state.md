@@ -36,9 +36,9 @@ This endpoint retrieves the current state of a finding as well as possible next 
 
 ### URL Parameters
 
-| Parameter         | Description                                                  |
-|-------------------|--------------------------------------------------------------|
-| `YOUR-FINDING-ID` | A unique ID representing the organization. Starts with `vl_` |
+| Parameter         | Description                                             |
+|-------------------|---------------------------------------------------------|
+| `YOUR-FINDING-ID` | A unique ID representing the finding. Starts with `vl_` |
 
 ### Response Fields
 
@@ -62,7 +62,7 @@ This endpoint retrieves the current state of a finding as well as possible next 
 ```sh
 curl -X PATCH "https://api.us.cobalt.io/findings/YOUR-FINDING-ID" \
   -H "Accept: application/vnd.cobalt.v2+json" \
-  -H 'Content-Type: application/vnd.cobalt.v2+json' \
+  -H "Content-Type: application/vnd.cobalt.v2+json" \
   -H "Idempotency-Key: A-UNIQUE-IDENTIFIER-TO-PREVENT-UNINTENTIONAL-DUPLICATION" \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
   -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN" \
@@ -79,12 +79,12 @@ This endpoint updates the current state of a finding.
 
 ### URL Parameters
 
-| Parameter         | Description                                                  |
-|-------------------|--------------------------------------------------------------|
-| `YOUR-FINDING-ID` | A unique ID representing the organization. Starts with `vl_` |
+| Parameter         | Description                                             |
+|-------------------|---------------------------------------------------------|
+| `YOUR-FINDING-ID` | A unique ID representing the finding. Starts with `vl_` |
 
 ### Body
 
 | Field   | Description                                                                  |
 |---------|------------------------------------------------------------------------------|
-| `state` | The desired next state of the finding. Should be one of the possible states. |
+| `state` | The desired next state of the finding. Should be one of the possible [states](./#states). |
