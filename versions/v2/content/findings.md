@@ -5,6 +5,28 @@ title: Findings
 
 # Findings
 
+## States
+
+<!-- info collected from https://github.com/cobalthq/cobalt-app-web/blob/main/packages/libs/vuln-mappings/src/VulnMappings.js -->
+
+The table below describes how the finding state values used by the API
+correspond to finding states shown in the user interface.
+
+| API Value      | UI Name          | Description                                                                       |
+|----------------|------------------|-----------------------------------------------------------------------------------|
+| new            | Draft            | A pentester has created a draft finding but has not yet submitted it for triaging |
+| triaging       | Triaging         | The finding is being triaged                                                      |
+| need_fix       | Pending Fix      | The finding is valid and needs to be fixed                                        |
+| check_fix      | Ready for Retest | A fix is awaiting validation by a pentester                                       |
+| valid_fix      | Fixed            | The finding was fixed and validated by a pentester                                |
+| wont_fix       | Accepted Risk    | The risk has been accepted. The finding will not be fixed                         |
+| carried_over   | Carried Over     | The finding was carried over from a previous pentest                              |
+| not_applicable | Not Applicable   | The finding is not applicable                                                     |
+| invalid        | Invalid          | The finding is invalid                                                            |
+| duplicate      | Invalid          | The finding is invalid (deprecated state)                                         |
+| stale          | Invalid          | The finding is invalid (deprecated state)                                         |
+| out_of_scope   | Invalid          | The finding is invalid (deprecated state)                                         |
+
 ## Get All Findings
 
 ```sh
