@@ -75,6 +75,6 @@ This endpoint updates the current state of a finding.
 
 ### Body
 
-| Field   | Description                                                                  |
-|---------|------------------------------------------------------------------------------|
+| Field   | Description                                                                               |
+|---------|-------------------------------------------------------------------------------------------|
 | `state` | The desired next state of the finding. Should be one of the possible [states](./#states). |
