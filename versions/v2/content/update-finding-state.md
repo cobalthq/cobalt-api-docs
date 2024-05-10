@@ -42,10 +42,10 @@ This endpoint retrieves the current state of a finding as well as possible next 
 
 ### Response Fields
 
-| Field             | Description                                                                                         |
-|-------------------|-----------------------------------------------------------------------------------------------------|
-| `current_state`   | The current state of the finding.                                                                   |
-| `possible_states` | A list of states that the finding can be transitioned to. [Finding States Documentation](./#states) |
+| Field             | Description                                                                                             |
+|-------------------|---------------------------------------------------------------------------------------------------------|
+| `current_state`   | The current state of the finding.                                                                       |
+| `possible_states` | A list of states that the finding can be transitioned to. See [Finding States Documentation](./#states) |
 
 ## Update Finding State
 

@@ -174,7 +174,7 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 | `severity_justification` | Optional; The justification for the severity rating                                                                            |
 | `prerequisites`          | Optional; The prerequisites required for reproducing the vulnerability                                                         |
 | `http_request`           | Optional; An example HTTP request for reproducing the vulnerability                                                            |
-| `state`                  | [Finding States Documentation](./#states)                                                                                      |
+| `state`                  | See [Finding States Documentation](./#states)                                                                                  |
 | `type_category`          | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                         |
 | `attachments`            | A list of finding attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.                   |
 | `links.ui.url`           | A link to redirect an authorized user to this finding in the Cobalt web application                                            |
@@ -282,7 +282,7 @@ This endpoint retrieves a specific finding that belong to the organization speci
 | `severity_justification` | Optional; The justification for the severity rating                                                                   |
 | `prerequisites`          | Optional; The prerequisites required for reproducing the vulnerability                                                |
 | `http_request`           | Optional; An example HTTP request for reproducing the vulnerability                                                   |
-| `state`                  | [Finding States Documentation](./#states)                                                                             |
+| `state`                  | See [Finding States Documentation](./#states)                                                                         |
 | `type_category`          | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                |
 | `attachments`            | A list of finding attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.          |
 | `url`                    | The links.ui.url will redirect an authorized user to this finding in the Cobalt platform                              |
