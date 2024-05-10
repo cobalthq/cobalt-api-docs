@@ -7,7 +7,9 @@ title: Findings
 
 ## States
 
-<!-- info collected from https://github.com/cobalthq/cobalt-app-web/blob/main/packages/libs/vuln-mappings/src/VulnMappings.js -->
+<!-- info collected from
+https://github.com/cobalthq/cobalt-app-web/blob/main/packages/libs/vuln-mappings/src/VulnMappings.js
+-->
 
 The table below describes how the finding state values used by the API
 correspond to finding states shown in the user interface.
