@@ -5,6 +5,30 @@ title: Findings
 
 # Findings
 
+## States
+
+<!-- info collected from
+https://github.com/cobalthq/cobalt-app-web/blob/main/packages/libs/vuln-mappings/src/VulnMappings.js
+-->
+
+The table below describes how the finding state values used by the API
+correspond to finding states shown in the user interface.
+
+| API Value      | UI Name          | Description                                                                       |
+|----------------|------------------|-----------------------------------------------------------------------------------|
+| new            | Draft            | A pentester has created a draft finding but has not yet submitted it for triaging |
+| triaging       | Triaging         | The finding is being triaged                                                      |
+| need_fix       | Pending Fix      | The finding is valid and needs to be fixed                                        |
+| check_fix      | Ready for Retest | A fix is awaiting validation by a pentester                                       |
+| valid_fix      | Fixed            | The finding was fixed and validated by a pentester                                |
+| wont_fix       | Accepted Risk    | The risk has been accepted. The finding will not be fixed                         |
+| carried_over   | Carried Over     | The finding was carried over from a previous pentest                              |
+| not_applicable | Not Applicable   | The finding is not applicable                                                     |
+| invalid        | Invalid          | The finding is invalid                                                            |
+| duplicate      | Invalid          | The finding is invalid (deprecated state)                                         |
+| stale          | Invalid          | The finding is invalid (deprecated state)                                         |
+| out_of_scope   | Invalid          | The finding is invalid (deprecated state)                                         |
+
 ## Get All Findings
 
 ```sh
@@ -152,7 +176,7 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 | `severity_justification` | Optional; The justification for the severity rating                                                                            |
 | `prerequisites`          | Optional; The prerequisites required for reproducing the vulnerability                                                         |
 | `http_request`           | Optional; An example HTTP request for reproducing the vulnerability                                                            |
-| `state`                  | `new`, `triaging`, `need_fix`, `wont_fix`, `valid_fix`, `check_fix`, `invalid`, `carried_over`                                 |
+| `state`                  | See [Finding States Documentation](./#states)                                                                                  |
 | `type_category`          | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                         |
 | `attachments`            | A list of finding attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.                   |
 | `links.ui.url`           | A link to redirect an authorized user to this finding in the Cobalt web application                                            |
@@ -171,16 +195,6 @@ fields for image attachments and extract the image attachment IDs. In the exampl
 `at_KYKDAhZPXuQ4BW23g8i9QN` is the attachment ID. Users can use the attachment ID to locate the full
 attachment information by searching the `attachments` array in the finding response for an object with
 a matching ID. The attachment object includes a `download_url` field that can be used to download the attachment.
-
-### State
-
-- `new`: The finding has been created but not yet triaged.
-- `triaging`: The finding is being evaluated.
-- `need_fix`: The finding was deemed valid and a fix either is being developed or will be developed in the future.
-- `wont_fix`: The finding was deemed valid but immaterial or meaningless and will not be addressed.
-- `check_fix`: A fix has been applied and now is awaiting validation by the pentester.
-- `invalid`: The finding was rejected as not being a true vulnerability.
-- `carried_over`: The finding was carried over from a previous pentest.
 
 <aside class="notice">
 Remember - you can only request findings scoped to the organization specified in the <code>X-Org-Token</code> header.
@@ -270,7 +284,7 @@ This endpoint retrieves a specific finding that belong to the organization speci
 | `severity_justification` | Optional; The justification for the severity rating                                                                   |
 | `prerequisites`          | Optional; The prerequisites required for reproducing the vulnerability                                                |
 | `http_request`           | Optional; An example HTTP request for reproducing the vulnerability                                                   |
-| `state`                  | new, triaging, need_fix, wont_fix, valid_fix, check_fix, invalid, carried_over                                        |
+| `state`                  | See [Finding States Documentation](./#states)                                                                         |
 | `type_category`          | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                |
 | `attachments`            | A list of finding attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.          |
 | `url`                    | The links.ui.url will redirect an authorized user to this finding in the Cobalt platform                              |
@@ -289,16 +303,6 @@ attachments and extract the image attachment IDs. In the example token, `at_KYKD
 ID. Users can use the attachment ID to locate the full attachment information by searching the `attachments` array in
 the finding response for an object with a matching ID. The attachment object includes a `download_url` field that
 can be used to download the attachment.
-
-### State
-
-- `new`: The finding has been created but not yet triaged.
-- `triaging`: The finding is being evaluated.
-- `need_fix`: The finding was deemed valid and a fix either is being developed or will be developed in the future.
-- `wont_fix`: The finding was deemed valid but immaterial or meaningless and will not be addressed.
-- `check_fix`: A fix has been applied and now is awaiting validation by the pentester.
-- `invalid`: The finding was rejected as not being a true vulnerability.
-- `carried_over`: The finding was carried over from a previous pentest.
 
 <aside class="notice">
 Remember - you can only request a finding scoped to the organization specified in the <code>X-Org-Token</code> header.

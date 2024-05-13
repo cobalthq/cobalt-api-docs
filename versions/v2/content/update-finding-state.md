@@ -42,20 +42,10 @@ This endpoint retrieves the current state of a finding as well as possible next 
 
 ### Response Fields
 
-| Field             | Description                                               |
-|-------------------|-----------------------------------------------------------|
-| `current_state`   | The current state of the finding.                         |
-| `possible_states` | A list of states that the finding can be transitioned to. |
-
-### States
-
-- `new`: The finding has been created but not yet triaged.
-- `triaging`: The finding is being evaluated.
-- `need_fix`: The finding was deemed valid and a fix either is being developed or will be developed in the future.
-- `wont_fix`: The finding was deemed valid but immaterial or meaningless and will not be addressed.
-- `check_fix`: A fix has been applied and now is awaiting validation by the pentester.
-- `invalid`: The finding was rejected as not being a true vulnerability.
-- `carried_over`: The finding was carried over from a previous pentest.
+| Field             | Description                                                                                             |
+|-------------------|---------------------------------------------------------------------------------------------------------|
+| `current_state`   | The current state of the finding.                                                                       |
+| `possible_states` | A list of states that the finding can be transitioned to. See [Finding States Documentation](./#states) |
 
 ## Update Finding State
 
@@ -85,6 +75,6 @@ This endpoint updates the current state of a finding.
 
 ### Body
 
-| Field   | Description                                                                  |
-|---------|------------------------------------------------------------------------------|
+| Field   | Description                                                                               |
+|---------|-------------------------------------------------------------------------------------------|
 | `state` | The desired next state of the finding. Should be one of the possible [states](./#states). |
