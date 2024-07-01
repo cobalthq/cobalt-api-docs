@@ -159,7 +159,7 @@ Remember - you can only request external ticket reference scoped to the organiza
 <code>X-Org-Token</code> header.
 </aside>
 
-## Ticketing System
+## Supported Ticketing Systems
 
 - `azure_devops_boards`: Azure DevOps Boards
 - `github`: GitHub
