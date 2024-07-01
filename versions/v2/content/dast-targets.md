@@ -35,7 +35,7 @@ curl -X GET "https://api.us.cobalt.io/dast/targets" \
 }
 ```
 
-This endpoint retrieves a list of all DAST Targets for the organization.
+This endpoint retrieves a list of all DAST Targets that belong to the organization specified in the `X-Org-Token` header.
 
 ### HTTP Request
 
@@ -43,10 +43,10 @@ This endpoint retrieves a list of all DAST Targets for the organization.
 
 ### URL Parameters
 
-| Parameter                      | Default | Description                                                                                                                                                                                                                                                                                                   |
-|--------------------------------|---------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `cursor`                       | N/A     | Used for [pagination](./#pagination). Example: `https://api.us.cobalt.io/dast/targets?cursor=a1b2c3d4`                                                                                                                                                                                                               |
-| `limit`                        | `10`    | If specified, returns only a specified amount of targets. Example: `https://api.us.cobalt.io/dast/targets?limit=5`                                                                                                                                                                              |
+| Parameter          | Default | Description  |
+|--------------------|---------|-----------------|
+| `cursor`      | N/A     | Used for [pagination](./#pagination). Example: `https://api.us.cobalt.io/dast/targets?cursor=a1b2c3d4` |
+| `limit`       | `10`    | If specified, returns only a specified amount of targets. Example: `https://api.us.cobalt.io/dast/targets?limit=5`|
 
 ### Response Fields
 
