@@ -136,7 +136,7 @@ You get a `201` response code for a successful request.
 | ------------------ | ----------------------------------------------------------------------------- |
 | `id`               | A unique ID representing the external ticket reference. Starts with `efr_`    |
 | `title`            | A short descriptive title of the external ticket. For example, the ticket ID. |
-| `ticketing_system` | One of the supported [ticketing system](#ticketing-system).                     |
+| `ticketing_system` | One of the [supported ticketing systems](#supported-ticketing-systems).                     |
 | `external_url`     | The URL of the external ticket.                                               |
 | `external_id`      | An arbitrary external identifier for the ticket reference.                    |
 | `finding_id`       | The Cobalt ID of the finding this external ticket belongs to.                 |
