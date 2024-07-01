@@ -76,7 +76,7 @@ This endpoint retrieves a list of all DAST findings that belong to the organizat
 | `last_found_at`     | Date and time of when the vulnerability was last found, in ISO 8601 UTC format. |
 | `severity`          | Severity of the vulnerability finding: `10` is low. `20` is medium. `30` is high. |
 | `state`             | State of the vulnerability finding: [`notfixed`, `invalid`, `accepted`, `fixed`] |
-| `affected_url`      | URL of the vulnerability finding |
+| `affected_url`      |URL affected by the found vulnerability |
 | `description`       | Description of the vulnerability. |
 | `proof_of_concept`  | Evidence of the vulnerability finding. |
 | `suggested_fix`     | Description of how to fix the vulnerability. |
