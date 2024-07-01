@@ -91,5 +91,5 @@ This endpoint retrieves a specific DAST Target that belongs to the organization 
 |-----------------|-------------------------------------------------------------------------------------|
 | `id`      | A unique ID representing the DAST target. Starts with `dt_`                             |
 | `name`    | The name of the returned DAST target.                                                  |
-| `url`     | The URL of the returns DAST target              |
+| `url`     | The URL of the returned DAST target              |
 | `enabled` | A boolean flag specifying if the DAST target is enabled                                |
