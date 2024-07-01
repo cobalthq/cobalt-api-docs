@@ -60,7 +60,8 @@ curl --location 'https://api.us.cobalt.io/external_ticket_references/search' \
 This endpoint retrieves a list of all external ticket references that belong to the organization specified in the `X-Org-Token`
 header.
 
-If you want to filter the search results based on a subset of findings, you can use the `findings` property in the request body.
+If you want to filter the search results based on a subset of findings, you can use the `findings` property in the
+request body.
 
 ```sh
 curl --location 'https://api.us.cobalt.io/external_ticket_references/search' \
@@ -81,7 +82,8 @@ curl --location 'https://api.us.cobalt.io/external_ticket_references/search' \
 | `findings` | An array of finding ID `object`s to filter the search. For example, `[{"id":"vl_JTovzf8AW1afCRpKJejse3"},{"id":"dfi_2bZrrKE3Hay7oLrbNUponW"}]`. |
 
 <aside class="notice">
-Remember - if the <code>findings</code> property is defined in the search request body, but is empty, the search result will always be empty.
+Remember - if the <code>findings</code> property is defined in the search request body, but is empty, the search result
+will always be empty.
 </aside>
 
 ## Create an External Ticket Reference
@@ -109,7 +111,8 @@ curl --location 'https://api.us.cobalt.io/external_ticket_references' \
 }
 ```
 
-This endpoint creates the external ticket reference, and on a successful request, it will return a `201` response code along with the created external ticket reference information.
+This endpoint creates the external ticket reference, and on a successful request, it will return a `201` response code
+along with the created external ticket reference information.
 
 ### HTTP Request
 
@@ -152,7 +155,8 @@ curl -X DELETE 'https://api.us.cobalt.io/external_ticket_references/YOUR-EXTERNA
 This endpoint deletes the external ticket reference.
 
 <aside class="notice">
-Remember - you can only request external ticket reference scoped to the organization specified in the <code>X-Org-Token</code> header.
+Remember - you can only request external ticket reference scoped to the organization specified in the
+<code>X-Org-Token</code> header.
 </aside>
 
 ### Ticketing System
