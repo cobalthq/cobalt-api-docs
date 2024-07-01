@@ -138,6 +138,6 @@ This endpoint retrieves a specific DAST finding that belongs to the organization
 | `state`             | State of the vulnerability finding: [`notfixed`, `invalid`, `accepted`, `fixed`] |
 | `affected_url`      | URL of the vulnerability finding |
 | `description`       | Description of the vulnerability. |
-| `proof_of_concept`  | Evidence with proof of the vulnerability finding. |
+| `proof_of_concept`  | Evidence of the vulnerability finding. |
 | `suggested_fix`     | Description of how to fix the vulnerability. |
 | `http_exchanges`    | Pairs of `request` and `response` of the vulnerability finding. |
