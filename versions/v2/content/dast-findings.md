@@ -78,7 +78,7 @@ This endpoint retrieves a list of all DAST findings that belong to the organizat
 | `state`             | State of the vulnerability finding: [`notfixed`, `invalid`, `accepted`, `fixed`] |
 | `affected_url`      | URL of the vulnerability finding |
 | `description`       | Description of the vulnerability. |
-| `proof_of_concept`  | Evidence with proof of the vulnerability finding. |
+| `proof_of_concept`  | Evidence of the vulnerability finding. |
 | `suggested_fix`     | Description of how to fix the vulnerability. |
 | `http_exchanges`    | Pairs of `request` and `response` of the vulnerability finding. |
 
