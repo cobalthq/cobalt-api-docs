@@ -74,7 +74,7 @@ curl --location 'https://api.us.cobalt.io/external_ticket_references/search' \
 
 `POST https://api.us.cobalt.io/external_ticket_references/search`
 
-### Body
+### Response Body
 
 | Field      | Description                                                                                                                                     |
 | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -115,7 +115,7 @@ This endpoint creates the external ticket reference, and on a successful request
 
 `POST https://api.us.cobalt.io/external_ticket_references`
 
-### Body
+### Response Body
 
 | Field              | Description                                                                   |
 | ------------------ | ----------------------------------------------------------------------------- |
