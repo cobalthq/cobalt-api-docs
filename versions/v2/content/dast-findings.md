@@ -69,7 +69,7 @@ This endpoint retrieves a list of all DAST findings that belong to the organizat
 
 | Field           | Description                                                                         |
 |-----------------|-------------------------------------------------------------------------------------|
-| `id`                | A unique ID representing the DAST finding. Starts with `dsc_` |
+| `id`                | A unique ID representing the DAST finding. Starts with `dfi_` |
 | `target_id`         | A unique ID representing the DAST target. Starts with `dt_` |
 | `scan_ids`          | An array of unique ID representing the scans that originated the vulnerability finding. Starts with `dsc_` |
 | `title`             | Name of the vulnerability |
