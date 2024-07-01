@@ -1,5 +1,5 @@
 ---
-weight: 15
+weight: 16
 title: DAST Scans
 ---
 
@@ -36,7 +36,7 @@ curl -X GET "https://api.us.cobalt.io/dast/scans" \
 }
 ```
 
-This endpoint retrieves a list of all DAST Scans for the organization.
+This endpoint retrieves a list of all DAST scans that belong to the organization specified in the `X-Org-Token` header.
 
 ### HTTP Request
 
@@ -46,8 +46,8 @@ This endpoint retrieves a list of all DAST Scans for the organization.
 
 | Parameter                      | Default | Description                                                                                                                                                                                                                                                                                                   |
 |--------------------------------|---------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `cursor`                       | N/A     | Used for [pagination](./#pagination). Example: `https://api.us.cobalt.io/dast/targets?cursor=a1b2c3d4` |
-| `limit`                        | `10`    | If specified, returns only a specified amount of targets. Example: `https://api.us.cobalt.io/dast/targets?limit=5` |
+| `cursor`                       | N/A     | Used for [pagination](./#pagination). Example: `https://api.us.cobalt.io/dast/scans?cursor=a1b2c3d4` |
+| `limit`                        | `10`    | If specified, returns only a specified amount of scans. Example: `https://api.us.cobalt.io/dast/scans?limit=5` |
 | `target`                       | N/A     | If specified, returns scans scoped to this target id. Example: `https://api.us.cobalt.io/dast/scans?target=dt_GZgcehapJUNh6mjNuqsE4T` |
 
 ### Response Fields
