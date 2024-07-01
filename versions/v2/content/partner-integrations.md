@@ -1,5 +1,5 @@
 ---
-weight: 17
+weight: 90
 title: Partner Integrations
 ---
 
