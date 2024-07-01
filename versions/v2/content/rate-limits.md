@@ -1,5 +1,5 @@
 ---
-weight: 15
+weight: 70
 title: Rate Limits
 ---
 
