@@ -25,10 +25,10 @@ curl -X GET "https://api.us.cobalt.io/dast/findings" \
   "data": [
     {
       "resource": {
-        "id": "string",
-        "target_id": "string",
+        "id": "dfi_2pF7XE2nJyP3i8ComjVXj3",
+        "target_id": "dt_GZgcehapJUNh6mjNuqsE4T",
         "scan_ids": [
-          "string"
+          "dsc_GZgceqweJUNh6mjNuqsE4T"
         ],
         "title": "string",
         "last_found_at": "2024-07-01T10:39:31.919Z",
@@ -96,10 +96,10 @@ curl -X GET "https://api.us.cobalt.io/dast/findings/YOUR-DAST-FINDING-IDENTIFIER
 ```json
 {
   "resource": {
-    "id": "string",
-    "target_id": "string",
+    "id": "dfi_2pF7XE2nJyP3i8ComjVXj3",
+    "target_id": "dt_GZgcehapJUNh6mjNuqsE4T",
     "scan_ids": [
-      "string"
+      "dsc_GZgceqweJUNh6mjNuqsE4T"
     ],
     "title": "string",
     "last_found_at": "2024-07-01T10:56:34.997Z",
