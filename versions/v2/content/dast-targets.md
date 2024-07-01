@@ -54,7 +54,7 @@ This endpoint retrieves a list of all DAST Targets that belong to the organizati
 |-----------------|-------------------------------------------------------------------------------------|
 | `id`      | A unique ID representing the DAST target. Starts with `dt_`                             |
 | `name`    | The name of the returned DAST target.                                                  |
-| `url`     | The URL of the returns DAST target              |
+| `url`     | The URL of the returned DAST target              |
 | `enabled` | A boolean flag specifying if the DAST target is enabled                                |
 
 ## Get a DAST Target
