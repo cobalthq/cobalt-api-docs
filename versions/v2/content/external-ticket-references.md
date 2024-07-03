@@ -60,7 +60,7 @@ curl --location 'https://api.us.cobalt.io/external_ticket_references/search' \
 This endpoint retrieves a list of all external ticket references that belong to the organization specified in the `X-Org-Token`
 header.
 
-If you want to filter the search results based on a subset of findings, you can use the `findings` property in the
+> If you want to filter the search results based on a subset of findings, you can use the `findings` property in the
 request body.
 
 ```sh
@@ -71,7 +71,7 @@ curl --location 'https://api.us.cobalt.io/external_ticket_references/search' \
   --data '{"findings":[{"id":"vl_JTovzf8AW1afCRpKJejse3"},{"id":"dfi_2bZrrKE3Hay7oLrbNUponW"}]}'
 ```
 
-You can filter the external ticket references by a particular ticketing system using the `ticketing_system` property.
+> You can filter the external ticket references by a particular ticketing system using the `ticketing_system` property.
 
 ```sh
 curl --location 'https://api.us.cobalt.io/external_ticket_references/search' \
@@ -81,7 +81,7 @@ curl --location 'https://api.us.cobalt.io/external_ticket_references/search' \
   --data '{"ticketing_system":"azure_devops_boards"}'
 ```
 
-The `external_id` property can filter the external ticket reference by its identifier in the external ticketing system.
+> The `external_id` property can filter the external ticket reference by its identifier in the external ticketing system.
 
 ```sh
 curl --location 'https://api.us.cobalt.io/external_ticket_references/search' \
