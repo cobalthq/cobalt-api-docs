@@ -60,7 +60,7 @@ curl --location 'https://api.us.cobalt.io/external_ticket_references/search' \
 This endpoint retrieves a list of all external ticket references that belong to the organization specified in the `X-Org-Token`
 header.
 
-If you want to filter the search results based on a subset of findings, you can use the `findings` property in the
+> If you want to filter the search results based on a subset of findings, you can use the `findings` property in the
 request body.
 
 ```sh
@@ -71,19 +71,46 @@ curl --location 'https://api.us.cobalt.io/external_ticket_references/search' \
   --data '{"findings":[{"id":"vl_JTovzf8AW1afCRpKJejse3"},{"id":"dfi_2bZrrKE3Hay7oLrbNUponW"}]}'
 ```
 
+> You can filter the external ticket references by a particular ticketing system using the `ticketing_system` property.
+
+```sh
+curl --location 'https://api.us.cobalt.io/external_ticket_references/search' \
+  -H "Accept: application/vnd.cobalt.v2+json" \
+  -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
+  -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
+  --data '{"ticketing_system":"azure_devops_boards"}'
+```
+
+> The `external_id` property can filter the external ticket reference by its identifier in the external ticketing system.
+
+```sh
+curl --location 'https://api.us.cobalt.io/external_ticket_references/search' \
+  -H "Accept: application/vnd.cobalt.v2+json" \
+  -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
+  -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
+  --data '{"external_id":"8"}'
+```
+
 ### HTTP Request
 
 `POST https://api.us.cobalt.io/external_ticket_references/search`
 
 ### Request Body
 
-| Field      | Description                                                                                                                                     |
-| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `findings` | An array of finding ID `object`s to filter the search. For example, `[{"id":"vl_JTovzf8AW1afCRpKJejse3"},{"id":"dfi_2bZrrKE3Hay7oLrbNUponW"}]`. |
+| Field              | Description                                                                                                                                     |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `findings`         | An array of finding ID `object`s to filter the search. For example, `[{"id":"vl_JTovzf8AW1afCRpKJejse3"},{"id":"dfi_2bZrrKE3Hay7oLrbNUponW"}]`. |
+| `ticketing_system` | One of the [supported ticketing systems](#supported-ticketing-systems).                                                                         |
+| `external_id`      | The external ticket's identifier in the external ticketing system.                                                                              |
 
 <aside class="notice">
 Remember - if the <code>findings</code> property is defined in the search request body, but is empty, the search result
 will always be empty.
+</aside>
+
+<aside class="notice">
+Remember - when filtering by the <code>external_id</code>, the string match must be a case-sensitive, full match.
+Partial matches, regexes, and <code>LIKE</code> query wildcards are not supported.
 </aside>
 
 ## Create an External Ticket Reference
@@ -123,7 +150,7 @@ along with the created external ticket reference information.
 | Field              | Description                                                                   |
 | ------------------ | ----------------------------------------------------------------------------- |
 | `title`            | A short descriptive title of the external ticket. For example, the ticket ID. |
-| `ticketing_system` | One of the [supported ticketing systems](#supported-ticketing-systems).                     |
+| `ticketing_system` | One of the [supported ticketing systems](#supported-ticketing-systems).       |
 | `external_url`     | The URL of the external ticket.                                               |
 | `external_id`      | An arbitrary external identifier for the ticket reference.                    |
 | `finding_id`       | The Cobalt ID of the finding this external ticket belongs to.                 |
@@ -136,7 +163,7 @@ You get a `201` response code for a successful request.
 | ------------------ | ----------------------------------------------------------------------------- |
 | `id`               | A unique ID representing the external ticket reference. Starts with `efr_`    |
 | `title`            | A short descriptive title of the external ticket. For example, the ticket ID. |
-| `ticketing_system` | One of the [supported ticketing systems](#supported-ticketing-systems).                     |
+| `ticketing_system` | One of the [supported ticketing systems](#supported-ticketing-systems).       |
 | `external_url`     | The URL of the external ticket.                                               |
 | `external_id`      | An arbitrary external identifier for the ticket reference.                    |
 | `finding_id`       | The Cobalt ID of the finding this external ticket belongs to.                 |
