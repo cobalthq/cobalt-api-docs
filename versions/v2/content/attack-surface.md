@@ -5,14 +5,13 @@ title: "Attack Surface"
 
 # Attack Surface
 
-## Get Attack Surface Stats
+## Get Attack Surface
 
 ```sh
 curl --location 'https://api.us.cobalt.io/attack_surface/stats' \
   -H "Accept: application/vnd.cobalt.v2+json" \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
   -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
-  --data '{}'
 ```
 
 > The above command returns JSON structured like this:
