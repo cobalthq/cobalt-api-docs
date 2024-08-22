@@ -31,7 +31,7 @@ curl --location 'https://api.us.cobalt.io/attack_surface/stats' \
 }
 ```
 
-This endpoint retrieves stats from Attack Surface for the organization
+This endpoint retrieves stats from the attack surface that belong to the organization specified in the `X-Org-Token` header.
 
 ### HTTP Request
 
