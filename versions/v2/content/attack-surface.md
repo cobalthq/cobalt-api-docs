@@ -46,4 +46,3 @@ This endpoint retrieves stats from Attack Surface for the organization
 | `seen_hosts`    |Amount of hosts with at least one IP found within the last 7 days|
 | `new_seen_hosts`     |Amount of hosts we found an IP for the first time within the last 7 days|
 | `links` |Contains URL to the attack surface of your Org|
-
