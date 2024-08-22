@@ -18,16 +18,16 @@ curl --location 'https://api.us.cobalt.io/attack_surface/stats' \
 
 ```json
 {
-      "resource": {
-        "domains": "3",
-        "seen_hosts": "200",
-        "new_seen_hosts": "10"
-      },
-      "links": {
-        "ui": {
-          "url": "https://api.cobalt.io/links/base64-link"
-        }
-      }
+  "resource": {
+    "domains": "3",
+    "seen_hosts": "200",
+    "new_seen_hosts": "10"
+  },
+  "links": {
+    "ui": {
+      "url": "https://api.cobalt.io/links/base64-link"
+    }
+  }
 }
 ```
 
@@ -39,9 +39,9 @@ This endpoint retrieves stats from Attack Surface for the organization
 
 ### Response Fields
 
-| Field           | Description                                                                         |
-|-----------------|-------------------------------------------------------------------------------------|
-| `domains`      |Total amount of domains|
-| `seen_hosts`    |Amount of hosts with at least one IP found within the last 7 days|
-| `new_seen_hosts`     |Amount of hosts we found an IP for the first time within the last 7 days|
-| `links` |Contains URL to the attack surface of your Org|
+| Field            | Description                                                              |
+| ---------------- | ------------------------------------------------------------------------ |
+| `domains`        | Total amount of domains                                                  |
+| `seen_hosts`     | Amount of hosts with at least one IP found within the last 7 days        |
+| `new_seen_hosts` | Amount of hosts we found an IP for the first time within the last 7 days |
+| `links.ui.url`   | Contains URL to the attack surface of your Org                           |
