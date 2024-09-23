@@ -49,7 +49,6 @@ curl -X GET "https://api.us.cobalt.io/engagement_findings/YOUR-ENGAGEMENT-FINDIN
       "severity_description": "Severity description.",
       "suggested_fix": "Suggested fix.",
       "code_snippets": "Code snippets.",
-      "references": "References.",
       "state": "need_fix",
       "target_asset_id": "as_4L4ZjKgfzP7VBwUmqCZmmL",
       "type_category": "Binary Planting",
@@ -100,7 +99,6 @@ field, which is common to all engagement finding types.
 | `likelihood`           | All                              | How likely this finding is to be exploited. 0 (very unlikely) - 5 (very likely)                                                          |
 | `prerequisites`        | Digital risk assessment findings | Conditions that must be fulfilled to successfully exploit the returned finding                                                           |
 | `proof_of_concept`     | All                              | A proof of concept for the returned finding                                                                                              |
-| `references`           | Secure code review findings      | Links to addition resources for more information about the returned finding                                                              |
 | `severity_description` | All                              | Description of the impact and likelihood of the returned finding                                                                         |
 | `state`                | All                              | The state of the finding. `new`, `triaging`, `out_of_scope`, `invalid`, `duplicate`, `need_fix`, `check_fix`, `valid_fix`, or `wont_fix` |
 | `suggested_fix`        | All                              | How to fix the returned finding                                                                                                          |
