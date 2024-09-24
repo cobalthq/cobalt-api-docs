@@ -139,7 +139,7 @@ which is common to all engagement types.
 | `engagement_type`     | All                      | The engagement type. `digital_risk_assessment` or `secure_code_review`                 |
 | `id`                  | All                      | A unique ID representing the engagement                                                |
 | `methodology`         | All                      | Engagement methodology. Valid values depend on the engagement type                     |
-| `objectives`          | All                      | The objectives of the engagement. for example "Coverage of OWASP Top 10"               |
+| `objectives`          | All                      | The objectives of the engagement, for example "Coverage of OWASP Top 10"               |
 | `start_date`          | All                      | The starting date of the engagement. Format: Aug 11 2024                               |
 | `state`               | All                      | `draft`, `in_review`, `planned`, `live`, `remediation`, `closed`, or `cancelled`       |
 | `tag`                 | All                      | A human-friendly unique ID representing the engagement                                 |
