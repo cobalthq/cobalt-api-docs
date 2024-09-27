@@ -5,7 +5,7 @@ title: Engagement Findings
 
 # Engagement Findings
 
-## States
+## States {#engagement-finding-states}
 
 The table below describes how the engagement finding state values used by the API correspond to finding states shown in
 the user interface.
@@ -240,6 +240,6 @@ This endpoint updates the current state of an engagement finding.
 
 ### Body
 
-| Field   | Description                                                                                          |
-|---------|------------------------------------------------------------------------------------------------------|
-| `state` | The desired next state of the engagement finding. Should be one of the possible [states](./#states). |
+| Field   | Description                                                                                                             |
+|---------|-------------------------------------------------------------------------------------------------------------------------|
+| `state` | The desired next state of the engagement finding. Should be one of the possible [states](./#engagement-finding-states). |
