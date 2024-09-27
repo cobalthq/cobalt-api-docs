@@ -224,7 +224,7 @@ curl -X PATCH "https://api.us.cobalt.io/engagement_findings/YOUR-ENGAGEMENT-FIND
   -d '{"state":"triaging"}'
 ```
 
-> If successful, this command returns `204`.
+> If successful, this command returns `200`.
 
 This endpoint updates the current state of an engagement finding.
 
