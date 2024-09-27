@@ -243,3 +243,9 @@ This endpoint updates the current state of an engagement finding.
 | Field   | Description                                                                                                             |
 |---------|-------------------------------------------------------------------------------------------------------------------------|
 | `state` | The desired next state of the engagement finding. Should be one of the possible [states](./#engagement-finding-states). |
+
+### Response Fields
+
+For details about each response field, please refer to the [table above](/#engagement-finding-response-fields).
+
+The returned object will reflect the updated state.
