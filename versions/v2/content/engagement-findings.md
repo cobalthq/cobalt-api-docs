@@ -5,7 +5,7 @@ title: Engagement Findings
 
 # Engagement Findings
 
-## States
+## States {#engagement-finding-states}
 
 The table below describes how the engagement finding state values used by the API correspond to finding states shown in
 the user interface.
@@ -211,3 +211,41 @@ For details about each response field, please refer to the [table above](/#engag
 Remember - you can only request an engagement finding scoped to the organization specified in the
 <code>X-Org-Token</code> header.
 </aside>
+
+## Update Engagement Finding State
+
+```sh
+curl -X PATCH "https://api.us.cobalt.io/engagement_findings/YOUR-ENGAGEMENT-FINDING-IDENTIFIER" \
+  -H "Accept: application/vnd.cobalt.v2+json" \
+  -H "Content-Type: application/vnd.cobalt.v2+json" \
+  -H "Idempotency-Key: A-UNIQUE-IDENTIFIER-TO-PREVENT-UNINTENTIONAL-DUPLICATION" \
+  -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
+  -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN" \
+  -d '{"state":"triaging"}'
+```
+
+> If successful, this command returns `200`.
+
+This endpoint updates the current state of an engagement finding.
+
+### HTTP Request
+
+`PATCH https://api.us.cobalt.io/findings/YOUR-ENGAGEMENT-FINDING-IDENTIFIER`
+
+### URL Parameters
+
+| Parameter                            | Description                                                                                                                                                                        |
+|--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `YOUR-ENGAGEMENT-FINDING-IDENTIFIER` | A unique ID representing the engagement finding. The general form is `P_I`, where `P` is a prefix (such as `scrf`) indicating the type of finding, and `I` is a unique identifier. |
+
+### Body
+
+| Field   | Description                                                                                                             |
+|---------|-------------------------------------------------------------------------------------------------------------------------|
+| `state` | The desired next state of the engagement finding. Should be one of the possible [states](./#engagement-finding-states). |
+
+### Response Fields
+
+For details about each response field, please refer to the [table above](/#engagement-finding-response-fields).
+
+The returned object will reflect the updated state.
