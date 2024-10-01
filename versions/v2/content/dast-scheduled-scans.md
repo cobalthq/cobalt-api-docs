@@ -8,7 +8,7 @@ title: DAST Scheduled Scans
 ## Create a scheduled DAST Scan
 
 ```sh
-curl -X POST "https://api.us.cobalt.io/dast/scans/targets/YOUR-DAST-TARGET-IDENTIFIER/scans" \
+curl -X POST "https://api.us.cobalt.io/dast/targets/YOUR-DAST-TARGET-IDENTIFIER/scheduled_scans" \
   -H "Accept: application/vnd.cobalt.v2+json" \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
   -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
