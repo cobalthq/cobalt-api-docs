@@ -346,6 +346,7 @@ Webhook event properties:
 
 `action` types:
 
+* `ENGAGEMENT_FINDING_STATE_UPDATED`
 * `FINDING_DELETED`
 * `FINDING_PUBLISHED`
 * `FINDING_STATE_UPDATED`
@@ -367,6 +368,7 @@ Webhook event properties:
 * `TEST_EVENT`
 * `PENTEST`
 * `FINDING`
+* `ENGAGEMENT_FINDING`
 
 The format of the subject ID will change based on the type of the subject.
 The full information about the event subject can be fetched from the `GET` API route that
@@ -588,3 +590,32 @@ Subject associations:
 | asset_id    | false    |
 
 Event details: None
+
+## Engagement Finding State Updated Event
+
+``` json
+{
+  "id": "eve_WGipopKwHxTLqdHMKpGM3h",
+  "action": "ENGAGEMENT_FINDING_STATE_UPDATED",
+  "subject": {
+    "id": "scrf_CrmugETa3zTJWbu6ybRZMJ",
+    "type": "ENGAGEMENT_FINDING",
+    "associations": {
+      "engagement_id": "scr_HQFC6FaM8kZv17QBTe3rmR"
+    }
+  },
+  "timestamp": "2024-03-18T17:23:57.207Z"
+}
+```
+
+This event is fired when an engagement finding's state is updated.
+
+Action: `ENGAGEMENT_FINDING_STATE_UPDATED`
+
+Subject type: `ENGAGEMENT_FINDING`
+
+Subject associations:
+
+| Association   | Nullable |
+|---------------|----------|
+| engagement_id | false    |
