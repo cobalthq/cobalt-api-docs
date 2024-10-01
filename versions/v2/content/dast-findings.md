@@ -125,6 +125,12 @@ This endpoint retrieves a specific DAST finding that belongs to the organization
 
 `GET https://api.us.cobalt.io/dast/findings/YOUR-DAST-FINDING-IDENTIFIER`
 
+### URL Parameters
+
+| Parameter                      | Description                                              |
+|--------------------------------|----------------------------------------------------------|
+| `YOUR-DAST-FINDING-IDENTIFIER` | A unique ID representing the finding. Starts with `dfi_` |
+
 ### Response Fields
 
 | Field           | Description                                                                         |
@@ -161,3 +167,40 @@ are of an automated nature, retesting and passing the scan is the only way to ma
 
 `POST https://api.us.cobalt.io/dast/findings/YOUR-DAST-FINDING-IDENTIFIER/retest`
 
+### URL Parameters
+
+| Parameter                      | Description                                              |
+|--------------------------------|----------------------------------------------------------|
+| `YOUR-DAST-FINDING-IDENTIFIER` | A unique ID representing the finding. Starts with `dfi_` |
+
+## Update Finding State
+
+```sh
+curl -X PATCH "https://api.us.cobalt.io/dast/findings/YOUR-DAST-FINDING-IDENTIFIER" \
+  -H "Accept: application/vnd.cobalt.v2+json" \
+  -H "Content-Type: application/vnd.cobalt.v2+json" \
+  -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
+  -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN" \
+  -d '{"state":"need_fix"}'
+```
+
+> If successful, this command returns `204`.
+
+This endpoint updates the current state of a DAST finding. Note that changing the state to `fixed` is not
+possible with this endpoint. You have to use the `retest` endpoint for that.
+
+### HTTP Request
+
+`PATCH https://api.us.cobalt.io/dast/findings/YOUR-DAST-FINDING-IDENTIFIER`
+
+### URL Parameters
+
+| Parameter                      | Description                                              |
+|--------------------------------|----------------------------------------------------------|
+| `YOUR-DAST-FINDING-IDENTIFIER` | A unique ID representing the finding. Starts with `dfi_` |
+
+### Body
+
+| Field   | Description                                                                               |
+|---------|-------------------------------------------------------------------------------------------|
+| `state` | The desired next state of the finding. Should be one of [`notfixed`, `invalid`, `accepted`] |
