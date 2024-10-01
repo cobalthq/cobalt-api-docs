@@ -122,7 +122,8 @@ curl -X POST "https://api.us.cobalt.io/dast/scans/targets/YOUR-DAST-TARGET-IDENT
 }
 ```
 
-This endpoint triggers a new DAST scan on the specified target. The scan will start in the `queued` state and progress to `completed` or `failed`
+This endpoint triggers a new DAST scan on the specified target. The scan will start in the `queued` state and
+progress to `completed` or `failed`.
 
 ### HTTP Request
 
