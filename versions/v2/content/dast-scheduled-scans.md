@@ -1,6 +1,6 @@
 ---
 weight: 16
-title: DAST Scans
+title: DAST Scheduled Scans
 ---
 
 # DAST Scans
