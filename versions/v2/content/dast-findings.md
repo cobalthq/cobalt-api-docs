@@ -141,3 +141,23 @@ This endpoint retrieves a specific DAST finding that belongs to the organization
 | `proof_of_concept`  | Evidence of the vulnerability finding. |
 | `suggested_fix`     | Description of how to fix the vulnerability. |
 | `http_exchanges`    | Pairs of `request` and `response` of the vulnerability finding. |
+
+## Retest DAST finding
+
+```sh
+curl -X POST "https://api.us.cobalt.io/dast/findings/YOUR-DAST-FINDING-IDENTIFIER/retest" \
+  -H "Accept: application/vnd.cobalt.v2+json" \
+  -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
+  -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
+```
+
+> The above command returns no data and a `204` response code when successful.
+
+This endpoint retests the finding to determine if it has been fixed or not. The state
+of the finding will change automatically once the retest finishes. Because DAST findings
+are of an automated nature, retesting and passing the scan is the only way to mark it as fixed.
+
+### HTTP Request
+
+`POST https://api.us.cobalt.io/dast/findings/YOUR-DAST-FINDING-IDENTIFIER/retest`
+
