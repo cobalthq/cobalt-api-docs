@@ -159,7 +159,7 @@ curl -X POST "https://api.us.cobalt.io/dast/findings/YOUR-DAST-FINDING-IDENTIFIE
 
 > The above command returns no data and a `204` response code when successful.
 
-This endpoint retests the finding to determine if it has been fixed or not. The state
+This endpoint runs a short scan to determine if the finding can still be detected. The state
 of the finding will change automatically once the retest finishes. Because DAST findings
 are of an automated nature, retesting and passing the scan is the only way to mark it as fixed.
 
