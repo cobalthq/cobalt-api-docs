@@ -131,7 +131,7 @@ This endpoint retrieves a specific DAST finding that belongs to the organization
 |--------------------------------|----------------------------------------------------------|
 | `YOUR-DAST-FINDING-IDENTIFIER` | A unique ID representing the finding. Starts with `dfi_` |
 
-### Response Fields
+<h3 id="dast-finding-response-fields">Response Fields</h3>
 
 | Field           | Description                                                                         |
 |-----------------|-------------------------------------------------------------------------------------|
@@ -184,7 +184,7 @@ curl -X PATCH "https://api.us.cobalt.io/dast/findings/YOUR-DAST-FINDING-IDENTIFI
   -d '{"state":"need_fix"}'
 ```
 
-> If successful, this command returns `204`.
+> If successful, this command returns `200` and the updated finding
 
 This endpoint updates the current state of a DAST finding. Note that changing the state to `fixed` is not
 possible with this endpoint. You have to use the [retest endpoint](#retest-dast-finding) for that.
@@ -204,3 +204,7 @@ possible with this endpoint. You have to use the [retest endpoint](#retest-dast-
 | Field   | Description                                                                               |
 |---------|-------------------------------------------------------------------------------------------|
 | `state` | The desired next state of the finding. Should be one of [`notfixed`, `invalid`, `accepted`] |
+
+### Response fields
+
+See [Get a DAST finding response fields](#dast-finding-response-fields)
