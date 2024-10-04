@@ -67,20 +67,7 @@ This endpoint retrieves a list of all DAST findings that belong to the organizat
 
 ### Response Fields
 
-| Field           | Description                                                                         |
-|-----------------|-------------------------------------------------------------------------------------|
-| `id`                | A unique ID representing the DAST finding. Starts with `dfi_` |
-| `target_id`         | A unique ID representing the DAST target. Starts with `dt_` |
-| `scan_ids`          | An array of unique ID representing the scans that originated the vulnerability finding. Starts with `dsc_` |
-| `title`             | Name of the vulnerability |
-| `last_found_at`     | Date and time of when the vulnerability was last found, in ISO 8601 UTC format. |
-| `severity`          | Severity of the vulnerability finding: `10` is low. `20` is medium. `30` is high. |
-| `state`             | State of the vulnerability finding: [`notfixed`, `invalid`, `accepted`, `fixed`] |
-| `affected_url`      |URL affected by the found vulnerability |
-| `description`       | Description of the vulnerability. |
-| `proof_of_concept`  | Evidence of the vulnerability finding. |
-| `suggested_fix`     | Description of how to fix the vulnerability. |
-| `http_exchanges`    | Pairs of `request` and `response` of the vulnerability finding. |
+See [Finding response fields](#finding-response-fields)
 
 ## Get a DAST Finding
 
@@ -131,7 +118,7 @@ This endpoint retrieves a specific DAST finding that belongs to the organization
 |--------------------------------|----------------------------------------------------------|
 | `YOUR-DAST-FINDING-IDENTIFIER` | A unique ID representing the finding. Starts with `dfi_` |
 
-### Response Fields
+### Finding Response Fields
 
 | Field           | Description                                                                         |
 |-----------------|-------------------------------------------------------------------------------------|
@@ -207,4 +194,4 @@ possible with this endpoint. You have to use the [retest endpoint](#retest-dast-
 
 ### Response fields
 
-See `Get a DAST finding response fields`
+See [Finding response fields](#finding-response-fields)
