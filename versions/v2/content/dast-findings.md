@@ -131,7 +131,7 @@ This endpoint retrieves a specific DAST finding that belongs to the organization
 |--------------------------------|----------------------------------------------------------|
 | `YOUR-DAST-FINDING-IDENTIFIER` | A unique ID representing the finding. Starts with `dfi_` |
 
-<h3 id="dast-finding-response-fields">Response Fields</h3>
+### Response Fields
 
 | Field           | Description                                                                         |
 |-----------------|-------------------------------------------------------------------------------------|
@@ -207,4 +207,4 @@ possible with this endpoint. You have to use the [retest endpoint](#retest-dast-
 
 ### Response fields
 
-See [Get a DAST finding response fields](#dast-finding-response-fields)
+See `Get a DAST finding response fields`
