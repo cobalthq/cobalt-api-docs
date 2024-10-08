@@ -10,6 +10,7 @@ title: DAST Scheduled Scans
 ```sh
 curl -X POST "https://api.us.cobalt.io/dast/targets/YOUR-DAST-TARGET-IDENTIFIER/scheduled_scans" \
   -H "Accept: application/vnd.cobalt.v2+json" \
+  -H "Content-Type: application/vnd.cobalt.v2+json" \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
   -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN" \
   --data '{
