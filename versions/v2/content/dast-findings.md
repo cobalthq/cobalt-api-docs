@@ -128,7 +128,7 @@ This endpoint retrieves a specific DAST finding that belongs to the organization
 | `title`             | Name of the vulnerability |
 | `last_found_at`     | Date and time of when the vulnerability was last found, in ISO 8601 UTC format. |
 | `severity`          | Severity of the vulnerability finding: `10` is low. `20` is medium. `30` is high. |
-| `state`             | State of the vulnerability finding: [`notfixed`, `invalid`, `accepted`, `fixed`] |
+| `state`             | State of the vulnerability finding: [`invalid`, `need_fix`, `wont_fix`, `valid_fix`, `check_fix`] |
 | `affected_url`      | URL affected by the found vulnerability |
 | `description`       | Description of the vulnerability. |
 | `proof_of_concept`  | Evidence of the vulnerability finding. |
@@ -190,7 +190,7 @@ possible with this endpoint. You have to use the [retest endpoint](#retest-dast-
 
 | Field   | Description                                                                               |
 |---------|-------------------------------------------------------------------------------------------|
-| `state` | The desired next state of the finding. Should be one of [`notfixed`, `invalid`, `accepted`] |
+| `state` | The desired next state of the finding. Should be one of [`invalid`, `wont_fix`, `need_fix`] |
 
 ### Response fields
 
