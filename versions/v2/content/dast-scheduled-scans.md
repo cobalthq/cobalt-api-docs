@@ -3,7 +3,7 @@ weight: 16
 title: DAST Scheduled Scans
 ---
 
-# DAST Scans
+# DAST Scheduled Scans
 
 ## Create a scheduled DAST Scan
 
