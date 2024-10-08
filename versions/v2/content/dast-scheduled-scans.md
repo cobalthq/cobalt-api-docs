@@ -11,7 +11,7 @@ title: DAST Scheduled Scans
 curl -X POST "https://api.us.cobalt.io/dast/targets/YOUR-DAST-TARGET-IDENTIFIER/scheduled_scans" \
   -H "Accept: application/vnd.cobalt.v2+json" \
   -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
-  -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN"
+  -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN" \
   --data '{
             "date_time": "2024-07-01T10:19:11.160Z",
             "recurrence": "WEEKLY"
