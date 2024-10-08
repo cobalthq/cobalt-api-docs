@@ -173,7 +173,7 @@ curl -X PATCH "https://api.us.cobalt.io/dast/findings/YOUR-DAST-FINDING-IDENTIFI
 
 > If successful, this command returns `200` and the updated finding
 
-This endpoint updates the current state of a DAST finding. Note that changing the state to `fixed` is not
+This endpoint updates the current state of a DAST finding. Note that changing the state to `fixed` or `check_fix` is not
 possible with this endpoint. You have to use the [retest endpoint](#retest-dast-finding) for that.
 
 ### HTTP Request
