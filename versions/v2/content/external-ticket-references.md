@@ -98,9 +98,9 @@ curl --location 'https://api.us.cobalt.io/external_ticket_references/search' \
 ### Request Body
 
 | Field              | Description                                                                                                                                     |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| ------------------ |-------------------------------------------------------------------------------------------------------------------------------------------------|
 | `findings`         | An array of finding ID `object`s to filter the search. For example, `[{"id":"vl_JTovzf8AW1afCRpKJejse3"},{"id":"dfi_2bZrrKE3Hay7oLrbNUponW"}]`. |
-| `ticketing_system` | One of the [supported ticketing systems](#supported-ticketing-systems).                                                                         |
+| `ticketing_system` | One of the [supported ticketing systems](#supported-ticketing-systems) or a custom ticketing system type.                                       |
 | `external_id`      | The external ticket's identifier in the external ticketing system.                                                                              |
 
 <aside class="notice">
@@ -147,26 +147,26 @@ along with the created external ticket reference information.
 
 ### Request Body
 
-| Field              | Description                                                                   |
-| ------------------ | ----------------------------------------------------------------------------- |
-| `title`            | A short descriptive title of the external ticket. For example, the ticket ID. |
-| `ticketing_system` | One of the [supported ticketing systems](#supported-ticketing-systems).       |
-| `external_url`     | The URL of the external ticket.                                               |
-| `external_id`      | An arbitrary external identifier for the ticket reference.                    |
-| `finding_id`       | The Cobalt ID of the finding this external ticket belongs to.                 |
+| Field              | Description                                                                                               |
+| ------------------ |-----------------------------------------------------------------------------------------------------------|
+| `title`            | A short descriptive title of the external ticket. For example, the ticket ID.                             |
+| `ticketing_system` | One of the [supported ticketing systems](#supported-ticketing-systems) or a custom ticketing system type. |
+| `external_url`     | The URL of the external ticket.                                                                           |
+| `external_id`      | An arbitrary external identifier for the ticket reference.                                                |
+| `finding_id`       | The Cobalt ID of the finding this external ticket belongs to.                                             |
 
 ### Response
 
 You get a `201` response code for a successful request.
 
-| Field              | Description                                                                   |
-| ------------------ | ----------------------------------------------------------------------------- |
-| `id`               | A unique ID representing the external ticket reference. Starts with `efr_`    |
-| `title`            | A short descriptive title of the external ticket. For example, the ticket ID. |
-| `ticketing_system` | One of the [supported ticketing systems](#supported-ticketing-systems).       |
-| `external_url`     | The URL of the external ticket.                                               |
-| `external_id`      | An arbitrary external identifier for the ticket reference.                    |
-| `finding_id`       | The Cobalt ID of the finding this external ticket belongs to.                 |
+| Field              | Description                                                                                               |
+| ------------------ |-----------------------------------------------------------------------------------------------------------|
+| `id`               | A unique ID representing the external ticket reference. Starts with `efr_`                                |
+| `title`            | A short descriptive title of the external ticket. For example, the ticket ID.                             |
+| `ticketing_system` | One of the [supported ticketing systems](#supported-ticketing-systems) or a custom ticketing system type. |
+| `external_url`     | The URL of the external ticket.                                                                           |
+| `external_id`      | An arbitrary external identifier for the ticket reference.                                                |
+| `finding_id`       | The Cobalt ID of the finding this external ticket belongs to.                                             |
 
 ## Delete an External Ticket Reference
 
@@ -188,6 +188,26 @@ Remember - you can only request external ticket reference scoped to the organiza
 
 ## Supported Ticketing Systems
 
-- `azure_devops_boards`: Azure DevOps Boards
-- `github`: GitHub
-- `jira`: Jira
+You may create an External Ticket Reference for any ticketing system.
+The `ticketing_system` property will accept any arbitrary string, but we
+recommend using one of the following values when it is possible and reasonable to do so.
+When you use one of these values, Cobalt will be able to display the logo of
+the ticketing system alongside the reference in the Cobalt UI.
+
+- `asana` - Asana
+- `azure_devops_boards` - Azure DevOps Boards
+- `bmc` - BMC
+- `basecamp` - Basecamp
+- `bitbucket` - Bitbucket
+- `clickup` - ClickUp
+- `freshservice` - Freshservice
+- `github` - GitHub
+- `gitlab` - GitLab
+- `hive` - Hive
+- `jira` - Jira
+- `monday` - Monday
+- `pivotaltracker` - Pivotal Tracker
+- `servicenow` - ServiceNow
+- `trello` - Trello
+- `wrike` - Wrike
+- `zendesk` - Zendesk
