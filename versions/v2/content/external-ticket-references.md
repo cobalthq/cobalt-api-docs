@@ -188,6 +188,20 @@ Remember - you can only request external ticket reference scoped to the organiza
 
 ## Supported Ticketing Systems
 
-- `azure_devops_boards`: Azure DevOps Boards
-- `github`: GitHub
-- `jira`: Jira
+- `asana` - Asana
+- `azure_devops_boards` - Azure DevOps Boards
+- `bmc` - BMC
+- `basecamp` - Basecamp
+- `bitbucket` - Bitbucket
+- `clickup` - ClickUp
+- `freshservice` - Freshservice
+- `github` - GitHub
+- `gitlab` - GitLab
+- `hive` - Hive
+- `jira` - Jira
+- `monday` - Monday
+- `pivotaltracker` - Pivotal Tracker
+- `servicenow` - ServiceNow
+- `trello` - Trello
+- `wrike` - Wrike
+- `zendesk` - Zendesk
