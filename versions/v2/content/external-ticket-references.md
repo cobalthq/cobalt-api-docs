@@ -188,6 +188,12 @@ Remember - you can only request external ticket reference scoped to the organiza
 
 ## Supported Ticketing Systems
 
+You may create an External Ticket Reference for any ticketing system.
+The `ticketing_system` property will accept any arbitrary string, but we 
+recommend using one of the following values when it is possible and reasonable to do so.
+When you use one of these values, Cobalt will be able to display the logo of 
+the ticketing system alongside the reference in the Cobalt UI.
+
 - `asana` - Asana
 - `azure_devops_boards` - Azure DevOps Boards
 - `bmc` - BMC
