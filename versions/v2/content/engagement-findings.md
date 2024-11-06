@@ -58,6 +58,7 @@ curl -X GET "https://api.us.cobalt.io/engagement_findings" \
         "type_category": "",
         "impact": 1,
         "likelihood": 2,
+        "severity": "low",
         "attachments": []
       },
       "links": {
@@ -85,6 +86,7 @@ curl -X GET "https://api.us.cobalt.io/engagement_findings" \
         "type_category": "",
         "impact": 3,
         "likelihood": 3,
+        "severity": "medium",
         "cvss_score": null,
         "attachments": []
       },
@@ -100,6 +102,27 @@ curl -X GET "https://api.us.cobalt.io/engagement_findings" \
 
 This endpoint retrieves a list of all engagement findings that belong to the organization specified in the `X-Org-Token`
 header.
+
+### Calculations {#engagement-finding-severity-calculations}
+
+We follow the standard risk model described by OWASP, where:
+
+`Risk = Impact * Likelihood`
+
+Cobalt Risk Input Fields:
+
+- `impact`: 1, 2, 3, 4, or 5
+- `likelihood`: 1, 2, 3, 4, or 5
+
+Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
+
+| Category        | Score | Description                                                                                                                                                     |
+|-----------------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `critical`      | 25    | Includes vulnerabilities that require immediate attention.                                                                                                      |
+| `high`          | 16-24 | Impacts the security of your application/platform/hardware, including supported systems. Includes high probability vulnerabilities with a high business impact. |
+| `medium`        | 5-15  | Includes vulnerabilities that are: medium risk, medium impact; low risk, high impact; high risk, low impact.                                                    |
+| `low`           | 2-4   | Specifies common vulnerabilities with minimal impact.                                                                                                           |
+| `informational` | 1     | Notes vulnerabilities of minimal risk to your business.                                                                                                         |
 
 ### HTTP Request
 
@@ -117,29 +140,30 @@ header.
 The fields that are returned depend on the engagement finding type.  This can be determined from the `finding_type`
 field, which is common to all engagement finding types.
 
-| Field                  | Engagement Finding Type(s)       | Description                                                                                                                              |
-|------------------------|----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| `affected_resource`    | All                              | Resource(s) impacted by the returned finding                                                                                             |
-| `attachments`          | All                              | A list of finding attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes                              |
-| `code_snippets`        | Secure code review findings      | Code snippets demonstrating the issue with the returned finding                                                                          |
-| `created_at`           | All                              | The timestamp when this finding was created.  Format: 2024-05-28T11:39:25.011Z                                                           |
-| `cvss_score`           | Secure code review findings      | CVSS score for this finding                                                                                                              |
-| `description`          | All                              | The description of the returned finding                                                                                                  |
-| `engagement_id`        | All                              | The unique ID of the engagement this finding belongs to                                                                                  |
-| `finding_type`         | All                              | The finding type. `digital_risk_assessment_finding` or `secure_code_review_finding`                                                      |
-| `id`                   | All                              | A unique ID representing the finding                                                                                                     |
-| `impact`               | All                              | If exploited, the potential impact of this finding. 0 (very low impact) - 5 (very high impact)                                           |
-| `likelihood`           | All                              | How likely this finding is to be exploited. 0 (very unlikely) - 5 (very likely)                                                          |
-| `prerequisites`        | Digital risk assessment findings | Conditions that must be fulfilled to successfully exploit the returned finding                                                           |
-| `proof_of_concept`     | All                              | A proof of concept for the returned finding                                                                                              |
-| `severity_description` | All                              | Description of the impact and likelihood of the returned finding                                                                         |
-| `state`                | All                              | The state of the finding. `new`, `triaging`, `out_of_scope`, `invalid`, `duplicate`, `need_fix`, `check_fix`, `valid_fix`, or `wont_fix` |
-| `suggested_fix`        | All                              | How to fix the returned finding                                                                                                          |
-| `tag`                  | All                              | A human-friendly unique ID representing the finding                                                                                      |
-| `target_asset_id`      | All                              | The unique ID of the asset impacted by the returned finding                                                                              |
-| `title`                | All                              | The title of the returned finding                                                                                                        |
-| `type_category`        | All                              | The general type category of the returned finding.  Example: XSS                                                                         |
-| `links.ui.url`         | All                              | A link to redirect an authorized user to this finding in the Cobalt web application                                                      |
+| Field                  | Engagement Finding Type(s)       | Description                                                                                                                                            |
+|------------------------|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `affected_resource`    | All                              | Resource(s) impacted by the returned finding                                                                                                           |
+| `attachments`          | All                              | A list of finding attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes                                            |
+| `code_snippets`        | Secure code review findings      | Code snippets demonstrating the issue with the returned finding                                                                                        |
+| `created_at`           | All                              | The timestamp when this finding was created.  Format: 2024-05-28T11:39:25.011Z                                                                         |
+| `cvss_score`           | Secure code review findings      | CVSS score for this finding                                                                                                                            |
+| `description`          | All                              | The description of the returned finding                                                                                                                |
+| `engagement_id`        | All                              | The unique ID of the engagement this finding belongs to                                                                                                |
+| `finding_type`         | All                              | The finding type. `digital_risk_assessment_finding` or `secure_code_review_finding`                                                                    |
+| `id`                   | All                              | A unique ID representing the finding                                                                                                                   |
+| `impact`               | All                              | If exploited, the potential impact of this finding. 0 (very low impact) - 5 (very high impact)                                                         |
+| `likelihood`           | All                              | How likely this finding is to be exploited. 0 (very unlikely) - 5 (very likely)                                                                        |
+| `prerequisites`        | Digital risk assessment findings | Conditions that must be fulfilled to successfully exploit the returned finding                                                                         |
+| `proof_of_concept`     | All                              | A proof of concept for the returned finding                                                                                                            |
+| `severity`             | All                              | `null` likelihood/impact have not yet been set by the pentester, otherwise the rating as [described above](/#engagement-finding-severity-calculations) |
+| `severity_description` | All                              | Description of the impact and likelihood of the returned finding                                                                                       |
+| `state`                | All                              | The state of the finding. `new`, `triaging`, `out_of_scope`, `invalid`, `duplicate`, `need_fix`, `check_fix`, `valid_fix`, or `wont_fix`               |
+| `suggested_fix`        | All                              | How to fix the returned finding                                                                                                                        |
+| `tag`                  | All                              | A human-friendly unique ID representing the finding                                                                                                    |
+| `target_asset_id`      | All                              | The unique ID of the asset impacted by the returned finding                                                                                            |
+| `title`                | All                              | The title of the returned finding                                                                                                                      |
+| `type_category`        | All                              | The general type category of the returned finding.  Example: XSS                                                                                       |
+| `links.ui.url`         | All                              | A link to redirect an authorized user to this finding in the Cobalt web application                                                                    |
 
 <aside class="notice">
 Remember - you can only request engagement findings scoped to the organization specified in the <code>X-Org-Token</code>
@@ -178,6 +202,7 @@ curl -X GET "https://api.us.cobalt.io/engagement_findings/YOUR-ENGAGEMENT-FINDIN
       "type_category": "Binary Planting",
       "impact": 3,
       "likelihood": 3,
+      "severity": "medium",
       "cvss_score": "8.8 (AV:N/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H)",
       "attachments": [
         {
