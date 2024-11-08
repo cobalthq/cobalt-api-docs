@@ -57,9 +57,11 @@ curl --location 'https://api.us.cobalt.io/external_ticket_references/search' \
 }
 ```
 
-This endpoint retrieves a list of all external ticket references that were created via the Integration Builder or the
-public API and that belong to the organization specified in the `X-Org-Token` header.
-External ticket references created via our older native Jira and GitHub integrations are not available via this API.
+This endpoint allows you to search for external ticket references that belong to the organization specified in the
+`X-Org-Token` header. You may search by a subset of findings, a particular ticketing system, or an external ticket's
+identifier in the external ticketing system. This endpoint only allows you to search for external ticket references
+created via the Integration Builder or the public API. External ticket references created via our older native Jira and
+GitHub integrations are not available via this API.
 
 > If you want to filter the search results based on a subset of findings, you can use the `findings` property in the
 request body.
