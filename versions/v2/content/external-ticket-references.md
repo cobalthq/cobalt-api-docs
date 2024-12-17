@@ -171,6 +171,62 @@ You get a `201` response code for a successful request.
 | `external_id`      | An arbitrary external identifier for the ticket reference.                                                |
 | `finding_id`       | The Cobalt ID of the finding this external ticket belongs to.                                             |
 
+## Update an External Ticket Reference
+
+```sh
+curl -X PATCH \ 
+  --location 'https://api.us.cobalt.io/external_ticket_references/efr_9ekpSErugPH8zst2pBcjPo' \
+  -H "Accept: application/vnd.cobalt.v2+json" \
+  -H "Content-Type: application/vnd.cobalt.v2+json" \
+  -H "Authorization: Bearer YOUR-PERSONAL-API-TOKEN" \
+  -H "X-Org-Token: YOUR-V2-ORGANIZATION-TOKEN" \
+  --data '{"title":"TEST-37","external_url":"https://my-project.atlassian.net/browse/TEST-37","external_id":"10214","finding_id":"vl_JTovzf8AW1afCRpKJejse3"}'
+```
+
+> The above command returns the updated external ticket reference and a `200` response code when successful.
+
+```json
+{
+  "resource": {
+    "id": "efr_9ekpSErugPH8zst2pBcjPo",
+    "title": "TEST-37",
+    "ticketing_system": "jira",
+    "external_url": "https://my-project.atlassian.net/browse/TEST-37",
+    "external_id": "10214",
+    "finding_id": "vl_JTovzf8AW1afCRpKJejse3"
+  }
+}
+```
+
+This endpoint updates an external ticket reference. On a successful request, it will return a `200` response code
+along with the updated external ticket reference information.
+
+### HTTP Request
+
+`PATCH https://api.us.cobalt.io/external_ticket_references/:id`
+
+### Request Body
+
+| Field              | Optional | Description                                                                                               |
+| ------------------ |----------|-----------------------------------------------------------------------------------------------------------|
+| `title`            | true     | A short descriptive title of the external ticket. For example, the ticket ID.                             |
+| `external_url`     | true     | The URL of the external ticket.                                                                           |
+| `external_id`      | true     | An arbitrary external identifier for the ticket reference.                                                |
+| `finding_id`       | true     | The Cobalt ID of the finding this external ticket belongs to.                                             |
+
+### Response
+
+You get a `200` response code for a successful request.
+
+| Field              | Description                                                                                               |
+| ------------------ |-----------------------------------------------------------------------------------------------------------|
+| `id`               | A unique ID representing the external ticket reference. Starts with `efr_`                                |
+| `title`            | A short descriptive title of the external ticket. For example, the ticket ID.                             |
+| `ticketing_system` | One of the [supported ticketing systems](#supported-ticketing-systems) or a custom ticketing system type. |
+| `external_url`     | The URL of the external ticket.                                                                           |
+| `external_id`      | An arbitrary external identifier for the ticket reference.                                                |
+| `finding_id`       | The Cobalt ID of the finding this external ticket belongs to.                                             |
+
 ## Delete an External Ticket Reference
 
 ```sh
