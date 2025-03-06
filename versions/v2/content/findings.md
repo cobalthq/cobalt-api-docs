@@ -104,6 +104,14 @@ curl -X GET "https://api.us.cobalt.io/findings" \
             "file_name": "rainbow.jpeg",
             "download_url": "https://s3.amazonaws.com/acmecorp/uploads/attachment/file/12345/rainbow.jpeg?something=1"
           }
+        ],
+        "cvsss": [
+          {
+            "score": 5.3,
+            "severity": "Medium",
+            "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+            "version": "3.1"
+          }
         ]
       },
       "links": {
@@ -179,6 +187,7 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 | `state`                  | See [Finding States Documentation](./#states)                                                                                  |
 | `type_category`          | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                         |
 | `attachments`            | A list of finding attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.                   |
+| `cvsss`                  | A list of associated [CVSS](https://www.first.org/cvss/) records                                                               |
 | `links.ui.url`           | A link to redirect an authorized user to this finding in the Cobalt web application                                            |
 
 ### Image Attachments
@@ -253,6 +262,14 @@ curl -X GET "https://api.us.cobalt.io/findings/YOUR-FINDING-IDENTIFIER" \
         "file_name": "rainbow.jpeg",
         "download_url": "https://s3.amazonaws.com/acmecorp/uploads/attachment/file/12345/rainbow.jpeg?something=1"
       }
+    ],
+    "cvsss": [
+      {
+        "score": 5.3,
+        "severity": "Medium",
+        "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+        "version": "3.1"
+      }
     ]
   },
   "links": {
@@ -287,6 +304,7 @@ This endpoint retrieves a specific finding that belong to the organization speci
 | `state`                  | See [Finding States Documentation](./#states)                                                                         |
 | `type_category`          | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                |
 | `attachments`            | A list of finding attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.          |
+| `cvsss`                  | A list of associated [CVSS](https://www.first.org/cvss/) records                                                      |
 | `url`                    | The links.ui.url will redirect an authorized user to this finding in the Cobalt platform                              |
 
 ### Image Attachments
