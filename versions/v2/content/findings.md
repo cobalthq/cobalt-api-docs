@@ -112,7 +112,9 @@ curl -X GET "https://api.us.cobalt.io/findings" \
             "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
             "version": "3.1"
           }
-        ]
+        ],
+        "predecessor_id": null,
+        "successor_id": null
       },
       "links": {
         "ui": {
@@ -177,18 +179,20 @@ Cobalt Risk Classification (`severity`, a.k.a. `criticality`):
 
 ### Response Fields
 
-| Field                    | Enum Types                                                                                                                     |
-|--------------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| `log`                    | `created`, `impact_changed`, `likelihood_changed`, `state_changed`                                                             |
-| `severity`               | `null`, `low`, `medium`, `high`  (aka `criticality`. will be null if likelihood/impact have not yet been set by the pentester) |
-| `severity_justification` | Optional; The justification for the severity rating                                                                            |
-| `prerequisites`          | Optional; The prerequisites required for reproducing the vulnerability                                                         |
-| `http_request`           | Optional; An example HTTP request for reproducing the vulnerability                                                            |
-| `state`                  | See [Finding States Documentation](./#states)                                                                                  |
-| `type_category`          | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                         |
-| `attachments`            | A list of finding attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.                   |
-| `cvsss`                  | A list of associated [CVSS](https://www.first.org/cvss/) records                                                               |
-| `links.ui.url`           | A link to redirect an authorized user to this finding in the Cobalt web application                                            |
+| Field                    | Enum Types                                                                                                                                                          |
+|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `log`                    | `created`, `impact_changed`, `likelihood_changed`, `state_changed`                                                                                                  |
+| `severity`               | `null`, `low`, `medium`, `high`  (aka `criticality`. will be null if likelihood/impact have not yet been set by the pentester)                                      |
+| `severity_justification` | Optional; The justification for the severity rating                                                                                                                 |
+| `prerequisites`          | Optional; The prerequisites required for reproducing the vulnerability                                                                                              |
+| `http_request`           | Optional; An example HTTP request for reproducing the vulnerability                                                                                                 |
+| `state`                  | See [Finding States Documentation](./#states)                                                                                                                       |
+| `type_category`          | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                                                              |
+| `attachments`            | A list of finding attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.                                                        |
+| `cvsss`                  | A list of associated [CVSS](https://www.first.org/cvss/) records                                                                                                    |
+| `predecessor_id`         | The ID of the original finding that this finding was created from during the carry-over process. `null` if this finding was not created via the carry-over process. |
+| `successor_id`           | The ID of the finding that was created from this finding during the carry-over process. `null` if this finding was not carried over.                                |
+| `links.ui.url`           | A link to redirect an authorized user to this finding in the Cobalt web application                                                                                 |
 
 ### Image Attachments
 
@@ -270,7 +274,9 @@ curl -X GET "https://api.us.cobalt.io/findings/YOUR-FINDING-IDENTIFIER" \
         "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
         "version": "3.1"
       }
-    ]
+    ],
+    "predecessor_id": null,
+    "successor_id": null
   },
   "links": {
     "ui": {
@@ -294,18 +300,20 @@ This endpoint retrieves a specific finding that belong to the organization speci
 
 ### Response Fields
 
-| Field                    | Enum Types                                                                                                            |
-|--------------------------|-----------------------------------------------------------------------------------------------------------------------|
-| `log`                    | created, impact_changed, likelihood_changed, state_changed                                                            |
-| `severity`               | null, low, medium, high (aka `criticality`. will be null if likelihood/impact have not yet been set by the pentester) |
-| `severity_justification` | Optional; The justification for the severity rating                                                                   |
-| `prerequisites`          | Optional; The prerequisites required for reproducing the vulnerability                                                |
-| `http_request`           | Optional; An example HTTP request for reproducing the vulnerability                                                   |
-| `state`                  | See [Finding States Documentation](./#states)                                                                         |
-| `type_category`          | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                |
-| `attachments`            | A list of finding attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.          |
-| `cvsss`                  | A list of associated [CVSS](https://www.first.org/cvss/) records                                                      |
-| `url`                    | The links.ui.url will redirect an authorized user to this finding in the Cobalt platform                              |
+| Field                    | Enum Types                                                                                                                                                          |
+|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `log`                    | created, impact_changed, likelihood_changed, state_changed                                                                                                          |
+| `severity`               | null, low, medium, high (aka `criticality`. will be null if likelihood/impact have not yet been set by the pentester)                                               |
+| `severity_justification` | Optional; The justification for the severity rating                                                                                                                 |
+| `prerequisites`          | Optional; The prerequisites required for reproducing the vulnerability                                                                                              |
+| `http_request`           | Optional; An example HTTP request for reproducing the vulnerability                                                                                                 |
+| `state`                  | See [Finding States Documentation](./#states)                                                                                                                       |
+| `type_category`          | XSS, SQLi, ... (about 30 more via the Cobalt Taxonomy)                                                                                                              |
+| `attachments`            | A list of finding attachments. Attachment download URLs are pre-authorized and will expire after 10 minutes.                                                        |
+| `cvsss`                  | A list of associated [CVSS](https://www.first.org/cvss/) records                                                                                                    |
+| `predecessor_id`         | The ID of the original finding that this finding was created from during the carry-over process. `null` if this finding was not created via the carry-over process. |
+| `successor_id`           | The ID of the finding that was created from this finding during the carry-over process. `null` if this finding was not carried over.                                |
+| `url`                    | The links.ui.url will redirect an authorized user to this finding in the Cobalt platform                                                                            |
 
 ### Image Attachments
 
