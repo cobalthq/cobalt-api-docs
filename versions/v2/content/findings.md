@@ -114,7 +114,7 @@ curl -X GET "https://api.us.cobalt.io/findings" \
           }
         ],
         "predecessor_id": null,
-        "successor_id": null,
+        "successor_id": null
       },
       "links": {
         "ui": {
@@ -276,7 +276,7 @@ curl -X GET "https://api.us.cobalt.io/findings/YOUR-FINDING-IDENTIFIER" \
       }
     ],
     "predecessor_id": null,
-    "successor_id": null,
+    "successor_id": null
   },
   "links": {
     "ui": {
