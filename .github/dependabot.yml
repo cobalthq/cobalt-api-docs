@@ -31,4 +31,12 @@ updates:
       time: "09:30"
       timezone: "Europe/Berlin"
     commit-message:
-      prefix: "docker"
+      prefix: "npm"
+    groups:
+      minor-updates: # Update all minor and security versions
+        applies-to: version-updates
+        patterns:
+        - "*"
+        update-types:
+        - "minor"
+        - "patch"
